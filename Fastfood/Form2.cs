@@ -17,7 +17,6 @@ namespace Fastfood
             InitializeComponent();
             UserControl1 home = new UserControl1();
             panel1.Controls.Add(home);
-            pictureBox1.SendToBack();
         }
 
         private void lbl3manage_Click(object sender, EventArgs e)
