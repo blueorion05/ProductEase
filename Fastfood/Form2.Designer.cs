@@ -37,13 +37,16 @@
             lbl6account = new Label();
             lbl7logout = new Label();
             pictureBox1 = new PictureBox();
+            panel2 = new Panel();
+            btnexit = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // lbl1company
             // 
             lbl1company.AutoSize = true;
-            lbl1company.BackColor = SystemColors.ActiveCaptionText;
+            lbl1company.BackColor = Color.SteelBlue;
             lbl1company.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             lbl1company.ForeColor = Color.White;
             lbl1company.Location = new Point(12, 26);
@@ -55,7 +58,7 @@
             // lbl2home
             // 
             lbl2home.AutoSize = true;
-            lbl2home.BackColor = SystemColors.ActiveCaptionText;
+            lbl2home.BackColor = Color.SteelBlue;
             lbl2home.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl2home.ForeColor = Color.White;
             lbl2home.Location = new Point(35, 95);
@@ -67,15 +70,15 @@
             // 
             // panel1
             // 
-            panel1.Location = new Point(162, 26);
+            panel1.Location = new Point(162, 32);
             panel1.Name = "panel1";
-            panel1.Size = new Size(735, 424);
+            panel1.Size = new Size(826, 582);
             panel1.TabIndex = 2;
             // 
             // lbl3manage
             // 
             lbl3manage.AutoSize = true;
-            lbl3manage.BackColor = SystemColors.ActiveCaptionText;
+            lbl3manage.BackColor = Color.SteelBlue;
             lbl3manage.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl3manage.ForeColor = Color.White;
             lbl3manage.Location = new Point(35, 145);
@@ -88,7 +91,7 @@
             // lbl4order
             // 
             lbl4order.AutoSize = true;
-            lbl4order.BackColor = SystemColors.ActiveCaptionText;
+            lbl4order.BackColor = Color.SteelBlue;
             lbl4order.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl4order.ForeColor = Color.White;
             lbl4order.Location = new Point(35, 195);
@@ -101,7 +104,7 @@
             // lbl5records
             // 
             lbl5records.AutoSize = true;
-            lbl5records.BackColor = SystemColors.ActiveCaptionText;
+            lbl5records.BackColor = Color.SteelBlue;
             lbl5records.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl5records.ForeColor = Color.White;
             lbl5records.Location = new Point(35, 245);
@@ -114,7 +117,7 @@
             // lbl6account
             // 
             lbl6account.AutoSize = true;
-            lbl6account.BackColor = SystemColors.ActiveCaptionText;
+            lbl6account.BackColor = Color.SteelBlue;
             lbl6account.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl6account.ForeColor = Color.White;
             lbl6account.Location = new Point(35, 295);
@@ -127,7 +130,7 @@
             // lbl7logout
             // 
             lbl7logout.AutoSize = true;
-            lbl7logout.BackColor = SystemColors.ActiveCaptionText;
+            lbl7logout.BackColor = Color.SteelBlue;
             lbl7logout.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl7logout.ForeColor = Color.White;
             lbl7logout.Location = new Point(35, 345);
@@ -139,18 +142,38 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = SystemColors.ActiveCaptionText;
-            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.BackColor = Color.SteelBlue;
+            pictureBox1.Location = new Point(-1, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(156, 450);
+            pictureBox1.Size = new Size(163, 619);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.DarkCyan;
+            panel2.Controls.Add(btnexit);
+            panel2.Location = new Point(162, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(826, 32);
+            panel2.TabIndex = 8;
+            // 
+            // btnexit
+            // 
+            btnexit.Location = new Point(777, 4);
+            btnexit.Name = "btnexit";
+            btnexit.Size = new Size(36, 22);
+            btnexit.TabIndex = 0;
+            btnexit.Text = "X";
+            btnexit.UseVisualStyleBackColor = true;
+            btnexit.Click += btnexit_Click;
+            // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(897, 450);
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            ClientSize = new Size(987, 618);
+            Controls.Add(panel2);
             Controls.Add(lbl7logout);
             Controls.Add(lbl6account);
             Controls.Add(lbl5records);
@@ -160,9 +183,13 @@
             Controls.Add(lbl2home);
             Controls.Add(lbl1company);
             Controls.Add(pictureBox1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form2";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
+            Load += Form2_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -178,5 +205,7 @@
         private Label lbl6account;
         private Label lbl7logout;
         private PictureBox pictureBox1;
+        private Panel panel2;
+        private Button btnexit;
     }
 }

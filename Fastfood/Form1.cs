@@ -5,6 +5,8 @@ namespace Fastfood
         public Form1()
         {
             InitializeComponent();
+            Form2 form2 = new Form2();
+            form2.Close();
         }
 
         private void btn1login_Click(object sender, EventArgs e)
@@ -12,7 +14,7 @@ namespace Fastfood
             this.Hide();
             Form2 form2 = new Form2();
             form2.ShowDialog();
-            this.Show();
+            this.Close();
         }
 
         private void txb1username_TextChanged(object sender, EventArgs e)
@@ -28,6 +30,11 @@ namespace Fastfood
         private void btnexit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

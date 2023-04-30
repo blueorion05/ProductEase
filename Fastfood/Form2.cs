@@ -42,7 +42,9 @@ namespace Fastfood
 
         private void lbl7logout_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Form1 form1 = new Form1();
+            this.Hide();
+            form1.ShowDialog();
         }
 
         private void lbl2home_Click(object sender, EventArgs e)
@@ -57,6 +59,16 @@ namespace Fastfood
             UserControl5 account = new UserControl5();
             panel1.Controls.Clear();
             panel1.Controls.Add(account);
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnexit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -123,7 +123,7 @@
             Controls.Add(pb1totalorders);
             Controls.Add(lbl1home);
             Name = "UserControl1";
-            Size = new Size(735, 424);
+            Size = new Size(826, 582);
             ((System.ComponentModel.ISupportInitialize)pb1totalorders).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

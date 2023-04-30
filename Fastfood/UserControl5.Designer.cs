@@ -47,7 +47,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lbl1account);
             Name = "UserControl5";
-            Size = new Size(735, 424);
+            Size = new Size(826, 582);
             ResumeLayout(false);
             PerformLayout();
         }

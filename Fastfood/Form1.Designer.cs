@@ -81,6 +81,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(312, 173);
             panel1.TabIndex = 5;
+            panel1.Paint += panel1_Paint;
             // 
             // btnexit
             // 
