@@ -28,80 +28,120 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lbl1login = new Label();
-            lbl2company = new Label();
-            txb1username = new TextBox();
-            txb2password = new TextBox();
-            btn1login = new Button();
+            tbuser = new TextBox();
+            tbpass = new TextBox();
+            btnlogin = new Button();
+            panel1 = new Panel();
+            btnexit = new Button();
+            pbuser = new PictureBox();
+            pbpass = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pbuser).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbpass).BeginInit();
             SuspendLayout();
             // 
-            // lbl1login
+            // tbuser
             // 
-            lbl1login.AutoSize = true;
-            lbl1login.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl1login.Location = new Point(55, 29);
-            lbl1login.Name = "lbl1login";
-            lbl1login.Size = new Size(120, 47);
-            lbl1login.TabIndex = 0;
-            lbl1login.Text = "LOGIN";
+            tbuser.BorderStyle = BorderStyle.FixedSingle;
+            tbuser.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            tbuser.Location = new Point(75, 227);
+            tbuser.Name = "tbuser";
+            tbuser.Size = new Size(201, 25);
+            tbuser.TabIndex = 2;
+            tbuser.TextChanged += txb1username_TextChanged;
             // 
-            // lbl2company
+            // tbpass
             // 
-            lbl2company.AutoSize = true;
-            lbl2company.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl2company.Location = new Point(617, 9);
-            lbl2company.Name = "lbl2company";
-            lbl2company.Size = new Size(171, 45);
-            lbl2company.TabIndex = 1;
-            lbl2company.Text = "COMPANY";
+            tbpass.BorderStyle = BorderStyle.FixedSingle;
+            tbpass.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            tbpass.Location = new Point(75, 282);
+            tbpass.Name = "tbpass";
+            tbpass.PasswordChar = '*';
+            tbpass.Size = new Size(201, 25);
+            tbpass.TabIndex = 3;
+            tbpass.UseSystemPasswordChar = true;
             // 
-            // txb1username
+            // btnlogin
             // 
-            txb1username.Location = new Point(91, 119);
-            txb1username.Name = "txb1username";
-            txb1username.Size = new Size(385, 23);
-            txb1username.TabIndex = 2;
+            btnlogin.BackColor = Color.Salmon;
+            btnlogin.FlatStyle = FlatStyle.Flat;
+            btnlogin.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnlogin.ForeColor = Color.White;
+            btnlogin.Location = new Point(37, 349);
+            btnlogin.Name = "btnlogin";
+            btnlogin.Size = new Size(102, 46);
+            btnlogin.TabIndex = 4;
+            btnlogin.Text = "LOGIN";
+            btnlogin.UseVisualStyleBackColor = false;
+            btnlogin.Click += btn1login_Click;
             // 
-            // txb2password
+            // panel1
             // 
-            txb2password.Location = new Point(91, 164);
-            txb2password.Name = "txb2password";
-            txb2password.Size = new Size(385, 23);
-            txb2password.TabIndex = 3;
-            txb2password.UseSystemPasswordChar = true;
+            panel1.BackColor = Color.SteelBlue;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(312, 173);
+            panel1.TabIndex = 5;
             // 
-            // btn1login
+            // btnexit
             // 
-            btn1login.Location = new Point(55, 215);
-            btn1login.Name = "btn1login";
-            btn1login.Size = new Size(421, 23);
-            btn1login.TabIndex = 4;
-            btn1login.Text = "LOGIN";
-            btn1login.UseVisualStyleBackColor = true;
-            btn1login.Click += btn1login_Click;
+            btnexit.BackColor = Color.Salmon;
+            btnexit.FlatStyle = FlatStyle.Flat;
+            btnexit.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnexit.ForeColor = Color.White;
+            btnexit.Location = new Point(174, 349);
+            btnexit.Name = "btnexit";
+            btnexit.Size = new Size(102, 46);
+            btnexit.TabIndex = 6;
+            btnexit.Text = "EXIT";
+            btnexit.UseVisualStyleBackColor = false;
+            btnexit.Click += btnexit_Click;
+            // 
+            // pbuser
+            // 
+            pbuser.Location = new Point(42, 227);
+            pbuser.Name = "pbuser";
+            pbuser.Size = new Size(27, 27);
+            pbuser.TabIndex = 7;
+            pbuser.TabStop = false;
+            // 
+            // pbpass
+            // 
+            pbpass.Location = new Point(42, 282);
+            pbpass.Name = "pbpass";
+            pbpass.Size = new Size(27, 27);
+            pbpass.TabIndex = 8;
+            pbpass.TabStop = false;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 303);
-            Controls.Add(btn1login);
-            Controls.Add(txb2password);
-            Controls.Add(txb1username);
-            Controls.Add(lbl2company);
-            Controls.Add(lbl1login);
+            BackColor = Color.Gainsboro;
+            ClientSize = new Size(312, 429);
+            Controls.Add(pbpass);
+            Controls.Add(pbuser);
+            Controls.Add(btnexit);
+            Controls.Add(panel1);
+            Controls.Add(btnlogin);
+            Controls.Add(tbpass);
+            Controls.Add(tbuser);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)pbuser).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbpass).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label lbl1login;
-        private Label lbl2company;
-        private TextBox txb1username;
-        private TextBox txb2password;
-        private Button btn1login;
+        private TextBox tbuser;
+        private TextBox tbpass;
+        private Button btnlogin;
+        private Panel panel1;
+        private Button btnexit;
+        private PictureBox pbuser;
+        private PictureBox pbpass;
     }
 }
