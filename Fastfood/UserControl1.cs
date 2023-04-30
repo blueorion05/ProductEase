@@ -16,5 +16,15 @@ namespace Fastfood
         {
             InitializeComponent();
         }
+
+        private void lbl2totalorders_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl3totalsales_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
