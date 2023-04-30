@@ -41,6 +41,7 @@
             // lbl1company
             // 
             lbl1company.AutoSize = true;
+            lbl1company.BackColor = Color.Transparent;
             lbl1company.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             lbl1company.Location = new Point(12, 9);
             lbl1company.Name = "lbl1company";
@@ -51,6 +52,7 @@
             // lbl2home
             // 
             lbl2home.AutoSize = true;
+            lbl2home.BackColor = Color.Transparent;
             lbl2home.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl2home.Location = new Point(35, 61);
             lbl2home.Name = "lbl2home";
@@ -69,6 +71,7 @@
             // lbl3manage
             // 
             lbl3manage.AutoSize = true;
+            lbl3manage.BackColor = Color.Transparent;
             lbl3manage.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl3manage.Location = new Point(35, 111);
             lbl3manage.Name = "lbl3manage";
@@ -80,6 +83,7 @@
             // lbl4order
             // 
             lbl4order.AutoSize = true;
+            lbl4order.BackColor = Color.Transparent;
             lbl4order.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl4order.Location = new Point(35, 161);
             lbl4order.Name = "lbl4order";
@@ -91,6 +95,7 @@
             // lbl5records
             // 
             lbl5records.AutoSize = true;
+            lbl5records.BackColor = Color.Transparent;
             lbl5records.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl5records.Location = new Point(35, 211);
             lbl5records.Name = "lbl5records";
@@ -102,6 +107,7 @@
             // lbl6account
             // 
             lbl6account.AutoSize = true;
+            lbl6account.BackColor = Color.Transparent;
             lbl6account.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl6account.Location = new Point(35, 261);
             lbl6account.Name = "lbl6account";
@@ -113,6 +119,7 @@
             // lbl7logout
             // 
             lbl7logout.AutoSize = true;
+            lbl7logout.BackColor = Color.Transparent;
             lbl7logout.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl7logout.Location = new Point(35, 311);
             lbl7logout.Name = "lbl7logout";
