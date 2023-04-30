@@ -62,9 +62,9 @@
             // 
             // btnlogin
             // 
-            btnlogin.BackColor = Color.Salmon;
+            btnlogin.BackColor = Color.DarkCyan;
             btnlogin.FlatStyle = FlatStyle.Flat;
-            btnlogin.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnlogin.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnlogin.ForeColor = Color.White;
             btnlogin.Location = new Point(37, 349);
             btnlogin.Name = "btnlogin";
@@ -84,9 +84,9 @@
             // 
             // btnexit
             // 
-            btnexit.BackColor = Color.Salmon;
+            btnexit.BackColor = Color.DarkCyan;
             btnexit.FlatStyle = FlatStyle.Flat;
-            btnexit.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnexit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnexit.ForeColor = Color.White;
             btnexit.Location = new Point(174, 349);
             btnexit.Name = "btnexit";
@@ -127,6 +127,7 @@
             Controls.Add(tbuser);
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pbuser).EndInit();
