@@ -58,5 +58,10 @@ namespace Fastfood
             panel1.Controls.Clear();
             panel1.Controls.Add(account);
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
