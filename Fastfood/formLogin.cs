@@ -1,18 +1,18 @@
 namespace Fastfood
 {
-    public partial class Form1 : Form
+    public partial class formLogin : Form
     {
-        public Form1()
+        public formLogin()
         {
             InitializeComponent();
-            Form2 form2 = new Form2();
+            formMain form2 = new formMain();
             form2.Close();
         }
 
         private void btn1login_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 form2 = new Form2();
+            formMain form2 = new formMain();
             form2.ShowDialog();
             this.Close();
         }

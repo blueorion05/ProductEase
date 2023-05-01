@@ -1,6 +1,6 @@
 ﻿namespace Fastfood
 {
-    partial class Form2
+    partial class formMain
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             lbl1company = new Label();
             lbl2home = new Label();
-            panel1 = new Panel();
+            panelMain = new Panel();
             lbl3manage = new Label();
             lbl4order = new Label();
             lbl5records = new Label();
@@ -68,12 +68,13 @@
             lbl2home.Text = "Home";
             lbl2home.Click += lbl2home_Click;
             // 
-            // panel1
+            // panelMain
             // 
-            panel1.Location = new Point(162, 32);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(826, 582);
-            panel1.TabIndex = 2;
+            panelMain.Dock = DockStyle.Fill;
+            panelMain.Location = new Point(163, 32);
+            panelMain.Name = "panelMain";
+            panelMain.Size = new Size(824, 586);
+            panelMain.TabIndex = 2;
             // 
             // lbl3manage
             // 
@@ -143,9 +144,10 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = Color.SteelBlue;
-            pictureBox1.Location = new Point(-1, 0);
+            pictureBox1.Dock = DockStyle.Left;
+            pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(163, 619);
+            pictureBox1.Size = new Size(163, 618);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -153,9 +155,10 @@
             // 
             panel2.BackColor = Color.DarkCyan;
             panel2.Controls.Add(btnexit);
-            panel2.Location = new Point(162, 0);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(163, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(826, 32);
+            panel2.Size = new Size(824, 32);
             panel2.TabIndex = 8;
             // 
             // btnexit
@@ -168,23 +171,23 @@
             btnexit.UseVisualStyleBackColor = true;
             btnexit.Click += btnexit_Click;
             // 
-            // Form2
+            // formMain
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(987, 618);
+            Controls.Add(panelMain);
             Controls.Add(panel2);
             Controls.Add(lbl7logout);
             Controls.Add(lbl6account);
             Controls.Add(lbl5records);
             Controls.Add(lbl4order);
             Controls.Add(lbl3manage);
-            Controls.Add(panel1);
             Controls.Add(lbl2home);
             Controls.Add(lbl1company);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "Form2";
+            Name = "formMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form2";
             Load += Form2_Load;
@@ -198,7 +201,7 @@
 
         private Label lbl1company;
         private Label lbl2home;
-        private Panel panel1;
+        private Panel panelMain;
         private Label lbl3manage;
         private Label lbl4order;
         private Label lbl5records;

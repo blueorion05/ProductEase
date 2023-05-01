@@ -10,39 +10,44 @@ using System.Windows.Forms;
 
 namespace Fastfood
 {
-    public partial class Form2 : Form
+    public partial class formMain : Form
     {
-        public Form2()
+        public formMain()
         {
             InitializeComponent();
             UserControl1 home = new UserControl1();
-            panel1.Controls.Add(home);
+            panelMain.Controls.Add(home);
+        }
+
+        public static void AddControl(UserControl f)
+        {
+
         }
 
         private void lbl3manage_Click(object sender, EventArgs e)
         {
             UserControl2 manage = new UserControl2();
-            panel1.Controls.Clear();
-            panel1.Controls.Add(manage);
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(manage);
         }
 
         private void lbl4order_Click(object sender, EventArgs e)
         {
             UserControl3 order = new UserControl3();
-            panel1.Controls.Clear();
-            panel1.Controls.Add(order);
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(order);
         }
 
         private void lbl5records_Click(object sender, EventArgs e)
         {
             UserControl4 records = new UserControl4();
-            panel1.Controls.Clear();
-            panel1.Controls.Add(records);
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(records);
         }
 
         private void lbl7logout_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            formLogin form1 = new formLogin();
             this.Hide();
             form1.ShowDialog();
         }
@@ -50,15 +55,15 @@ namespace Fastfood
         private void lbl2home_Click(object sender, EventArgs e)
         {
             UserControl1 home = new UserControl1();
-            panel1.Controls.Clear();
-            panel1.Controls.Add(home);
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(home);
         }
 
         private void lbl6account_Click(object sender, EventArgs e)
         {
             UserControl5 account = new UserControl5();
-            panel1.Controls.Clear();
-            panel1.Controls.Add(account);
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(account);
         }
 
         private void Form2_Load(object sender, EventArgs e)

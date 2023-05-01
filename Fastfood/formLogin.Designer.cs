@@ -1,6 +1,6 @@
 ﻿namespace Fastfood
 {
-    partial class Form1
+    partial class formLogin
     {
         /// <summary>
         ///  Required designer variable.
