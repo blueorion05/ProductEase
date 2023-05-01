@@ -17,7 +17,26 @@ namespace Fastfood
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string DateToday = DateTime.Now.ToString();
+                string CatSelected = comboBox1.SelectedItem.ToString();
+                dataGridView1.Rows.Add(Tb1.Text, Tb2.Text, DateToday, CatSelected, Tb3.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Select category");
+            }
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
         {
 
         }
