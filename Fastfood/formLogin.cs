@@ -5,16 +5,14 @@ namespace Fastfood
         public formLogin()
         {
             InitializeComponent();
-            formMain form2 = new formMain();
-            form2.Close();
         }
 
         private void btn1login_Click(object sender, EventArgs e)
         {
             this.Hide();
-            formMain form2 = new formMain();
-            form2.ShowDialog();
-            this.Close();
+            formMain f = new formMain();
+            f.ShowDialog();
+            this.Show();
         }
 
         private void txb1username_TextChanged(object sender, EventArgs e)

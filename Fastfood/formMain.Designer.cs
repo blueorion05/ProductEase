@@ -59,6 +59,7 @@
             // 
             lbl2home.AutoSize = true;
             lbl2home.BackColor = Color.SteelBlue;
+            lbl2home.Cursor = Cursors.Hand;
             lbl2home.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl2home.ForeColor = Color.White;
             lbl2home.Location = new Point(35, 95);
@@ -80,6 +81,7 @@
             // 
             lbl3manage.AutoSize = true;
             lbl3manage.BackColor = Color.SteelBlue;
+            lbl3manage.Cursor = Cursors.Hand;
             lbl3manage.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl3manage.ForeColor = Color.White;
             lbl3manage.Location = new Point(35, 145);
@@ -93,6 +95,7 @@
             // 
             lbl4order.AutoSize = true;
             lbl4order.BackColor = Color.SteelBlue;
+            lbl4order.Cursor = Cursors.Hand;
             lbl4order.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl4order.ForeColor = Color.White;
             lbl4order.Location = new Point(35, 195);
@@ -106,6 +109,7 @@
             // 
             lbl5records.AutoSize = true;
             lbl5records.BackColor = Color.SteelBlue;
+            lbl5records.Cursor = Cursors.Hand;
             lbl5records.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl5records.ForeColor = Color.White;
             lbl5records.Location = new Point(35, 245);
@@ -119,6 +123,7 @@
             // 
             lbl6account.AutoSize = true;
             lbl6account.BackColor = Color.SteelBlue;
+            lbl6account.Cursor = Cursors.Hand;
             lbl6account.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl6account.ForeColor = Color.White;
             lbl6account.Location = new Point(35, 295);
@@ -132,6 +137,7 @@
             // 
             lbl7logout.AutoSize = true;
             lbl7logout.BackColor = Color.SteelBlue;
+            lbl7logout.Cursor = Cursors.Hand;
             lbl7logout.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl7logout.ForeColor = Color.White;
             lbl7logout.Location = new Point(35, 345);

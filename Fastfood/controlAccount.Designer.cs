@@ -1,6 +1,6 @@
 ﻿namespace Fastfood
 {
-    partial class UserControl2
+    partial class controlAccount
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lbl1manage = new Label();
+            lbl1account = new Label();
             SuspendLayout();
             // 
-            // lbl1manage
+            // lbl1account
             // 
-            lbl1manage.AutoSize = true;
-            lbl1manage.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl1manage.Location = new Point(0, 0);
-            lbl1manage.Name = "lbl1manage";
-            lbl1manage.Size = new Size(89, 30);
-            lbl1manage.TabIndex = 1;
-            lbl1manage.Text = "Manage";
+            lbl1account.AutoSize = true;
+            lbl1account.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl1account.Location = new Point(0, 0);
+            lbl1account.Name = "lbl1account";
+            lbl1account.Size = new Size(90, 30);
+            lbl1account.TabIndex = 4;
+            lbl1account.Text = "Account";
             // 
-            // UserControl2
+            // UserControl5
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(lbl1manage);
-            Name = "UserControl2";
+            Controls.Add(lbl1account);
+            Name = "UserControl5";
             Size = new Size(826, 582);
             ResumeLayout(false);
             PerformLayout();
@@ -54,6 +54,6 @@
 
         #endregion
 
-        private Label lbl1manage;
+        private Label lbl1account;
     }
 }

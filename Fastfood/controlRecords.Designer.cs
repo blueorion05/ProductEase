@@ -1,6 +1,6 @@
 ﻿namespace Fastfood
 {
-    partial class UserControl4
+    partial class controlRecords
     {
         /// <summary> 
         /// Required designer variable.

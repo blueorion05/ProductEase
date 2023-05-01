@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace Fastfood
 {
-    public partial class UserControl3 : UserControl
+    public partial class controlManage : UserControl
     {
-        public UserControl3()
+        public controlManage()
         {
             InitializeComponent();
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

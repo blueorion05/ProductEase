@@ -1,6 +1,6 @@
 ﻿namespace Fastfood
 {
-    partial class UserControl1
+    partial class controlHome
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,14 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControl1));
             lbl1home = new Label();
             pb1totalorders = new PictureBox();
             lbl2totalorders = new Label();
             pictureBox1 = new PictureBox();
             lbl3totalsales = new Label();
-            lbl4about = new Label();
-            lbl5company = new Label();
             ((System.ComponentModel.ISupportInitialize)pb1totalorders).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -92,38 +89,17 @@
             lbl3totalsales.Text = "Total Sales";
             lbl3totalsales.Click += lbl3totalsales_Click;
             // 
-            // lbl4about
-            // 
-            lbl4about.AutoSize = true;
-            lbl4about.Location = new Point(108, 150);
-            lbl4about.Name = "lbl4about";
-            lbl4about.Size = new Size(295, 150);
-            lbl4about.TabIndex = 5;
-            lbl4about.Text = resources.GetString("lbl4about.Text");
-            // 
-            // lbl5company
-            // 
-            lbl5company.AutoSize = true;
-            lbl5company.Font = new Font("Segoe UI", 36F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl5company.Location = new Point(26, 61);
-            lbl5company.Name = "lbl5company";
-            lbl5company.Size = new Size(229, 65);
-            lbl5company.TabIndex = 6;
-            lbl5company.Text = "Company";
-            // 
-            // UserControl1
+            // controlHome
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(lbl5company);
-            Controls.Add(lbl4about);
             Controls.Add(lbl3totalsales);
             Controls.Add(pictureBox1);
             Controls.Add(lbl2totalorders);
             Controls.Add(pb1totalorders);
             Controls.Add(lbl1home);
-            Name = "UserControl1";
-            Size = new Size(826, 582);
+            Name = "controlHome";
+            Size = new Size(824, 586);
             ((System.ComponentModel.ISupportInitialize)pb1totalorders).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
@@ -137,7 +113,5 @@
         private Label lbl2totalorders;
         private PictureBox pictureBox1;
         private Label lbl3totalsales;
-        private Label lbl4about;
-        private Label lbl5company;
     }
 }
