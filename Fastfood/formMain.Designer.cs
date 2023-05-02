@@ -212,7 +212,7 @@
 
         private Label lbl1company;
         private Label lbl2home;
-        private Panel panelMain;
+        public Panel panelMain;
         private Label lbl3manage;
         private Label lbl4order;
         private Label lbl5records;

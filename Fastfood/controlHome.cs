@@ -34,6 +34,28 @@ namespace Fastfood
 
         private void controlHome_Load(object sender, EventArgs e)
         {
+            formMain f = new formMain();
+            this.Height = f.panelMain.Height;
+            this.Width = f.panelMain.Width;
+        }
+
+        private void controlHome_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pb1totalorders_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbl2totalordersnumbers_Click(object sender, EventArgs e)
+        {
 
         }
     }

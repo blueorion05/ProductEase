@@ -41,13 +41,14 @@
             lbl1account.TabIndex = 4;
             lbl1account.Text = "Account";
             // 
-            // UserControl5
+            // controlAccount
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lbl1account);
-            Name = "UserControl5";
+            Name = "controlAccount";
             Size = new Size(826, 582);
+            Load += controlAccount_Load;
             ResumeLayout(false);
             PerformLayout();
         }

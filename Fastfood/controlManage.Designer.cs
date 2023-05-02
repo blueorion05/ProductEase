@@ -41,13 +41,14 @@
             lbl1manage.TabIndex = 1;
             lbl1manage.Text = "Manage";
             // 
-            // UserControl2
+            // controlManage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lbl1manage);
-            Name = "UserControl2";
+            Name = "controlManage";
             Size = new Size(826, 582);
+            Load += controlManage_Load;
             ResumeLayout(false);
             PerformLayout();
         }

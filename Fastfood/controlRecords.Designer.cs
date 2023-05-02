@@ -41,13 +41,14 @@
             lbl1records.TabIndex = 3;
             lbl1records.Text = "Records";
             // 
-            // UserControl4
+            // controlRecords
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lbl1records);
-            Name = "UserControl4";
+            Name = "controlRecords";
             Size = new Size(826, 582);
+            Load += controlRecords_Load;
             ResumeLayout(false);
             PerformLayout();
         }

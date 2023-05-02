@@ -28,109 +28,125 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl1home = new System.Windows.Forms.Label();
-            this.pb1totalorders = new System.Windows.Forms.PictureBox();
-            this.lbl2totalorders = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbl3totalsales = new System.Windows.Forms.Label();
-            this.lbl2totalordersnumbers = new System.Windows.Forms.Label();
-            this.lbl3totalsalesnumbers = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pb1totalorders)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            lbl1home = new Label();
+            pb1totalorders = new PictureBox();
+            lbl2totalorders = new Label();
+            pictureBox1 = new PictureBox();
+            lbl3totalsales = new Label();
+            lbl2totalordersnumbers = new Label();
+            lbl3totalsalesnumbers = new Label();
+            panel1 = new Panel();
+            ((System.ComponentModel.ISupportInitialize)pb1totalorders).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // lbl1home
             // 
-            this.lbl1home.AutoSize = true;
-            this.lbl1home.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl1home.Location = new System.Drawing.Point(3, 0);
-            this.lbl1home.Name = "lbl1home";
-            this.lbl1home.Size = new System.Drawing.Size(69, 30);
-            this.lbl1home.TabIndex = 0;
-            this.lbl1home.Text = "Home";
+            lbl1home.AutoSize = true;
+            lbl1home.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl1home.Location = new Point(3, 0);
+            lbl1home.Name = "lbl1home";
+            lbl1home.Size = new Size(69, 30);
+            lbl1home.TabIndex = 0;
+            lbl1home.Text = "Home";
             // 
             // pb1totalorders
             // 
-            this.pb1totalorders.BackColor = System.Drawing.Color.SteelBlue;
-            this.pb1totalorders.Location = new System.Drawing.Point(510, 79);
-            this.pb1totalorders.Name = "pb1totalorders";
-            this.pb1totalorders.Size = new System.Drawing.Size(164, 91);
-            this.pb1totalorders.TabIndex = 1;
-            this.pb1totalorders.TabStop = false;
+            pb1totalorders.BackColor = Color.SteelBlue;
+            pb1totalorders.Location = new Point(58, 104);
+            pb1totalorders.Name = "pb1totalorders";
+            pb1totalorders.Size = new Size(164, 91);
+            pb1totalorders.TabIndex = 1;
+            pb1totalorders.TabStop = false;
+            pb1totalorders.Click += pb1totalorders_Click;
             // 
             // lbl2totalorders
             // 
-            this.lbl2totalorders.AutoSize = true;
-            this.lbl2totalorders.BackColor = System.Drawing.Color.SteelBlue;
-            this.lbl2totalorders.ForeColor = System.Drawing.Color.White;
-            this.lbl2totalorders.Location = new System.Drawing.Point(521, 101);
-            this.lbl2totalorders.Name = "lbl2totalorders";
-            this.lbl2totalorders.Size = new System.Drawing.Size(70, 15);
-            this.lbl2totalorders.TabIndex = 2;
-            this.lbl2totalorders.Text = "Total Orders";
+            lbl2totalorders.AutoSize = true;
+            lbl2totalorders.BackColor = Color.SteelBlue;
+            lbl2totalorders.ForeColor = Color.White;
+            lbl2totalorders.Location = new Point(69, 126);
+            lbl2totalorders.Name = "lbl2totalorders";
+            lbl2totalorders.Size = new Size(70, 15);
+            lbl2totalorders.TabIndex = 2;
+            lbl2totalorders.Text = "Total Orders";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.SteelBlue;
-            this.pictureBox1.Location = new System.Drawing.Point(510, 260);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(164, 91);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.BackColor = Color.SteelBlue;
+            pictureBox1.Location = new Point(58, 285);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(164, 91);
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
             // 
             // lbl3totalsales
             // 
-            this.lbl3totalsales.AutoSize = true;
-            this.lbl3totalsales.BackColor = System.Drawing.Color.SteelBlue;
-            this.lbl3totalsales.ForeColor = System.Drawing.Color.White;
-            this.lbl3totalsales.Location = new System.Drawing.Point(530, 285);
-            this.lbl3totalsales.Name = "lbl3totalsales";
-            this.lbl3totalsales.Size = new System.Drawing.Size(61, 15);
-            this.lbl3totalsales.TabIndex = 4;
-            this.lbl3totalsales.Text = "Total Sales";
+            lbl3totalsales.AutoSize = true;
+            lbl3totalsales.BackColor = Color.SteelBlue;
+            lbl3totalsales.ForeColor = Color.White;
+            lbl3totalsales.Location = new Point(78, 310);
+            lbl3totalsales.Name = "lbl3totalsales";
+            lbl3totalsales.Size = new Size(61, 15);
+            lbl3totalsales.TabIndex = 4;
+            lbl3totalsales.Text = "Total Sales";
             // 
             // lbl2totalordersnumbers
             // 
-            this.lbl2totalordersnumbers.AutoSize = true;
-            this.lbl2totalordersnumbers.BackColor = System.Drawing.Color.SteelBlue;
-            this.lbl2totalordersnumbers.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl2totalordersnumbers.ForeColor = System.Drawing.Color.White;
-            this.lbl2totalordersnumbers.Location = new System.Drawing.Point(578, 116);
-            this.lbl2totalordersnumbers.Name = "lbl2totalordersnumbers";
-            this.lbl2totalordersnumbers.Size = new System.Drawing.Size(33, 40);
-            this.lbl2totalordersnumbers.TabIndex = 5;
-            this.lbl2totalordersnumbers.Text = "0";
+            lbl2totalordersnumbers.AutoSize = true;
+            lbl2totalordersnumbers.BackColor = Color.SteelBlue;
+            lbl2totalordersnumbers.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl2totalordersnumbers.ForeColor = Color.White;
+            lbl2totalordersnumbers.Location = new Point(126, 141);
+            lbl2totalordersnumbers.Name = "lbl2totalordersnumbers";
+            lbl2totalordersnumbers.Size = new Size(33, 40);
+            lbl2totalordersnumbers.TabIndex = 5;
+            lbl2totalordersnumbers.Text = "0";
             // 
             // lbl3totalsalesnumbers
             // 
-            this.lbl3totalsalesnumbers.AutoSize = true;
-            this.lbl3totalsalesnumbers.BackColor = System.Drawing.Color.SteelBlue;
-            this.lbl3totalsalesnumbers.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lbl3totalsalesnumbers.ForeColor = System.Drawing.Color.White;
-            this.lbl3totalsalesnumbers.Location = new System.Drawing.Point(578, 300);
-            this.lbl3totalsalesnumbers.Name = "lbl3totalsalesnumbers";
-            this.lbl3totalsalesnumbers.Size = new System.Drawing.Size(33, 40);
-            this.lbl3totalsalesnumbers.TabIndex = 6;
-            this.lbl3totalsalesnumbers.Text = "0";
+            lbl3totalsalesnumbers.AutoSize = true;
+            lbl3totalsalesnumbers.BackColor = Color.SteelBlue;
+            lbl3totalsalesnumbers.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl3totalsalesnumbers.ForeColor = Color.White;
+            lbl3totalsalesnumbers.Location = new Point(126, 325);
+            lbl3totalsalesnumbers.Name = "lbl3totalsalesnumbers";
+            lbl3totalsalesnumbers.Size = new Size(33, 40);
+            lbl3totalsalesnumbers.TabIndex = 6;
+            lbl3totalsalesnumbers.Text = "0";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ActiveCaption;
+            panel1.Controls.Add(lbl3totalsalesnumbers);
+            panel1.Controls.Add(lbl3totalsales);
+            panel1.Controls.Add(lbl2totalordersnumbers);
+            panel1.Controls.Add(lbl2totalorders);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(pb1totalorders);
+            panel1.Dock = DockStyle.Right;
+            panel1.Location = new Point(544, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(280, 586);
+            panel1.TabIndex = 7;
+            panel1.Paint += panel1_Paint;
             // 
             // controlHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.Controls.Add(this.lbl3totalsalesnumbers);
-            this.Controls.Add(this.lbl2totalordersnumbers);
-            this.Controls.Add(this.lbl3totalsales);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.lbl2totalorders);
-            this.Controls.Add(this.pb1totalorders);
-            this.Controls.Add(this.lbl1home);
-            this.Name = "controlHome";
-            this.Size = new System.Drawing.Size(824, 586);
-            ((System.ComponentModel.ISupportInitialize)(this.pb1totalorders)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            Controls.Add(panel1);
+            Controls.Add(lbl1home);
+            Name = "controlHome";
+            Size = new Size(824, 586);
+            Load += controlHome_Load_1;
+            ((System.ComponentModel.ISupportInitialize)pb1totalorders).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -142,5 +158,6 @@
         private Label lbl3totalsales;
         private Label lbl2totalordersnumbers;
         private Label lbl3totalsalesnumbers;
+        private Panel panel1;
     }
 }

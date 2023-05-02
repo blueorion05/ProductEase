@@ -45,5 +45,21 @@ namespace Fastfood
         {
 
         }
+
+        private void controlOrder_Load(object sender, EventArgs e)
+        {
+            formMain f = new formMain();
+            this.Height = f.panelMain.Height;
+            this.Width = f.panelMain.Width;
+            dataGridView1.Height = f.panelMain.Height - 100;
+            dataGridView1.Width = f.panelMain.Width - 10;
+            panel3.Height = f.panelMain.Height + 75;
+            panel3.Width = f.panelMain.Width + 20;
+        }
+
+        private void lbl2orderno_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

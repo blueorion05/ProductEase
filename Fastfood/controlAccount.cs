@@ -16,5 +16,12 @@ namespace Fastfood
         {
             InitializeComponent();
         }
+
+        private void controlAccount_Load(object sender, EventArgs e)
+        {
+            formMain f = new formMain();
+            this.Height = f.panelMain.Height;
+            this.Width = f.panelMain.Width;
+        }
     }
 }
