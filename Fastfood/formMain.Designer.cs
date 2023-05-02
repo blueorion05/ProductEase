@@ -76,6 +76,7 @@
             panelMain.Name = "panelMain";
             panelMain.Size = new Size(824, 586);
             panelMain.TabIndex = 2;
+            panelMain.Paint += panelMain_Paint;
             // 
             // lbl3manage
             // 
@@ -166,9 +167,11 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(824, 32);
             panel2.TabIndex = 8;
+            panel2.Paint += panel2_Paint;
             // 
             // btnexit
             // 
+            btnexit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnexit.Location = new Point(777, 4);
             btnexit.Name = "btnexit";
             btnexit.Size = new Size(36, 22);
@@ -181,6 +184,7 @@
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
+            AutoValidate = AutoValidate.Disable;
             ClientSize = new Size(987, 618);
             Controls.Add(panelMain);
             Controls.Add(panel2);
@@ -193,9 +197,10 @@
             Controls.Add(lbl1company);
             Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
+            MaximizeBox = false;
             Name = "formMain";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form2";
+            StartPosition = FormStartPosition.Manual;
+            Text = "Main";
             Load += Form2_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);

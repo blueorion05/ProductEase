@@ -49,7 +49,7 @@
             // 
             // pb1totalorders
             // 
-            pb1totalorders.BackColor = SystemColors.ActiveCaptionText;
+            pb1totalorders.BackColor = Color.SteelBlue;
             pb1totalorders.Location = new Point(510, 79);
             pb1totalorders.Name = "pb1totalorders";
             pb1totalorders.Size = new Size(164, 91);
@@ -59,7 +59,7 @@
             // lbl2totalorders
             // 
             lbl2totalorders.AutoSize = true;
-            lbl2totalorders.BackColor = SystemColors.ActiveCaptionText;
+            lbl2totalorders.BackColor = Color.SteelBlue;
             lbl2totalorders.ForeColor = Color.White;
             lbl2totalorders.Location = new Point(521, 101);
             lbl2totalorders.Name = "lbl2totalorders";
@@ -70,7 +70,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = SystemColors.ActiveCaptionText;
+            pictureBox1.BackColor = Color.SteelBlue;
             pictureBox1.Location = new Point(510, 260);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(164, 91);
@@ -80,7 +80,7 @@
             // lbl3totalsales
             // 
             lbl3totalsales.AutoSize = true;
-            lbl3totalsales.BackColor = SystemColors.ActiveCaptionText;
+            lbl3totalsales.BackColor = Color.SteelBlue;
             lbl3totalsales.ForeColor = Color.White;
             lbl3totalsales.Location = new Point(530, 285);
             lbl3totalsales.Name = "lbl3totalsales";
@@ -91,8 +91,8 @@
             // 
             // controlHome
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
             Controls.Add(lbl3totalsales);
             Controls.Add(pictureBox1);
             Controls.Add(lbl2totalorders);
@@ -100,6 +100,7 @@
             Controls.Add(lbl1home);
             Name = "controlHome";
             Size = new Size(824, 586);
+            Load += controlHome_Load;
             ((System.ComponentModel.ISupportInitialize)pb1totalorders).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

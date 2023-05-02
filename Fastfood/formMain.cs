@@ -73,12 +73,24 @@ namespace Fastfood
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            this.Height = Screen.PrimaryScreen.WorkingArea.Height;
+            this.Width = Screen.PrimaryScreen.WorkingArea.Width;
+            this.Location = Screen.PrimaryScreen.WorkingArea.Location;
         }
 
         private void btnexit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void panelMain_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
