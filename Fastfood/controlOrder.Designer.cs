@@ -92,7 +92,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(826, 582);
+            panel1.Size = new Size(824, 586);
             panel1.TabIndex = 3;
             // 
             // comboBox1
@@ -173,7 +173,7 @@
             panel3.Controls.Add(dataGridView1);
             panel3.Location = new Point(9, 41);
             panel3.Name = "panel3";
-            panel3.Size = new Size(436, 424);
+            panel3.Size = new Size(527, 424);
             panel3.TabIndex = 10;
             // 
             // toolStrip1
@@ -224,7 +224,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(397, 237);
+            dataGridView1.Size = new Size(495, 248);
             dataGridView1.TabIndex = 8;
             // 
             // ColID
@@ -277,7 +277,7 @@
             pb1order.BackColor = Color.SteelBlue;
             pb1order.Location = new Point(29, 42);
             pb1order.Name = "pb1order";
-            pb1order.Size = new Size(281, 36);
+            pb1order.Size = new Size(218, 36);
             pb1order.TabIndex = 1;
             pb1order.TabStop = false;
             // 
@@ -286,7 +286,7 @@
             lbl3item.AutoSize = true;
             lbl3item.BackColor = Color.SteelBlue;
             lbl3item.ForeColor = Color.White;
-            lbl3item.Location = new Point(71, 54);
+            lbl3item.Location = new Point(43, 54);
             lbl3item.Name = "lbl3item";
             lbl3item.Size = new Size(33, 15);
             lbl3item.TabIndex = 2;
@@ -297,7 +297,7 @@
             lbl4quantity.AutoSize = true;
             lbl4quantity.BackColor = Color.SteelBlue;
             lbl4quantity.ForeColor = Color.White;
-            lbl4quantity.Location = new Point(181, 54);
+            lbl4quantity.Location = new Point(140, 53);
             lbl4quantity.Name = "lbl4quantity";
             lbl4quantity.Size = new Size(28, 15);
             lbl4quantity.TabIndex = 3;
@@ -308,7 +308,7 @@
             lbl5cost.AutoSize = true;
             lbl5cost.BackColor = Color.SteelBlue;
             lbl5cost.ForeColor = Color.White;
-            lbl5cost.Location = new Point(243, 54);
+            lbl5cost.Location = new Point(194, 53);
             lbl5cost.Name = "lbl5cost";
             lbl5cost.Size = new Size(36, 15);
             lbl5cost.TabIndex = 4;
@@ -317,7 +317,7 @@
             // lbl6total
             // 
             lbl6total.AutoSize = true;
-            lbl6total.Location = new Point(80, 370);
+            lbl6total.Location = new Point(45, 474);
             lbl6total.Name = "lbl6total";
             lbl6total.Size = new Size(32, 15);
             lbl6total.TabIndex = 5;
@@ -327,7 +327,7 @@
             // 
             lbl7amount.AutoSize = true;
             lbl7amount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl7amount.Location = new Point(181, 362);
+            lbl7amount.Location = new Point(146, 466);
             lbl7amount.Name = "lbl7amount";
             lbl7amount.Size = new Size(84, 25);
             lbl7amount.TabIndex = 6;
@@ -336,7 +336,7 @@
             // btn1pay
             // 
             btn1pay.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btn1pay.Location = new Point(80, 397);
+            btn1pay.Location = new Point(45, 501);
             btn1pay.Name = "btn1pay";
             btn1pay.Size = new Size(185, 50);
             btn1pay.TabIndex = 7;
@@ -356,9 +356,9 @@
             panel2.Controls.Add(pb1order);
             panel2.Controls.Add(lbl2orderno);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(487, 0);
+            panel2.Location = new Point(542, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(339, 582);
+            panel2.Size = new Size(282, 586);
             panel2.TabIndex = 4;
             // 
             // controlOrder
@@ -369,7 +369,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "controlOrder";
-            Size = new Size(826, 582);
+            Size = new Size(824, 586);
             Load += controlOrder_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();

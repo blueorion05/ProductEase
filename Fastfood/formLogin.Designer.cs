@@ -35,6 +35,7 @@
             btnexit = new Button();
             pbuser = new PictureBox();
             pbpass = new PictureBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pbuser).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbpass).BeginInit();
             SuspendLayout();
@@ -115,12 +116,23 @@
             pbpass.TabIndex = 8;
             pbpass.TabStop = false;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(186, 414);
+            label1.Name = "label1";
+            label1.Size = new Size(126, 15);
+            label1.TabIndex = 9;
+            label1.Text = "user and pass = admin";
+            label1.Click += label1_Click;
+            // 
             // formLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gainsboro;
             ClientSize = new Size(312, 429);
+            Controls.Add(label1);
             Controls.Add(pbpass);
             Controls.Add(pbuser);
             Controls.Add(btnexit);
@@ -146,5 +158,6 @@
         private Button btnexit;
         private PictureBox pbuser;
         private PictureBox pbpass;
+        private Label label1;
     }
 }

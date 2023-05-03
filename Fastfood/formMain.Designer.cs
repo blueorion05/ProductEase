@@ -199,7 +199,7 @@
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "formMain";
-            StartPosition = FormStartPosition.Manual;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Main";
             Load += Form2_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
