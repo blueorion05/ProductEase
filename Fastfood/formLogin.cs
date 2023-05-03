@@ -11,7 +11,7 @@ namespace Fastfood
         {
             InitializeComponent();
 
-            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Administrator\source\repos\blueorion05\Fastfood\Fastfood\Database\Login.accdb;
+            conn.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\blueorion05\Fastfood\Fastfood\Database\Login.accdb;
             Persist Security Info=False";
         }
 

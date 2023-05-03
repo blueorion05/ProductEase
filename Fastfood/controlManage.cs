@@ -14,7 +14,7 @@ namespace Fastfood
 {
     public partial class controlManage : UserControl
     {
-        String db = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Administrator\source\repos\blueorion05\Fastfood\Fastfood\Database\Login.accdb";
+        String db = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\blueorion05\Fastfood\Fastfood\Database\Login.accdb";
         String addData = "INSERT INTO FoodAndDrinks (Category, Item, Price) VALUES (?,?,?)";
         public OleDbConnection conn = new OleDbConnection();
         string FoodAndDrinks = "SELECT * FROM FoodAndDrinks";
