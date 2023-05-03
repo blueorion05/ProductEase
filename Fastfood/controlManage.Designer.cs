@@ -54,7 +54,7 @@
             // 
             lbl1manage.AutoSize = true;
             lbl1manage.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl1manage.Location = new Point(0, 0);
+            lbl1manage.Location = new Point(12, 21);
             lbl1manage.Name = "lbl1manage";
             lbl1manage.Size = new Size(89, 30);
             lbl1manage.TabIndex = 1;
