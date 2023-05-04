@@ -47,7 +47,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(lbl1records);
             Name = "controlRecords";
-            Size = new Size(826, 582);
+            Size = new Size(1064, 654);
             Load += controlRecords_Load;
             ResumeLayout(false);
             PerformLayout();

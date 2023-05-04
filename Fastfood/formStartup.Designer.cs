@@ -1,6 +1,6 @@
 ﻿namespace Fastfood
 {
-    partial class StartUp
+    partial class formStartup
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartUp));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formStartup));
             label1 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             progressBar1 = new ProgressBar();
@@ -42,9 +42,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Arial Rounded MT Bold", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(233, 120);
+            label1.Location = new Point(163, 72);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(343, 64);
+            label1.Size = new Size(235, 44);
             label1.TabIndex = 0;
             label1.Text = "PRODUCT \r\nMANAGEMENT SYSTEM";
             // 
@@ -54,44 +55,50 @@
             // 
             // progressBar1
             // 
-            progressBar1.Location = new Point(-1, 338);
+            progressBar1.ForeColor = Color.FromArgb(51, 51, 76);
+            progressBar1.Location = new Point(-1, 203);
+            progressBar1.Margin = new Padding(2, 2, 2, 2);
             progressBar1.Name = "progressBar1";
-            progressBar1.Size = new Size(621, 12);
+            progressBar1.Size = new Size(435, 7);
             progressBar1.TabIndex = 1;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Arial Rounded MT Bold", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(233, 199);
+            label2.Location = new Point(163, 119);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(120, 23);
+            label2.Size = new Size(83, 16);
             label2.TabIndex = 2;
             label2.Text = "Version 1.0";
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.DodgerBlue;
+            pictureBox1.BackColor = Color.FromArgb(0, 150, 136);
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(86, 107);
+            pictureBox1.Location = new Point(60, 64);
+            pictureBox1.Margin = new Padding(2, 2, 2, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(141, 128);
+            pictureBox1.Size = new Size(99, 77);
             pictureBox1.TabIndex = 3;
             pictureBox1.TabStop = false;
             // 
-            // StartUp
+            // formStartup
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DodgerBlue;
-            ClientSize = new Size(614, 350);
+            BackColor = Color.FromArgb(0, 150, 136);
+            ClientSize = new Size(430, 210);
             Controls.Add(pictureBox1);
             Controls.Add(label2);
             Controls.Add(progressBar1);
             Controls.Add(label1);
+            ForeColor = Color.Black;
             FormBorderStyle = FormBorderStyle.None;
-            Name = "StartUp";
+            Margin = new Padding(2, 2, 2, 2);
+            Name = "formStartup";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "StartUp";
             Load += StartUp_Load;

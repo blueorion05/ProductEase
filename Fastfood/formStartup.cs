@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Fastfood
 {
-    public partial class StartUp : Form
+    public partial class formStartup : Form
     {
-        public StartUp()
+        public formStartup()
         {
             InitializeComponent();
         }
@@ -21,7 +21,7 @@ namespace Fastfood
         {
             start += 1;
             progressBar1.Value = start;
-            if (progressBar1.Value == 80)
+            if (progressBar1.Value == 60)
             {
                 progressBar1.Value = 0;
                 timer1.Stop();

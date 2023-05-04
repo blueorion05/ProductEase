@@ -28,27 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(controlOrder));
-            lbl1order = new Label();
-            panel1 = new Panel();
-            comboBox1 = new ComboBox();
-            label3 = new Label();
-            label2 = new Label();
-            Tb3 = new TextBox();
-            Tb2 = new TextBox();
-            Tb1 = new TextBox();
-            label1 = new Label();
-            panel3 = new Panel();
-            toolStrip1 = new ToolStrip();
-            toolStripButton1 = new ToolStripButton();
-            toolStripButton2 = new ToolStripButton();
-            toolStripButton3 = new ToolStripButton();
-            dataGridView1 = new DataGridView();
-            ColID = new DataGridViewTextBoxColumn();
-            ColName = new DataGridViewTextBoxColumn();
-            ColDate = new DataGridViewTextBoxColumn();
-            ColType = new DataGridViewTextBoxColumn();
-            ColItem = new DataGridViewTextBoxColumn();
             lbl2orderno = new Label();
             pb1order = new PictureBox();
             lbl3item = new Label();
@@ -58,224 +37,34 @@
             lbl7amount = new Label();
             btn1pay = new Button();
             panel2 = new Panel();
-            panel1.SuspendLayout();
-            panel3.SuspendLayout();
-            toolStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            pictureBox1 = new PictureBox();
+            button6 = new Button();
+            button7 = new Button();
+            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pb1order).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
-            // 
-            // lbl1order
-            // 
-            lbl1order.AutoSize = true;
-            lbl1order.BackColor = Color.Gainsboro;
-            lbl1order.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl1order.ForeColor = Color.Black;
-            lbl1order.Location = new Point(0, 0);
-            lbl1order.Name = "lbl1order";
-            lbl1order.Size = new Size(66, 30);
-            lbl1order.TabIndex = 2;
-            lbl1order.Text = "Order";
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Gainsboro;
-            panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(Tb3);
-            panel1.Controls.Add(Tb2);
-            panel1.Controls.Add(Tb1);
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(panel3);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(824, 586);
-            panel1.TabIndex = 3;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Product Type 1", "Product Type 2", "Product Type 3" });
-            comboBox1.Location = new Point(91, 52);
-            comboBox1.Margin = new Padding(2);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(145, 23);
-            comboBox1.TabIndex = 9;
-            comboBox1.Text = "Category";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.SteelBlue;
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(39, 136);
-            label3.Margin = new Padding(2, 0, 2, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(31, 15);
-            label3.TabIndex = 5;
-            label3.Text = "Item";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.SteelBlue;
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(39, 112);
-            label2.Margin = new Padding(2, 0, 2, 0);
-            label2.Name = "label2";
-            label2.Size = new Size(39, 15);
-            label2.TabIndex = 4;
-            label2.Text = "Name";
-            // 
-            // Tb3
-            // 
-            Tb3.Location = new Point(91, 136);
-            Tb3.Margin = new Padding(2);
-            Tb3.Name = "Tb3";
-            Tb3.Size = new Size(145, 23);
-            Tb3.TabIndex = 3;
-            // 
-            // Tb2
-            // 
-            Tb2.Location = new Point(91, 109);
-            Tb2.Margin = new Padding(2);
-            Tb2.Name = "Tb2";
-            Tb2.Size = new Size(145, 23);
-            Tb2.TabIndex = 2;
-            // 
-            // Tb1
-            // 
-            Tb1.Location = new Point(91, 81);
-            Tb1.Margin = new Padding(2);
-            Tb1.Name = "Tb1";
-            Tb1.Size = new Size(145, 23);
-            Tb1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.SteelBlue;
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(39, 82);
-            label1.Margin = new Padding(2, 0, 2, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(18, 15);
-            label1.TabIndex = 0;
-            label1.Text = "ID";
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.SteelBlue;
-            panel3.Controls.Add(toolStrip1);
-            panel3.Controls.Add(dataGridView1);
-            panel3.Location = new Point(9, 41);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(527, 424);
-            panel3.TabIndex = 10;
-            // 
-            // toolStrip1
-            // 
-            toolStrip1.Dock = DockStyle.None;
-            toolStrip1.ImageScalingSize = new Size(24, 24);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton1, toolStripButton2, toolStripButton3 });
-            toolStrip1.Location = new Point(15, 139);
-            toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(220, 25);
-            toolStrip1.TabIndex = 7;
-            toolStrip1.Text = "toolStrip1";
-            // 
-            // toolStripButton1
-            // 
-            toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
-            toolStripButton1.ImageTransparentColor = Color.Magenta;
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new Size(66, 22);
-            toolStripButton1.Text = "Add Order";
-            // 
-            // toolStripButton2
-            // 
-            toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
-            toolStripButton2.ImageTransparentColor = Color.Magenta;
-            toolStripButton2.Name = "toolStripButton2";
-            toolStripButton2.Size = new Size(77, 22);
-            toolStripButton2.Text = "Delete Order";
-            // 
-            // toolStripButton3
-            // 
-            toolStripButton3.DisplayStyle = ToolStripItemDisplayStyle.Text;
-            toolStripButton3.Image = (Image)resources.GetObject("toolStripButton3.Image");
-            toolStripButton3.ImageTransparentColor = Color.Magenta;
-            toolStripButton3.Name = "toolStripButton3";
-            toolStripButton3.Size = new Size(65, 22);
-            toolStripButton3.Text = "Sort Order";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = Color.Gainsboro;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ColID, ColName, ColDate, ColType, ColItem });
-            dataGridView1.Location = new Point(15, 161);
-            dataGridView1.Margin = new Padding(2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 62;
-            dataGridView1.RowTemplate.Height = 33;
-            dataGridView1.Size = new Size(495, 248);
-            dataGridView1.TabIndex = 8;
-            // 
-            // ColID
-            // 
-            ColID.HeaderText = "Product ID";
-            ColID.MinimumWidth = 8;
-            ColID.Name = "ColID";
-            ColID.Width = 150;
-            // 
-            // ColName
-            // 
-            ColName.HeaderText = "Customer Name";
-            ColName.MinimumWidth = 8;
-            ColName.Name = "ColName";
-            ColName.Width = 150;
-            // 
-            // ColDate
-            // 
-            ColDate.HeaderText = "Date Ordered";
-            ColDate.MinimumWidth = 8;
-            ColDate.Name = "ColDate";
-            ColDate.Width = 150;
-            // 
-            // ColType
-            // 
-            ColType.HeaderText = "Product Type";
-            ColType.MinimumWidth = 8;
-            ColType.Name = "ColType";
-            ColType.Width = 150;
-            // 
-            // ColItem
-            // 
-            ColItem.HeaderText = "Item";
-            ColItem.MinimumWidth = 8;
-            ColItem.Name = "ColItem";
-            ColItem.Width = 150;
             // 
             // lbl2orderno
             // 
             lbl2orderno.AutoSize = true;
-            lbl2orderno.Location = new Point(29, 24);
+            lbl2orderno.Location = new Point(27, 65);
             lbl2orderno.Name = "lbl2orderno";
             lbl2orderno.Size = new Size(57, 15);
             lbl2orderno.TabIndex = 0;
             lbl2orderno.Text = "Order no.";
-            lbl2orderno.Click += lbl2orderno_Click;
             // 
             // pb1order
             // 
-            pb1order.BackColor = Color.SteelBlue;
-            pb1order.Location = new Point(29, 42);
+            pb1order.BackColor = Color.FromArgb(0, 150, 136);
+            pb1order.Location = new Point(27, 83);
             pb1order.Name = "pb1order";
             pb1order.Size = new Size(218, 36);
             pb1order.TabIndex = 1;
@@ -284,9 +73,9 @@
             // lbl3item
             // 
             lbl3item.AutoSize = true;
-            lbl3item.BackColor = Color.SteelBlue;
+            lbl3item.BackColor = Color.FromArgb(0, 150, 136);
             lbl3item.ForeColor = Color.White;
-            lbl3item.Location = new Point(43, 54);
+            lbl3item.Location = new Point(41, 95);
             lbl3item.Name = "lbl3item";
             lbl3item.Size = new Size(33, 15);
             lbl3item.TabIndex = 2;
@@ -295,9 +84,9 @@
             // lbl4quantity
             // 
             lbl4quantity.AutoSize = true;
-            lbl4quantity.BackColor = Color.SteelBlue;
+            lbl4quantity.BackColor = Color.FromArgb(0, 150, 136);
             lbl4quantity.ForeColor = Color.White;
-            lbl4quantity.Location = new Point(140, 53);
+            lbl4quantity.Location = new Point(138, 94);
             lbl4quantity.Name = "lbl4quantity";
             lbl4quantity.Size = new Size(28, 15);
             lbl4quantity.TabIndex = 3;
@@ -306,9 +95,9 @@
             // lbl5cost
             // 
             lbl5cost.AutoSize = true;
-            lbl5cost.BackColor = Color.SteelBlue;
+            lbl5cost.BackColor = Color.FromArgb(0, 150, 136);
             lbl5cost.ForeColor = Color.White;
-            lbl5cost.Location = new Point(194, 53);
+            lbl5cost.Location = new Point(192, 94);
             lbl5cost.Name = "lbl5cost";
             lbl5cost.Size = new Size(36, 15);
             lbl5cost.TabIndex = 4;
@@ -317,7 +106,7 @@
             // lbl6total
             // 
             lbl6total.AutoSize = true;
-            lbl6total.Location = new Point(45, 474);
+            lbl6total.Location = new Point(45, 472);
             lbl6total.Name = "lbl6total";
             lbl6total.Size = new Size(32, 15);
             lbl6total.TabIndex = 5;
@@ -327,7 +116,7 @@
             // 
             lbl7amount.AutoSize = true;
             lbl7amount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl7amount.Location = new Point(146, 466);
+            lbl7amount.Location = new Point(146, 464);
             lbl7amount.Name = "lbl7amount";
             lbl7amount.Size = new Size(84, 25);
             lbl7amount.TabIndex = 6;
@@ -335,17 +124,21 @@
             // 
             // btn1pay
             // 
+            btn1pay.BackColor = Color.FromArgb(39, 39, 58);
+            btn1pay.FlatAppearance.BorderSize = 0;
+            btn1pay.FlatStyle = FlatStyle.Flat;
             btn1pay.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btn1pay.Location = new Point(45, 501);
+            btn1pay.ForeColor = Color.White;
+            btn1pay.Location = new Point(45, 502);
             btn1pay.Name = "btn1pay";
             btn1pay.Size = new Size(185, 50);
             btn1pay.TabIndex = 7;
             btn1pay.Text = "PAY";
-            btn1pay.UseVisualStyleBackColor = true;
+            btn1pay.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
-            panel2.BackColor = Color.Gainsboro;
+            panel2.BackColor = Color.WhiteSmoke;
             panel2.BorderStyle = BorderStyle.Fixed3D;
             panel2.Controls.Add(btn1pay);
             panel2.Controls.Add(lbl7amount);
@@ -356,56 +149,149 @@
             panel2.Controls.Add(pb1order);
             panel2.Controls.Add(lbl2orderno);
             panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(542, 0);
+            panel2.Location = new Point(782, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(282, 586);
+            panel2.Size = new Size(282, 665);
             panel2.TabIndex = 4;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(51, 51, 76);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(0, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(126, 47);
+            button1.TabIndex = 5;
+            button1.Text = "All";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(51, 51, 76);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(126, 0);
+            button2.Name = "button2";
+            button2.Size = new Size(126, 47);
+            button2.TabIndex = 6;
+            button2.Text = "Category";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(51, 51, 76);
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(252, 0);
+            button3.Name = "button3";
+            button3.Size = new Size(126, 47);
+            button3.TabIndex = 7;
+            button3.Text = "Category";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.FromArgb(51, 51, 76);
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(378, 0);
+            button4.Name = "button4";
+            button4.Size = new Size(126, 47);
+            button4.TabIndex = 8;
+            button4.Text = "Category";
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(51, 51, 76);
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.ForeColor = Color.White;
+            button5.Location = new Point(504, 0);
+            button5.Name = "button5";
+            button5.Size = new Size(126, 47);
+            button5.TabIndex = 9;
+            button5.Text = "Category";
+            button5.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.FromArgb(51, 51, 76);
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.Location = new Point(630, -9);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(434, 56);
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.FromArgb(51, 51, 76);
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.ForeColor = Color.White;
+            button6.Location = new Point(0, 618);
+            button6.Name = "button6";
+            button6.Size = new Size(126, 47);
+            button6.TabIndex = 11;
+            button6.Text = "New";
+            button6.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.FromArgb(51, 51, 76);
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.ForeColor = Color.White;
+            button7.Location = new Point(126, 618);
+            button7.Name = "button7";
+            button7.Size = new Size(126, 47);
+            button7.TabIndex = 12;
+            button7.Text = "Cancel";
+            button7.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.FromArgb(51, 51, 76);
+            pictureBox2.BackgroundImageLayout = ImageLayout.None;
+            pictureBox2.Location = new Point(252, 618);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(812, 54);
+            pictureBox2.TabIndex = 13;
+            pictureBox2.TabStop = false;
             // 
             // controlOrder
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(lbl1order);
+            BackColor = Color.WhiteSmoke;
+            Controls.Add(pictureBox2);
+            Controls.Add(button7);
+            Controls.Add(button6);
+            Controls.Add(pictureBox1);
+            Controls.Add(button5);
+            Controls.Add(button4);
+            Controls.Add(button3);
+            Controls.Add(button2);
+            Controls.Add(button1);
             Controls.Add(panel2);
-            Controls.Add(panel1);
             Name = "controlOrder";
-            Size = new Size(824, 586);
+            Size = new Size(1064, 665);
             Load += controlOrder_Load;
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
-            toolStrip1.ResumeLayout(false);
-            toolStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pb1order).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label lbl1order;
-        private Panel panel1;
-        private Label label1;
-        private DataGridView dataGridView1;
-        private ToolStrip toolStrip1;
-        private ToolStripButton toolStripButton1;
-        private ToolStripButton toolStripButton2;
-        private ToolStripButton toolStripButton3;
-        private Label label3;
-        private Label label2;
-        private TextBox Tb3;
-        private TextBox Tb2;
-        private TextBox Tb1;
-        private ComboBox comboBox1;
-        private DataGridViewTextBoxColumn ColID;
-        private DataGridViewTextBoxColumn ColName;
-        private DataGridViewTextBoxColumn ColDate;
-        private DataGridViewTextBoxColumn ColType;
-        private DataGridViewTextBoxColumn ColItem;
         private Label lbl2orderno;
         private PictureBox pb1order;
         private Label lbl3item;
@@ -415,6 +301,14 @@
         private Label lbl7amount;
         private Button btn1pay;
         private Panel panel2;
-        private Panel panel3;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
+        private Button button5;
+        private PictureBox pictureBox1;
+        private Button button6;
+        private Button button7;
+        private PictureBox pictureBox2;
     }
 }

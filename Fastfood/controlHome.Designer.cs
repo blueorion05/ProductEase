@@ -126,9 +126,9 @@
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(pb1totalorders);
             panel1.Dock = DockStyle.Right;
-            panel1.Location = new Point(544, 0);
+            panel1.Location = new Point(784, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(280, 586);
+            panel1.Size = new Size(280, 654);
             panel1.TabIndex = 7;
             panel1.Paint += panel1_Paint;
             // 
@@ -139,7 +139,7 @@
             Controls.Add(panel1);
             Controls.Add(lbl1home);
             Name = "controlHome";
-            Size = new Size(824, 586);
+            Size = new Size(1064, 654);
             Load += controlHome_Load_1;
             ((System.ComponentModel.ISupportInitialize)pb1totalorders).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

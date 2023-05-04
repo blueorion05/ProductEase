@@ -61,7 +61,7 @@
             // 
             // btnlogin
             // 
-            btnlogin.BackColor = Color.DarkCyan;
+            btnlogin.BackColor = Color.FromArgb(39, 39, 58);
             btnlogin.FlatStyle = FlatStyle.Flat;
             btnlogin.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnlogin.ForeColor = Color.White;
@@ -75,7 +75,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.SteelBlue;
+            panel1.BackColor = Color.FromArgb(0, 150, 136);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(312, 173);
@@ -83,7 +83,7 @@
             // 
             // btnexit
             // 
-            btnexit.BackColor = Color.DarkCyan;
+            btnexit.BackColor = Color.FromArgb(39, 39, 58);
             btnexit.FlatStyle = FlatStyle.Flat;
             btnexit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnexit.ForeColor = Color.White;
@@ -119,7 +119,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Gainsboro;
+            BackColor = Color.WhiteSmoke;
             ClientSize = new Size(312, 429);
             Controls.Add(pbpass);
             Controls.Add(pbuser);

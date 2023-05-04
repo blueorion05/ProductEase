@@ -30,11 +30,6 @@
         {
             lbl1manage = new Label();
             tableItems = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewImageColumn();
             btnAdd = new Button();
             lblId = new Label();
             lblCategory = new Label();
@@ -46,6 +41,11 @@
             tbPrice = new TextBox();
             pictureBox1 = new PictureBox();
             btnBrowse = new Button();
+            Column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)tableItems).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -62,6 +62,8 @@
             // 
             // tableItems
             // 
+            tableItems.AllowUserToAddRows = false;
+            tableItems.AllowUserToDeleteRows = false;
             tableItems.AllowUserToResizeColumns = false;
             tableItems.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tableItems.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
@@ -69,45 +71,13 @@
             tableItems.Name = "tableItems";
             tableItems.ReadOnly = true;
             tableItems.RowTemplate.Height = 25;
-            tableItems.Size = new Size(744, 150);
+            tableItems.Size = new Size(973, 150);
             tableItems.TabIndex = 2;
             tableItems.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // Column1
-            // 
-            Column1.HeaderText = "ID";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Category";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Item";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Price";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Image";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            Column5.Resizable = DataGridViewTriState.True;
-            Column5.SortMode = DataGridViewColumnSortMode.Automatic;
-            // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(42, 191);
+            btnAdd.Location = new Point(79, 204);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(75, 23);
             btnAdd.TabIndex = 3;
@@ -184,22 +154,67 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(527, 52);
+            pictureBox1.Location = new Point(418, 28);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(121, 114);
+            pictureBox1.Size = new Size(150, 150);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 12;
             pictureBox1.TabStop = false;
             // 
             // btnBrowse
             // 
-            btnBrowse.Location = new Point(552, 172);
+            btnBrowse.Location = new Point(458, 184);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(75, 23);
             btnBrowse.TabIndex = 13;
             btnBrowse.Text = "Browse";
             btnBrowse.UseVisualStyleBackColor = true;
             btnBrowse.Click += btnBrowse_Click;
+            // 
+            // Column1
+            // 
+            Column1.FillWeight = 126.903557F;
+            Column1.HeaderText = "ID";
+            Column1.Name = "Column1";
+            Column1.ReadOnly = true;
+            Column1.Resizable = DataGridViewTriState.False;
+            // 
+            // Column2
+            // 
+            Column2.FillWeight = 93.27411F;
+            Column2.HeaderText = "Category";
+            Column2.Name = "Column2";
+            Column2.ReadOnly = true;
+            Column2.Resizable = DataGridViewTriState.False;
+            Column2.Width = 174;
+            // 
+            // Column3
+            // 
+            Column3.FillWeight = 93.27411F;
+            Column3.HeaderText = "Item";
+            Column3.Name = "Column3";
+            Column3.ReadOnly = true;
+            Column3.Resizable = DataGridViewTriState.False;
+            Column3.Width = 309;
+            // 
+            // Column4
+            // 
+            Column4.FillWeight = 93.27411F;
+            Column4.HeaderText = "Price";
+            Column4.Name = "Column4";
+            Column4.ReadOnly = true;
+            Column4.Resizable = DataGridViewTriState.False;
+            Column4.Width = 174;
+            // 
+            // Column5
+            // 
+            Column5.FillWeight = 93.27411F;
+            Column5.HeaderText = "Image";
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            Column5.Resizable = DataGridViewTriState.False;
+            Column5.SortMode = DataGridViewColumnSortMode.Automatic;
+            Column5.Width = 173;
             // 
             // controlManage
             // 
@@ -219,7 +234,7 @@
             Controls.Add(tableItems);
             Controls.Add(lbl1manage);
             Name = "controlManage";
-            Size = new Size(826, 582);
+            Size = new Size(1064, 654);
             Load += controlManage_Load;
             ((System.ComponentModel.ISupportInitialize)tableItems).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
@@ -231,11 +246,6 @@
 
         private Label lbl1manage;
         private DataGridView tableItems;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewImageColumn Column5;
         private Button btnAdd;
         private Label lblId;
         private Label lblCategory;
@@ -247,5 +257,10 @@
         private TextBox tbPrice;
         private PictureBox pictureBox1;
         private Button btnBrowse;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewImageColumn Column5;
     }
 }

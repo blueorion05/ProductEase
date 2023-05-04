@@ -19,61 +19,14 @@ namespace Fastfood
 
             InitializeComponent();
 
+            btnHome.BackColor = panel2.BackColor;
             panelMain.Controls.Clear();
-            controlHome c = new controlHome();
-            c.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(c);
-        }
-
-        private void lbl3manage_Click(object sender, EventArgs e)
-        {
-            panelMain.Controls.Clear();
-            controlManage c = new controlManage();
-            c.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(c);
-        }
-
-        private void lbl4order_Click(object sender, EventArgs e)
-        {
-            panelMain.Controls.Clear();
-            controlOrder c = new controlOrder();
-            c.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(c);
-        }
-
-        private void lbl5records_Click(object sender, EventArgs e)
-        {
-            panelMain.Controls.Clear();
-            controlRecords c = new controlRecords();
-            c.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(c);
-        }
-
-        private void lbl7logout_Click(object sender, EventArgs e)
-        {
-            formLogin form1 = new formLogin();
-            this.Close();
-        }
-
-        private void lbl2home_Click(object sender, EventArgs e)
-        {
-            panelMain.Controls.Clear();
-            controlHome c = new controlHome();
-            c.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(c);
-        }
-
-        private void lbl6account_Click(object sender, EventArgs e)
-        {
-            panelMain.Controls.Clear();
-            controlAccount c = new controlAccount();
-            c.Dock = DockStyle.Fill;
-            panelMain.Controls.Add(c);
+            panelMain.Controls.Add(new controlHome());
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnexit_Click(object sender, EventArgs e)
@@ -81,14 +34,61 @@ namespace Fastfood
             Application.Exit();
         }
 
-        private void panelMain_Paint(object sender, PaintEventArgs e)
+        private void btnHome_Click(object sender, EventArgs e)
         {
-
+            ButtonColor();
+            btnHome.BackColor = panel2.BackColor;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(new controlHome());
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
+        private void btnManage_Click(object sender, EventArgs e)
         {
+            ButtonColor();
+            btnManage.BackColor = panel2.BackColor;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(new controlManage());
+        }
 
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            ButtonColor();
+            btnOrder.BackColor = panel2.BackColor;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(new controlOrder());
+        }
+
+        private void btnRecords_Click(object sender, EventArgs e)
+        {
+            ButtonColor();
+            btnRecords.BackColor = panel2.BackColor;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(new controlRecords());
+        }
+
+        private void btnAccount_Click(object sender, EventArgs e)
+        {
+            ButtonColor();
+            btnAccount.BackColor = panel2.BackColor;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(new controlAccount());
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            ButtonColor();
+            btnLogout.BackColor = panel2.BackColor;
+            this.Close();
+        }
+
+        private void ButtonColor()
+        {
+            btnHome.BackColor = panel3.BackColor;
+            btnManage.BackColor = panel3.BackColor;
+            btnOrder.BackColor = panel3.BackColor;
+            btnRecords.BackColor = panel3.BackColor;
+            btnAccount.BackColor = panel3.BackColor;
+            btnLogout.BackColor = panel3.BackColor;
         }
     }
 }
