@@ -46,6 +46,8 @@
             button6 = new Button();
             button7 = new Button();
             pictureBox2 = new PictureBox();
+            textBox1 = new TextBox();
+            btnSearch = new Button();
             ((System.ComponentModel.ISupportInitialize)pb1order).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -148,10 +150,9 @@
             panel2.Controls.Add(lbl3item);
             panel2.Controls.Add(pb1order);
             panel2.Controls.Add(lbl2orderno);
-            panel2.Dock = DockStyle.Right;
-            panel2.Location = new Point(782, 0);
+            panel2.Location = new Point(782, 42);
             panel2.Name = "panel2";
-            panel2.Size = new Size(282, 654);
+            panel2.Size = new Size(282, 612);
             panel2.TabIndex = 4;
             // 
             // button1
@@ -225,7 +226,7 @@
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Location = new Point(630, -9);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(434, 56);
+            pictureBox1.Size = new Size(310, 56);
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
             // 
@@ -265,20 +266,44 @@
             pictureBox2.TabIndex = 13;
             pictureBox2.TabStop = false;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(658, 11);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(274, 23);
+            textBox1.TabIndex = 14;
+            // 
+            // btnSearch
+            // 
+            btnSearch.BackColor = Color.FromArgb(51, 51, 76);
+            btnSearch.FlatAppearance.BorderSize = 0;
+            btnSearch.FlatStyle = FlatStyle.Flat;
+            btnSearch.ForeColor = Color.White;
+            btnSearch.Location = new Point(938, 0);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(126, 47);
+            btnSearch.TabIndex = 15;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
+            // 
             // controlOrder
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
+            Controls.Add(btnSearch);
+            Controls.Add(textBox1);
             Controls.Add(pictureBox2);
             Controls.Add(button7);
             Controls.Add(button6);
-            Controls.Add(pictureBox1);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
+            Controls.Add(pictureBox1);
             Controls.Add(panel2);
             Name = "controlOrder";
             Size = new Size(1064, 654);
@@ -289,6 +314,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -310,5 +336,7 @@
         private Button button6;
         private Button button7;
         private PictureBox pictureBox2;
+        private Button btnSearch;
+        private TextBox textBox1;
     }
 }
