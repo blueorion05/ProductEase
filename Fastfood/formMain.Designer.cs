@@ -31,6 +31,7 @@
             lbl1company = new Label();
             panelMain = new Panel();
             panel2 = new Panel();
+            btnMinimize = new Button();
             btnexit = new Button();
             panel1 = new Panel();
             button1 = new Button();
@@ -53,7 +54,7 @@
             lbl1company.BackColor = Color.Transparent;
             lbl1company.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             lbl1company.ForeColor = Color.White;
-            lbl1company.Location = new Point(48, 15);
+            lbl1company.Location = new Point(44, 18);
             lbl1company.Name = "lbl1company";
             lbl1company.Size = new Size(125, 32);
             lbl1company.TabIndex = 0;
@@ -70,21 +71,43 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(0, 150, 136);
+            panel2.Controls.Add(btnMinimize);
             panel2.Controls.Add(btnexit);
             panel2.Location = new Point(215, 3);
             panel2.Name = "panel2";
             panel2.Size = new Size(1064, 64);
             panel2.TabIndex = 8;
             // 
+            // btnMinimize
+            // 
+            btnMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnMinimize.BackColor = Color.FromArgb(0, 150, 136);
+            btnMinimize.FlatAppearance.BorderSize = 0;
+            btnMinimize.FlatStyle = FlatStyle.Flat;
+            btnMinimize.Font = new Font("Showcard Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnMinimize.ForeColor = Color.White;
+            btnMinimize.Location = new Point(987, 4);
+            btnMinimize.Name = "btnMinimize";
+            btnMinimize.Size = new Size(30, 22);
+            btnMinimize.TabIndex = 1;
+            btnMinimize.Text = "--";
+            btnMinimize.UseVisualStyleBackColor = false;
+            btnMinimize.Click += btnMinimize_Click;
+            // 
             // btnexit
             // 
             btnexit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnexit.BackColor = Color.FromArgb(0, 150, 136);
+            btnexit.FlatAppearance.BorderSize = 0;
+            btnexit.FlatStyle = FlatStyle.Flat;
+            btnexit.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnexit.ForeColor = Color.White;
             btnexit.Location = new Point(1023, 4);
             btnexit.Name = "btnexit";
             btnexit.Size = new Size(30, 22);
             btnexit.TabIndex = 0;
             btnexit.Text = "X";
-            btnexit.UseVisualStyleBackColor = true;
+            btnexit.UseVisualStyleBackColor = false;
             btnexit.Click += btnexit_Click;
             // 
             // panel1
@@ -261,5 +284,6 @@
         private Button btnRecords;
         private Button btnOrder;
         private Button btnManage;
+        private Button btnMinimize;
     }
 }
