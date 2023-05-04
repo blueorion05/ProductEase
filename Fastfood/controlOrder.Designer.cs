@@ -151,7 +151,7 @@
             panel2.Dock = DockStyle.Right;
             panel2.Location = new Point(782, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(282, 665);
+            panel2.Size = new Size(282, 654);
             panel2.TabIndex = 4;
             // 
             // button1
@@ -235,7 +235,7 @@
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.ForeColor = Color.White;
-            button6.Location = new Point(0, 618);
+            button6.Location = new Point(0, 607);
             button6.Name = "button6";
             button6.Size = new Size(126, 47);
             button6.TabIndex = 11;
@@ -248,7 +248,7 @@
             button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
             button7.ForeColor = Color.White;
-            button7.Location = new Point(126, 618);
+            button7.Location = new Point(126, 607);
             button7.Name = "button7";
             button7.Size = new Size(126, 47);
             button7.TabIndex = 12;
@@ -259,7 +259,7 @@
             // 
             pictureBox2.BackColor = Color.FromArgb(51, 51, 76);
             pictureBox2.BackgroundImageLayout = ImageLayout.None;
-            pictureBox2.Location = new Point(252, 618);
+            pictureBox2.Location = new Point(252, 607);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(812, 54);
             pictureBox2.TabIndex = 13;
@@ -281,7 +281,7 @@
             Controls.Add(button1);
             Controls.Add(panel2);
             Name = "controlOrder";
-            Size = new Size(1064, 665);
+            Size = new Size(1064, 654);
             Load += controlOrder_Load;
             ((System.ComponentModel.ISupportInitialize)pb1order).EndInit();
             panel2.ResumeLayout(false);

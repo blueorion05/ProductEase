@@ -28,33 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lbl1account = new Label();
             SuspendLayout();
-            // 
-            // lbl1account
-            // 
-            lbl1account.AutoSize = true;
-            lbl1account.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl1account.Location = new Point(0, 0);
-            lbl1account.Name = "lbl1account";
-            lbl1account.Size = new Size(90, 30);
-            lbl1account.TabIndex = 4;
-            lbl1account.Text = "Account";
             // 
             // controlAccount
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(lbl1account);
             Name = "controlAccount";
             Size = new Size(1064, 654);
             Load += controlAccount_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private Label lbl1account;
     }
 }
