@@ -34,6 +34,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.WhiteSmoke;
             Name = "controlRecords";
             Size = new Size(1064, 654);
             Load += controlRecords_Load;

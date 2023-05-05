@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
             lbl1company = new Label();
             panelMain = new Panel();
             panel2 = new Panel();
+            pbActive = new PictureBox();
             btnMinimize = new Button();
             btnexit = new Button();
             panel1 = new Panel();
@@ -44,6 +46,7 @@
             btnHome = new Button();
             button2 = new Button();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbActive).BeginInit();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -54,7 +57,7 @@
             lbl1company.BackColor = Color.Transparent;
             lbl1company.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
             lbl1company.ForeColor = Color.White;
-            lbl1company.Location = new Point(44, 18);
+            lbl1company.Location = new Point(43, 44);
             lbl1company.Name = "lbl1company";
             lbl1company.Size = new Size(125, 32);
             lbl1company.TabIndex = 0;
@@ -70,7 +73,8 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.FromArgb(0, 150, 136);
+            panel2.BackColor = Color.FromArgb(25, 26, 62);
+            panel2.Controls.Add(pbActive);
             panel2.Controls.Add(btnMinimize);
             panel2.Controls.Add(btnexit);
             panel2.Location = new Point(215, 3);
@@ -78,10 +82,19 @@
             panel2.Size = new Size(1064, 64);
             panel2.TabIndex = 8;
             // 
+            // pbActive
+            // 
+            pbActive.BackgroundImageLayout = ImageLayout.Center;
+            pbActive.Location = new Point(23, 18);
+            pbActive.Name = "pbActive";
+            pbActive.Size = new Size(27, 27);
+            pbActive.TabIndex = 16;
+            pbActive.TabStop = false;
+            // 
             // btnMinimize
             // 
             btnMinimize.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnMinimize.BackColor = Color.FromArgb(0, 150, 136);
+            btnMinimize.BackColor = Color.Transparent;
             btnMinimize.FlatAppearance.BorderSize = 0;
             btnMinimize.FlatStyle = FlatStyle.Flat;
             btnMinimize.Font = new Font("Showcard Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -97,7 +110,7 @@
             // btnexit
             // 
             btnexit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnexit.BackColor = Color.FromArgb(0, 150, 136);
+            btnexit.BackColor = Color.Transparent;
             btnexit.FlatAppearance.BorderSize = 0;
             btnexit.FlatStyle = FlatStyle.Flat;
             btnexit.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -112,12 +125,12 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(39, 39, 58);
+            panel1.BackColor = Color.FromArgb(31, 30, 68);
             panel1.Controls.Add(lbl1company);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(0, 2);
+            panel1.Location = new Point(-1, 3);
             panel1.Name = "panel1";
-            panel1.Size = new Size(217, 64);
+            panel1.Size = new Size(217, 126);
             panel1.TabIndex = 9;
             // 
             // button1
@@ -132,7 +145,7 @@
             // 
             // panel3
             // 
-            panel3.BackColor = Color.FromArgb(51, 51, 76);
+            panel3.BackColor = Color.FromArgb(31, 30, 68);
             panel3.Controls.Add(btnLogout);
             panel3.Controls.Add(btnAccount);
             panel3.Controls.Add(btnRecords);
@@ -147,91 +160,115 @@
             // 
             // btnLogout
             // 
-            btnLogout.BackColor = Color.FromArgb(51, 51, 76);
+            btnLogout.BackColor = Color.FromArgb(31, 30, 68);
             btnLogout.FlatAppearance.BorderSize = 0;
             btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnLogout.ForeColor = Color.White;
-            btnLogout.Location = new Point(0, 356);
+            btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
+            btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
+            btnLogout.Location = new Point(0, 414);
             btnLogout.Name = "btnLogout";
             btnLogout.Size = new Size(217, 64);
             btnLogout.TabIndex = 12;
-            btnLogout.Text = "Logout";
+            btnLogout.Text = "     Logout";
+            btnLogout.TextAlign = ContentAlignment.MiddleLeft;
+            btnLogout.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
             // btnAccount
             // 
-            btnAccount.BackColor = Color.FromArgb(51, 51, 76);
+            btnAccount.BackColor = Color.FromArgb(31, 30, 68);
             btnAccount.FlatAppearance.BorderSize = 0;
             btnAccount.FlatStyle = FlatStyle.Flat;
             btnAccount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnAccount.ForeColor = Color.White;
-            btnAccount.Location = new Point(0, 286);
+            btnAccount.Image = (Image)resources.GetObject("btnAccount.Image");
+            btnAccount.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAccount.Location = new Point(0, 344);
             btnAccount.Name = "btnAccount";
             btnAccount.Size = new Size(217, 64);
             btnAccount.TabIndex = 11;
-            btnAccount.Text = "Account";
+            btnAccount.Text = "     Account";
+            btnAccount.TextAlign = ContentAlignment.MiddleLeft;
+            btnAccount.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnAccount.UseVisualStyleBackColor = false;
             btnAccount.Click += btnAccount_Click;
             // 
             // btnRecords
             // 
-            btnRecords.BackColor = Color.FromArgb(51, 51, 76);
+            btnRecords.BackColor = Color.FromArgb(31, 30, 68);
             btnRecords.FlatAppearance.BorderSize = 0;
             btnRecords.FlatStyle = FlatStyle.Flat;
             btnRecords.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnRecords.ForeColor = Color.White;
-            btnRecords.Location = new Point(0, 216);
+            btnRecords.Image = (Image)resources.GetObject("btnRecords.Image");
+            btnRecords.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRecords.Location = new Point(0, 274);
             btnRecords.Name = "btnRecords";
             btnRecords.Size = new Size(217, 64);
             btnRecords.TabIndex = 10;
-            btnRecords.Text = "Records";
+            btnRecords.Text = "     Records";
+            btnRecords.TextAlign = ContentAlignment.MiddleLeft;
+            btnRecords.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnRecords.UseVisualStyleBackColor = false;
             btnRecords.Click += btnRecords_Click;
             // 
             // btnOrder
             // 
-            btnOrder.BackColor = Color.FromArgb(51, 51, 76);
+            btnOrder.BackColor = Color.FromArgb(31, 30, 68);
             btnOrder.FlatAppearance.BorderSize = 0;
             btnOrder.FlatStyle = FlatStyle.Flat;
             btnOrder.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnOrder.ForeColor = Color.White;
-            btnOrder.Location = new Point(0, 146);
+            btnOrder.Image = (Image)resources.GetObject("btnOrder.Image");
+            btnOrder.ImageAlign = ContentAlignment.MiddleLeft;
+            btnOrder.Location = new Point(0, 204);
             btnOrder.Name = "btnOrder";
             btnOrder.Size = new Size(217, 64);
             btnOrder.TabIndex = 9;
-            btnOrder.Text = "Order";
+            btnOrder.Text = "     Order";
+            btnOrder.TextAlign = ContentAlignment.MiddleLeft;
+            btnOrder.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnOrder.UseVisualStyleBackColor = false;
             btnOrder.Click += btnOrder_Click;
             // 
             // btnManage
             // 
-            btnManage.BackColor = Color.FromArgb(51, 51, 76);
+            btnManage.BackColor = Color.FromArgb(31, 30, 68);
             btnManage.FlatAppearance.BorderSize = 0;
             btnManage.FlatStyle = FlatStyle.Flat;
             btnManage.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnManage.ForeColor = Color.White;
-            btnManage.Location = new Point(0, 76);
+            btnManage.Image = (Image)resources.GetObject("btnManage.Image");
+            btnManage.ImageAlign = ContentAlignment.MiddleLeft;
+            btnManage.Location = new Point(0, 134);
             btnManage.Name = "btnManage";
             btnManage.Size = new Size(217, 64);
             btnManage.TabIndex = 8;
-            btnManage.Text = "Manage";
+            btnManage.Text = "     Manage";
+            btnManage.TextAlign = ContentAlignment.MiddleLeft;
+            btnManage.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnManage.UseVisualStyleBackColor = false;
             btnManage.Click += btnManage_Click;
             // 
             // btnHome
             // 
-            btnHome.BackColor = Color.FromArgb(51, 51, 76);
+            btnHome.BackColor = Color.FromArgb(31, 30, 68);
             btnHome.FlatAppearance.BorderSize = 0;
             btnHome.FlatStyle = FlatStyle.Flat;
             btnHome.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnHome.ForeColor = Color.White;
-            btnHome.Location = new Point(0, 6);
+            btnHome.Image = (Image)resources.GetObject("btnHome.Image");
+            btnHome.ImageAlign = ContentAlignment.MiddleLeft;
+            btnHome.Location = new Point(0, 64);
             btnHome.Name = "btnHome";
             btnHome.Size = new Size(217, 64);
             btnHome.TabIndex = 0;
-            btnHome.Text = "Home";
+            btnHome.Text = "     Home";
+            btnHome.TextAlign = ContentAlignment.MiddleLeft;
+            btnHome.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnHome.UseVisualStyleBackColor = false;
             btnHome.Click += btnHome_Click;
             // 
@@ -249,7 +286,7 @@
             // 
             AutoScaleMode = AutoScaleMode.None;
             AutoValidate = AutoValidate.Disable;
-            BackColor = Color.FromArgb(51, 51, 76);
+            BackColor = Color.FromArgb(31, 30, 68);
             ClientSize = new Size(1280, 720);
             Controls.Add(panelMain);
             Controls.Add(panel2);
@@ -262,6 +299,7 @@
             Text = "Main";
             Load += Form2_Load;
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbActive).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
@@ -285,5 +323,6 @@
         private Button btnOrder;
         private Button btnManage;
         private Button btnMinimize;
+        private PictureBox pbActive;
     }
 }

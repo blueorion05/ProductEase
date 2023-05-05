@@ -19,7 +19,8 @@ namespace Fastfood
 
             InitializeComponent();
 
-            btnHome.BackColor = panel2.BackColor;
+            btnHome.BackColor = Color.FromArgb(0, 150, 136);
+            pbActive.BackgroundImage = btnHome.Image;
             panelMain.Controls.Clear();
             panelMain.Controls.Add(new controlHome());
         }
@@ -37,7 +38,8 @@ namespace Fastfood
         private void btnHome_Click(object sender, EventArgs e)
         {
             ButtonColor();
-            btnHome.BackColor = panel2.BackColor;
+            btnHome.BackColor = Color.FromArgb(0, 150, 136);
+            pbActive.BackgroundImage = btnHome.Image;
             panelMain.Controls.Clear();
             panelMain.Controls.Add(new controlHome());
         }
@@ -45,7 +47,8 @@ namespace Fastfood
         private void btnManage_Click(object sender, EventArgs e)
         {
             ButtonColor();
-            btnManage.BackColor = panel2.BackColor;
+            btnManage.BackColor = Color.FromArgb(0, 150, 136);
+            pbActive.BackgroundImage = btnManage.Image;
             panelMain.Controls.Clear();
             panelMain.Controls.Add(new controlManage());
         }
@@ -53,7 +56,8 @@ namespace Fastfood
         private void btnOrder_Click(object sender, EventArgs e)
         {
             ButtonColor();
-            btnOrder.BackColor = panel2.BackColor;
+            btnOrder.BackColor = Color.FromArgb(0, 150, 136);
+            pbActive.BackgroundImage = btnOrder.Image;
             panelMain.Controls.Clear();
             panelMain.Controls.Add(new controlOrder());
         }
@@ -61,7 +65,8 @@ namespace Fastfood
         private void btnRecords_Click(object sender, EventArgs e)
         {
             ButtonColor();
-            btnRecords.BackColor = panel2.BackColor;
+            btnRecords.BackColor = Color.FromArgb(0, 150, 136);
+            pbActive.BackgroundImage = btnRecords.Image;
             panelMain.Controls.Clear();
             panelMain.Controls.Add(new controlRecords());
         }
@@ -69,7 +74,8 @@ namespace Fastfood
         private void btnAccount_Click(object sender, EventArgs e)
         {
             ButtonColor();
-            btnAccount.BackColor = panel2.BackColor;
+            btnAccount.BackColor = Color.FromArgb(0, 150, 136);
+            pbActive.BackgroundImage = btnAccount.Image;
             panelMain.Controls.Clear();
             panelMain.Controls.Add(new controlAccount());
         }
@@ -77,7 +83,6 @@ namespace Fastfood
         private void btnLogout_Click(object sender, EventArgs e)
         {
             ButtonColor();
-            btnLogout.BackColor = panel2.BackColor;
             this.Close();
         }
 

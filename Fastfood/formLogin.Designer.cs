@@ -61,7 +61,8 @@
             // 
             // btnlogin
             // 
-            btnlogin.BackColor = Color.FromArgb(39, 39, 58);
+            btnlogin.BackColor = Color.FromArgb(0, 150, 136);
+            btnlogin.FlatAppearance.BorderSize = 0;
             btnlogin.FlatStyle = FlatStyle.Flat;
             btnlogin.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnlogin.ForeColor = Color.White;
@@ -75,7 +76,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(0, 150, 136);
+            panel1.BackColor = Color.FromArgb(25, 26, 62);
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(312, 173);
@@ -83,7 +84,8 @@
             // 
             // btnexit
             // 
-            btnexit.BackColor = Color.FromArgb(39, 39, 58);
+            btnexit.BackColor = Color.FromArgb(0, 150, 136);
+            btnexit.FlatAppearance.BorderSize = 0;
             btnexit.FlatStyle = FlatStyle.Flat;
             btnexit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnexit.ForeColor = Color.White;

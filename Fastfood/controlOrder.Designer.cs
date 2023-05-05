@@ -57,6 +57,8 @@
             // lbl2orderno
             // 
             lbl2orderno.AutoSize = true;
+            lbl2orderno.BackColor = Color.Transparent;
+            lbl2orderno.ForeColor = Color.Black;
             lbl2orderno.Location = new Point(27, 65);
             lbl2orderno.Name = "lbl2orderno";
             lbl2orderno.Size = new Size(57, 15);
@@ -108,6 +110,7 @@
             // lbl6total
             // 
             lbl6total.AutoSize = true;
+            lbl6total.ForeColor = Color.White;
             lbl6total.Location = new Point(45, 472);
             lbl6total.Name = "lbl6total";
             lbl6total.Size = new Size(32, 15);
@@ -118,6 +121,7 @@
             // 
             lbl7amount.AutoSize = true;
             lbl7amount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl7amount.ForeColor = Color.White;
             lbl7amount.Location = new Point(146, 464);
             lbl7amount.Name = "lbl7amount";
             lbl7amount.Size = new Size(84, 25);
@@ -126,7 +130,7 @@
             // 
             // btn1pay
             // 
-            btn1pay.BackColor = Color.FromArgb(39, 39, 58);
+            btn1pay.BackColor = Color.FromArgb(0, 150, 136);
             btn1pay.FlatAppearance.BorderSize = 0;
             btn1pay.FlatStyle = FlatStyle.Flat;
             btn1pay.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
@@ -157,7 +161,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.FromArgb(51, 51, 76);
+            button1.BackColor = Color.FromArgb(0, 150, 136);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.ForeColor = Color.White;
@@ -170,7 +174,7 @@
             // 
             // button2
             // 
-            button2.BackColor = Color.FromArgb(51, 51, 76);
+            button2.BackColor = Color.FromArgb(0, 150, 136);
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.ForeColor = Color.White;
@@ -183,7 +187,7 @@
             // 
             // button3
             // 
-            button3.BackColor = Color.FromArgb(51, 51, 76);
+            button3.BackColor = Color.FromArgb(0, 150, 136);
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.ForeColor = Color.White;
@@ -196,7 +200,7 @@
             // 
             // button4
             // 
-            button4.BackColor = Color.FromArgb(51, 51, 76);
+            button4.BackColor = Color.FromArgb(0, 150, 136);
             button4.FlatAppearance.BorderSize = 0;
             button4.FlatStyle = FlatStyle.Flat;
             button4.ForeColor = Color.White;
@@ -209,7 +213,7 @@
             // 
             // button5
             // 
-            button5.BackColor = Color.FromArgb(51, 51, 76);
+            button5.BackColor = Color.FromArgb(0, 150, 136);
             button5.FlatAppearance.BorderSize = 0;
             button5.FlatStyle = FlatStyle.Flat;
             button5.ForeColor = Color.White;
@@ -222,7 +226,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = Color.FromArgb(51, 51, 76);
+            pictureBox1.BackColor = Color.FromArgb(0, 150, 136);
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Location = new Point(630, -9);
             pictureBox1.Name = "pictureBox1";
@@ -232,7 +236,7 @@
             // 
             // button6
             // 
-            button6.BackColor = Color.FromArgb(51, 51, 76);
+            button6.BackColor = Color.FromArgb(0, 150, 136);
             button6.FlatAppearance.BorderSize = 0;
             button6.FlatStyle = FlatStyle.Flat;
             button6.ForeColor = Color.White;
@@ -245,7 +249,7 @@
             // 
             // button7
             // 
-            button7.BackColor = Color.FromArgb(51, 51, 76);
+            button7.BackColor = Color.FromArgb(0, 150, 136);
             button7.FlatAppearance.BorderSize = 0;
             button7.FlatStyle = FlatStyle.Flat;
             button7.ForeColor = Color.White;
@@ -258,7 +262,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.BackColor = Color.FromArgb(51, 51, 76);
+            pictureBox2.BackColor = Color.FromArgb(0, 150, 136);
             pictureBox2.BackgroundImageLayout = ImageLayout.None;
             pictureBox2.Location = new Point(252, 607);
             pictureBox2.Name = "pictureBox2";
@@ -276,7 +280,7 @@
             // 
             // btnSearch
             // 
-            btnSearch.BackColor = Color.FromArgb(51, 51, 76);
+            btnSearch.BackColor = Color.FromArgb(0, 150, 136);
             btnSearch.FlatAppearance.BorderSize = 0;
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.ForeColor = Color.White;

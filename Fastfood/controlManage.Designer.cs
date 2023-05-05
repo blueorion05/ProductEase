@@ -111,17 +111,23 @@
             // 
             // btnAdd
             // 
+            btnAdd.BackColor = Color.FromArgb(0, 150, 136);
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.ForeColor = Color.White;
             btnAdd.Location = new Point(79, 204);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(75, 23);
             btnAdd.TabIndex = 3;
             btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 
             // lblId
             // 
             lblId.AutoSize = true;
+            lblId.BackColor = Color.Transparent;
+            lblId.ForeColor = Color.Black;
             lblId.Location = new Point(79, 61);
             lblId.Name = "lblId";
             lblId.Size = new Size(18, 15);
@@ -131,6 +137,8 @@
             // lblCategory
             // 
             lblCategory.AutoSize = true;
+            lblCategory.BackColor = Color.Transparent;
+            lblCategory.ForeColor = Color.Black;
             lblCategory.Location = new Point(79, 93);
             lblCategory.Name = "lblCategory";
             lblCategory.Size = new Size(55, 15);
@@ -141,6 +149,8 @@
             // lblItem
             // 
             lblItem.AutoSize = true;
+            lblItem.BackColor = Color.Transparent;
+            lblItem.ForeColor = Color.Black;
             lblItem.Location = new Point(79, 122);
             lblItem.Name = "lblItem";
             lblItem.Size = new Size(31, 15);
@@ -151,6 +161,8 @@
             // lblPrice
             // 
             lblPrice.AutoSize = true;
+            lblPrice.BackColor = Color.Transparent;
+            lblPrice.ForeColor = Color.Black;
             lblPrice.Location = new Point(79, 151);
             lblPrice.Name = "lblPrice";
             lblPrice.Size = new Size(33, 15);
@@ -197,18 +209,23 @@
             // 
             // btnBrowse
             // 
+            btnBrowse.BackColor = Color.FromArgb(0, 150, 136);
+            btnBrowse.FlatAppearance.BorderSize = 0;
+            btnBrowse.FlatStyle = FlatStyle.Flat;
+            btnBrowse.ForeColor = Color.White;
             btnBrowse.Location = new Point(458, 184);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(75, 23);
             btnBrowse.TabIndex = 13;
             btnBrowse.Text = "Browse";
-            btnBrowse.UseVisualStyleBackColor = true;
+            btnBrowse.UseVisualStyleBackColor = false;
             btnBrowse.Click += btnBrowse_Click;
             // 
             // controlManage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.WhiteSmoke;
             Controls.Add(btnBrowse);
             Controls.Add(pictureBox1);
             Controls.Add(tbPrice);

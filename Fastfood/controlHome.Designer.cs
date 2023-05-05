@@ -107,7 +107,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.FromArgb(51, 51, 76);
+            panel1.BackColor = Color.WhiteSmoke;
             panel1.Controls.Add(lbl3totalsalesnumbers);
             panel1.Controls.Add(lbl3totalsales);
             panel1.Controls.Add(lbl2totalordersnumbers);
