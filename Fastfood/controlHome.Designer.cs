@@ -54,10 +54,11 @@
             // 
             lbl2totalorders.AutoSize = true;
             lbl2totalorders.BackColor = Color.FromArgb(0, 150, 136);
+            lbl2totalorders.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl2totalorders.ForeColor = Color.White;
-            lbl2totalorders.Location = new Point(69, 126);
+            lbl2totalorders.Location = new Point(64, 114);
             lbl2totalorders.Name = "lbl2totalorders";
-            lbl2totalorders.Size = new Size(70, 15);
+            lbl2totalorders.Size = new Size(119, 22);
             lbl2totalorders.TabIndex = 2;
             lbl2totalorders.Text = "Total Orders";
             // 
@@ -74,10 +75,11 @@
             // 
             lbl3totalsales.AutoSize = true;
             lbl3totalsales.BackColor = Color.FromArgb(0, 150, 136);
+            lbl3totalsales.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl3totalsales.ForeColor = Color.White;
-            lbl3totalsales.Location = new Point(78, 310);
+            lbl3totalsales.Location = new Point(64, 295);
             lbl3totalsales.Name = "lbl3totalsales";
-            lbl3totalsales.Size = new Size(61, 15);
+            lbl3totalsales.Size = new Size(102, 22);
             lbl3totalsales.TabIndex = 4;
             lbl3totalsales.Text = "Total Sales";
             // 
@@ -85,11 +87,11 @@
             // 
             lbl2totalordersnumbers.AutoSize = true;
             lbl2totalordersnumbers.BackColor = Color.FromArgb(0, 150, 136);
-            lbl2totalordersnumbers.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl2totalordersnumbers.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl2totalordersnumbers.ForeColor = Color.White;
-            lbl2totalordersnumbers.Location = new Point(126, 141);
+            lbl2totalordersnumbers.Location = new Point(127, 145);
             lbl2totalordersnumbers.Name = "lbl2totalordersnumbers";
-            lbl2totalordersnumbers.Size = new Size(33, 40);
+            lbl2totalordersnumbers.Size = new Size(30, 33);
             lbl2totalordersnumbers.TabIndex = 5;
             lbl2totalordersnumbers.Text = "0";
             // 
@@ -97,11 +99,11 @@
             // 
             lbl3totalsalesnumbers.AutoSize = true;
             lbl3totalsalesnumbers.BackColor = Color.FromArgb(0, 150, 136);
-            lbl3totalsalesnumbers.Font = new Font("Segoe UI", 21.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl3totalsalesnumbers.Font = new Font("Century Gothic", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl3totalsalesnumbers.ForeColor = Color.White;
-            lbl3totalsalesnumbers.Location = new Point(126, 325);
+            lbl3totalsalesnumbers.Location = new Point(127, 328);
             lbl3totalsalesnumbers.Name = "lbl3totalsalesnumbers";
-            lbl3totalsalesnumbers.Size = new Size(33, 40);
+            lbl3totalsalesnumbers.Size = new Size(30, 33);
             lbl3totalsalesnumbers.TabIndex = 6;
             lbl3totalsalesnumbers.Text = "0";
             // 
@@ -127,6 +129,7 @@
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.WhiteSmoke;
             Controls.Add(panel1);
+            Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "controlHome";
             Size = new Size(1064, 654);
             Load += controlHome_Load_1;

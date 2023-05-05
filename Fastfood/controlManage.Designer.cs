@@ -54,8 +54,10 @@
             tableItems.AllowUserToAddRows = false;
             tableItems.AllowUserToDeleteRows = false;
             tableItems.AllowUserToResizeColumns = false;
+            tableItems.BackgroundColor = Color.WhiteSmoke;
             tableItems.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             tableItems.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
+            tableItems.GridColor = Color.WhiteSmoke;
             tableItems.Location = new Point(42, 274);
             tableItems.Name = "tableItems";
             tableItems.ReadOnly = true;
@@ -114,6 +116,7 @@
             btnAdd.BackColor = Color.FromArgb(0, 150, 136);
             btnAdd.FlatAppearance.BorderSize = 0;
             btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnAdd.ForeColor = Color.White;
             btnAdd.Location = new Point(79, 204);
             btnAdd.Name = "btnAdd";
@@ -127,10 +130,11 @@
             // 
             lblId.AutoSize = true;
             lblId.BackColor = Color.Transparent;
+            lblId.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblId.ForeColor = Color.Black;
             lblId.Location = new Point(79, 61);
             lblId.Name = "lblId";
-            lblId.Size = new Size(18, 15);
+            lblId.Size = new Size(20, 17);
             lblId.TabIndex = 4;
             lblId.Text = "ID";
             // 
@@ -138,10 +142,11 @@
             // 
             lblCategory.AutoSize = true;
             lblCategory.BackColor = Color.Transparent;
+            lblCategory.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblCategory.ForeColor = Color.Black;
             lblCategory.Location = new Point(79, 93);
             lblCategory.Name = "lblCategory";
-            lblCategory.Size = new Size(55, 15);
+            lblCategory.Size = new Size(64, 17);
             lblCategory.TabIndex = 5;
             lblCategory.Text = "Category";
             lblCategory.Click += lblCategory_Click;
@@ -150,10 +155,11 @@
             // 
             lblItem.AutoSize = true;
             lblItem.BackColor = Color.Transparent;
+            lblItem.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblItem.ForeColor = Color.Black;
             lblItem.Location = new Point(79, 122);
             lblItem.Name = "lblItem";
-            lblItem.Size = new Size(31, 15);
+            lblItem.Size = new Size(35, 17);
             lblItem.TabIndex = 6;
             lblItem.Text = "Item";
             lblItem.Click += label2_Click;
@@ -162,10 +168,11 @@
             // 
             lblPrice.AutoSize = true;
             lblPrice.BackColor = Color.Transparent;
+            lblPrice.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblPrice.ForeColor = Color.Black;
             lblPrice.Location = new Point(79, 151);
             lblPrice.Name = "lblPrice";
-            lblPrice.Size = new Size(33, 15);
+            lblPrice.Size = new Size(38, 17);
             lblPrice.TabIndex = 7;
             lblPrice.Text = "Price";
             // 
@@ -212,6 +219,7 @@
             btnBrowse.BackColor = Color.FromArgb(0, 150, 136);
             btnBrowse.FlatAppearance.BorderSize = 0;
             btnBrowse.FlatStyle = FlatStyle.Flat;
+            btnBrowse.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnBrowse.ForeColor = Color.White;
             btnBrowse.Location = new Point(458, 184);
             btnBrowse.Name = "btnBrowse";

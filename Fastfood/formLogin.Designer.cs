@@ -42,20 +42,20 @@
             // tbuser
             // 
             tbuser.BorderStyle = BorderStyle.FixedSingle;
-            tbuser.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            tbuser.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             tbuser.Location = new Point(75, 227);
             tbuser.Name = "tbuser";
-            tbuser.Size = new Size(201, 25);
+            tbuser.Size = new Size(201, 23);
             tbuser.TabIndex = 2;
             // 
             // tbpass
             // 
             tbpass.BorderStyle = BorderStyle.FixedSingle;
-            tbpass.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            tbpass.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             tbpass.Location = new Point(75, 282);
             tbpass.Name = "tbpass";
             tbpass.PasswordChar = '*';
-            tbpass.Size = new Size(201, 25);
+            tbpass.Size = new Size(201, 23);
             tbpass.TabIndex = 3;
             tbpass.UseSystemPasswordChar = true;
             // 
@@ -64,7 +64,7 @@
             btnlogin.BackColor = Color.FromArgb(0, 150, 136);
             btnlogin.FlatAppearance.BorderSize = 0;
             btnlogin.FlatStyle = FlatStyle.Flat;
-            btnlogin.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnlogin.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnlogin.ForeColor = Color.White;
             btnlogin.Location = new Point(37, 349);
             btnlogin.Name = "btnlogin";
@@ -87,7 +87,7 @@
             btnexit.BackColor = Color.FromArgb(0, 150, 136);
             btnexit.FlatAppearance.BorderSize = 0;
             btnexit.FlatStyle = FlatStyle.Flat;
-            btnexit.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            btnexit.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point);
             btnexit.ForeColor = Color.White;
             btnexit.Location = new Point(174, 349);
             btnexit.Name = "btnexit";

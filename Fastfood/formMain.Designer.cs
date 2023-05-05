@@ -55,11 +55,11 @@
             // 
             lbl1company.AutoSize = true;
             lbl1company.BackColor = Color.Transparent;
-            lbl1company.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl1company.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
             lbl1company.ForeColor = Color.White;
-            lbl1company.Location = new Point(43, 44);
+            lbl1company.Location = new Point(36, 44);
             lbl1company.Name = "lbl1company";
-            lbl1company.Size = new Size(125, 32);
+            lbl1company.Size = new Size(142, 30);
             lbl1company.TabIndex = 0;
             lbl1company.Text = "COMPANY";
             // 
@@ -97,9 +97,9 @@
             btnMinimize.BackColor = Color.Transparent;
             btnMinimize.FlatAppearance.BorderSize = 0;
             btnMinimize.FlatStyle = FlatStyle.Flat;
-            btnMinimize.Font = new Font("Showcard Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnMinimize.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnMinimize.ForeColor = Color.White;
-            btnMinimize.Location = new Point(987, 4);
+            btnMinimize.Location = new Point(994, 4);
             btnMinimize.Name = "btnMinimize";
             btnMinimize.Size = new Size(30, 22);
             btnMinimize.TabIndex = 1;
@@ -113,9 +113,9 @@
             btnexit.BackColor = Color.Transparent;
             btnexit.FlatAppearance.BorderSize = 0;
             btnexit.FlatStyle = FlatStyle.Flat;
-            btnexit.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            btnexit.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnexit.ForeColor = Color.White;
-            btnexit.Location = new Point(1023, 4);
+            btnexit.Location = new Point(1030, 4);
             btnexit.Name = "btnexit";
             btnexit.Size = new Size(30, 22);
             btnexit.TabIndex = 0;
@@ -163,7 +163,7 @@
             btnLogout.BackColor = Color.FromArgb(31, 30, 68);
             btnLogout.FlatAppearance.BorderSize = 0;
             btnLogout.FlatStyle = FlatStyle.Flat;
-            btnLogout.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnLogout.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnLogout.ForeColor = Color.White;
             btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
             btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
@@ -182,7 +182,7 @@
             btnAccount.BackColor = Color.FromArgb(31, 30, 68);
             btnAccount.FlatAppearance.BorderSize = 0;
             btnAccount.FlatStyle = FlatStyle.Flat;
-            btnAccount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAccount.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnAccount.ForeColor = Color.White;
             btnAccount.Image = (Image)resources.GetObject("btnAccount.Image");
             btnAccount.ImageAlign = ContentAlignment.MiddleLeft;
@@ -201,7 +201,7 @@
             btnRecords.BackColor = Color.FromArgb(31, 30, 68);
             btnRecords.FlatAppearance.BorderSize = 0;
             btnRecords.FlatStyle = FlatStyle.Flat;
-            btnRecords.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRecords.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnRecords.ForeColor = Color.White;
             btnRecords.Image = (Image)resources.GetObject("btnRecords.Image");
             btnRecords.ImageAlign = ContentAlignment.MiddleLeft;
@@ -220,7 +220,7 @@
             btnOrder.BackColor = Color.FromArgb(31, 30, 68);
             btnOrder.FlatAppearance.BorderSize = 0;
             btnOrder.FlatStyle = FlatStyle.Flat;
-            btnOrder.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnOrder.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnOrder.ForeColor = Color.White;
             btnOrder.Image = (Image)resources.GetObject("btnOrder.Image");
             btnOrder.ImageAlign = ContentAlignment.MiddleLeft;
@@ -239,7 +239,7 @@
             btnManage.BackColor = Color.FromArgb(31, 30, 68);
             btnManage.FlatAppearance.BorderSize = 0;
             btnManage.FlatStyle = FlatStyle.Flat;
-            btnManage.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnManage.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnManage.ForeColor = Color.White;
             btnManage.Image = (Image)resources.GetObject("btnManage.Image");
             btnManage.ImageAlign = ContentAlignment.MiddleLeft;
@@ -258,7 +258,7 @@
             btnHome.BackColor = Color.FromArgb(31, 30, 68);
             btnHome.FlatAppearance.BorderSize = 0;
             btnHome.FlatStyle = FlatStyle.Flat;
-            btnHome.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnHome.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnHome.ForeColor = Color.White;
             btnHome.Image = (Image)resources.GetObject("btnHome.Image");
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
