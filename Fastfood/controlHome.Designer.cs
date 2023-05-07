@@ -35,6 +35,7 @@
             lbl2totalordersnumbers = new Label();
             lbl3totalsalesnumbers = new Label();
             panel1 = new Panel();
+            lblWelcome = new Label();
             ((System.ComponentModel.ISupportInitialize)pb1totalorders).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -123,11 +124,24 @@
             panel1.TabIndex = 7;
             panel1.Paint += panel1_Paint;
             // 
+            // lblWelcome
+            // 
+            lblWelcome.AutoSize = true;
+            lblWelcome.BackColor = Color.Transparent;
+            lblWelcome.Font = new Font("Century Gothic", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblWelcome.ForeColor = Color.Black;
+            lblWelcome.Location = new Point(20, 16);
+            lblWelcome.Name = "lblWelcome";
+            lblWelcome.Size = new Size(180, 42);
+            lblWelcome.TabIndex = 8;
+            lblWelcome.Text = "Welcome";
+            // 
             // controlHome
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.WhiteSmoke;
+            Controls.Add(lblWelcome);
             Controls.Add(panel1);
             Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "controlHome";
@@ -138,6 +152,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -148,5 +163,6 @@
         private Label lbl2totalordersnumbers;
         private Label lbl3totalsalesnumbers;
         private Panel panel1;
+        private Label lblWelcome;
     }
 }

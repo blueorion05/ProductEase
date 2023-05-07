@@ -27,7 +27,7 @@ namespace Fastfood
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            btnExit.FlatAppearance.MouseOverBackColor = Color.Red;
+            
         }
 
         private void btnexit_Click(object sender, EventArgs e)
@@ -99,6 +99,11 @@ namespace Fastfood
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblDateTime.Text = DateTime.Now.ToString("dd-MMM-yyyy hh:mm:ss tt");
         }
     }
 }

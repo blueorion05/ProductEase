@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
             lbl1company = new Label();
             panelMain = new Panel();
@@ -38,6 +39,7 @@
             panel1 = new Panel();
             button1 = new Button();
             panel3 = new Panel();
+            lblDateTime = new Label();
             btnLogout = new Button();
             btnAccount = new Button();
             btnRecords = new Button();
@@ -45,6 +47,7 @@
             btnManage = new Button();
             btnHome = new Button();
             button2 = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbActive).BeginInit();
             panel1.SuspendLayout();
@@ -112,6 +115,7 @@
             btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnExit.BackColor = Color.Transparent;
             btnExit.FlatAppearance.BorderSize = 0;
+            btnExit.FlatAppearance.MouseOverBackColor = Color.Red;
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnExit.ForeColor = Color.White;
@@ -146,6 +150,7 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(31, 30, 68);
+            panel3.Controls.Add(lblDateTime);
             panel3.Controls.Add(btnLogout);
             panel3.Controls.Add(btnAccount);
             panel3.Controls.Add(btnRecords);
@@ -157,6 +162,19 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(216, 653);
             panel3.TabIndex = 10;
+            // 
+            // lblDateTime
+            // 
+            lblDateTime.AutoSize = true;
+            lblDateTime.BackColor = Color.Transparent;
+            lblDateTime.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDateTime.ForeColor = Color.White;
+            lblDateTime.Location = new Point(24, 627);
+            lblDateTime.Name = "lblDateTime";
+            lblDateTime.Size = new Size(169, 17);
+            lblDateTime.TabIndex = 13;
+            lblDateTime.Text = "dd-MMM-yyyy hh:mm:ss tt";
+            lblDateTime.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnLogout
             // 
@@ -288,6 +306,12 @@
             button2.Text = "X";
             button2.UseVisualStyleBackColor = true;
             // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            // 
             // formMain
             // 
             AutoScaleMode = AutoScaleMode.None;
@@ -309,6 +333,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -330,5 +355,7 @@
         private Button btnManage;
         private Button btnMinimize;
         private PictureBox pbActive;
+        private Label lblDateTime;
+        private System.Windows.Forms.Timer timer1;
     }
 }
