@@ -25,9 +25,9 @@ namespace Fastfood
             {
                 progressBar1.Value = 0;
                 timer1.Stop();
-                formLogin start = new formLogin();
+                formLogin f = new formLogin();
                 this.Hide();
-                start.Show();
+                f.Show();
             }
         }
         private void StartUp_Load(object sender, EventArgs e)

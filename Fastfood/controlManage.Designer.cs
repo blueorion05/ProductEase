@@ -45,6 +45,7 @@
             tbPrice = new TextBox();
             pictureBox1 = new PictureBox();
             btnBrowse = new Button();
+            btnCancel = new Button();
             ((System.ComponentModel.ISupportInitialize)tableItems).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -229,11 +230,26 @@
             btnBrowse.UseVisualStyleBackColor = false;
             btnBrowse.Click += btnBrowse_Click;
             // 
+            // btnCancel
+            // 
+            btnCancel.BackColor = Color.FromArgb(0, 150, 136);
+            btnCancel.FlatAppearance.BorderSize = 0;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancel.ForeColor = Color.White;
+            btnCancel.Location = new Point(160, 204);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(75, 23);
+            btnCancel.TabIndex = 14;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
+            // 
             // controlManage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
+            Controls.Add(btnCancel);
             Controls.Add(btnBrowse);
             Controls.Add(pictureBox1);
             Controls.Add(tbPrice);
@@ -273,5 +289,6 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewImageColumn Column5;
+        private Button btnCancel;
     }
 }

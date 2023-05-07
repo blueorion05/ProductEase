@@ -34,7 +34,7 @@
             panel2 = new Panel();
             pbActive = new PictureBox();
             btnMinimize = new Button();
-            btnexit = new Button();
+            btnExit = new Button();
             panel1 = new Panel();
             button1 = new Button();
             panel3 = new Panel();
@@ -76,7 +76,7 @@
             panel2.BackColor = Color.FromArgb(25, 26, 62);
             panel2.Controls.Add(pbActive);
             panel2.Controls.Add(btnMinimize);
-            panel2.Controls.Add(btnexit);
+            panel2.Controls.Add(btnExit);
             panel2.Location = new Point(215, 3);
             panel2.Name = "panel2";
             panel2.Size = new Size(1064, 64);
@@ -107,21 +107,21 @@
             btnMinimize.UseVisualStyleBackColor = false;
             btnMinimize.Click += btnMinimize_Click;
             // 
-            // btnexit
+            // btnExit
             // 
-            btnexit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnexit.BackColor = Color.Transparent;
-            btnexit.FlatAppearance.BorderSize = 0;
-            btnexit.FlatStyle = FlatStyle.Flat;
-            btnexit.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnexit.ForeColor = Color.White;
-            btnexit.Image = (Image)resources.GetObject("btnexit.Image");
-            btnexit.Location = new Point(1032, 0);
-            btnexit.Name = "btnexit";
-            btnexit.Size = new Size(30, 25);
-            btnexit.TabIndex = 0;
-            btnexit.UseVisualStyleBackColor = false;
-            btnexit.Click += btnexit_Click;
+            btnExit.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnExit.BackColor = Color.Transparent;
+            btnExit.FlatAppearance.BorderSize = 0;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnExit.ForeColor = Color.White;
+            btnExit.Image = (Image)resources.GetObject("btnExit.Image");
+            btnExit.Location = new Point(1032, 0);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(30, 25);
+            btnExit.TabIndex = 0;
+            btnExit.UseVisualStyleBackColor = false;
+            btnExit.Click += btnexit_Click;
             // 
             // panel1
             // 
@@ -317,7 +317,7 @@
         private Label lbl1company;
         public Panel panelMain;
         private Panel panel2;
-        private Button btnexit;
+        private Button btnExit;
         private Panel panel1;
         private Button button1;
         private Panel panel3;
