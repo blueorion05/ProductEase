@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLogin));
             tbuser = new TextBox();
             tbpass = new TextBox();
             btnlogin = new Button();
@@ -99,7 +100,7 @@
             // 
             // pbUser
             // 
-            pbUser.Image = Properties.Resources.account;
+            pbUser.Image = (Image)resources.GetObject("pbUser.Image");
             pbUser.Location = new Point(42, 227);
             pbUser.Name = "pbUser";
             pbUser.Size = new Size(27, 27);
@@ -109,7 +110,7 @@
             // 
             // pbPass
             // 
-            pbPass.Image = Properties.Resources.password;
+            pbPass.Image = (Image)resources.GetObject("pbPass.Image");
             pbPass.Location = new Point(42, 282);
             pbPass.Name = "pbPass";
             pbPass.Size = new Size(27, 27);

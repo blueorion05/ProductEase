@@ -24,14 +24,6 @@ namespace Fastfood.Properties {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
-        internal static Image minimize;
-        internal static Image close;
-        internal static Image logout;
-        internal static Image account;
-        internal static Image records;
-        internal static Image home;
-        internal static Image manage;
-        internal static Image order;
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;

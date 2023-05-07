@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
             lbl1company = new Label();
             panelMain = new Panel();
             panel2 = new Panel();
@@ -98,7 +99,7 @@
             btnMinimize.FlatStyle = FlatStyle.Flat;
             btnMinimize.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnMinimize.ForeColor = Color.White;
-            btnMinimize.Image = Properties.Resources.minimize;
+            btnMinimize.Image = (Image)resources.GetObject("btnMinimize.Image");
             btnMinimize.Location = new Point(1000, 0);
             btnMinimize.Name = "btnMinimize";
             btnMinimize.Size = new Size(30, 25);
@@ -114,7 +115,7 @@
             btnexit.FlatStyle = FlatStyle.Flat;
             btnexit.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnexit.ForeColor = Color.White;
-            btnexit.Image = Properties.Resources.close;
+            btnexit.Image = (Image)resources.GetObject("btnexit.Image");
             btnexit.Location = new Point(1032, 0);
             btnexit.Name = "btnexit";
             btnexit.Size = new Size(30, 25);
@@ -164,7 +165,7 @@
             btnLogout.FlatStyle = FlatStyle.Flat;
             btnLogout.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnLogout.ForeColor = Color.White;
-            btnLogout.Image = Properties.Resources.logout;
+            btnLogout.Image = (Image)resources.GetObject("btnLogout.Image");
             btnLogout.ImageAlign = ContentAlignment.MiddleLeft;
             btnLogout.Location = new Point(0, 414);
             btnLogout.Name = "btnLogout";
@@ -184,7 +185,7 @@
             btnAccount.FlatStyle = FlatStyle.Flat;
             btnAccount.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnAccount.ForeColor = Color.White;
-            btnAccount.Image = Properties.Resources.account;
+            btnAccount.Image = (Image)resources.GetObject("btnAccount.Image");
             btnAccount.ImageAlign = ContentAlignment.MiddleLeft;
             btnAccount.Location = new Point(0, 344);
             btnAccount.Name = "btnAccount";
@@ -204,7 +205,7 @@
             btnRecords.FlatStyle = FlatStyle.Flat;
             btnRecords.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnRecords.ForeColor = Color.White;
-            btnRecords.Image = Properties.Resources.records;
+            btnRecords.Image = (Image)resources.GetObject("btnRecords.Image");
             btnRecords.ImageAlign = ContentAlignment.MiddleLeft;
             btnRecords.Location = new Point(0, 274);
             btnRecords.Name = "btnRecords";
@@ -224,7 +225,7 @@
             btnOrder.FlatStyle = FlatStyle.Flat;
             btnOrder.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnOrder.ForeColor = Color.White;
-            btnOrder.Image = Properties.Resources.order;
+            btnOrder.Image = (Image)resources.GetObject("btnOrder.Image");
             btnOrder.ImageAlign = ContentAlignment.MiddleLeft;
             btnOrder.Location = new Point(0, 204);
             btnOrder.Name = "btnOrder";
@@ -244,7 +245,7 @@
             btnManage.FlatStyle = FlatStyle.Flat;
             btnManage.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnManage.ForeColor = Color.White;
-            btnManage.Image = Properties.Resources.manage;
+            btnManage.Image = (Image)resources.GetObject("btnManage.Image");
             btnManage.ImageAlign = ContentAlignment.MiddleLeft;
             btnManage.Location = new Point(0, 134);
             btnManage.Name = "btnManage";
@@ -264,7 +265,7 @@
             btnHome.FlatStyle = FlatStyle.Flat;
             btnHome.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btnHome.ForeColor = Color.White;
-            btnHome.Image = Properties.Resources.home;
+            btnHome.Image = (Image)resources.GetObject("btnHome.Image");
             btnHome.ImageAlign = ContentAlignment.MiddleLeft;
             btnHome.Location = new Point(0, 64);
             btnHome.Name = "btnHome";
