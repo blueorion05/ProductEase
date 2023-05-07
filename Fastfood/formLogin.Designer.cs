@@ -33,10 +33,10 @@
             btnlogin = new Button();
             panel1 = new Panel();
             btnexit = new Button();
-            pbuser = new PictureBox();
-            pbpass = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pbuser).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pbpass).BeginInit();
+            pbUser = new PictureBox();
+            pbPass = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pbUser).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbPass).BeginInit();
             SuspendLayout();
             // 
             // tbuser
@@ -97,25 +97,25 @@
             btnexit.UseVisualStyleBackColor = false;
             btnexit.Click += btnexit_Click_1;
             // 
-            // pbuser
+            // pbUser
             // 
-            pbuser.Image = Properties.Resources.download__1_;
-            pbuser.Location = new Point(42, 227);
-            pbuser.Name = "pbuser";
-            pbuser.Size = new Size(27, 27);
-            pbuser.SizeMode = PictureBoxSizeMode.Zoom;
-            pbuser.TabIndex = 7;
-            pbuser.TabStop = false;
+            pbUser.Image = Properties.Resources.account;
+            pbUser.Location = new Point(42, 227);
+            pbUser.Name = "pbUser";
+            pbUser.Size = new Size(27, 27);
+            pbUser.SizeMode = PictureBoxSizeMode.CenterImage;
+            pbUser.TabIndex = 7;
+            pbUser.TabStop = false;
             // 
-            // pbpass
+            // pbPass
             // 
-            pbpass.Image = Properties.Resources.download;
-            pbpass.Location = new Point(42, 282);
-            pbpass.Name = "pbpass";
-            pbpass.Size = new Size(27, 27);
-            pbpass.SizeMode = PictureBoxSizeMode.Zoom;
-            pbpass.TabIndex = 8;
-            pbpass.TabStop = false;
+            pbPass.Image = Properties.Resources.password;
+            pbPass.Location = new Point(42, 282);
+            pbPass.Name = "pbPass";
+            pbPass.Size = new Size(27, 27);
+            pbPass.SizeMode = PictureBoxSizeMode.CenterImage;
+            pbPass.TabIndex = 8;
+            pbPass.TabStop = false;
             // 
             // formLogin
             // 
@@ -123,8 +123,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(312, 429);
-            Controls.Add(pbpass);
-            Controls.Add(pbuser);
+            Controls.Add(pbPass);
+            Controls.Add(pbUser);
             Controls.Add(btnexit);
             Controls.Add(panel1);
             Controls.Add(btnlogin);
@@ -134,8 +134,8 @@
             Name = "formLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)pbuser).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pbpass).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbUser).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbPass).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -146,7 +146,7 @@
         private Button btnlogin;
         private Panel panel1;
         private Button btnexit;
-        private PictureBox pbuser;
-        private PictureBox pbpass;
+        private PictureBox pbUser;
+        private PictureBox pbPass;
     }
 }
