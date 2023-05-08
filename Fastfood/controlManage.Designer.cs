@@ -28,267 +28,377 @@
         /// </summary>
         private void InitializeComponent()
         {
-            tableItems = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewImageColumn();
-            btnAdd = new Button();
-            lblId = new Label();
-            lblCategory = new Label();
-            lblItem = new Label();
-            lblPrice = new Label();
-            tbId = new TextBox();
-            tbCategory = new TextBox();
-            tbItem = new TextBox();
-            tbPrice = new TextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(controlManage));
+            pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
-            btnBrowse = new Button();
-            btnCancel = new Button();
-            ((System.ComponentModel.ISupportInitialize)tableItems).BeginInit();
+            groupBox1 = new GroupBox();
+            panel1 = new Panel();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            button4 = new Button();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            label2 = new Label();
+            label5 = new Label();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            label4 = new Label();
+            label3 = new Label();
+            label1 = new Label();
+            Button = new ToolStripButton();
+            toolStripSeparator1 = new ToolStripSeparator();
+            toolStripSeparator2 = new ToolStripSeparator();
+            toolStrip1 = new ToolStrip();
+            toolStripButton2 = new ToolStripButton();
+            toolStripButton3 = new ToolStripButton();
+            dataGridView1 = new DataGridView();
+            CL1 = new DataGridViewTextBoxColumn();
+            CL2 = new DataGridViewTextBoxColumn();
+            CL3 = new DataGridViewTextBoxColumn();
+            CL4 = new DataGridViewTextBoxColumn();
+            CL5 = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            groupBox1.SuspendLayout();
+            toolStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
-            // tableItems
+            // pictureBox2
             // 
-            tableItems.AllowUserToAddRows = false;
-            tableItems.AllowUserToDeleteRows = false;
-            tableItems.AllowUserToResizeColumns = false;
-            tableItems.BackgroundColor = Color.WhiteSmoke;
-            tableItems.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tableItems.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
-            tableItems.GridColor = Color.WhiteSmoke;
-            tableItems.Location = new Point(42, 274);
-            tableItems.Name = "tableItems";
-            tableItems.ReadOnly = true;
-            tableItems.RowTemplate.Height = 25;
-            tableItems.Size = new Size(973, 150);
-            tableItems.TabIndex = 2;
-            tableItems.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // Column1
-            // 
-            Column1.FillWeight = 126.903557F;
-            Column1.HeaderText = "ID";
-            Column1.Name = "Column1";
-            Column1.ReadOnly = true;
-            Column1.Resizable = DataGridViewTriState.False;
-            // 
-            // Column2
-            // 
-            Column2.FillWeight = 93.27411F;
-            Column2.HeaderText = "Category";
-            Column2.Name = "Column2";
-            Column2.ReadOnly = true;
-            Column2.Resizable = DataGridViewTriState.False;
-            Column2.Width = 174;
-            // 
-            // Column3
-            // 
-            Column3.FillWeight = 93.27411F;
-            Column3.HeaderText = "Item";
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Resizable = DataGridViewTriState.False;
-            Column3.Width = 309;
-            // 
-            // Column4
-            // 
-            Column4.FillWeight = 93.27411F;
-            Column4.HeaderText = "Price";
-            Column4.Name = "Column4";
-            Column4.ReadOnly = true;
-            Column4.Resizable = DataGridViewTriState.False;
-            Column4.Width = 174;
-            // 
-            // Column5
-            // 
-            Column5.FillWeight = 93.27411F;
-            Column5.HeaderText = "Image";
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            Column5.Resizable = DataGridViewTriState.False;
-            Column5.SortMode = DataGridViewColumnSortMode.Automatic;
-            Column5.Width = 173;
-            // 
-            // btnAdd
-            // 
-            btnAdd.BackColor = Color.FromArgb(0, 150, 136);
-            btnAdd.FlatAppearance.BorderSize = 0;
-            btnAdd.FlatStyle = FlatStyle.Flat;
-            btnAdd.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(79, 204);
-            btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(75, 23);
-            btnAdd.TabIndex = 3;
-            btnAdd.Text = "Add";
-            btnAdd.UseVisualStyleBackColor = false;
-            btnAdd.Click += btnAdd_Click;
-            // 
-            // lblId
-            // 
-            lblId.AutoSize = true;
-            lblId.BackColor = Color.Transparent;
-            lblId.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblId.ForeColor = Color.Black;
-            lblId.Location = new Point(79, 61);
-            lblId.Name = "lblId";
-            lblId.Size = new Size(20, 17);
-            lblId.TabIndex = 4;
-            lblId.Text = "ID";
-            // 
-            // lblCategory
-            // 
-            lblCategory.AutoSize = true;
-            lblCategory.BackColor = Color.Transparent;
-            lblCategory.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCategory.ForeColor = Color.Black;
-            lblCategory.Location = new Point(79, 93);
-            lblCategory.Name = "lblCategory";
-            lblCategory.Size = new Size(64, 17);
-            lblCategory.TabIndex = 5;
-            lblCategory.Text = "Category";
-            lblCategory.Click += lblCategory_Click;
-            // 
-            // lblItem
-            // 
-            lblItem.AutoSize = true;
-            lblItem.BackColor = Color.Transparent;
-            lblItem.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblItem.ForeColor = Color.Black;
-            lblItem.Location = new Point(79, 122);
-            lblItem.Name = "lblItem";
-            lblItem.Size = new Size(35, 17);
-            lblItem.TabIndex = 6;
-            lblItem.Text = "Item";
-            lblItem.Click += label2_Click;
-            // 
-            // lblPrice
-            // 
-            lblPrice.AutoSize = true;
-            lblPrice.BackColor = Color.Transparent;
-            lblPrice.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPrice.ForeColor = Color.Black;
-            lblPrice.Location = new Point(79, 151);
-            lblPrice.Name = "lblPrice";
-            lblPrice.Size = new Size(38, 17);
-            lblPrice.TabIndex = 7;
-            lblPrice.Text = "Price";
-            // 
-            // tbId
-            // 
-            tbId.Location = new Point(152, 58);
-            tbId.Name = "tbId";
-            tbId.ReadOnly = true;
-            tbId.Size = new Size(217, 23);
-            tbId.TabIndex = 8;
-            // 
-            // tbCategory
-            // 
-            tbCategory.Location = new Point(152, 90);
-            tbCategory.Name = "tbCategory";
-            tbCategory.Size = new Size(217, 23);
-            tbCategory.TabIndex = 9;
-            // 
-            // tbItem
-            // 
-            tbItem.Location = new Point(152, 119);
-            tbItem.Name = "tbItem";
-            tbItem.Size = new Size(217, 23);
-            tbItem.TabIndex = 10;
-            // 
-            // tbPrice
-            // 
-            tbPrice.Location = new Point(152, 148);
-            tbPrice.Name = "tbPrice";
-            tbPrice.Size = new Size(217, 23);
-            tbPrice.TabIndex = 11;
+            pictureBox2.BackColor = Color.FromArgb(0, 150, 136);
+            pictureBox2.BackgroundImageLayout = ImageLayout.None;
+            pictureBox2.Dock = DockStyle.Top;
+            pictureBox2.Location = new Point(0, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(1064, 50);
+            pictureBox2.TabIndex = 14;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(418, 28);
+            pictureBox1.BackColor = Color.FromArgb(0, 150, 136);
+            pictureBox1.BackgroundImageLayout = ImageLayout.None;
+            pictureBox1.Dock = DockStyle.Bottom;
+            pictureBox1.Location = new Point(0, 602);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(150, 150);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 12;
+            pictureBox1.Size = new Size(1064, 50);
+            pictureBox1.TabIndex = 15;
             pictureBox1.TabStop = false;
             // 
-            // btnBrowse
+            // groupBox1
             // 
-            btnBrowse.BackColor = Color.FromArgb(0, 150, 136);
-            btnBrowse.FlatAppearance.BorderSize = 0;
-            btnBrowse.FlatStyle = FlatStyle.Flat;
-            btnBrowse.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnBrowse.ForeColor = Color.White;
-            btnBrowse.Location = new Point(458, 184);
-            btnBrowse.Name = "btnBrowse";
-            btnBrowse.Size = new Size(75, 23);
-            btnBrowse.TabIndex = 13;
-            btnBrowse.Text = "Browse";
-            btnBrowse.UseVisualStyleBackColor = false;
-            btnBrowse.Click += btnBrowse_Click;
+            groupBox1.Controls.Add(panel1);
+            groupBox1.Controls.Add(button3);
+            groupBox1.Controls.Add(button2);
+            groupBox1.Controls.Add(button1);
+            groupBox1.Controls.Add(button4);
+            groupBox1.Controls.Add(textBox3);
+            groupBox1.Controls.Add(textBox4);
+            groupBox1.Controls.Add(label2);
+            groupBox1.Controls.Add(label5);
+            groupBox1.Controls.Add(textBox2);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(label1);
+            groupBox1.Location = new Point(3, 56);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(367, 542);
+            groupBox1.TabIndex = 16;
+            groupBox1.TabStop = false;
             // 
-            // btnCancel
+            // panel1
             // 
-            btnCancel.BackColor = Color.FromArgb(0, 150, 136);
-            btnCancel.FlatAppearance.BorderSize = 0;
-            btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(160, 204);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(75, 23);
-            btnCancel.TabIndex = 14;
-            btnCancel.Text = "Cancel";
-            btnCancel.UseVisualStyleBackColor = false;
+            panel1.BackColor = Color.Black;
+            panel1.Location = new Point(19, 210);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(338, 227);
+            panel1.TabIndex = 14;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(0, 150, 136);
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(19, 169);
+            button3.Name = "button3";
+            button3.Size = new Size(97, 35);
+            button3.TabIndex = 13;
+            button3.Text = "BROWSE";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(0, 150, 136);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(263, 484);
+            button2.Name = "button2";
+            button2.Size = new Size(97, 43);
+            button2.TabIndex = 12;
+            button2.Text = "DELETE";
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(0, 150, 136);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(142, 484);
+            button1.Name = "button1";
+            button1.Size = new Size(97, 43);
+            button1.TabIndex = 11;
+            button1.Text = "EDIT";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.FromArgb(0, 150, 136);
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(25, 484);
+            button4.Name = "button4";
+            button4.Size = new Size(97, 43);
+            button4.TabIndex = 10;
+            button4.Text = "ADD";
+            button4.UseVisualStyleBackColor = false;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(197, 131);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(86, 23);
+            textBox3.TabIndex = 9;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(91, 131);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(55, 23);
+            textBox4.TabIndex = 8;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(18, 131);
+            label2.Name = "label2";
+            label2.Size = new Size(67, 17);
+            label2.TabIndex = 7;
+            label2.Text = "Quantity:";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(152, 131);
+            label5.Name = "label5";
+            label5.Size = new Size(39, 17);
+            label5.TabIndex = 6;
+            label5.Text = "Price";
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(263, 90);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(94, 23);
+            textBox2.TabIndex = 5;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(104, 90);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(42, 23);
+            textBox1.TabIndex = 4;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(18, 90);
+            label4.Name = "label4";
+            label4.Size = new Size(80, 17);
+            label4.TabIndex = 3;
+            label4.Text = "Product ID:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(152, 90);
+            label3.Name = "label3";
+            label3.Size = new Size(105, 17);
+            label3.TabIndex = 2;
+            label3.Text = "Product name:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(63, 39);
+            label1.Name = "label1";
+            label1.Size = new Size(175, 21);
+            label1.TabIndex = 0;
+            label1.Text = "MANAGE PRODUCTS";
+            // 
+            // Button
+            // 
+            Button.AutoSize = false;
+            Button.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            Button.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Button.ForeColor = SystemColors.Control;
+            Button.Image = (Image)resources.GetObject("Button.Image");
+            Button.ImageTransparentColor = Color.Magenta;
+            Button.Name = "Button";
+            Button.Size = new Size(126, 53);
+            Button.Text = "Button";
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(6, 51);
+            // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(6, 51);
+            // 
+            // toolStrip1
+            // 
+            toolStrip1.AutoSize = false;
+            toolStrip1.BackColor = Color.FromArgb(0, 150, 136);
+            toolStrip1.Dock = DockStyle.None;
+            toolStrip1.Items.AddRange(new ToolStripItem[] { Button, toolStripSeparator1, toolStripButton2, toolStripSeparator2, toolStripButton3 });
+            toolStrip1.Location = new Point(3, -1);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(417, 51);
+            toolStrip1.TabIndex = 17;
+            toolStrip1.ItemClicked += toolStrip1_ItemClicked;
+            // 
+            // toolStripButton2
+            // 
+            toolStripButton2.AutoSize = false;
+            toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            toolStripButton2.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            toolStripButton2.ForeColor = SystemColors.Control;
+            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
+            toolStripButton2.ImageTransparentColor = Color.Magenta;
+            toolStripButton2.Name = "toolStripButton2";
+            toolStripButton2.Size = new Size(126, 53);
+            toolStripButton2.Text = "Button";
+            // 
+            // toolStripButton3
+            // 
+            toolStripButton3.AutoSize = false;
+            toolStripButton3.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            toolStripButton3.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            toolStripButton3.ForeColor = SystemColors.Control;
+            toolStripButton3.Image = (Image)resources.GetObject("toolStripButton3.Image");
+            toolStripButton3.ImageTransparentColor = Color.Magenta;
+            toolStripButton3.Name = "toolStripButton3";
+            toolStripButton3.Size = new Size(126, 53);
+            toolStripButton3.Text = "Button";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { CL1, CL2, CL3, CL4, CL5 });
+            dataGridView1.Location = new Point(394, 116);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(653, 467);
+            dataGridView1.TabIndex = 18;
+            // 
+            // CL1
+            // 
+            CL1.HeaderText = "Column1";
+            CL1.Name = "CL1";
+            // 
+            // CL2
+            // 
+            CL2.HeaderText = "Column1";
+            CL2.Name = "CL2";
+            // 
+            // CL3
+            // 
+            CL3.HeaderText = "Column1";
+            CL3.Name = "CL3";
+            // 
+            // CL4
+            // 
+            CL4.HeaderText = "Column1";
+            CL4.Name = "CL4";
+            // 
+            // CL5
+            // 
+            CL5.HeaderText = "Column1";
+            CL5.Name = "CL5";
             // 
             // controlManage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            Controls.Add(btnCancel);
-            Controls.Add(btnBrowse);
+            Controls.Add(dataGridView1);
+            Controls.Add(toolStrip1);
+            Controls.Add(groupBox1);
             Controls.Add(pictureBox1);
-            Controls.Add(tbPrice);
-            Controls.Add(tbItem);
-            Controls.Add(tbCategory);
-            Controls.Add(tbId);
-            Controls.Add(lblPrice);
-            Controls.Add(lblItem);
-            Controls.Add(lblCategory);
-            Controls.Add(lblId);
-            Controls.Add(btnAdd);
-            Controls.Add(tableItems);
+            Controls.Add(pictureBox2);
             Name = "controlManage";
-            Size = new Size(1064, 654);
+            Size = new Size(1064, 652);
             Load += controlManage_Load;
-            ((System.ComponentModel.ISupportInitialize)tableItems).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox1.PerformLayout();
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-        private DataGridView tableItems;
-        private Button btnAdd;
-        private Label lblId;
-        private Label lblCategory;
-        private Label lblItem;
-        private Label lblPrice;
-        private TextBox tbId;
-        private TextBox tbCategory;
-        private TextBox tbItem;
-        private TextBox tbPrice;
+
+        private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private Button btnBrowse;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewImageColumn Column5;
-        private Button btnCancel;
+        private GroupBox groupBox1;
+        private ToolStripButton Button;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStrip toolStrip1;
+        private ToolStripButton toolStripButton2;
+        private ToolStripButton toolStripButton3;
+        private Label label1;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn CL1;
+        private DataGridViewTextBoxColumn CL2;
+        private DataGridViewTextBoxColumn CL3;
+        private DataGridViewTextBoxColumn CL4;
+        private DataGridViewTextBoxColumn CL5;
+        private TextBox textBox3;
+        private TextBox textBox4;
+        private Label label2;
+        private Label label5;
+        private TextBox textBox2;
+        private TextBox textBox1;
+        private Label label4;
+        private Label label3;
+        private Panel panel1;
+        private Button button3;
+        private Button button2;
+        private Button button1;
+        private Button button4;
     }
 }

@@ -23,5 +23,10 @@ namespace Fastfood
             this.Height = f.panelMain.Height;
             this.Width = f.panelMain.Width;
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

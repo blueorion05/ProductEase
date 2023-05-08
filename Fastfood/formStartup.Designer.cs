@@ -44,12 +44,12 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(163, 72);
+            label1.Location = new Point(163, 96);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(216, 46);
+            label1.Size = new Size(124, 23);
             label1.TabIndex = 0;
-            label1.Text = "PRODUCT \r\nMANAGEMENT SYSTEM";
+            label1.Text = "ProductEase";
             // 
             // timer1
             // 

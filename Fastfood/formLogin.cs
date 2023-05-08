@@ -1,3 +1,6 @@
+using System.Drawing.Drawing2D;
+using System.Windows.Forms;
+
 namespace Fastfood
 {
     public partial class formLogin : Form
@@ -21,6 +24,11 @@ namespace Fastfood
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_1(object sender, PaintEventArgs e)
         {
 
         }

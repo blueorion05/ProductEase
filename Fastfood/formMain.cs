@@ -27,7 +27,7 @@ namespace Fastfood
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void btnexit_Click(object sender, EventArgs e)
