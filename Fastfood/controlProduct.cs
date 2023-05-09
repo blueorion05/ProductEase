@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace Fastfood
 {
-    public partial class controlOrder : UserControl
+    public partial class controlProduct : UserControl
     {
-        public controlOrder()
+        public controlProduct()
         {
             InitializeComponent();
-        }
-
-        void controlOrder_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

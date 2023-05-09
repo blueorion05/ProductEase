@@ -48,6 +48,7 @@
             lbl7amount = new Label();
             btn1pay = new Button();
             panel2 = new Panel();
+            flowLayoutPanel1 = new FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pb1order).BeginInit();
@@ -299,16 +300,25 @@
             panel2.Controls.Add(lbl3item);
             panel2.Controls.Add(pb1order);
             panel2.Controls.Add(lbl2orderno);
-            panel2.Location = new Point(782, 48);
+            panel2.Location = new Point(799, 48);
             panel2.Name = "panel2";
-            panel2.Size = new Size(282, 693);
+            panel2.Size = new Size(265, 693);
             panel2.TabIndex = 4;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.Location = new Point(0, 55);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(797, 547);
+            flowLayoutPanel1.TabIndex = 16;
             // 
             // controlOrder
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
+            Controls.Add(flowLayoutPanel1);
             Controls.Add(btnSearch);
             Controls.Add(textBox1);
             Controls.Add(pictureBox2);
@@ -355,5 +365,6 @@
         private Label lbl7amount;
         private Button btn1pay;
         private Panel panel2;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
