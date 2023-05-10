@@ -256,8 +256,9 @@
             // lbl6total
             // 
             lbl6total.AutoSize = true;
-            lbl6total.ForeColor = Color.White;
-            lbl6total.Location = new Point(45, 535);
+            lbl6total.BackColor = Color.Transparent;
+            lbl6total.ForeColor = Color.Black;
+            lbl6total.Location = new Point(46, 425);
             lbl6total.Name = "lbl6total";
             lbl6total.Size = new Size(37, 17);
             lbl6total.TabIndex = 5;
@@ -266,9 +267,10 @@
             // lbl7amount
             // 
             lbl7amount.AutoSize = true;
+            lbl7amount.BackColor = Color.Transparent;
             lbl7amount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl7amount.ForeColor = Color.White;
-            lbl7amount.Location = new Point(146, 526);
+            lbl7amount.ForeColor = Color.Black;
+            lbl7amount.Location = new Point(147, 416);
             lbl7amount.Name = "lbl7amount";
             lbl7amount.Size = new Size(84, 25);
             lbl7amount.TabIndex = 6;

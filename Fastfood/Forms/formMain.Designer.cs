@@ -30,15 +30,14 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formMain));
-            lbl1company = new Label();
+            lbl1Company = new Label();
             panelMain = new Panel();
-            panel2 = new Panel();
+            panelHeader = new Panel();
             pbActive = new PictureBox();
             btnMinimize = new Button();
             btnExit = new Button();
-            panel1 = new Panel();
-            button1 = new Button();
-            panel3 = new Panel();
+            panelCompany = new Panel();
+            panelMenu = new Panel();
             lblDateTime = new Label();
             btnLogout = new Button();
             btnAccount = new Button();
@@ -46,25 +45,24 @@
             btnOrder = new Button();
             btnManage = new Button();
             btnHome = new Button();
-            button2 = new Button();
-            timer1 = new System.Windows.Forms.Timer(components);
-            panel2.SuspendLayout();
+            timerDateTime = new System.Windows.Forms.Timer(components);
+            panelHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbActive).BeginInit();
-            panel1.SuspendLayout();
-            panel3.SuspendLayout();
+            panelCompany.SuspendLayout();
+            panelMenu.SuspendLayout();
             SuspendLayout();
             // 
-            // lbl1company
+            // lbl1Company
             // 
-            lbl1company.AutoSize = true;
-            lbl1company.BackColor = Color.Transparent;
-            lbl1company.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl1company.ForeColor = Color.White;
-            lbl1company.Location = new Point(36, 44);
-            lbl1company.Name = "lbl1company";
-            lbl1company.Size = new Size(142, 30);
-            lbl1company.TabIndex = 0;
-            lbl1company.Text = "COMPANY";
+            lbl1Company.AutoSize = true;
+            lbl1Company.BackColor = Color.Transparent;
+            lbl1Company.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl1Company.ForeColor = Color.White;
+            lbl1Company.Location = new Point(36, 44);
+            lbl1Company.Name = "lbl1Company";
+            lbl1Company.Size = new Size(142, 30);
+            lbl1Company.TabIndex = 0;
+            lbl1Company.Text = "COMPANY";
             // 
             // panelMain
             // 
@@ -74,16 +72,16 @@
             panelMain.Size = new Size(1064, 654);
             panelMain.TabIndex = 2;
             // 
-            // panel2
+            // panelHeader
             // 
-            panel2.BackColor = Color.FromArgb(25, 26, 62);
-            panel2.Controls.Add(pbActive);
-            panel2.Controls.Add(btnMinimize);
-            panel2.Controls.Add(btnExit);
-            panel2.Location = new Point(215, 3);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1064, 64);
-            panel2.TabIndex = 8;
+            panelHeader.BackColor = Color.FromArgb(25, 26, 62);
+            panelHeader.Controls.Add(pbActive);
+            panelHeader.Controls.Add(btnMinimize);
+            panelHeader.Controls.Add(btnExit);
+            panelHeader.Location = new Point(215, 3);
+            panelHeader.Name = "panelHeader";
+            panelHeader.Size = new Size(1064, 64);
+            panelHeader.TabIndex = 8;
             // 
             // pbActive
             // 
@@ -127,41 +125,29 @@
             btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnexit_Click;
             // 
-            // panel1
+            // panelCompany
             // 
-            panel1.BackColor = Color.FromArgb(31, 30, 68);
-            panel1.Controls.Add(lbl1company);
-            panel1.Controls.Add(button1);
-            panel1.Location = new Point(-1, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(217, 126);
-            panel1.TabIndex = 9;
+            panelCompany.BackColor = Color.FromArgb(31, 30, 68);
+            panelCompany.Controls.Add(lbl1Company);
+            panelCompany.Location = new Point(-1, 3);
+            panelCompany.Name = "panelCompany";
+            panelCompany.Size = new Size(217, 126);
+            panelCompany.TabIndex = 9;
             // 
-            // button1
+            // panelMenu
             // 
-            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button1.Location = new Point(1087, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(36, 22);
-            button1.TabIndex = 0;
-            button1.Text = "X";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.FromArgb(31, 30, 68);
-            panel3.Controls.Add(lblDateTime);
-            panel3.Controls.Add(btnLogout);
-            panel3.Controls.Add(btnAccount);
-            panel3.Controls.Add(btnRecords);
-            panel3.Controls.Add(btnOrder);
-            panel3.Controls.Add(btnManage);
-            panel3.Controls.Add(btnHome);
-            panel3.Controls.Add(button2);
-            panel3.Location = new Point(0, 67);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(216, 653);
-            panel3.TabIndex = 10;
+            panelMenu.BackColor = Color.FromArgb(31, 30, 68);
+            panelMenu.Controls.Add(lblDateTime);
+            panelMenu.Controls.Add(btnLogout);
+            panelMenu.Controls.Add(btnAccount);
+            panelMenu.Controls.Add(btnRecords);
+            panelMenu.Controls.Add(btnOrder);
+            panelMenu.Controls.Add(btnManage);
+            panelMenu.Controls.Add(btnHome);
+            panelMenu.Location = new Point(0, 67);
+            panelMenu.Name = "panelMenu";
+            panelMenu.Size = new Size(216, 653);
+            panelMenu.TabIndex = 10;
             // 
             // lblDateTime
             // 
@@ -171,9 +157,8 @@
             lblDateTime.ForeColor = Color.White;
             lblDateTime.Location = new Point(24, 627);
             lblDateTime.Name = "lblDateTime";
-            lblDateTime.Size = new Size(169, 17);
+            lblDateTime.Size = new Size(0, 17);
             lblDateTime.TabIndex = 13;
-            lblDateTime.Text = "dd-MMM-yyyy hh:mm:ss tt";
             lblDateTime.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btnLogout
@@ -296,21 +281,11 @@
             btnHome.UseVisualStyleBackColor = false;
             btnHome.Click += btnHome_Click;
             // 
-            // button2
+            // timerDateTime
             // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.Location = new Point(1102, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(36, 22);
-            button2.TabIndex = 0;
-            button2.Text = "X";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // timer1
-            // 
-            timer1.Enabled = true;
-            timer1.Interval = 1000;
-            timer1.Tick += timer1_Tick;
+            timerDateTime.Enabled = true;
+            timerDateTime.Interval = 1000;
+            timerDateTime.Tick += timer1_Tick;
             // 
             // formMain
             // 
@@ -319,34 +294,32 @@
             BackColor = Color.FromArgb(31, 30, 68);
             ClientSize = new Size(1280, 720);
             Controls.Add(panelMain);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
-            Controls.Add(panel3);
+            Controls.Add(panelHeader);
+            Controls.Add(panelCompany);
+            Controls.Add(panelMenu);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "formMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Main";
             Load += Form2_Load;
-            panel2.ResumeLayout(false);
+            panelHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbActive).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
+            panelCompany.ResumeLayout(false);
+            panelCompany.PerformLayout();
+            panelMenu.ResumeLayout(false);
+            panelMenu.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Label lbl1company;
+        private Label lbl1Company;
         public Panel panelMain;
-        private Panel panel2;
+        private Panel panelHeader;
         private Button btnExit;
-        private Panel panel1;
-        private Button button1;
-        private Panel panel3;
-        private Button button2;
+        private Panel panelCompany;
+        private Panel panelMenu;
         private Button btnHome;
         private Button btnLogout;
         private Button btnAccount;
@@ -356,6 +329,6 @@
         private Button btnMinimize;
         private PictureBox pbActive;
         private Label lblDateTime;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timerDateTime;
     }
 }

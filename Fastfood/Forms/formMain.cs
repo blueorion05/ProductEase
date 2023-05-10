@@ -18,16 +18,14 @@ namespace Fastfood
             form.Close();
 
             InitializeComponent();
-
-            btnHome.BackColor = Color.FromArgb(0, 150, 136);
-            pbActive.BackgroundImage = btnHome.Image;
-            panelMain.Controls.Clear();
-            panelMain.Controls.Add(new controlHome());
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-
+            btnHome.BackColor = Color.FromArgb(0, 150, 136);
+            pbActive.BackgroundImage = btnHome.Image;
+            panelMain.Controls.Clear();
+            panelMain.Controls.Add(new controlHome());
         }
 
         private void btnexit_Click(object sender, EventArgs e)
@@ -88,12 +86,12 @@ namespace Fastfood
 
         private void ButtonColor()
         {
-            btnHome.BackColor = panel3.BackColor;
-            btnManage.BackColor = panel3.BackColor;
-            btnOrder.BackColor = panel3.BackColor;
-            btnRecords.BackColor = panel3.BackColor;
-            btnAccount.BackColor = panel3.BackColor;
-            btnLogout.BackColor = panel3.BackColor;
+            btnHome.BackColor = panelMenu.BackColor;
+            btnManage.BackColor = panelMenu.BackColor;
+            btnOrder.BackColor = panelMenu.BackColor;
+            btnRecords.BackColor = panelMenu.BackColor;
+            btnAccount.BackColor = panelMenu.BackColor;
+            btnLogout.BackColor = panelMenu.BackColor;
         }
 
         private void btnMinimize_Click(object sender, EventArgs e)
