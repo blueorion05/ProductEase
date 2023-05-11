@@ -138,9 +138,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(213, 9);
+            label1.Dock = DockStyle.Right;
+            label1.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(508, 0);
             label1.Name = "label1";
-            label1.Size = new Size(38, 15);
+            label1.Size = new Size(38, 13);
             label1.TabIndex = 12;
             label1.Text = "label1";
             // 
