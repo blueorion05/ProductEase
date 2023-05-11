@@ -10,6 +10,8 @@ namespace Fastfood
         public formLogin()
         {
             InitializeComponent();
+
+            label1.Text = Path.Combine(Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName, "ProductEase.mdf");
         }
 
         private void btnlogin_Click(object sender, EventArgs e)
