@@ -5,13 +5,13 @@ namespace Fastfood
 {
     public partial class formLogin : Form
     {
-        public SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.Combine(Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName, "ProductEase.mdf") + ";Integrated Security=True");
+        public SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.Combine(Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName, "Database", "ProductEase.mdf") + ";Integrated Security=True");
 
         public formLogin()
         {
             InitializeComponent();
 
-            label1.Text = Path.Combine(Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName, "ProductEase.mdf");
+            label1.Text = Path.Combine(Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName, "Database", "ProductEase.mdf");
         }
 
         private void btnlogin_Click(object sender, EventArgs e)
