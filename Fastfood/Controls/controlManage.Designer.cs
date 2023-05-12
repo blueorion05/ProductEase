@@ -56,7 +56,6 @@
             pictureBox2.Size = new Size(1064, 53);
             pictureBox2.TabIndex = 14;
             pictureBox2.TabStop = false;
-            pictureBox2.Click += pictureBox2_Click;
             // 
             // pictureBox1
             // 
@@ -184,13 +183,13 @@
         private Button button2;
         private Button button1;
         private Button button4;
-        public DataGridViewTextBoxColumn Id;
-        public DataGridViewTextBoxColumn Category;
-        public DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        public DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        public DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        public DataGridViewTextBoxColumn Price;
-        public DataGridViewTextBoxColumn Image;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Category;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn Price;
+        private DataGridViewTextBoxColumn Image;
         public DataGridView dataGridView1;
     }
 }

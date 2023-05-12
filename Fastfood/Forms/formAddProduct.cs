@@ -45,7 +45,6 @@ namespace Fastfood
 
             try
             {
-                formAddProduct f = new formAddProduct();
                 cmd.Parameters.Add("@Id", SqlDbType.VarChar).Value = tbId.Text;
                 cmd.Parameters.Add("@Category", SqlDbType.VarChar).Value = cbCategory.Text;
                 cmd.Parameters.Add("@Product_Name", SqlDbType.VarChar).Value = tbName.Text;
@@ -66,18 +65,60 @@ namespace Fastfood
 
         private void formAddProduct_Load(object sender, EventArgs e)
         {
+            tbId.Text = IdCheck();
+        }
+
+        private string IdCheck()
+        {
+        Rand:
+            Random rand = new Random();
+            int Id = rand.Next(10000, 99999);
+            SqlConnection conn = GetConnection();
+            SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Products WHERE Id = @Id", conn);
+            cmd.Parameters.AddWithValue("@Id", Id);
+            int count = (int)cmd.ExecuteScalar();
+            if (count > 0)
+            {
+                conn.Close();
+                goto Rand;
+            }
+            else
+            {
+                conn.Close();
+                return Id.ToString();
+            }
+        }
+
+        private void controlManage_DataChanged(object sender, EventArgs e)
+        {
 
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             AddFood();
-            this.Close();
+            this.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog image = new OpenFileDialog())
+            {
+                image.InitialDirectory = "C:\\";
+                image.Filter = "Image files (*.bmp;*.jpg;*.jpeg;*.png)|*.bmp;*.jpg;*.jpeg;*.png";
+                image.RestoreDirectory = true;
+
+                if (image.ShowDialog() == DialogResult.OK)
+                {
+                    tbImage.Text = image.FileName;
+                    pictureBox1.BackgroundImage = System.Drawing.Image.FromFile(tbImage.Text);
+                }
+            }
         }
     }
 }

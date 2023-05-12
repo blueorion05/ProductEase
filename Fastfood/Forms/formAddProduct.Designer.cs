@@ -34,7 +34,6 @@
             label1 = new Label();
             cbCategory = new ComboBox();
             tbImage = new TextBox();
-            panel1 = new Panel();
             button3 = new Button();
             tbPrice = new TextBox();
             label2 = new Label();
@@ -44,15 +43,19 @@
             label4 = new Label();
             label3 = new Label();
             button1 = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // comboBox1
             // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Yes", "No" });
             comboBox1.Location = new Point(148, 176);
             comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(201, 23);
+            comboBox1.Size = new Size(201, 25);
             comboBox1.TabIndex = 48;
             // 
             // button4
@@ -94,27 +97,24 @@
             // 
             // cbCategory
             // 
+            cbCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbCategory.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbCategory.FormattingEnabled = true;
             cbCategory.Items.AddRange(new object[] { "Food", "Drinks", "Dessert" });
             cbCategory.Location = new Point(148, 31);
             cbCategory.Name = "cbCategory";
-            cbCategory.Size = new Size(201, 23);
+            cbCategory.Size = new Size(201, 25);
             cbCategory.TabIndex = 44;
             // 
             // tbImage
             // 
+            tbImage.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbImage.Location = new Point(148, 147);
             tbImage.Name = "tbImage";
-            tbImage.Size = new Size(201, 23);
+            tbImage.ReadOnly = true;
+            tbImage.Size = new Size(201, 22);
             tbImage.TabIndex = 43;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.Black;
-            panel1.Location = new Point(369, 29);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(166, 166);
-            panel1.TabIndex = 42;
+            tbImage.Text = "Use the browse button";
             // 
             // button3
             // 
@@ -129,12 +129,14 @@
             button3.TabIndex = 41;
             button3.Text = "BROWSE";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // tbPrice
             // 
+            tbPrice.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbPrice.Location = new Point(148, 118);
             tbPrice.Name = "tbPrice";
-            tbPrice.Size = new Size(201, 23);
+            tbPrice.Size = new Size(201, 22);
             tbPrice.TabIndex = 40;
             // 
             // label2
@@ -161,16 +163,19 @@
             // 
             // tbName
             // 
+            tbName.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbName.Location = new Point(148, 89);
             tbName.Name = "tbName";
-            tbName.Size = new Size(201, 23);
+            tbName.Size = new Size(201, 22);
             tbName.TabIndex = 37;
             // 
             // tbId
             // 
+            tbId.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbId.Location = new Point(148, 60);
             tbId.Name = "tbId";
-            tbId.Size = new Size(201, 23);
+            tbId.ReadOnly = true;
+            tbId.Size = new Size(201, 22);
             tbId.TabIndex = 36;
             // 
             // label4
@@ -210,12 +215,24 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.FromArgb(0, 150, 136);
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
+            pictureBox1.Location = new Point(370, 29);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(166, 166);
+            pictureBox1.TabIndex = 50;
+            pictureBox1.TabStop = false;
+            // 
             // formAddProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(25, 26, 62);
             ClientSize = new Size(567, 342);
+            Controls.Add(pictureBox1);
             Controls.Add(button1);
             Controls.Add(comboBox1);
             Controls.Add(button4);
@@ -223,7 +240,6 @@
             Controls.Add(label1);
             Controls.Add(cbCategory);
             Controls.Add(tbImage);
-            Controls.Add(panel1);
             Controls.Add(button3);
             Controls.Add(tbPrice);
             Controls.Add(label2);
@@ -237,6 +253,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "formAddProduct";
             Load += formAddProduct_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -249,7 +266,6 @@
         private Label label1;
         private ComboBox cbCategory;
         private TextBox tbImage;
-        private Panel panel1;
         private Button button3;
         private TextBox tbPrice;
         private Label label2;
@@ -259,5 +275,6 @@
         private Label label4;
         private Label label3;
         private Button button1;
+        private PictureBox pictureBox1;
     }
 }

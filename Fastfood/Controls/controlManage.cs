@@ -18,6 +18,7 @@ namespace Fastfood
         public controlManage()
         {
             InitializeComponent();
+            Table();
         }
 
         public SqlConnection GetConnection()
@@ -37,7 +38,7 @@ namespace Fastfood
 
         private void controlManage_Load(object sender, EventArgs e)
         {
-            Table();
+            
         }
 
         public void Table()
@@ -49,62 +50,19 @@ namespace Fastfood
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+            conn.Close();
         }
-
-        private void TableData()
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCategory_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBrowse_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
-
         private void button4_Click(object sender, EventArgs e)
         {
             formAddProduct f = new formAddProduct();
-            f.Show();
+            f.ShowDialog();
+            Table();
+            f.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            Table();
         }
     }
 }
