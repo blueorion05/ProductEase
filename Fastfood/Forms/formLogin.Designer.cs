@@ -37,7 +37,6 @@
             pbUser = new PictureBox();
             pbPass = new PictureBox();
             panelHeader = new Panel();
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pbUser).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbPass).BeginInit();
             panelHeader.SuspendLayout();
@@ -135,24 +134,12 @@
             panelHeader.Size = new Size(207, 386);
             panelHeader.TabIndex = 11;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Dock = DockStyle.Right;
-            label1.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(508, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 13);
-            label1.TabIndex = 12;
-            label1.Text = "label1";
-            // 
             // formLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(546, 386);
-            Controls.Add(label1);
             Controls.Add(panelHeader);
             Controls.Add(pbPass);
             Controls.Add(tbPass);
@@ -181,6 +168,5 @@
         private PictureBox pbUser;
         private PictureBox pbPass;
         private Panel panelHeader;
-        private Label label1;
     }
 }
