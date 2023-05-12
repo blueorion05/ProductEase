@@ -114,7 +114,6 @@
             tbImage.ReadOnly = true;
             tbImage.Size = new Size(201, 22);
             tbImage.TabIndex = 43;
-            tbImage.Text = "Use the browse button";
             // 
             // button3
             // 
