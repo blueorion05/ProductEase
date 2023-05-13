@@ -114,7 +114,6 @@ namespace Fastfood
                     MessageBox.Show("Input a valid price.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-
         }
 
         private void button1_Click(object sender, EventArgs e)

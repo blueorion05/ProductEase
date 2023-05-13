@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
-            button2 = new Button();
-            button1 = new Button();
             button4 = new Button();
             Id = new DataGridViewTextBoxColumn();
             Category = new DataGridViewTextBoxColumn();
@@ -41,6 +41,15 @@
             Price = new DataGridViewTextBoxColumn();
             Image = new DataGridViewTextBoxColumn();
             dataGridView1 = new DataGridView();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            Product_Name = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
+            Available = new DataGridViewTextBoxColumn();
+            Picture = new DataGridViewImageColumn();
+            Edit = new DataGridViewButtonColumn();
+            Delete = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -67,34 +76,6 @@
             pictureBox1.Size = new Size(1064, 53);
             pictureBox1.TabIndex = 15;
             pictureBox1.TabStop = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.FromArgb(0, 150, 136);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(220, 0);
-            button2.Name = "button2";
-            button2.Size = new Size(104, 53);
-            button2.TabIndex = 12;
-            button2.Text = "DELETE";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(0, 150, 136);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(109, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(111, 53);
-            button1.TabIndex = 11;
-            button1.Text = "EDIT";
-            button1.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
@@ -150,15 +131,106 @@
             // 
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, Product_Name, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, Available, Picture, Edit, Delete });
             dataGridView1.GridColor = Color.Black;
             dataGridView1.Location = new Point(3, 59);
+            dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.ShowEditingIcon = false;
             dataGridView1.Size = new Size(1058, 536);
-            dataGridView1.TabIndex = 16;
+            dataGridView1.TabIndex = 0;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.DataPropertyName = "Id";
+            dataGridViewTextBoxColumn4.HeaderText = "Id";
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.DataPropertyName = "Category";
+            dataGridViewTextBoxColumn5.HeaderText = "Category";
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // Product_Name
+            // 
+            Product_Name.DataPropertyName = "Product_Name";
+            Product_Name.HeaderText = "Product Name";
+            Product_Name.Name = "Product_Name";
+            Product_Name.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewTextBoxColumn6.DataPropertyName = "Price";
+            dataGridViewTextBoxColumn6.HeaderText = "Price";
+            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewTextBoxColumn7.DataPropertyName = "Image";
+            dataGridViewTextBoxColumn7.HeaderText = "Image Path";
+            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // Available
+            // 
+            Available.DataPropertyName = "Available";
+            Available.HeaderText = "Is Available?";
+            Available.Name = "Available";
+            Available.ReadOnly = true;
+            // 
+            // Picture
+            // 
+            Picture.DataPropertyName = "Picture";
+            Picture.HeaderText = "Image";
+            Picture.Name = "Picture";
+            Picture.ReadOnly = true;
+            // 
+            // Edit
+            // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 150, 136);
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 150, 136);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            Edit.DefaultCellStyle = dataGridViewCellStyle1;
+            Edit.FlatStyle = FlatStyle.Flat;
+            Edit.HeaderText = "";
+            Edit.Name = "Edit";
+            Edit.ReadOnly = true;
+            Edit.Text = "Edit";
+            Edit.UseColumnTextForButtonValue = true;
+            // 
+            // Delete
+            // 
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(219, 88, 96);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(219, 88, 96);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            Delete.DefaultCellStyle = dataGridViewCellStyle2;
+            Delete.FlatStyle = FlatStyle.Flat;
+            Delete.HeaderText = "";
+            Delete.Name = "Delete";
+            Delete.ReadOnly = true;
+            Delete.Text = "Delete";
+            Delete.UseColumnTextForButtonValue = true;
             // 
             // controlManage
             // 
@@ -166,8 +238,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             Controls.Add(dataGridView1);
-            Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(button4);
             Controls.Add(pictureBox1);
             Controls.Add(pictureBox2);
@@ -185,8 +255,6 @@
 
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private Button button2;
-        private Button button1;
         private Button button4;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Category;
@@ -196,5 +264,14 @@
         private DataGridViewTextBoxColumn Price;
         private DataGridViewTextBoxColumn Image;
         private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn Product_Name;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn Available;
+        private DataGridViewImageColumn Picture;
+        private DataGridViewButtonColumn Edit;
+        private DataGridViewButtonColumn Delete;
     }
 }
