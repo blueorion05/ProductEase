@@ -38,18 +38,19 @@ namespace Fastfood
 
         private void controlManage_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         public void Table()
         {
-            string data = "SELECT * FROM PRODUCTS";
+            string data = "SELECT * FROM Products";
             SqlConnection conn = GetConnection();
             SqlCommand cmd = new SqlCommand(data, conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
             dataGridView1.DataSource = dt;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             conn.Close();
         }
         private void button4_Click(object sender, EventArgs e)

@@ -62,9 +62,9 @@
             pictureBox1.BackColor = Color.FromArgb(0, 150, 136);
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
             pictureBox1.Dock = DockStyle.Bottom;
-            pictureBox1.Location = new Point(0, 604);
+            pictureBox1.Location = new Point(0, 601);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(1064, 50);
+            pictureBox1.Size = new Size(1064, 53);
             pictureBox1.TabIndex = 15;
             pictureBox1.TabStop = false;
             // 
@@ -148,12 +148,17 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(19, 59);
+            dataGridView1.GridColor = Color.Black;
+            dataGridView1.Location = new Point(3, 59);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(1024, 539);
-            dataGridView1.TabIndex = 20;
+            dataGridView1.Size = new Size(1058, 536);
+            dataGridView1.TabIndex = 16;
             // 
             // controlManage
             // 
@@ -190,6 +195,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn Price;
         private DataGridViewTextBoxColumn Image;
-        public DataGridView dataGridView1;
+        private DataGridView dataGridView1;
     }
 }

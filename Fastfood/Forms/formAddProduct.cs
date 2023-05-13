@@ -52,10 +52,11 @@ namespace Fastfood
                 cmd.Parameters.Add("@Image", SqlDbType.VarChar).Value = tbImage.Text;
                 cmd.Parameters.Add("@Available", SqlDbType.VarChar).Value = comboBox1.Text;
                 cmd.ExecuteNonQuery();
+                MessageBox.Show("Added Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            catch
+            catch (SqlException x)
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Product not Added. \n" + x.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -96,8 +97,24 @@ namespace Fastfood
 
         private void button4_Click(object sender, EventArgs e)
         {
-            AddFood();
-            this.Hide();
+            if (cbCategory.Text == "" || tbName.Text == "" || tbPrice.Text == "" || comboBox1.Text == "")
+            {
+                MessageBox.Show("Make sure to fill required information with *.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                float valid;
+                if (float.TryParse(tbPrice.Text, out valid))
+                {
+                    AddFood();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Input a valid price.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -115,10 +132,15 @@ namespace Fastfood
 
                 if (image.ShowDialog() == DialogResult.OK)
                 {
-                    tbImage.Text = image.FileName;
+                    tbImage.Text = image.FileName.ToString();
                     pictureBox1.BackgroundImage = System.Drawing.Image.FromFile(tbImage.Text);
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            tbImage.Text = "";
         }
     }
 }
