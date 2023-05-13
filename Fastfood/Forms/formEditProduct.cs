@@ -50,7 +50,7 @@ namespace Fastfood
                 cmd.Parameters.AddWithValue("@Product_Name", SqlDbType.VarChar).Value = tbName.Text;
                 cmd.Parameters.AddWithValue("@Price", SqlDbType.VarChar).Value = tbPrice.Text;
                 cmd.Parameters.AddWithValue("@Image", SqlDbType.VarChar).Value = tbImage.Text;
-                cmd.Parameters.AddWithValue("@Available", SqlDbType.VarChar).Value = comboBox1.Text;
+                cmd.Parameters.AddWithValue("@Available", SqlDbType.VarChar).Value = cbAvailable.Text;
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Updated Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -66,9 +66,9 @@ namespace Fastfood
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (cbCategory.Text == "" || tbName.Text == "" || tbPrice.Text == "" || comboBox1.Text == "")
+            if (cbCategory.Text == "" || tbName.Text == "" || tbPrice.Text == "" || cbAvailable.Text == "")
             {
-                MessageBox.Show("Make sure to fill required information with *.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Make sure to fill all with *.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -88,6 +88,7 @@ namespace Fastfood
         private void button2_Click(object sender, EventArgs e)
         {
             tbImage.Text = "";
+            pbImage.BackgroundImage = null;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -106,8 +107,16 @@ namespace Fastfood
                 if (image.ShowDialog() == DialogResult.OK)
                 {
                     tbImage.Text = image.FileName.ToString();
-                    pictureBox1.BackgroundImage = System.Drawing.Image.FromFile(tbImage.Text);
+                    pbImage.BackgroundImage = System.Drawing.Image.FromFile(tbImage.Text);
                 }
+            }
+        }
+
+        private void formEditProduct_Load(object sender, EventArgs e)
+        {
+            if (File.Exists(tbImage.Text))
+            {
+                pbImage.BackgroundImage = System.Drawing.Image.FromFile(tbImage.Text);
             }
         }
     }

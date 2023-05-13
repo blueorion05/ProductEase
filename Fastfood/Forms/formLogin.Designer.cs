@@ -163,8 +163,8 @@
         private Button btnLogin;
         private Button btnExit;
         private Label lblWelcome;
-        private TextBox tbUser;
-        private TextBox tbPass;
+        public TextBox tbUser;
+        public TextBox tbPass;
         private PictureBox pbUser;
         private PictureBox pbPass;
         private Panel panelHeader;

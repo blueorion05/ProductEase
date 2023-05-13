@@ -52,7 +52,7 @@ namespace Fastfood
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
-            dataGridView1.DataSource = dt;
+            tableProduct.DataSource = dt;
             conn.Close();
         }
         private void button4_Click(object sender, EventArgs e)
@@ -101,12 +101,12 @@ namespace Fastfood
             if (e.ColumnIndex == 1)
             {
                 formEditProduct f = new formEditProduct();
-                f.tbId.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
-                f.cbCategory.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-                f.tbName.Text = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
-                f.tbPrice.Text = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
-                f.tbImage.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-                f.comboBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+                f.tbId.Text = tableProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
+                f.cbCategory.Text = tableProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
+                f.tbName.Text = tableProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
+                f.tbPrice.Text = tableProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
+                f.tbImage.Text = tableProduct.Rows[e.RowIndex].Cells[7].Value.ToString();
+                f.cbAvailable.Text = tableProduct.Rows[e.RowIndex].Cells[8].Value.ToString();
                 f.ShowDialog();
                 Table();
                 f.Close();
@@ -116,7 +116,7 @@ namespace Fastfood
             {
                 if (MessageBox.Show("Are you sure you want to delete this product?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                    DeleteProduct(dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString()!);
+                    DeleteProduct(tableProduct.Rows[e.RowIndex].Cells[3].Value.ToString()!);
                 }
                 Table();
                 return;

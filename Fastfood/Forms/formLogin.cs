@@ -32,6 +32,8 @@ namespace Fastfood
                     this.Hide();
                     formMain f = new formMain();
                     f.ShowDialog();
+                    tbUser.Text = null;
+                    tbPass.Text = null;
                     this.Show();
                 }
                 else

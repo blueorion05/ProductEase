@@ -29,79 +29,79 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formAddProduct));
-            comboBox1 = new ComboBox();
-            button4 = new Button();
-            label6 = new Label();
-            label1 = new Label();
+            cbAvailable = new ComboBox();
+            btnSave = new Button();
+            lblAvailable = new Label();
+            lblImage = new Label();
             cbCategory = new ComboBox();
             tbImage = new TextBox();
-            button3 = new Button();
+            btnBrowse = new Button();
             tbPrice = new TextBox();
-            label2 = new Label();
-            label5 = new Label();
+            lblCategory = new Label();
+            lblPrice = new Label();
             tbName = new TextBox();
             tbId = new TextBox();
-            label4 = new Label();
-            label3 = new Label();
-            button1 = new Button();
-            pictureBox1 = new PictureBox();
-            button2 = new Button();
+            lblId = new Label();
+            lblName = new Label();
+            btnCancel = new Button();
+            pbImage = new PictureBox();
+            btnClear = new Button();
             lblRequired1 = new Label();
             lblRequired2 = new Label();
             lblRequired3 = new Label();
             lblRequired4 = new Label();
             lblRequired5 = new Label();
             lblRequired = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbImage).BeginInit();
             SuspendLayout();
             // 
-            // comboBox1
+            // cbAvailable
             // 
-            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBox1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Yes", "No" });
-            comboBox1.Location = new Point(148, 176);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(201, 25);
-            comboBox1.TabIndex = 48;
+            cbAvailable.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbAvailable.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            cbAvailable.FormattingEnabled = true;
+            cbAvailable.Items.AddRange(new object[] { "Yes", "No" });
+            cbAvailable.Location = new Point(148, 176);
+            cbAvailable.Name = "cbAvailable";
+            cbAvailable.Size = new Size(201, 25);
+            cbAvailable.TabIndex = 48;
             // 
-            // button4
+            // btnSave
             // 
-            button4.BackColor = Color.FromArgb(0, 150, 136);
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(27, 267);
-            button4.Name = "button4";
-            button4.Size = new Size(97, 43);
-            button4.TabIndex = 47;
-            button4.Text = "SAVE";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            btnSave.BackColor = Color.FromArgb(0, 150, 136);
+            btnSave.FlatAppearance.BorderSize = 0;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.ForeColor = Color.White;
+            btnSave.Location = new Point(27, 267);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(97, 43);
+            btnSave.TabIndex = 47;
+            btnSave.Text = "SAVE";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += button4_Click;
             // 
-            // label6
+            // lblAvailable
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.ForeColor = Color.White;
-            label6.Location = new Point(27, 178);
-            label6.Name = "label6";
-            label6.Size = new Size(89, 17);
-            label6.TabIndex = 46;
-            label6.Text = "Is Available?";
+            lblAvailable.AutoSize = true;
+            lblAvailable.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAvailable.ForeColor = Color.White;
+            lblAvailable.Location = new Point(27, 178);
+            lblAvailable.Name = "lblAvailable";
+            lblAvailable.Size = new Size(89, 17);
+            lblAvailable.TabIndex = 46;
+            lblAvailable.Text = "Is Available?";
             // 
-            // label1
+            // lblImage
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(27, 149);
-            label1.Name = "label1";
-            label1.Size = new Size(88, 17);
-            label1.TabIndex = 45;
-            label1.Text = "Image Path:";
+            lblImage.AutoSize = true;
+            lblImage.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblImage.ForeColor = Color.White;
+            lblImage.Location = new Point(27, 149);
+            lblImage.Name = "lblImage";
+            lblImage.Size = new Size(88, 17);
+            lblImage.TabIndex = 45;
+            lblImage.Text = "Image Path:";
             // 
             // cbCategory
             // 
@@ -124,20 +124,20 @@
             tbImage.Size = new Size(132, 22);
             tbImage.TabIndex = 43;
             // 
-            // button3
+            // btnBrowse
             // 
-            button3.BackColor = Color.FromArgb(0, 150, 136);
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(407, 201);
-            button3.Name = "button3";
-            button3.Size = new Size(97, 35);
-            button3.TabIndex = 41;
-            button3.Text = "BROWSE";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            btnBrowse.BackColor = Color.FromArgb(0, 150, 136);
+            btnBrowse.FlatAppearance.BorderSize = 0;
+            btnBrowse.FlatStyle = FlatStyle.Flat;
+            btnBrowse.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBrowse.ForeColor = Color.White;
+            btnBrowse.Location = new Point(407, 201);
+            btnBrowse.Name = "btnBrowse";
+            btnBrowse.Size = new Size(97, 35);
+            btnBrowse.TabIndex = 41;
+            btnBrowse.Text = "BROWSE";
+            btnBrowse.UseVisualStyleBackColor = false;
+            btnBrowse.Click += button3_Click;
             // 
             // tbPrice
             // 
@@ -147,27 +147,27 @@
             tbPrice.Size = new Size(201, 22);
             tbPrice.TabIndex = 40;
             // 
-            // label2
+            // lblCategory
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(27, 33);
-            label2.Name = "label2";
-            label2.Size = new Size(73, 17);
-            label2.TabIndex = 39;
-            label2.Text = "Category:";
+            lblCategory.AutoSize = true;
+            lblCategory.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCategory.ForeColor = Color.White;
+            lblCategory.Location = new Point(27, 33);
+            lblCategory.Name = "lblCategory";
+            lblCategory.Size = new Size(73, 17);
+            lblCategory.TabIndex = 39;
+            lblCategory.Text = "Category:";
             // 
-            // label5
+            // lblPrice
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = Color.White;
-            label5.Location = new Point(27, 120);
-            label5.Name = "label5";
-            label5.Size = new Size(43, 17);
-            label5.TabIndex = 38;
-            label5.Text = "Price:";
+            lblPrice.AutoSize = true;
+            lblPrice.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPrice.ForeColor = Color.White;
+            lblPrice.Location = new Point(27, 120);
+            lblPrice.Name = "lblPrice";
+            lblPrice.Size = new Size(43, 17);
+            lblPrice.TabIndex = 38;
+            lblPrice.Text = "Price:";
             // 
             // tbName
             // 
@@ -186,69 +186,71 @@
             tbId.Size = new Size(201, 22);
             tbId.TabIndex = 36;
             // 
-            // label4
+            // lblId
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(27, 62);
-            label4.Name = "label4";
-            label4.Size = new Size(80, 17);
-            label4.TabIndex = 35;
-            label4.Text = "Product ID:";
+            lblId.AutoSize = true;
+            lblId.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblId.ForeColor = Color.White;
+            lblId.Location = new Point(27, 62);
+            lblId.Name = "lblId";
+            lblId.Size = new Size(80, 17);
+            lblId.TabIndex = 35;
+            lblId.Text = "Product ID:";
             // 
-            // label3
+            // lblName
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(27, 91);
-            label3.Name = "label3";
-            label3.Size = new Size(105, 17);
-            label3.TabIndex = 34;
-            label3.Text = "Product name:";
+            lblName.AutoSize = true;
+            lblName.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblName.ForeColor = Color.White;
+            lblName.Location = new Point(27, 91);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(105, 17);
+            lblName.TabIndex = 34;
+            lblName.Text = "Product name:";
             // 
-            // button1
+            // btnCancel
             // 
-            button1.BackColor = Color.FromArgb(0, 150, 136);
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(148, 267);
-            button1.Name = "button1";
-            button1.Size = new Size(97, 43);
-            button1.TabIndex = 49;
-            button1.Text = "CANCEL";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            btnCancel.BackColor = Color.FromArgb(0, 150, 136);
+            btnCancel.FlatAppearance.BorderSize = 0;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancel.ForeColor = Color.White;
+            btnCancel.Location = new Point(148, 267);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(97, 43);
+            btnCancel.TabIndex = 49;
+            btnCancel.Text = "CANCEL";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += button1_Click;
             // 
-            // pictureBox1
+            // pbImage
             // 
-            pictureBox1.BackColor = Color.FromArgb(0, 150, 136);
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Location = new Point(370, 29);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(166, 166);
-            pictureBox1.TabIndex = 50;
-            pictureBox1.TabStop = false;
+            pbImage.BackColor = Color.Transparent;
+            pbImage.BackgroundImage = (Image)resources.GetObject("pbImage.BackgroundImage");
+            pbImage.BackgroundImageLayout = ImageLayout.Stretch;
+            pbImage.BorderStyle = BorderStyle.FixedSingle;
+            pbImage.ErrorImage = (Image)resources.GetObject("pbImage.ErrorImage");
+            pbImage.InitialImage = (Image)resources.GetObject("pbImage.InitialImage");
+            pbImage.Location = new Point(370, 29);
+            pbImage.Name = "pbImage";
+            pbImage.Size = new Size(166, 166);
+            pbImage.TabIndex = 50;
+            pbImage.TabStop = false;
             // 
-            // button2
+            // btnClear
             // 
-            button2.BackColor = Color.FromArgb(0, 150, 136);
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(286, 147);
-            button2.Name = "button2";
-            button2.Size = new Size(63, 22);
-            button2.TabIndex = 51;
-            button2.Text = "CLEAR";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            btnClear.BackColor = Color.FromArgb(0, 150, 136);
+            btnClear.FlatAppearance.BorderSize = 0;
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnClear.ForeColor = Color.White;
+            btnClear.Location = new Point(286, 147);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(63, 22);
+            btnClear.TabIndex = 51;
+            btnClear.Text = "CLEAR";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += button2_Click;
             // 
             // lblRequired1
             // 
@@ -334,52 +336,52 @@
             Controls.Add(lblRequired3);
             Controls.Add(lblRequired2);
             Controls.Add(lblRequired1);
-            Controls.Add(button2);
-            Controls.Add(pictureBox1);
-            Controls.Add(button1);
-            Controls.Add(comboBox1);
-            Controls.Add(button4);
-            Controls.Add(label6);
-            Controls.Add(label1);
+            Controls.Add(btnClear);
+            Controls.Add(pbImage);
+            Controls.Add(btnCancel);
+            Controls.Add(cbAvailable);
+            Controls.Add(btnSave);
+            Controls.Add(lblAvailable);
+            Controls.Add(lblImage);
             Controls.Add(cbCategory);
             Controls.Add(tbImage);
-            Controls.Add(button3);
+            Controls.Add(btnBrowse);
             Controls.Add(tbPrice);
-            Controls.Add(label2);
-            Controls.Add(label5);
+            Controls.Add(lblCategory);
+            Controls.Add(lblPrice);
             Controls.Add(tbName);
             Controls.Add(tbId);
-            Controls.Add(label4);
-            Controls.Add(label3);
+            Controls.Add(lblId);
+            Controls.Add(lblName);
             FormBorderStyle = FormBorderStyle.None;
             Name = "formAddProduct";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "formAddProduct";
             Load += formAddProduct_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbImage).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private ComboBox comboBox1;
-        private Button button4;
-        private Label label6;
-        private Label label1;
+        private ComboBox cbAvailable;
+        private Button btnSave;
+        private Label lblAvailable;
+        private Label lblImage;
         private ComboBox cbCategory;
         private TextBox tbImage;
-        private Button button3;
+        private Button btnBrowse;
         private TextBox tbPrice;
-        private Label label2;
-        private Label label5;
+        private Label lblCategory;
+        private Label lblPrice;
         private TextBox tbName;
         private TextBox tbId;
-        private Label label4;
-        private Label label3;
-        private Button button1;
-        private PictureBox pictureBox1;
-        private Button button2;
+        private Label lblId;
+        private Label lblName;
+        private Button btnCancel;
+        private PictureBox pbImage;
+        private Button btnClear;
         private Label lblRequired1;
         private Label lblRequired2;
         private Label lblRequired3;

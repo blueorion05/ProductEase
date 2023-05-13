@@ -50,7 +50,7 @@ namespace Fastfood
                 cmd.Parameters.Add("@Product_Name", SqlDbType.VarChar).Value = tbName.Text;
                 cmd.Parameters.Add("@Price", SqlDbType.VarChar).Value = tbPrice.Text;
                 cmd.Parameters.Add("@Image", SqlDbType.VarChar).Value = tbImage.Text;
-                cmd.Parameters.Add("@Available", SqlDbType.VarChar).Value = comboBox1.Text;
+                cmd.Parameters.Add("@Available", SqlDbType.VarChar).Value = cbAvailable.Text;
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Added Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -97,9 +97,9 @@ namespace Fastfood
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (cbCategory.Text == "" || tbName.Text == "" || tbPrice.Text == "" || comboBox1.Text == "")
+            if (cbCategory.Text == "" || tbName.Text == "" || tbPrice.Text == "" || cbAvailable.Text == "")
             {
-                MessageBox.Show("Make sure to fill required information with *.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Make sure to fill all with *.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
@@ -132,7 +132,7 @@ namespace Fastfood
                 if (image.ShowDialog() == DialogResult.OK)
                 {
                     tbImage.Text = image.FileName.ToString();
-                    pictureBox1.BackgroundImage = System.Drawing.Image.FromFile(tbImage.Text);
+                    pbImage.BackgroundImage = System.Drawing.Image.FromFile(tbImage.Text);
                 }
             }
         }
@@ -140,6 +140,7 @@ namespace Fastfood
         private void button2_Click(object sender, EventArgs e)
         {
             tbImage.Text = "";
+            pbImage.BackgroundImage = null;
         }
     }
 }

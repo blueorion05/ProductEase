@@ -28,13 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(controlProduct));
             pictureBox1 = new PictureBox();
-            label1 = new Label();
+            lblName = new Label();
+            lblPrice = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(5, 3);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(140, 140);
@@ -42,24 +46,37 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // label1
+            // lblName
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(28, 151);
-            label1.Name = "label1";
-            label1.Size = new Size(94, 17);
-            label1.TabIndex = 1;
-            label1.Text = "Product Name";
+            lblName.AutoSize = true;
+            lblName.Location = new Point(28, 151);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(94, 17);
+            lblName.TabIndex = 1;
+            lblName.Text = "Product Name";
+            // 
+            // lblPrice
+            // 
+            lblPrice.AutoSize = true;
+            lblPrice.Location = new Point(54, 178);
+            lblPrice.Name = "lblPrice";
+            lblPrice.Size = new Size(38, 17);
+            lblPrice.TabIndex = 2;
+            lblPrice.Text = "Price";
             // 
             // controlProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(label1);
+            BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(lblPrice);
+            Controls.Add(lblName);
             Controls.Add(pictureBox1);
+            Cursor = Cursors.Hand;
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "controlProduct";
-            Size = new Size(150, 175);
+            Size = new Size(148, 206);
+            Load += controlProduct_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -67,7 +84,8 @@
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private Label label1;
+        public PictureBox pictureBox1;
+        public Label lblName;
+        public Label lblPrice;
     }
 }

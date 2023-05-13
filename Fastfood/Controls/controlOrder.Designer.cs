@@ -28,31 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             pictureBox2 = new PictureBox();
             pictureBox1 = new PictureBox();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
-            button5 = new Button();
             textBox1 = new TextBox();
             btnSearch = new Button();
             button7 = new Button();
             button6 = new Button();
             lbl2orderno = new Label();
-            pb1order = new PictureBox();
-            lbl3item = new Label();
-            lbl4quantity = new Label();
-            lbl5cost = new Label();
             lbl6total = new Label();
             lbl7amount = new Label();
             btn1pay = new Button();
             panel2 = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            dataGridView1 = new DataGridView();
+            Product_Name = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
+            Reduce = new DataGridViewButtonColumn();
+            Delete = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pb1order).BeginInit();
-            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // pictureBox2
@@ -69,9 +71,9 @@
             // 
             pictureBox1.BackColor = Color.FromArgb(0, 150, 136);
             pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            pictureBox1.Location = new Point(630, -10);
+            pictureBox1.Location = new Point(504, -10);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(310, 63);
+            pictureBox1.Size = new Size(436, 63);
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
             // 
@@ -100,7 +102,7 @@
             button2.Name = "button2";
             button2.Size = new Size(126, 53);
             button2.TabIndex = 6;
-            button2.Text = "Category";
+            button2.Text = "Food";
             button2.UseVisualStyleBackColor = false;
             // 
             // button3
@@ -114,7 +116,7 @@
             button3.Name = "button3";
             button3.Size = new Size(126, 53);
             button3.TabIndex = 7;
-            button3.Text = "Category";
+            button3.Text = "Drinks";
             button3.UseVisualStyleBackColor = false;
             // 
             // button4
@@ -128,29 +130,15 @@
             button4.Name = "button4";
             button4.Size = new Size(126, 53);
             button4.TabIndex = 8;
-            button4.Text = "Category";
+            button4.Text = "Dessert";
             button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            button5.BackColor = Color.FromArgb(0, 150, 136);
-            button5.FlatAppearance.BorderSize = 0;
-            button5.FlatStyle = FlatStyle.Flat;
-            button5.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button5.ForeColor = Color.White;
-            button5.Location = new Point(504, 0);
-            button5.Name = "button5";
-            button5.Size = new Size(126, 53);
-            button5.TabIndex = 9;
-            button5.Text = "Category";
-            button5.UseVisualStyleBackColor = false;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(658, 12);
+            textBox1.Location = new Point(510, 12);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(274, 26);
+            textBox1.Size = new Size(422, 26);
             textBox1.TabIndex = 14;
             // 
             // btnSearch
@@ -202,63 +190,18 @@
             lbl2orderno.BackColor = Color.Transparent;
             lbl2orderno.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lbl2orderno.ForeColor = Color.Black;
-            lbl2orderno.Location = new Point(26, 45);
+            lbl2orderno.Location = new Point(803, 56);
             lbl2orderno.Name = "lbl2orderno";
             lbl2orderno.Size = new Size(63, 17);
             lbl2orderno.TabIndex = 0;
             lbl2orderno.Text = "Order no.";
-            // 
-            // pb1order
-            // 
-            pb1order.BackColor = Color.FromArgb(0, 150, 136);
-            pb1order.Location = new Point(26, 65);
-            pb1order.Name = "pb1order";
-            pb1order.Size = new Size(218, 41);
-            pb1order.TabIndex = 1;
-            pb1order.TabStop = false;
-            // 
-            // lbl3item
-            // 
-            lbl3item.AutoSize = true;
-            lbl3item.BackColor = Color.FromArgb(0, 150, 136);
-            lbl3item.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl3item.ForeColor = Color.White;
-            lbl3item.Location = new Point(40, 79);
-            lbl3item.Name = "lbl3item";
-            lbl3item.Size = new Size(33, 17);
-            lbl3item.TabIndex = 2;
-            lbl3item.Text = "ITEM";
-            // 
-            // lbl4quantity
-            // 
-            lbl4quantity.AutoSize = true;
-            lbl4quantity.BackColor = Color.FromArgb(0, 150, 136);
-            lbl4quantity.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl4quantity.ForeColor = Color.White;
-            lbl4quantity.Location = new Point(137, 78);
-            lbl4quantity.Name = "lbl4quantity";
-            lbl4quantity.Size = new Size(30, 17);
-            lbl4quantity.TabIndex = 3;
-            lbl4quantity.Text = "QTY";
-            // 
-            // lbl5cost
-            // 
-            lbl5cost.AutoSize = true;
-            lbl5cost.BackColor = Color.FromArgb(0, 150, 136);
-            lbl5cost.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl5cost.ForeColor = Color.White;
-            lbl5cost.Location = new Point(191, 78);
-            lbl5cost.Name = "lbl5cost";
-            lbl5cost.Size = new Size(39, 17);
-            lbl5cost.TabIndex = 4;
-            lbl5cost.Text = "COST";
             // 
             // lbl6total
             // 
             lbl6total.AutoSize = true;
             lbl6total.BackColor = Color.Transparent;
             lbl6total.ForeColor = Color.Black;
-            lbl6total.Location = new Point(46, 425);
+            lbl6total.Location = new Point(843, 495);
             lbl6total.Name = "lbl6total";
             lbl6total.Size = new Size(37, 17);
             lbl6total.TabIndex = 5;
@@ -270,7 +213,7 @@
             lbl7amount.BackColor = Color.Transparent;
             lbl7amount.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl7amount.ForeColor = Color.Black;
-            lbl7amount.Location = new Point(147, 416);
+            lbl7amount.Location = new Point(908, 495);
             lbl7amount.Name = "lbl7amount";
             lbl7amount.Size = new Size(84, 25);
             lbl7amount.TabIndex = 6;
@@ -283,9 +226,9 @@
             btn1pay.FlatStyle = FlatStyle.Flat;
             btn1pay.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btn1pay.ForeColor = Color.White;
-            btn1pay.Location = new Point(46, 444);
+            btn1pay.Location = new Point(843, 535);
             btn1pay.Name = "btn1pay";
-            btn1pay.Size = new Size(185, 57);
+            btn1pay.Size = new Size(126, 53);
             btn1pay.TabIndex = 7;
             btn1pay.Text = "PAY";
             btn1pay.UseVisualStyleBackColor = false;
@@ -294,15 +237,7 @@
             // 
             panel2.BackColor = Color.WhiteSmoke;
             panel2.BorderStyle = BorderStyle.Fixed3D;
-            panel2.Controls.Add(btn1pay);
-            panel2.Controls.Add(lbl7amount);
-            panel2.Controls.Add(lbl6total);
-            panel2.Controls.Add(lbl5cost);
-            panel2.Controls.Add(lbl4quantity);
-            panel2.Controls.Add(lbl3item);
-            panel2.Controls.Add(pb1order);
-            panel2.Controls.Add(lbl2orderno);
-            panel2.Location = new Point(799, 48);
+            panel2.Location = new Point(3, 9);
             panel2.Name = "panel2";
             panel2.Size = new Size(265, 693);
             panel2.TabIndex = 4;
@@ -315,18 +250,100 @@
             flowLayoutPanel1.Size = new Size(797, 547);
             flowLayoutPanel1.TabIndex = 16;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Product_Name, Quantity, Price, Reduce, Delete });
+            dataGridView1.GridColor = Color.White;
+            dataGridView1.Location = new Point(803, 76);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.ShowEditingIcon = false;
+            dataGridView1.Size = new Size(258, 150);
+            dataGridView1.TabIndex = 0;
+            // 
+            // Product_Name
+            // 
+            Product_Name.DataPropertyName = "Product_Name";
+            Product_Name.HeaderText = "Name";
+            Product_Name.MinimumWidth = 100;
+            Product_Name.Name = "Product_Name";
+            Product_Name.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            Quantity.HeaderText = "Qty";
+            Quantity.MinimumWidth = 50;
+            Quantity.Name = "Quantity";
+            Quantity.ReadOnly = true;
+            Quantity.Width = 50;
+            // 
+            // Price
+            // 
+            Price.DataPropertyName = "Price";
+            Price.HeaderText = "Price";
+            Price.MinimumWidth = 75;
+            Price.Name = "Price";
+            Price.ReadOnly = true;
+            Price.Width = 75;
+            // 
+            // Reduce
+            // 
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 150, 136);
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 150, 136);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            Reduce.DefaultCellStyle = dataGridViewCellStyle1;
+            Reduce.FlatStyle = FlatStyle.Flat;
+            Reduce.HeaderText = "";
+            Reduce.MinimumWidth = 15;
+            Reduce.Name = "Reduce";
+            Reduce.ReadOnly = true;
+            Reduce.UseColumnTextForButtonValue = true;
+            Reduce.Width = 15;
+            // 
+            // Delete
+            // 
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(219, 88, 96);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(219, 88, 96);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            Delete.DefaultCellStyle = dataGridViewCellStyle2;
+            Delete.FlatStyle = FlatStyle.Flat;
+            Delete.HeaderText = "";
+            Delete.MinimumWidth = 15;
+            Delete.Name = "Delete";
+            Delete.ReadOnly = true;
+            Delete.UseColumnTextForButtonValue = true;
+            Delete.Width = 15;
+            // 
             // controlOrder
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
+            Controls.Add(dataGridView1);
+            Controls.Add(btn1pay);
+            Controls.Add(lbl7amount);
+            Controls.Add(lbl2orderno);
+            Controls.Add(lbl6total);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(btnSearch);
             Controls.Add(textBox1);
             Controls.Add(pictureBox2);
             Controls.Add(button7);
             Controls.Add(button6);
-            Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -339,9 +356,7 @@
             Load += controlOrder_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pb1order).EndInit();
-            panel2.ResumeLayout(false);
-            panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -353,20 +368,21 @@
         private Button button2;
         private Button button3;
         private Button button4;
-        private Button button5;
         private TextBox textBox1;
         private Button btnSearch;
         private Button button7;
         private Button button6;
         private Label lbl2orderno;
-        private PictureBox pb1order;
-        private Label lbl3item;
-        private Label lbl4quantity;
-        private Label lbl5cost;
         private Label lbl6total;
         private Label lbl7amount;
         private Button btn1pay;
         private Panel panel2;
         private FlowLayoutPanel flowLayoutPanel1;
+        public DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Product_Name;
+        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewTextBoxColumn Price;
+        private DataGridViewButtonColumn Reduce;
+        private DataGridViewButtonColumn Delete;
     }
 }
