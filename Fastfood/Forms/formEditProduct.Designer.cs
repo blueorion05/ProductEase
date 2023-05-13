@@ -251,6 +251,7 @@
             button3.TabIndex = 66;
             button3.Text = "BROWSE";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // tbPrice
             // 

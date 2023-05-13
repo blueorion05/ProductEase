@@ -94,5 +94,21 @@ namespace Fastfood
         {
             this.Close();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog image = new OpenFileDialog())
+            {
+                image.InitialDirectory = "C:\\";
+                image.Filter = "Image files (*.bmp;*.jpg;*.jpeg;*.png)|*.bmp;*.jpg;*.jpeg;*.png";
+                image.RestoreDirectory = true;
+
+                if (image.ShowDialog() == DialogResult.OK)
+                {
+                    tbImage.Text = image.FileName.ToString();
+                    pictureBox1.BackgroundImage = System.Drawing.Image.FromFile(tbImage.Text);
+                }
+            }
+        }
     }
 }
