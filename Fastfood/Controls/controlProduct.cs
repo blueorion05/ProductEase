@@ -49,5 +49,36 @@ namespace Fastfood
         {
 
         }
+
+        private void controlProduct_Click(object sender, EventArgs e)
+        {
+            controlProduct c = (controlProduct)sender;
+            //controlProduct c = new controlProduct();
+            controlOrder o = new controlOrder();
+            string Name = c.lblName.ToString();
+            decimal Price = Convert.ToDecimal(c.lblPrice);
+            bool found = false;
+            for (int i = 0; i < o.dataGridView1.Rows.Count; i++)
+            {
+                if (o.dataGridView1.Rows[i].Cells["Product_Name"].Value.ToString() == Name)
+                {
+                    int quantity = Convert.ToInt32(o.dataGridView1.Rows[i].Cells["Quantity"].Value);
+                    decimal price = Convert.ToDecimal(o.dataGridView1.Rows[i].Cells["Price"].Value);
+                    quantity++;
+                    price += Price;
+                    o.dataGridView1.Rows[i].Cells["Quantity"].Value = quantity;
+                    o.dataGridView1.Rows[i].Cells["Price"].Value = Price;
+                    found = true;
+                    break;
+                }
+            }
+            if (!found)
+            {
+                int rowIndex = o.dataGridView1.Rows.Add();
+                o.dataGridView1.Rows[rowIndex].Cells["Product_Name"].Value = Name;
+                o.dataGridView1.Rows[rowIndex].Cells["Quantity"].Value = 1;
+                o.dataGridView1.Rows[rowIndex].Cells["Price"].Value = Price;
+            }
+        }
     }
 }
