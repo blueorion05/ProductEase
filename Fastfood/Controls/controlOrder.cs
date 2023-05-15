@@ -15,7 +15,6 @@ namespace Fastfood
 {
     public partial class controlOrder : UserControl
     {
-
         public controlOrder()
         {
             InitializeComponent();
@@ -58,7 +57,6 @@ namespace Fastfood
                 {
                     c.pictureBox1.BackgroundImage = System.Drawing.Image.FromFile(row["Image"].ToString()!);
                 }
-                c.lblId.Text = row["Id"].ToString();
                 c.lblName.Text = row["Product_Name"].ToString();
                 c.lblPrice.Text = row["Price"].ToString();
                 if (row["Available"].ToString() == "Yes")

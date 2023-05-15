@@ -379,10 +379,10 @@
         private Panel panel2;
         private FlowLayoutPanel flowLayoutPanel1;
         public DataGridView dataGridView1;
-        public DataGridViewTextBoxColumn Product_Name;
-        public DataGridViewTextBoxColumn Quantity;
-        public DataGridViewTextBoxColumn Price;
-        public DataGridViewButtonColumn Reduce;
-        public DataGridViewButtonColumn Delete;
+        private DataGridViewTextBoxColumn Product_Name;
+        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewTextBoxColumn Price;
+        private DataGridViewButtonColumn Reduce;
+        private DataGridViewButtonColumn Delete;
     }
 }
