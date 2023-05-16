@@ -16,9 +16,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Fastfood
 {
-    public partial class controlManage : UserControl
+    public partial class Manage : UserControl
     {
-        public controlManage()
+        public Manage()
         {
             InitializeComponent();
             Table();

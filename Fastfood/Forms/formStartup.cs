@@ -21,10 +21,10 @@ namespace Fastfood
         {
             start += 1;
             progressBar1.Value = start;
-            if (progressBar1.Value == 60)
+            if (progressBar1.Value == 80)
             {
                 progressBar1.Value = 0;
-                timer1.Stop();
+                timerLoad.Stop();
                 formLogin f = new formLogin();
                 this.Hide();
                 f.Show();
@@ -32,7 +32,7 @@ namespace Fastfood
         }
         private void StartUp_Load(object sender, EventArgs e)
         {
-            timer1.Start();
+            timerLoad.Start();
         }
     }
 }

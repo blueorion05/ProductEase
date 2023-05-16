@@ -95,7 +95,7 @@
         gg==
 </value>
   </data>
-  <data name="btnRecords.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnTransactions.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAPdJREFUSEvdlb0NwjAQRtPBEDABXSgYgwo2gAnYgQIKIojic4rswAT00NKxADU9
@@ -105,7 +105,7 @@
         TJVi9EKVwg364dDfHZ/Bv8zfIkmeJxymP3tmhj0AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnOrder.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnPOS.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAALlJREFUSEtjgIP//xkZZs7kogoGmYUB5syRB0r+pwoGmYUBRi1AxkRaUMwwY4YH

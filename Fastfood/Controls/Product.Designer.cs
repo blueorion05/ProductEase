@@ -1,6 +1,6 @@
 ﻿namespace Fastfood
 {
-    partial class controlProduct
+    partial class Product
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(controlProduct));
-            pictureBox1 = new PictureBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product));
+            pbProduct = new PictureBox();
             lblName = new Label();
             lblPrice = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbProduct).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pbProduct
             // 
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.Location = new Point(5, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(140, 140);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            pbProduct.BackgroundImage = (Image)resources.GetObject("pbProduct.BackgroundImage");
+            pbProduct.BackgroundImageLayout = ImageLayout.Stretch;
+            pbProduct.Location = new Point(5, 3);
+            pbProduct.Name = "pbProduct";
+            pbProduct.Size = new Size(140, 140);
+            pbProduct.SizeMode = PictureBoxSizeMode.StretchImage;
+            pbProduct.TabIndex = 0;
+            pbProduct.TabStop = false;
+            pbProduct.Click += pbProduct_Click;
             // 
             // lblName
             // 
@@ -58,6 +59,7 @@
             lblName.TabIndex = 1;
             lblName.Text = "Product Name";
             lblName.TextAlign = ContentAlignment.MiddleCenter;
+            lblName.Click += lblName_Click;
             // 
             // lblPrice
             // 
@@ -73,29 +75,30 @@
             lblPrice.TabIndex = 2;
             lblPrice.Text = "Price";
             lblPrice.TextAlign = ContentAlignment.MiddleCenter;
+            lblPrice.Click += lblPrice_Click;
             // 
-            // controlProduct
+            // Product
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             BorderStyle = BorderStyle.FixedSingle;
-            Controls.Add(pictureBox1);
+            Controls.Add(pbProduct);
             Controls.Add(lblName);
             Controls.Add(lblPrice);
             Cursor = Cursors.Hand;
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            Name = "controlProduct";
+            Name = "Product";
             Size = new Size(148, 206);
             Click += controlProduct_Click;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbProduct).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        public PictureBox pictureBox1;
+        public PictureBox pbProduct;
         public Label lblName;
         public Label lblPrice;
     }

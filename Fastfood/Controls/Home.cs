@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Fastfood
 {
-    public partial class controlHome : UserControl
+    public partial class Home : UserControl
     {
-        public controlHome()
+        public Home()
         {
             InitializeComponent();
         }

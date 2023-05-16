@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPOS));
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panelHeader = new Panel();
             lbl1Company = new Label();
             button5 = new Button();
@@ -284,9 +286,9 @@
             panel4.Controls.Add(panel6);
             panel4.Controls.Add(lbl2orderno);
             panel4.Dock = DockStyle.Right;
-            panel4.Location = new Point(733, 117);
+            panel4.Location = new Point(725, 117);
             panel4.Name = "panel4";
-            panel4.Size = new Size(331, 340);
+            panel4.Size = new Size(339, 340);
             panel4.TabIndex = 25;
             // 
             // dataGridView1
@@ -295,9 +297,18 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToResizeColumns = false;
             dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Product_Name, Quantity, Price, Add, Reduce, Delete });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.GridColor = Color.White;
@@ -305,98 +316,116 @@
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.TopLeft;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.TopLeft;
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.ShowEditingIcon = false;
-            dataGridView1.Size = new Size(331, 209);
+            dataGridView1.Size = new Size(339, 209);
             dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Product_Name
             // 
+            Product_Name.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             Product_Name.DataPropertyName = "Product_Name";
             Product_Name.HeaderText = "Name";
-            Product_Name.MinimumWidth = 123;
+            Product_Name.MinimumWidth = 135;
             Product_Name.Name = "Product_Name";
             Product_Name.ReadOnly = true;
-            Product_Name.Width = 123;
+            Product_Name.Width = 135;
             // 
             // Quantity
             // 
+            Quantity.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             Quantity.HeaderText = "Qty";
-            Quantity.MinimumWidth = 50;
+            Quantity.MinimumWidth = 54;
             Quantity.Name = "Quantity";
             Quantity.ReadOnly = true;
             Quantity.Width = 54;
             // 
             // Price
             // 
+            Price.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             Price.DataPropertyName = "Price";
             Price.HeaderText = "Price";
-            Price.MinimumWidth = 80;
+            Price.MinimumWidth = 65;
             Price.Name = "Price";
             Price.ReadOnly = true;
-            Price.Width = 80;
+            Price.Width = 65;
             // 
             // Add
             // 
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 150, 136);
-            dataGridViewCellStyle1.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.White;
-            dataGridViewCellStyle1.NullValue = "+";
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 150, 136);
-            dataGridViewCellStyle1.SelectionForeColor = Color.White;
-            Add.DefaultCellStyle = dataGridViewCellStyle1;
+            Add.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(0, 150, 136);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.NullValue = "+";
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 150, 136);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            Add.DefaultCellStyle = dataGridViewCellStyle2;
             Add.FlatStyle = FlatStyle.Flat;
             Add.HeaderText = "";
-            Add.MinimumWidth = 15;
+            Add.MinimumWidth = 27;
             Add.Name = "Add";
             Add.ReadOnly = true;
             Add.Resizable = DataGridViewTriState.True;
             Add.SortMode = DataGridViewColumnSortMode.Automatic;
             Add.UseColumnTextForButtonValue = true;
-            Add.Width = 19;
+            Add.Width = 27;
             // 
             // Reduce
             // 
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(0, 150, 136);
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.NullValue = "-";
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 150, 136);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            Reduce.DefaultCellStyle = dataGridViewCellStyle2;
+            Reduce.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(0, 150, 136);
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.NullValue = "-";
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(0, 150, 136);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            Reduce.DefaultCellStyle = dataGridViewCellStyle3;
             Reduce.FlatStyle = FlatStyle.Flat;
             Reduce.HeaderText = "";
-            Reduce.MinimumWidth = 15;
+            Reduce.MinimumWidth = 27;
             Reduce.Name = "Reduce";
             Reduce.ReadOnly = true;
             Reduce.UseColumnTextForButtonValue = true;
-            Reduce.Width = 15;
+            Reduce.Width = 27;
             // 
             // Delete
             // 
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 88, 96);
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.NullValue = "X";
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(219, 88, 96);
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            Delete.DefaultCellStyle = dataGridViewCellStyle3;
+            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = Color.FromArgb(219, 88, 96);
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.White;
+            dataGridViewCellStyle4.NullValue = "X";
+            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(219, 88, 96);
+            dataGridViewCellStyle4.SelectionForeColor = Color.White;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            Delete.DefaultCellStyle = dataGridViewCellStyle4;
             Delete.FlatStyle = FlatStyle.Flat;
             Delete.HeaderText = "";
-            Delete.MinimumWidth = 15;
+            Delete.MinimumWidth = 27;
             Delete.Name = "Delete";
             Delete.ReadOnly = true;
             Delete.UseColumnTextForButtonValue = true;
-            Delete.Width = 15;
+            Delete.Width = 27;
             // 
             // panel6
             // 
@@ -407,7 +436,7 @@
             panel6.Dock = DockStyle.Bottom;
             panel6.Location = new Point(0, 226);
             panel6.Name = "panel6";
-            panel6.Size = new Size(331, 114);
+            panel6.Size = new Size(339, 114);
             panel6.TabIndex = 3;
             // 
             // lbl7amount
@@ -445,7 +474,7 @@
             btn1pay.ForeColor = Color.White;
             btn1pay.Location = new Point(110, 55);
             btn1pay.Name = "btn1pay";
-            btn1pay.Size = new Size(126, 53);
+            btn1pay.Size = new Size(131, 53);
             btn1pay.TabIndex = 8;
             btn1pay.Text = "PAY";
             btn1pay.UseVisualStyleBackColor = false;
@@ -471,7 +500,7 @@
             flowLayoutPanel1.Location = new Point(0, 117);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Padding = new Padding(50, 0, 50, 0);
-            flowLayoutPanel1.Size = new Size(733, 340);
+            flowLayoutPanel1.Size = new Size(725, 340);
             flowLayoutPanel1.TabIndex = 26;
             // 
             // formPOS
@@ -528,12 +557,12 @@
         private Button btn1pay;
         private Label lbl6total;
         private Label lbl7amount;
+        private FlowLayoutPanel flowLayoutPanel1;
         private DataGridViewTextBoxColumn Product_Name;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Price;
         private DataGridViewButtonColumn Add;
         private DataGridViewButtonColumn Reduce;
         private DataGridViewButtonColumn Delete;
-        private FlowLayoutPanel flowLayoutPanel1;
     }
 }

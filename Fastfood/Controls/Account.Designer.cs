@@ -1,6 +1,6 @@
 ﻿namespace Fastfood
 {
-    partial class controlAccount
+    partial class Account
     {
         /// <summary> 
         /// Required designer variable.

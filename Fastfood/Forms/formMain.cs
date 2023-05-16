@@ -25,7 +25,7 @@ namespace Fastfood
             btnHome.BackColor = Color.FromArgb(0, 150, 136);
             pbActive.BackgroundImage = btnHome.Image;
             panelMain.Controls.Clear();
-            panelMain.Controls.Add(new controlHome());
+            panelMain.Controls.Add(new Home());
         }
 
         private void btnexit_Click(object sender, EventArgs e)
@@ -37,7 +37,7 @@ namespace Fastfood
         {
             if (pbActive.BackgroundImage != btnHome.Image)
             {
-                controlHome home = new controlHome();
+                Home home = new Home();
                 ButtonColor();
                 btnHome.BackColor = Color.FromArgb(0, 150, 136);
                 pbActive.BackgroundImage = btnHome.Image;
@@ -50,7 +50,7 @@ namespace Fastfood
         {
             if (pbActive.BackgroundImage != btnManage.Image)
             {
-                controlManage manage = new controlManage();
+                Manage manage = new Manage();
                 ButtonColor();
                 btnManage.BackColor = Color.FromArgb(0, 150, 136);
                 pbActive.BackgroundImage = btnManage.Image;
@@ -67,12 +67,12 @@ namespace Fastfood
 
         private void btnRecords_Click(object sender, EventArgs e)
         {
-            if (pbActive.BackgroundImage != btnRecords.Image)
+            if (pbActive.BackgroundImage != btnTransactions.Image)
             {
-                controlRecords records = new controlRecords();
+                Transactions records = new Transactions();
                 ButtonColor();
-                btnRecords.BackColor = Color.FromArgb(0, 150, 136);
-                pbActive.BackgroundImage = btnRecords.Image;
+                btnTransactions.BackColor = Color.FromArgb(0, 150, 136);
+                pbActive.BackgroundImage = btnTransactions.Image;
                 panelMain.Controls.Clear();
                 panelMain.Controls.Add(records);
             }
@@ -82,7 +82,7 @@ namespace Fastfood
         {
             if (pbActive.BackgroundImage != btnAccount.Image)
             {
-                controlAccount account = new controlAccount();
+                Account account = new Account();
                 ButtonColor();
                 btnAccount.BackColor = Color.FromArgb(0, 150, 136);
                 pbActive.BackgroundImage = btnAccount.Image;
@@ -101,8 +101,8 @@ namespace Fastfood
         {
             btnHome.BackColor = panelMenu.BackColor;
             btnManage.BackColor = panelMenu.BackColor;
-            btnOrder.BackColor = panelMenu.BackColor;
-            btnRecords.BackColor = panelMenu.BackColor;
+            btnPOS.BackColor = panelMenu.BackColor;
+            btnTransactions.BackColor = panelMenu.BackColor;
             btnAccount.BackColor = panelMenu.BackColor;
             btnLogout.BackColor = panelMenu.BackColor;
         }

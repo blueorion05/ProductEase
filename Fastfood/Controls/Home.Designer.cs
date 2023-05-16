@@ -1,6 +1,6 @@
 ﻿namespace Fastfood
 {
-    partial class controlHome
+    partial class Home
     {
         /// <summary> 
         /// Required designer variable.

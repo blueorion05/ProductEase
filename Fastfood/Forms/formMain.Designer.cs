@@ -41,8 +41,8 @@
             lblDateTime = new Label();
             btnLogout = new Button();
             btnAccount = new Button();
-            btnRecords = new Button();
-            btnOrder = new Button();
+            btnTransactions = new Button();
+            btnPOS = new Button();
             btnManage = new Button();
             btnHome = new Button();
             timerDateTime = new System.Windows.Forms.Timer(components);
@@ -56,13 +56,18 @@
             // 
             lbl1Company.AutoSize = true;
             lbl1Company.BackColor = Color.Transparent;
+            lbl1Company.Dock = DockStyle.Top;
             lbl1Company.Font = new Font("Century Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point);
             lbl1Company.ForeColor = Color.White;
-            lbl1Company.Location = new Point(36, 44);
+            lbl1Company.Location = new Point(0, 0);
+            lbl1Company.MaximumSize = new Size(216, 0);
+            lbl1Company.MinimumSize = new Size(216, 0);
             lbl1Company.Name = "lbl1Company";
-            lbl1Company.Size = new Size(142, 30);
+            lbl1Company.Padding = new Padding(0, 20, 0, 0);
+            lbl1Company.Size = new Size(216, 50);
             lbl1Company.TabIndex = 0;
             lbl1Company.Text = "COMPANY";
+            lbl1Company.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panelMain
             // 
@@ -140,8 +145,8 @@
             panelMenu.Controls.Add(lblDateTime);
             panelMenu.Controls.Add(btnLogout);
             panelMenu.Controls.Add(btnAccount);
-            panelMenu.Controls.Add(btnRecords);
-            panelMenu.Controls.Add(btnOrder);
+            panelMenu.Controls.Add(btnTransactions);
+            panelMenu.Controls.Add(btnPOS);
             panelMenu.Controls.Add(btnManage);
             panelMenu.Controls.Add(btnHome);
             panelMenu.Location = new Point(0, 67);
@@ -153,11 +158,15 @@
             // 
             lblDateTime.AutoSize = true;
             lblDateTime.BackColor = Color.Transparent;
+            lblDateTime.Dock = DockStyle.Bottom;
             lblDateTime.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblDateTime.ForeColor = Color.White;
-            lblDateTime.Location = new Point(24, 627);
+            lblDateTime.Location = new Point(0, 616);
+            lblDateTime.MaximumSize = new Size(216, 0);
+            lblDateTime.MinimumSize = new Size(216, 0);
             lblDateTime.Name = "lblDateTime";
-            lblDateTime.Size = new Size(0, 17);
+            lblDateTime.Padding = new Padding(0, 0, 0, 20);
+            lblDateTime.Size = new Size(216, 37);
             lblDateTime.TabIndex = 13;
             lblDateTime.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -201,45 +210,45 @@
             btnAccount.UseVisualStyleBackColor = false;
             btnAccount.Click += btnAccount_Click;
             // 
-            // btnRecords
+            // btnTransactions
             // 
-            btnRecords.BackColor = Color.FromArgb(31, 30, 68);
-            btnRecords.FlatAppearance.BorderSize = 0;
-            btnRecords.FlatStyle = FlatStyle.Flat;
-            btnRecords.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnRecords.ForeColor = Color.White;
-            btnRecords.Image = (Image)resources.GetObject("btnRecords.Image");
-            btnRecords.ImageAlign = ContentAlignment.MiddleLeft;
-            btnRecords.Location = new Point(0, 274);
-            btnRecords.Name = "btnRecords";
-            btnRecords.Padding = new Padding(15, 0, 0, 0);
-            btnRecords.Size = new Size(217, 64);
-            btnRecords.TabIndex = 10;
-            btnRecords.Text = "     Records";
-            btnRecords.TextAlign = ContentAlignment.MiddleLeft;
-            btnRecords.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnRecords.UseVisualStyleBackColor = false;
-            btnRecords.Click += btnRecords_Click;
+            btnTransactions.BackColor = Color.FromArgb(31, 30, 68);
+            btnTransactions.FlatAppearance.BorderSize = 0;
+            btnTransactions.FlatStyle = FlatStyle.Flat;
+            btnTransactions.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnTransactions.ForeColor = Color.White;
+            btnTransactions.Image = (Image)resources.GetObject("btnTransactions.Image");
+            btnTransactions.ImageAlign = ContentAlignment.MiddleLeft;
+            btnTransactions.Location = new Point(0, 274);
+            btnTransactions.Name = "btnTransactions";
+            btnTransactions.Padding = new Padding(15, 0, 0, 0);
+            btnTransactions.Size = new Size(217, 64);
+            btnTransactions.TabIndex = 10;
+            btnTransactions.Text = "     Records";
+            btnTransactions.TextAlign = ContentAlignment.MiddleLeft;
+            btnTransactions.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnTransactions.UseVisualStyleBackColor = false;
+            btnTransactions.Click += btnRecords_Click;
             // 
-            // btnOrder
+            // btnPOS
             // 
-            btnOrder.BackColor = Color.FromArgb(31, 30, 68);
-            btnOrder.FlatAppearance.BorderSize = 0;
-            btnOrder.FlatStyle = FlatStyle.Flat;
-            btnOrder.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnOrder.ForeColor = Color.White;
-            btnOrder.Image = (Image)resources.GetObject("btnOrder.Image");
-            btnOrder.ImageAlign = ContentAlignment.MiddleLeft;
-            btnOrder.Location = new Point(0, 204);
-            btnOrder.Name = "btnOrder";
-            btnOrder.Padding = new Padding(15, 0, 0, 0);
-            btnOrder.Size = new Size(217, 64);
-            btnOrder.TabIndex = 9;
-            btnOrder.Text = "     Order";
-            btnOrder.TextAlign = ContentAlignment.MiddleLeft;
-            btnOrder.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnOrder.UseVisualStyleBackColor = false;
-            btnOrder.Click += btnOrder_Click;
+            btnPOS.BackColor = Color.FromArgb(31, 30, 68);
+            btnPOS.FlatAppearance.BorderSize = 0;
+            btnPOS.FlatStyle = FlatStyle.Flat;
+            btnPOS.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnPOS.ForeColor = Color.White;
+            btnPOS.Image = (Image)resources.GetObject("btnPOS.Image");
+            btnPOS.ImageAlign = ContentAlignment.MiddleLeft;
+            btnPOS.Location = new Point(0, 204);
+            btnPOS.Name = "btnPOS";
+            btnPOS.Padding = new Padding(15, 0, 0, 0);
+            btnPOS.Size = new Size(217, 64);
+            btnPOS.TabIndex = 9;
+            btnPOS.Text = "     POS";
+            btnPOS.TextAlign = ContentAlignment.MiddleLeft;
+            btnPOS.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnPOS.UseVisualStyleBackColor = false;
+            btnPOS.Click += btnOrder_Click;
             // 
             // btnManage
             // 
@@ -301,7 +310,6 @@
             MaximizeBox = false;
             Name = "formMain";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Main";
             Load += Form2_Load;
             panelHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbActive).EndInit();
@@ -323,8 +331,8 @@
         private Button btnHome;
         private Button btnLogout;
         private Button btnAccount;
-        private Button btnRecords;
-        private Button btnOrder;
+        private Button btnTransactions;
+        private Button btnPOS;
         private Button btnManage;
         private Button btnMinimize;
         private PictureBox pbActive;
