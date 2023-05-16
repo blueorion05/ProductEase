@@ -124,17 +124,17 @@ namespace Fastfood
                 price = Convert.ToDouble(f.lblPrice.Text) * quantity;
                 dataGridView1.Rows[row].Cells["Quantity"].Value = quantity;
                 dataGridView1.Rows[row].Cells["Price"].Value = price;
-                if (Convert.ToInt32(dataGridView1.Rows[row].Cells["Quantity"].Value) == 0)
+                /*if (Convert.ToInt32(dataGridView1.Rows[row].Cells["Quantity"].Value) == 0)
                 {
                     row = dataGridView1.SelectedCells[0].RowIndex;
                     Products.Remove(f);
                     dataGridView1.Rows.RemoveAt(row);
-                }
+                }*/
             }
             if (e.ColumnIndex == 5)
             {
                 row = dataGridView1.SelectedCells[0].RowIndex;
-                Products.Remove(f);
+                //Products.Remove(f);
                 dataGridView1.Rows.RemoveAt(row);
             }
         }

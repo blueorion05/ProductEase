@@ -224,7 +224,7 @@
             btnTransactions.Padding = new Padding(15, 0, 0, 0);
             btnTransactions.Size = new Size(217, 64);
             btnTransactions.TabIndex = 10;
-            btnTransactions.Text = "     Records";
+            btnTransactions.Text = "     Transactions";
             btnTransactions.TextAlign = ContentAlignment.MiddleLeft;
             btnTransactions.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnTransactions.UseVisualStyleBackColor = false;
