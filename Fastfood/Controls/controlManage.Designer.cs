@@ -28,8 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(controlManage));
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             pbHeader = new PictureBox();
             pbFooter = new PictureBox();
             btnAdd = new Button();
@@ -154,6 +162,8 @@
             // tableProductC4
             // 
             tableProductC4.DataPropertyName = "Id";
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tableProductC4.DefaultCellStyle = dataGridViewCellStyle1;
             tableProductC4.HeaderText = "Id";
             tableProductC4.Name = "tableProductC4";
             tableProductC4.ReadOnly = true;
@@ -161,6 +171,8 @@
             // tableProductC5
             // 
             tableProductC5.DataPropertyName = "Category";
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tableProductC5.DefaultCellStyle = dataGridViewCellStyle2;
             tableProductC5.HeaderText = "Category";
             tableProductC5.Name = "tableProductC5";
             tableProductC5.ReadOnly = true;
@@ -168,6 +180,8 @@
             // Product_Name
             // 
             Product_Name.DataPropertyName = "Product_Name";
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            Product_Name.DefaultCellStyle = dataGridViewCellStyle3;
             Product_Name.HeaderText = "Product Name";
             Product_Name.Name = "Product_Name";
             Product_Name.ReadOnly = true;
@@ -175,6 +189,8 @@
             // tableProductC6
             // 
             tableProductC6.DataPropertyName = "Price";
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tableProductC6.DefaultCellStyle = dataGridViewCellStyle4;
             tableProductC6.HeaderText = "Price";
             tableProductC6.Name = "tableProductC6";
             tableProductC6.ReadOnly = true;
@@ -182,6 +198,8 @@
             // tableProductC7
             // 
             tableProductC7.DataPropertyName = "Image";
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tableProductC7.DefaultCellStyle = dataGridViewCellStyle5;
             tableProductC7.HeaderText = "Image Path";
             tableProductC7.Name = "tableProductC7";
             tableProductC7.ReadOnly = true;
@@ -189,6 +207,8 @@
             // Available
             // 
             Available.DataPropertyName = "Available";
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            Available.DefaultCellStyle = dataGridViewCellStyle6;
             Available.HeaderText = "Is Available?";
             Available.Name = "Available";
             Available.ReadOnly = true;
@@ -196,19 +216,23 @@
             // Picture
             // 
             Picture.DataPropertyName = "Picture";
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.NullValue = resources.GetObject("dataGridViewCellStyle7.NullValue");
+            Picture.DefaultCellStyle = dataGridViewCellStyle7;
             Picture.HeaderText = "Image";
             Picture.Name = "Picture";
             Picture.ReadOnly = true;
             // 
             // Edit
             // 
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(0, 150, 136);
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(0, 150, 136);
-            dataGridViewCellStyle3.SelectionForeColor = Color.White;
-            Edit.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(0, 150, 136);
+            dataGridViewCellStyle8.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(0, 150, 136);
+            dataGridViewCellStyle8.SelectionForeColor = Color.White;
+            Edit.DefaultCellStyle = dataGridViewCellStyle8;
             Edit.FlatStyle = FlatStyle.Flat;
             Edit.HeaderText = "";
             Edit.Name = "Edit";
@@ -218,13 +242,13 @@
             // 
             // Delete
             // 
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = Color.FromArgb(219, 88, 96);
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(219, 88, 96);
-            dataGridViewCellStyle4.SelectionForeColor = Color.White;
-            Delete.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = Color.FromArgb(219, 88, 96);
+            dataGridViewCellStyle9.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(219, 88, 96);
+            dataGridViewCellStyle9.SelectionForeColor = Color.White;
+            Delete.DefaultCellStyle = dataGridViewCellStyle9;
             Delete.FlatStyle = FlatStyle.Flat;
             Delete.HeaderText = "";
             Delete.Name = "Delete";

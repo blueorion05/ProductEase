@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System;
 
 namespace Fastfood
 {
@@ -16,6 +17,13 @@ namespace Fastfood
         public controlProduct()
         {
             InitializeComponent();
+        }
+
+        private void controlProduct_Click(object sender, EventArgs e)
+        {
+            controlProduct c = (controlProduct)sender;
+            formPOS f = Application.OpenForms.OfType<formPOS>().FirstOrDefault()!;
+            f.controlProduct_Click(c);
         }
 
         public SqlConnection GetConnection()
@@ -43,11 +51,6 @@ namespace Fastfood
             da.Fill(dt);
             conn.Close();
             return dt;
-        }
-
-        private void controlProduct_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

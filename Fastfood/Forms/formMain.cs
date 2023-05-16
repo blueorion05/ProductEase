@@ -35,47 +35,60 @@ namespace Fastfood
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            ButtonColor();
-            btnHome.BackColor = Color.FromArgb(0, 150, 136);
-            pbActive.BackgroundImage = btnHome.Image;
-            panelMain.Controls.Clear();
-            panelMain.Controls.Add(new controlHome());
+            if (pbActive.BackgroundImage != btnHome.Image)
+            {
+                controlHome home = new controlHome();
+                ButtonColor();
+                btnHome.BackColor = Color.FromArgb(0, 150, 136);
+                pbActive.BackgroundImage = btnHome.Image;
+                panelMain.Controls.Clear();
+                panelMain.Controls.Add(home);
+            }
         }
 
         private void btnManage_Click(object sender, EventArgs e)
         {
-            ButtonColor();
-            btnManage.BackColor = Color.FromArgb(0, 150, 136);
-            pbActive.BackgroundImage = btnManage.Image;
-            panelMain.Controls.Clear();
-            panelMain.Controls.Add(new controlManage());
+            if (pbActive.BackgroundImage != btnManage.Image)
+            {
+                controlManage manage = new controlManage();
+                ButtonColor();
+                btnManage.BackColor = Color.FromArgb(0, 150, 136);
+                pbActive.BackgroundImage = btnManage.Image;
+                panelMain.Controls.Clear();
+                panelMain.Controls.Add(manage);
+            }
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            ButtonColor();
-            btnOrder.BackColor = Color.FromArgb(0, 150, 136);
-            pbActive.BackgroundImage = btnOrder.Image;
-            panelMain.Controls.Clear();
-            panelMain.Controls.Add(new controlOrder());
+            formPOS f = new formPOS();
+            f.ShowDialog();
         }
 
         private void btnRecords_Click(object sender, EventArgs e)
         {
-            ButtonColor();
-            btnRecords.BackColor = Color.FromArgb(0, 150, 136);
-            pbActive.BackgroundImage = btnRecords.Image;
-            panelMain.Controls.Clear();
-            panelMain.Controls.Add(new controlRecords());
+            if (pbActive.BackgroundImage != btnRecords.Image)
+            {
+                controlRecords records = new controlRecords();
+                ButtonColor();
+                btnRecords.BackColor = Color.FromArgb(0, 150, 136);
+                pbActive.BackgroundImage = btnRecords.Image;
+                panelMain.Controls.Clear();
+                panelMain.Controls.Add(records);
+            }
         }
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            ButtonColor();
-            btnAccount.BackColor = Color.FromArgb(0, 150, 136);
-            pbActive.BackgroundImage = btnAccount.Image;
-            panelMain.Controls.Clear();
-            panelMain.Controls.Add(new controlAccount());
+            if (pbActive.BackgroundImage != btnAccount.Image)
+            {
+                controlAccount account = new controlAccount();
+                ButtonColor();
+                btnAccount.BackColor = Color.FromArgb(0, 150, 136);
+                pbActive.BackgroundImage = btnAccount.Image;
+                panelMain.Controls.Clear();
+                panelMain.Controls.Add(account);
+            }
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

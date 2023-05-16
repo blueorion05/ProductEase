@@ -49,34 +49,45 @@
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Location = new Point(28, 151);
+            lblName.Dock = DockStyle.Bottom;
+            lblName.Location = new Point(0, 157);
+            lblName.MaximumSize = new Size(148, 0);
+            lblName.MinimumSize = new Size(148, 0);
             lblName.Name = "lblName";
-            lblName.Size = new Size(94, 17);
+            lblName.Size = new Size(148, 17);
             lblName.TabIndex = 1;
             lblName.Text = "Product Name";
+            lblName.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblPrice
             // 
             lblPrice.AutoSize = true;
-            lblPrice.Location = new Point(54, 178);
+            lblPrice.BackColor = Color.White;
+            lblPrice.Dock = DockStyle.Bottom;
+            lblPrice.Location = new Point(0, 174);
+            lblPrice.MaximumSize = new Size(148, 0);
+            lblPrice.MinimumSize = new Size(148, 0);
             lblPrice.Name = "lblPrice";
-            lblPrice.Size = new Size(38, 17);
+            lblPrice.Padding = new Padding(0, 0, 0, 15);
+            lblPrice.Size = new Size(148, 32);
             lblPrice.TabIndex = 2;
             lblPrice.Text = "Price";
+            lblPrice.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // controlProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             BorderStyle = BorderStyle.FixedSingle;
-            Controls.Add(lblPrice);
-            Controls.Add(lblName);
             Controls.Add(pictureBox1);
+            Controls.Add(lblName);
+            Controls.Add(lblPrice);
             Cursor = Cursors.Hand;
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "controlProduct";
             Size = new Size(148, 206);
-            Load += controlProduct_Load;
+            Click += controlProduct_Click;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
