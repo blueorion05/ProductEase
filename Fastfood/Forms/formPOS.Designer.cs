@@ -58,6 +58,7 @@
             Add = new DataGridViewButtonColumn();
             Reduce = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
+            OgPrice = new DataGridViewTextBoxColumn();
             panel6 = new Panel();
             lbl7amount = new Label();
             lbl6total = new Label();
@@ -160,6 +161,7 @@
             btnSearch.TabIndex = 22;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
             // 
             // textBox1
             // 
@@ -184,6 +186,7 @@
             button4.TabIndex = 19;
             button4.Text = "Dessert";
             button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
             // 
             // button3
             // 
@@ -199,6 +202,7 @@
             button3.TabIndex = 18;
             button3.Text = "Drinks";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -214,6 +218,7 @@
             button2.TabIndex = 17;
             button2.Text = "Food";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -229,6 +234,7 @@
             button1.TabIndex = 16;
             button1.Text = "All";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // panel1
             // 
@@ -278,6 +284,7 @@
             button9.TabIndex = 16;
             button9.Text = "Cancel";
             button9.UseVisualStyleBackColor = false;
+            button9.Click += button9_Click;
             // 
             // panel4
             // 
@@ -309,7 +316,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Product_Name, Quantity, Price, Add, Reduce, Delete });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Product_Name, Quantity, Price, Add, Reduce, Delete, OgPrice });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.GridColor = Color.White;
             dataGridView1.Location = new Point(0, 17);
@@ -426,6 +433,13 @@
             Delete.ReadOnly = true;
             Delete.UseColumnTextForButtonValue = true;
             Delete.Width = 27;
+            // 
+            // OgPrice
+            // 
+            OgPrice.HeaderText = "";
+            OgPrice.Name = "OgPrice";
+            OgPrice.ReadOnly = true;
+            OgPrice.Visible = false;
             // 
             // panel6
             // 
@@ -564,5 +578,6 @@
         private DataGridViewButtonColumn Add;
         private DataGridViewButtonColumn Reduce;
         private DataGridViewButtonColumn Delete;
+        private DataGridViewTextBoxColumn OgPrice;
     }
 }

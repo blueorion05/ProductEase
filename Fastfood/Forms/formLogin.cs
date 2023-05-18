@@ -57,5 +57,29 @@ namespace Fastfood
         {
             Application.Exit();
         }
+
+        private void btnLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                OnEnter(EventArgs.Empty);
+            }
+        }
+
+        private void tbPass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                OnEnter(EventArgs.Empty);
+            }
+        }
+
+        private void tbUser_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                OnEnter(EventArgs.Empty);
+            }
+        }
     }
 }

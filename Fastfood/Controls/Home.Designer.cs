@@ -136,7 +136,7 @@
             lblWelcome.TabIndex = 8;
             lblWelcome.Text = "Welcome";
             // 
-            // controlHome
+            // Home
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
@@ -144,7 +144,7 @@
             Controls.Add(lblWelcome);
             Controls.Add(panelDashboard);
             Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            Name = "controlHome";
+            Name = "Home";
             Size = new Size(1064, 654);
             Load += controlHome_Load_1;
             ((System.ComponentModel.ISupportInitialize)pbOrders).EndInit();

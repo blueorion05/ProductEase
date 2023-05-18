@@ -62,7 +62,9 @@ namespace Fastfood
         private void btnOrder_Click(object sender, EventArgs e)
         {
             formPOS f = new formPOS();
+            this.Hide();
             f.ShowDialog();
+            this.Show();
         }
 
         private void btnRecords_Click(object sender, EventArgs e)

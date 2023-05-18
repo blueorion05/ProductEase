@@ -85,15 +85,15 @@
             panel1.Controls.Add(label2);
             panel1.Controls.Add(textBox4);
             panel1.Controls.Add(label1);
-            panel1.Location = new Point(33, 261);
+            panel1.Location = new Point(33, 265);
             panel1.Name = "panel1";
-            panel1.Size = new Size(990, 216);
+            panel1.Size = new Size(990, 237);
             panel1.TabIndex = 0;
             // 
             // dateTimePicker1
             // 
             dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(243, 140);
+            dateTimePicker1.Location = new Point(243, 136);
             dateTimePicker1.MaxDate = new DateTime(2023, 12, 31, 0, 0, 0, 0);
             dateTimePicker1.MinDate = new DateTime(1900, 1, 1, 0, 0, 0, 0);
             dateTimePicker1.Name = "dateTimePicker1";
@@ -306,7 +306,7 @@
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(122, 493);
+            btnCancel.Location = new Point(122, 508);
             btnCancel.Name = "btnCancel";
             btnCancel.Size = new Size(75, 23);
             btnCancel.TabIndex = 12;
@@ -320,7 +320,7 @@
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(33, 493);
+            btnSave.Location = new Point(33, 508);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(75, 23);
             btnSave.TabIndex = 11;
@@ -390,7 +390,7 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // controlAccount
+            // Account
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -399,7 +399,7 @@
             Controls.Add(btnSave);
             Controls.Add(btnCancel);
             Controls.Add(panel1);
-            Name = "controlAccount";
+            Name = "Account";
             Size = new Size(1064, 654);
             Load += controlAccount_Load;
             panel1.ResumeLayout(false);

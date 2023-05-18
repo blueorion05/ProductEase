@@ -13,8 +13,7 @@ namespace Fastfood
 {
     public partial class formPOS : Form
     {
-        public Dictionary<Product, int> Products = new Dictionary<Product, int>();
-        public Product f = new Product();
+        Dictionary<string, int> Products = new Dictionary<string, int>();
         public formPOS()
         {
             InitializeComponent();
@@ -49,8 +48,7 @@ namespace Fastfood
 
         public void controlProduct_Click(Product c)
         {
-            f = c;
-            if (Products.ContainsKey(c))
+            if (Products.ContainsKey(c.lblName.Text))
             {
                 for (int i = 0; i < dataGridView1.RowCount; i++)
                 {
@@ -66,7 +64,7 @@ namespace Fastfood
             }
             else
             {
-                Products.Add(c, 1);
+                Products.Add(c.lblName.Text, 1);
                 AddNew(c);
             }
         }
@@ -77,6 +75,7 @@ namespace Fastfood
             dataGridView1.Rows[rowIndex].Cells["Product_Name"].Value = c.lblName.Text;
             dataGridView1.Rows[rowIndex].Cells["Quantity"].Value = 1;
             dataGridView1.Rows[rowIndex].Cells["Price"].Value = c.lblPrice.Text;
+            dataGridView1.Rows[rowIndex].Cells["OgPrice"].Value = c.lblPrice.Text;
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -112,7 +111,7 @@ namespace Fastfood
                 row = dataGridView1.SelectedCells[0].RowIndex;
                 quantity = Convert.ToInt32(dataGridView1.Rows[row].Cells["Quantity"].Value);
                 quantity++;
-                price = Convert.ToDouble(f.lblPrice.Text) * quantity;
+                price = Convert.ToDouble(dataGridView1.Rows[row].Cells["OgPrice"].Value) * quantity;
                 dataGridView1.Rows[row].Cells["Quantity"].Value = quantity;
                 dataGridView1.Rows[row].Cells["Price"].Value = price;
             }
@@ -121,22 +120,135 @@ namespace Fastfood
                 row = dataGridView1.SelectedCells[0].RowIndex;
                 quantity = Convert.ToInt32(dataGridView1.Rows[row].Cells["Quantity"].Value);
                 quantity--;
-                price = Convert.ToDouble(f.lblPrice.Text) * quantity;
+                price = Convert.ToDouble(dataGridView1.Rows[row].Cells["OgPrice"].Value) * quantity;
                 dataGridView1.Rows[row].Cells["Quantity"].Value = quantity;
                 dataGridView1.Rows[row].Cells["Price"].Value = price;
-                /*if (Convert.ToInt32(dataGridView1.Rows[row].Cells["Quantity"].Value) == 0)
+                if (Convert.ToInt32(dataGridView1.Rows[row].Cells["Quantity"].Value) == 0)
                 {
                     row = dataGridView1.SelectedCells[0].RowIndex;
-                    Products.Remove(f);
+                    Products.Remove(dataGridView1.Rows[row].Cells["Product_Name"].Value.ToString()!);
                     dataGridView1.Rows.RemoveAt(row);
-                }*/
+                }
             }
             if (e.ColumnIndex == 5)
             {
                 row = dataGridView1.SelectedCells[0].RowIndex;
-                //Products.Remove(f);
+                Products.Remove(dataGridView1.Rows[row].Cells["Product_Name"].Value.ToString()!);
                 dataGridView1.Rows.RemoveAt(row);
             }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to cancel this transaction?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                Products.Clear();
+                int i = dataGridView1.Rows.Count - 1;
+                while (dataGridView1.Rows.Count > 0)
+                {
+                    dataGridView1.Rows.RemoveAt(i);
+                    i--;
+                }
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            DataTable data = GetData();
+            foreach (DataRow row in data.Rows)
+            {
+                Product c = new Product();
+                if (File.Exists(row["Image"].ToString()))
+                {
+                    c.pbProduct.BackgroundImage = System.Drawing.Image.FromFile(row["Image"].ToString()!);
+                }
+                c.lblName.Text = row["Product_Name"].ToString();
+                c.lblPrice.Text = row["Price"].ToString();
+                if (row["Available"].ToString() == "Yes")
+                {
+                    flowLayoutPanel1.Controls.Add(c);
+                }
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            DataTable data = GetData();
+            foreach (DataRow row in data.Rows)
+            {
+                Product c = new Product();
+                if (File.Exists(row["Image"].ToString()))
+                {
+                    c.pbProduct.BackgroundImage = System.Drawing.Image.FromFile(row["Image"].ToString()!);
+                }
+                c.lblName.Text = row["Product_Name"].ToString();
+                c.lblPrice.Text = row["Price"].ToString();
+                if (row["Category"].ToString() == "Food")
+                {
+                    if (row["Available"].ToString() == "Yes")
+                    {
+                        flowLayoutPanel1.Controls.Add(c);
+                    }
+                }
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            DataTable data = GetData();
+            foreach (DataRow row in data.Rows)
+            {
+                Product c = new Product();
+                if (File.Exists(row["Image"].ToString()))
+                {
+                    c.pbProduct.BackgroundImage = System.Drawing.Image.FromFile(row["Image"].ToString()!);
+                }
+                c.lblName.Text = row["Product_Name"].ToString();
+                c.lblPrice.Text = row["Price"].ToString();
+                if (row["Category"].ToString() == "Drinks")
+                {
+                    if (row["Available"].ToString() == "Yes")
+                    {
+                        flowLayoutPanel1.Controls.Add(c);
+                    }
+                }
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            DataTable data = GetData();
+            foreach (DataRow row in data.Rows)
+            {
+                Product c = new Product();
+                if (File.Exists(row["Image"].ToString()))
+                {
+                    c.pbProduct.BackgroundImage = System.Drawing.Image.FromFile(row["Image"].ToString()!);
+                }
+                c.lblName.Text = row["Product_Name"].ToString();
+                c.lblPrice.Text = row["Price"].ToString();
+                if (row["Category"].ToString() == "Dessert")
+                {
+                    if (row["Available"].ToString() == "Yes")
+                    {
+                        flowLayoutPanel1.Controls.Add(c);
+                    }
+                }
+            }
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

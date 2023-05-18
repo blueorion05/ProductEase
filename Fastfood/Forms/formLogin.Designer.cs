@@ -56,6 +56,7 @@
             btnLogin.Text = "LOGIN";
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnlogin_Click;
+            btnLogin.KeyPress += btnLogin_KeyPress;
             // 
             // btnExit
             // 
@@ -92,6 +93,7 @@
             tbUser.Name = "tbUser";
             tbUser.Size = new Size(201, 23);
             tbUser.TabIndex = 2;
+            tbUser.KeyPress += tbUser_KeyPress;
             // 
             // tbPass
             // 
@@ -103,6 +105,7 @@
             tbPass.Size = new Size(201, 23);
             tbPass.TabIndex = 3;
             tbPass.UseSystemPasswordChar = true;
+            tbPass.KeyPress += tbPass_KeyPress;
             // 
             // pbUser
             // 
@@ -151,6 +154,7 @@
             Name = "formLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Enter += btnlogin_Click;
             ((System.ComponentModel.ISupportInitialize)pbUser).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbPass).EndInit();
             panelHeader.ResumeLayout(false);
