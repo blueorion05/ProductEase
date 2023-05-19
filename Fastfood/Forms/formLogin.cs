@@ -81,5 +81,13 @@ namespace Fastfood
                 OnEnter(EventArgs.Empty);
             }
         }
+
+        private void formLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                OnEnter(EventArgs.Empty);
+            }
+        }
     }
 }

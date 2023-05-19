@@ -32,6 +32,7 @@
             pbProduct = new PictureBox();
             lblName = new Label();
             lblPrice = new Label();
+            lblId = new Label();
             ((System.ComponentModel.ISupportInitialize)pbProduct).BeginInit();
             SuspendLayout();
             // 
@@ -77,12 +78,27 @@
             lblPrice.TextAlign = ContentAlignment.MiddleCenter;
             lblPrice.Click += lblPrice_Click;
             // 
+            // lblId
+            // 
+            lblId.AutoSize = true;
+            lblId.Dock = DockStyle.Bottom;
+            lblId.Enabled = false;
+            lblId.ForeColor = Color.White;
+            lblId.Location = new Point(0, 156);
+            lblId.MaximumSize = new Size(148, 1);
+            lblId.MinimumSize = new Size(148, 1);
+            lblId.Name = "lblId";
+            lblId.Size = new Size(148, 1);
+            lblId.TabIndex = 3;
+            lblId.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Product
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(lblId);
             Controls.Add(pbProduct);
             Controls.Add(lblName);
             Controls.Add(lblPrice);
@@ -101,5 +117,6 @@
         public PictureBox pbProduct;
         public Label lblName;
         public Label lblPrice;
+        public Label lblId;
     }
 }

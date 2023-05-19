@@ -155,6 +155,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Enter += btnlogin_Click;
+            KeyPress += formLogin_KeyPress;
             ((System.ComponentModel.ISupportInitialize)pbUser).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbPass).EndInit();
             panelHeader.ResumeLayout(false);

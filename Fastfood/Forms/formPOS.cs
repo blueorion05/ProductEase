@@ -48,11 +48,11 @@ namespace Fastfood
 
         public void controlProduct_Click(Product c)
         {
-            if (Products.ContainsKey(c.lblName.Text))
+            if (Products.ContainsKey(c.lblId.Text))
             {
                 for (int i = 0; i < dataGridView1.RowCount; i++)
                 {
-                    if (dataGridView1.Rows[i].Cells["Product_Name"].Value.ToString() == c.lblName.Text)
+                    if (dataGridView1.Rows[i].Cells["Id"].Value.ToString() == c.lblId.Text)
                     {
                         int quantity = Convert.ToInt32(dataGridView1.Rows[i].Cells["Quantity"].Value);
                         quantity++;
@@ -64,7 +64,7 @@ namespace Fastfood
             }
             else
             {
-                Products.Add(c.lblName.Text, 1);
+                Products.Add(c.lblId.Text, 1);
                 AddNew(c);
             }
         }
@@ -72,6 +72,7 @@ namespace Fastfood
         private void AddNew(Product c)
         {
             int rowIndex = dataGridView1.Rows.Add();
+            dataGridView1.Rows[rowIndex].Cells["Id"].Value = c.lblId.Text;
             dataGridView1.Rows[rowIndex].Cells["Product_Name"].Value = c.lblName.Text;
             dataGridView1.Rows[rowIndex].Cells["Quantity"].Value = 1;
             dataGridView1.Rows[rowIndex].Cells["Price"].Value = c.lblPrice.Text;
@@ -85,21 +86,7 @@ namespace Fastfood
 
         private void formPOS_Load(object sender, EventArgs e)
         {
-            DataTable data = GetData();
-            foreach (DataRow row in data.Rows)
-            {
-                Product c = new Product();
-                if (File.Exists(row["Image"].ToString()))
-                {
-                    c.pbProduct.BackgroundImage = System.Drawing.Image.FromFile(row["Image"].ToString()!);
-                }
-                c.lblName.Text = row["Product_Name"].ToString();
-                c.lblPrice.Text = row["Price"].ToString();
-                if (row["Available"].ToString() == "Yes")
-                {
-                    flowLayoutPanel1.Controls.Add(c);
-                }
-            }
+            button1_Click(sender, e);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -126,14 +113,14 @@ namespace Fastfood
                 if (Convert.ToInt32(dataGridView1.Rows[row].Cells["Quantity"].Value) == 0)
                 {
                     row = dataGridView1.SelectedCells[0].RowIndex;
-                    Products.Remove(dataGridView1.Rows[row].Cells["Product_Name"].Value.ToString()!);
+                    Products.Remove(dataGridView1.Rows[row].Cells["Id"].Value.ToString()!);
                     dataGridView1.Rows.RemoveAt(row);
                 }
             }
             if (e.ColumnIndex == 5)
             {
                 row = dataGridView1.SelectedCells[0].RowIndex;
-                Products.Remove(dataGridView1.Rows[row].Cells["Product_Name"].Value.ToString()!);
+                Products.Remove(dataGridView1.Rows[row].Cells["Id"].Value.ToString()!);
                 dataGridView1.Rows.RemoveAt(row);
             }
         }
@@ -165,6 +152,8 @@ namespace Fastfood
                 }
                 c.lblName.Text = row["Product_Name"].ToString();
                 c.lblPrice.Text = row["Price"].ToString();
+                c.lblPrice.Text = row["Price"].ToString();
+                c.lblId.Text = row["Id"].ToString();
                 if (row["Available"].ToString() == "Yes")
                 {
                     flowLayoutPanel1.Controls.Add(c);
@@ -185,6 +174,8 @@ namespace Fastfood
                 }
                 c.lblName.Text = row["Product_Name"].ToString();
                 c.lblPrice.Text = row["Price"].ToString();
+                c.lblPrice.Text = row["Price"].ToString();
+                c.lblId.Text = row["Id"].ToString();
                 if (row["Category"].ToString() == "Food")
                 {
                     if (row["Available"].ToString() == "Yes")
@@ -208,6 +199,8 @@ namespace Fastfood
                 }
                 c.lblName.Text = row["Product_Name"].ToString();
                 c.lblPrice.Text = row["Price"].ToString();
+                c.lblPrice.Text = row["Price"].ToString();
+                c.lblId.Text = row["Id"].ToString();
                 if (row["Category"].ToString() == "Drinks")
                 {
                     if (row["Available"].ToString() == "Yes")
@@ -231,6 +224,8 @@ namespace Fastfood
                 }
                 c.lblName.Text = row["Product_Name"].ToString();
                 c.lblPrice.Text = row["Price"].ToString();
+                c.lblPrice.Text = row["Price"].ToString();
+                c.lblId.Text = row["Id"].ToString();
                 if (row["Category"].ToString() == "Dessert")
                 {
                     if (row["Available"].ToString() == "Yes")

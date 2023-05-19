@@ -14,18 +14,12 @@ namespace Fastfood
     {
         public formMain()
         {
-            formLogin form = new formLogin();
-            form.Close();
-
             InitializeComponent();
         }
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            btnHome.BackColor = Color.FromArgb(0, 150, 136);
-            pbActive.BackgroundImage = btnHome.Image;
-            panelMain.Controls.Clear();
-            panelMain.Controls.Add(new Home());
+            btnHome_Click(sender, e);
         }
 
         private void btnexit_Click(object sender, EventArgs e)

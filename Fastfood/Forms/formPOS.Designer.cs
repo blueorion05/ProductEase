@@ -59,6 +59,7 @@
             Reduce = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
             OgPrice = new DataGridViewTextBoxColumn();
+            Id = new DataGridViewTextBoxColumn();
             panel6 = new Panel();
             lbl7amount = new Label();
             lbl6total = new Label();
@@ -316,7 +317,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Product_Name, Quantity, Price, Add, Reduce, Delete, OgPrice });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Product_Name, Quantity, Price, Add, Reduce, Delete, OgPrice, Id });
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.GridColor = Color.White;
             dataGridView1.Location = new Point(0, 17);
@@ -440,6 +441,13 @@
             OgPrice.Name = "OgPrice";
             OgPrice.ReadOnly = true;
             OgPrice.Visible = false;
+            // 
+            // Id
+            // 
+            Id.HeaderText = "";
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.Visible = false;
             // 
             // panel6
             // 
@@ -579,5 +587,6 @@
         private DataGridViewButtonColumn Reduce;
         private DataGridViewButtonColumn Delete;
         private DataGridViewTextBoxColumn OgPrice;
+        private DataGridViewTextBoxColumn Id;
     }
 }
