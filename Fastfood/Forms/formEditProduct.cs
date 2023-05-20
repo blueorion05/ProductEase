@@ -36,7 +36,7 @@ namespace Fastfood
             return conn;
         }
 
-        public void EditFood()
+        public void EditProduct()
         {
             string addProduct = "UPDATE Products SET Category = @Category, Product_Name = @Product_Name, Price = @Price, Image = @Image, Available = @Available WHERE Id = @Id";
             SqlConnection conn = GetConnection();
@@ -75,7 +75,7 @@ namespace Fastfood
                 float valid;
                 if (float.TryParse(tbPrice.Text, out valid))
                 {
-                    EditFood();
+                    EditProduct();
                     this.Hide();
                 }
                 else
@@ -88,7 +88,7 @@ namespace Fastfood
         private void button2_Click(object sender, EventArgs e)
         {
             tbImage.Text = "";
-            pbImage.BackgroundImage = null;
+            pbImage.Image = null;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -107,7 +107,8 @@ namespace Fastfood
                 if (image.ShowDialog() == DialogResult.OK)
                 {
                     tbImage.Text = image.FileName.ToString();
-                    pbImage.BackgroundImage = System.Drawing.Image.FromFile(tbImage.Text);
+                    pbImage.Image = System.Drawing.Image.FromFile(tbImage.Text);
+                    pbImage.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
             }
         }
@@ -116,7 +117,8 @@ namespace Fastfood
         {
             if (File.Exists(tbImage.Text))
             {
-                pbImage.BackgroundImage = System.Drawing.Image.FromFile(tbImage.Text);
+                pbImage.Image = System.Drawing.Image.FromFile(tbImage.Text);
+                pbImage.SizeMode = PictureBoxSizeMode.StretchImage;
             }
         }
     }

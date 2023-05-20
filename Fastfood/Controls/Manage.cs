@@ -52,6 +52,14 @@ namespace Fastfood
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            dt.Columns.Add("Picture", Type.GetType("System.Byte[]")!);
+            foreach (DataRow row in dt.Rows)
+            {
+                if (File.Exists(row["Image"].ToString()))
+                {
+                    row["Picture"] = File.ReadAllBytes(row["Image"].ToString()!);
+                }
+            }
             tableProduct.DataSource = dt;
             conn.Close();
         }
@@ -98,21 +106,21 @@ namespace Fastfood
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 1)
+            if (e.ColumnIndex == 0)
             {
                 formEditProduct f = new formEditProduct();
-                f.tbId.Text = tableProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
-                f.cbCategory.Text = tableProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
-                f.tbName.Text = tableProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
-                f.tbPrice.Text = tableProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
-                f.tbImage.Text = tableProduct.Rows[e.RowIndex].Cells[7].Value.ToString();
-                f.cbAvailable.Text = tableProduct.Rows[e.RowIndex].Cells[8].Value.ToString();
+                f.tbId.Text = tableProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
+                f.cbCategory.Text = tableProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
+                f.tbName.Text = tableProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
+                f.tbPrice.Text = tableProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
+                f.tbImage.Text = tableProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
+                f.cbAvailable.Text = tableProduct.Rows[e.RowIndex].Cells[7].Value.ToString();
                 f.ShowDialog();
                 Table();
                 f.Close();
                 return;
             }
-            if (e.ColumnIndex == 2)
+            if (e.ColumnIndex == 1)
             {
                 if (MessageBox.Show("Are you sure you want to delete this product?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
                 {

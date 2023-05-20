@@ -132,7 +132,8 @@ namespace Fastfood
                 if (image.ShowDialog() == DialogResult.OK)
                 {
                     tbImage.Text = image.FileName.ToString();
-                    pbImage.BackgroundImage = System.Drawing.Image.FromFile(tbImage.Text);
+                    pbImage.Image = System.Drawing.Image.FromFile(tbImage.Text);
+                    pbImage.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
             }
         }
@@ -140,7 +141,7 @@ namespace Fastfood
         private void button2_Click(object sender, EventArgs e)
         {
             tbImage.Text = "";
-            pbImage.BackgroundImage = null;
+            pbImage.Image = null;
         }
     }
 }

@@ -153,7 +153,7 @@
             tableProduct.ReadOnly = true;
             tableProduct.RowHeadersVisible = false;
             tableProduct.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            tableProduct.RowTemplate.Height = 25;
+            tableProduct.RowTemplate.Height = 50;
             tableProduct.ShowEditingIcon = false;
             tableProduct.Size = new Size(1058, 536);
             tableProduct.TabIndex = 0;
@@ -221,6 +221,7 @@
             dataGridViewCellStyle7.NullValue = resources.GetObject("dataGridViewCellStyle7.NullValue");
             Picture.DefaultCellStyle = dataGridViewCellStyle7;
             Picture.HeaderText = "Image";
+            Picture.ImageLayout = DataGridViewImageCellLayout.Stretch;
             Picture.Name = "Picture";
             Picture.ReadOnly = true;
             // 
@@ -256,7 +257,7 @@
             Delete.Text = "Delete";
             Delete.UseColumnTextForButtonValue = true;
             // 
-            // controlManage
+            // Manage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -266,7 +267,7 @@
             Controls.Add(pbFooter);
             Controls.Add(pbHeader);
             ForeColor = Color.Black;
-            Name = "controlManage";
+            Name = "Manage";
             Size = new Size(1064, 654);
             Load += controlManage_Load;
             ((System.ComponentModel.ISupportInitialize)pbHeader).EndInit();
