@@ -142,6 +142,7 @@ namespace Fastfood
         private void button1_Click(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
+            textBox1.Text = "";
             DataTable data = GetData();
             foreach (DataRow row in data.Rows)
             {
@@ -170,6 +171,7 @@ namespace Fastfood
         private void button2_Click(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
+            textBox1.Text = "";
             DataTable data = GetData();
             foreach (DataRow row in data.Rows)
             {
@@ -202,6 +204,7 @@ namespace Fastfood
         private void button3_Click(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
+            textBox1.Text = "";
             DataTable data = GetData();
             foreach (DataRow row in data.Rows)
             {
@@ -234,6 +237,7 @@ namespace Fastfood
         private void button4_Click(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
+            textBox1.Text = "";
             DataTable data = GetData();
             foreach (DataRow row in data.Rows)
             {
@@ -271,6 +275,48 @@ namespace Fastfood
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            string data = "SELECT * FROM Products WHERE Product_Name LIKE'" + textBox1.Text + "%'";
+            SqlConnection conn = GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            da.Fill(dt);
+            conn.Close();
+            Product c = new Product();
+            foreach (DataRow row in dt.Rows)
+            {
+                if (row["Available"].ToString() != "Yes")
+                {
+                    continue;
+                }
+                if (row["Image"] != DBNull.Value)
+                {
+                    byte[] imageData = (byte[])row["Image"];
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        Image Image = Image.FromStream(ms);
+                        c.pbProduct.Image = Image;
+                    }
+                }
+                else
+                {
+                    c.pbProduct.Image = null;
+                }
+                c.lblName.Text = row["Product_Name"].ToString();
+                c.lblPrice.Text = row["Price"].ToString();
+                c.lblPrice.Text = row["Price"].ToString();
+                c.lblId.Text = row["Id"].ToString();
+                flowLayoutPanel1.Controls.Add(c);
+            }
+            if (textBox1.Text == "")
+            {
+                button1_Click(sender, e);
+            }
         }
     }
 }

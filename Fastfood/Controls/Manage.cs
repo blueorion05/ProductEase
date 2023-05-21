@@ -145,7 +145,7 @@ namespace Fastfood
                                 f.pbImage.Image = System.Drawing.Image.FromStream(ms);
                                 f.pbImage.SizeMode = PictureBoxSizeMode.StretchImage;
                             }
-                        } 
+                        }
                         break;
                     }
                 }
@@ -164,6 +164,42 @@ namespace Fastfood
                 Table();
                 return;
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            int i = tableProduct.Rows.Count - 1;
+            while (tableProduct.Rows.Count > 0)
+            {
+                tableProduct.Rows.RemoveAt(i);
+                i--;
+            }
+            string data = "SELECT * FROM Products WHERE Product_Name LIKE'" + textBox1.Text + "%'";
+            SqlConnection conn = GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                string Id = (string)reader["Id"];
+                string Category = (string)reader["Category"];
+                string Product_Name = (string)reader["Product_Name"];
+                string Price = (string)reader["Price"];
+                string Available = (string)reader["Available"];
+                if (reader["Image"] != DBNull.Value)
+                {
+                    byte[] imageData = (byte[])reader["Image"];
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        Image Image = Image.FromStream(ms);
+                        tableProduct.Rows.Add(Id, Category, Product_Name, Price, Image, Available);
+                    }
+                }
+                else
+                {
+                    tableProduct.Rows.Add(Id, Category, Product_Name, Price, null, Available);
+                }
+            }
+            conn.Close();
         }
     }
 }

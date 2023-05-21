@@ -12,6 +12,11 @@ namespace Fastfood
 {
     public partial class formMain : Form
     {
+        Home home = new Home();
+        Manage manage = new Manage();
+        Transactions records = new Transactions();
+        Account account = new Account();
+        formPOS pos = new formPOS();
         public formMain()
         {
             InitializeComponent();
@@ -31,7 +36,6 @@ namespace Fastfood
         {
             if (pbActive.BackgroundImage != btnHome.Image)
             {
-                Home home = new Home();
                 ButtonColor();
                 btnHome.BackColor = Color.FromArgb(0, 150, 136);
                 pbActive.BackgroundImage = btnHome.Image;
@@ -44,7 +48,6 @@ namespace Fastfood
         {
             if (pbActive.BackgroundImage != btnManage.Image)
             {
-                Manage manage = new Manage();
                 ButtonColor();
                 btnManage.BackColor = Color.FromArgb(0, 150, 136);
                 pbActive.BackgroundImage = btnManage.Image;
@@ -55,9 +58,8 @@ namespace Fastfood
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
-            formPOS f = new formPOS();
             this.Hide();
-            f.ShowDialog();
+            pos.ShowDialog();
             this.Show();
         }
 
@@ -65,7 +67,6 @@ namespace Fastfood
         {
             if (pbActive.BackgroundImage != btnTransactions.Image)
             {
-                Transactions records = new Transactions();
                 ButtonColor();
                 btnTransactions.BackColor = Color.FromArgb(0, 150, 136);
                 pbActive.BackgroundImage = btnTransactions.Image;
@@ -78,7 +79,6 @@ namespace Fastfood
         {
             if (pbActive.BackgroundImage != btnAccount.Image)
             {
-                Account account = new Account();
                 ButtonColor();
                 btnAccount.BackColor = Color.FromArgb(0, 150, 136);
                 pbActive.BackgroundImage = btnAccount.Image;

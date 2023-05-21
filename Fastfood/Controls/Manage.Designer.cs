@@ -56,6 +56,7 @@
             Available = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pbHeader).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbFooter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tableProduct).BeginInit();
@@ -248,11 +249,25 @@
             Delete.Text = "Delete";
             Delete.UseColumnTextForButtonValue = true;
             // 
+            // textBox1
+            // 
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox1.BackColor = Color.White;
+            textBox1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(115, 15);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Search Product Name here.";
+            textBox1.Size = new Size(422, 24);
+            textBox1.TabIndex = 23;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
             // Manage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
+            Controls.Add(textBox1);
             Controls.Add(tableProduct);
             Controls.Add(btnAdd);
             Controls.Add(pbFooter);
@@ -265,6 +280,7 @@
             ((System.ComponentModel.ISupportInitialize)pbFooter).EndInit();
             ((System.ComponentModel.ISupportInitialize)tableProduct).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -288,5 +304,6 @@
         private DataGridViewTextBoxColumn Available;
         private DataGridViewButtonColumn Edit;
         private DataGridViewButtonColumn Delete;
+        private TextBox textBox1;
     }
 }

@@ -39,11 +39,22 @@ namespace Fastfood
 
         public void EditProduct()
         {
-            string editProduct = "UPDATE Products SET Category = @Category, Product_Name = @Product_Name, Price = @Price, Image = @Image, Available = @Available WHERE Id = @Id";
+            string editProduct = "UPDATE Products SET Category = @Category, Product_Name = @Product_Name, Price = @Price, Available = @Available";
             SqlConnection conn = GetConnection();
+            byte[]? imageData = CompressImage(tbImage.Text, 800, 600, 80);
+            
+            if (imageData != null)
+            {
+                editProduct += ", Image = @Image";
+            }
+            if (imageData == null && pbImage.Image == null && tbImage.Text == "")
+            {
+                editProduct += ", Image = NULL";
+            }
+            editProduct += " WHERE Id = @Id";
+
             SqlCommand cmd = new SqlCommand(editProduct, conn);
             cmd.CommandType = CommandType.Text;
-            byte[]? imageData = CompressImage(tbImage.Text, 800, 600, 80);
 
             try
             {
@@ -56,15 +67,7 @@ namespace Fastfood
                 {
                     SqlParameter imageParam = new SqlParameter("@Image", SqlDbType.VarBinary);
                     imageParam.Value = imageData;
-                    cmd.Parameters.Add("@Image", SqlDbType.VarBinary).Value = imageParam.Value;
-                }
-                else if (imageData == null && pbImage == null)
-                {
-                    cmd.Parameters.Add("@Image", SqlDbType.VarBinary).Value = null;
-                }
-                else
-                {
-                    cmd.Parameters.Add("@Image", SqlDbType.VarBinary).Value = DBNull.Value;
+                    cmd.Parameters.AddWithValue("@Image", SqlDbType.VarBinary).Value = imageParam.Value;
                 }
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Updated Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
