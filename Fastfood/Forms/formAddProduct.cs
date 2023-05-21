@@ -108,6 +108,7 @@ namespace Fastfood
 
         private void button4_Click(object sender, EventArgs e)
         {
+            tbPrice.Text = tbPrice.Text.Replace(" ", "");
             if (cbCategory.Text == "" || tbName.Text == "" || tbPrice.Text == "" || cbAvailable.Text == "")
             {
                 MessageBox.Show("Make sure to fill all with *.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -117,8 +118,15 @@ namespace Fastfood
                 float valid;
                 if (float.TryParse(tbPrice.Text, out valid))
                 {
-                    AddFood();
-                    this.Hide();
+                    if (Convert.ToDecimal(tbPrice.Text) >= 0)
+                    {
+                        AddFood();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Input a valid price.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {

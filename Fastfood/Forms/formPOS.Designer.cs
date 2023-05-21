@@ -259,7 +259,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1064, 53);
             panel2.TabIndex = 24;
-            panel2.Paint += panel2_Paint;
             // 
             // button9
             // 
@@ -333,9 +332,6 @@
             dataGridView1.Size = new Size(339, 194);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
-            dataGridView1.CurrentCellChanged += dataGridView1_CurrentCellChanged;
-            dataGridView1.RowsAdded += dataGridView1_RowsAdded;
             // 
             // Product_Name
             // 
@@ -460,7 +456,6 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(339, 129);
             panel6.TabIndex = 3;
-            panel6.Paint += panel6_Paint;
             // 
             // textBox3
             // 
@@ -471,6 +466,7 @@
             textBox3.Size = new Size(126, 23);
             textBox3.TabIndex = 33;
             textBox3.Text = "0";
+            textBox3.KeyPress += textBox3_KeyPress;
             // 
             // label2
             // 
@@ -531,9 +527,8 @@
             label5.ForeColor = Color.Black;
             label5.Location = new Point(110, 96);
             label5.Name = "label5";
-            label5.Size = new Size(69, 20);
+            label5.Size = new Size(0, 20);
             label5.TabIndex = 26;
-            label5.Text = "Php 0.00";
             // 
             // label3
             // 
@@ -547,7 +542,6 @@
             label3.Size = new Size(94, 17);
             label3.TabIndex = 25;
             label3.Text = "Amount Due:";
-            label3.Click += label3_Click;
             // 
             // lbl7amount
             // 
@@ -558,10 +552,9 @@
             lbl7amount.ForeColor = Color.Black;
             lbl7amount.Location = new Point(110, 8);
             lbl7amount.Name = "lbl7amount";
-            lbl7amount.Size = new Size(89, 22);
+            lbl7amount.Size = new Size(21, 22);
             lbl7amount.TabIndex = 10;
-            lbl7amount.Text = "Php 0.00";
-            lbl7amount.Click += lbl7amount_Click;
+            lbl7amount.Text = "0";
             // 
             // btn1pay
             // 

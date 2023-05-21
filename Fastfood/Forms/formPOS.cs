@@ -70,7 +70,7 @@ namespace Fastfood
             }
             AmountDue();
             textBox2.Text = "";
-            label5.Text = "0";
+            label5.Text = "";
         }
 
         private void AddNew(Product c)
@@ -85,21 +85,51 @@ namespace Fastfood
 
         private void AmountDue()
         {
-            decimal totalAmount = 0;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            try
             {
-                decimal price = decimal.Parse(dataGridView1.Rows[i].Cells["Price"].Value.ToString()!);
-                totalAmount += price;
+                decimal totalAmount = 0;
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    decimal price = decimal.Parse(dataGridView1.Rows[i].Cells["Price"].Value.ToString()!);
+                    totalAmount += price;
+                }
+                UpdateAmountDue(totalAmount);
             }
-            UpdateAmountDue(totalAmount);
+            catch
+            {
+                MessageBox.Show("Invalid discount.");
+                textBox3.Text = "0";
+                AmountDue();
+            }
         }
 
         private void UpdateAmountDue(decimal totalAmount)
         {
-            decimal discount = decimal.Parse(textBox3.Text);
-            decimal amountDue = totalAmount - discount;
+            decimal discount, amountDue;
 
-            lbl7amount.Text = amountDue.ToString();
+            textBox3.Text = textBox3.Text.Replace(" ", "");
+
+            if (textBox3.Text == "")
+            {
+                textBox3.Text = "0";
+            }
+            if (textBox3.Text.EndsWith("%"))
+            {
+                discount = totalAmount * Convert.ToDecimal(textBox3.Text.Replace("%", "")) / 100;
+            }
+            else
+            {
+                discount = decimal.Parse(textBox3.Text);
+            }
+            amountDue = totalAmount - discount;
+            if (amountDue >= 0)
+            {
+                lbl7amount.Text = amountDue.ToString();
+            }
+            else
+            {
+                lbl7amount.Text = "0";
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -186,7 +216,7 @@ namespace Fastfood
                 dataGridView1.Rows[row].Cells["Price"].Value = price;
                 AmountDue();
                 textBox2.Text = "";
-                label5.Text = "0";
+                label5.Text = "";
             }
             if (e.ColumnIndex == 4)
             {
@@ -204,7 +234,7 @@ namespace Fastfood
                 }
                 AmountDue();
                 textBox2.Text = "";
-                label5.Text = "0";
+                label5.Text = "";
             }
             if (e.ColumnIndex == 5)
             {
@@ -213,7 +243,7 @@ namespace Fastfood
                 dataGridView1.Rows.RemoveAt(row);
                 AmountDue();
                 textBox2.Text = "";
-                label5.Text = "0";
+                label5.Text = "";
             }
         }
 
@@ -229,8 +259,9 @@ namespace Fastfood
                     i--;
                 }
                 AmountDue();
+                textBox3.Text = "0";
                 textBox2.Text = "";
-                label5.Text = "0";
+                label5.Text = "";
             }
         }
 
@@ -301,46 +332,30 @@ namespace Fastfood
             }
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lbl7amount_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel6_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CurrentCellChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                Change();
+                try
+                {
+                    textBox2.Text = textBox2.Text.Replace(" ", "");
+                    if (Convert.ToDouble(textBox2.Text) >= Convert.ToDouble(lbl7amount.Text))
+                    {
+                        Change();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cash received is less than the amount due.");
+                        textBox2.Text = "";
+                        label5.Text = "";
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Enter a valid cash amount.");
+                    textBox2.Text = "";
+                    label5.Text = "";
+                }
             }
         }
 
@@ -352,6 +367,40 @@ namespace Fastfood
         private void Change()
         {
             label5.Text = (Convert.ToDouble(textBox2.Text) - Convert.ToDouble(lbl7amount.Text)).ToString();
+        }
+
+        private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                try
+                {
+                    if (textBox3.Text == "")
+                    {
+                        textBox3.Text = "0";
+                    }
+                    if (Convert.ToDecimal(textBox3.Text) >= 0)
+                    {
+                        AmountDue();
+                        if (label5.Text != "" && textBox2.Text != "")
+                        {
+                            Change();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid discount.");
+                        textBox3.Text = "0";
+                        AmountDue();
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Invalid discount.");
+                    textBox3.Text = "0";
+                    AmountDue();
+                }
+            }
         }
     }
 }
