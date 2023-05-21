@@ -17,6 +17,7 @@ namespace Fastfood
         public formPOS()
         {
             InitializeComponent();
+            ProductControl("ALL");
         }
 
         private SqlConnection GetConnection()
@@ -86,7 +87,67 @@ namespace Fastfood
 
         private void formPOS_Load(object sender, EventArgs e)
         {
-            button1_Click(sender, e);
+
+        }
+
+        private void ProductControl(string category)
+        {
+            flowLayoutPanel1.Controls.Clear();
+            DataTable data = GetData();
+            foreach (DataRow row in data.Rows)
+            {
+                Product c = new Product();
+                if (row["Available"].ToString() != "Yes")
+                {
+                    continue;
+                }
+                if (row["Image"] != DBNull.Value)
+                {
+                    byte[] imageData = (byte[])row["Image"];
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        Image Image = Image.FromStream(ms);
+                        c.pbProduct.Image = Image;
+                    }
+                }
+                if (category == "FOOD")
+                {
+                    if (row["Category"].ToString() != "Food")
+                    {
+                        continue;
+                    }
+                    Product(c, row);
+                }
+                else if (category == "DRINKS")
+                {
+                    if (row["Category"].ToString() != "Drinks")
+                    {
+                        continue;
+                    }
+                    Product(c, row);
+                }
+                else if (category == "DESSERT")
+                {
+                    if (row["Category"].ToString() != "Dessert")
+                    {
+                        continue;
+                    }
+                    Product(c, row);
+                }
+                else
+                {
+                    Product(c, row);
+                }
+            }
+        }
+
+        private void Product(Product c, DataRow row)
+        {
+            c.lblName.Text = row["Product_Name"].ToString();
+            c.lblPrice.Text = row["Price"].ToString();
+            c.lblPrice.Text = row["Price"].ToString();
+            c.lblId.Text = row["Id"].ToString();
+            flowLayoutPanel1.Controls.Add(c);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -141,181 +202,68 @@ namespace Fastfood
 
         private void button1_Click(object sender, EventArgs e)
         {
-            flowLayoutPanel1.Controls.Clear();
             textBox1.Text = "";
-            DataTable data = GetData();
-            foreach (DataRow row in data.Rows)
-            {
-                Product c = new Product();
-                if (row["Available"].ToString() != "Yes")
-                {
-                    continue;
-                }
-                if (row["Image"] != DBNull.Value)
-                {
-                    byte[] imageData = (byte[])row["Image"];
-                    using (MemoryStream ms = new MemoryStream(imageData))
-                    {
-                        Image Image = Image.FromStream(ms);
-                        c.pbProduct.Image = Image;
-                    }
-                }
-                c.lblName.Text = row["Product_Name"].ToString();
-                c.lblPrice.Text = row["Price"].ToString();
-                c.lblPrice.Text = row["Price"].ToString();
-                c.lblId.Text = row["Id"].ToString();
-                flowLayoutPanel1.Controls.Add(c);
-            }
+            flowLayoutPanel1.Controls.Clear();
+            ProductControl("ALL");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            flowLayoutPanel1.Controls.Clear();
             textBox1.Text = "";
-            DataTable data = GetData();
-            foreach (DataRow row in data.Rows)
-            {
-                Product c = new Product();
-                if (row["Available"].ToString() != "Yes")
-                {
-                    continue;
-                }
-                if (row["Category"].ToString() != "Food")
-                {
-                    continue;
-                }
-                if (row["Image"] != DBNull.Value)
-                {
-                    byte[] imageData = (byte[])row["Image"];
-                    using (MemoryStream ms = new MemoryStream(imageData))
-                    {
-                        Image Image = Image.FromStream(ms);
-                        c.pbProduct.Image = Image;
-                    }
-                }
-                c.lblName.Text = row["Product_Name"].ToString();
-                c.lblPrice.Text = row["Price"].ToString();
-                c.lblPrice.Text = row["Price"].ToString();
-                c.lblId.Text = row["Id"].ToString();
-                flowLayoutPanel1.Controls.Add(c);
-            }
+            flowLayoutPanel1.Controls.Clear();
+            ProductControl("FOOD");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            flowLayoutPanel1.Controls.Clear();
             textBox1.Text = "";
-            DataTable data = GetData();
-            foreach (DataRow row in data.Rows)
-            {
-                Product c = new Product();
-                if (row["Available"].ToString() != "Yes")
-                {
-                    continue;
-                }
-                if (row["Category"].ToString() != "Drinks")
-                {
-                    continue;
-                }
-                if (row["Image"] != DBNull.Value)
-                {
-                    byte[] imageData = (byte[])row["Image"];
-                    using (MemoryStream ms = new MemoryStream(imageData))
-                    {
-                        Image Image = Image.FromStream(ms);
-                        c.pbProduct.Image = Image;
-                    }
-                }
-                c.lblName.Text = row["Product_Name"].ToString();
-                c.lblPrice.Text = row["Price"].ToString();
-                c.lblPrice.Text = row["Price"].ToString();
-                c.lblId.Text = row["Id"].ToString();
-                flowLayoutPanel1.Controls.Add(c);
-            }
+            flowLayoutPanel1.Controls.Clear();
+            ProductControl("DRINKS");
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            flowLayoutPanel1.Controls.Clear();
             textBox1.Text = "";
-            DataTable data = GetData();
-            foreach (DataRow row in data.Rows)
-            {
-                Product c = new Product();
-                if (row["Available"].ToString() != "Yes")
-                {
-                    continue;
-                }
-                if (row["Category"].ToString() != "Dessert")
-                {
-                    continue;
-                }
-                if (row["Image"] != DBNull.Value)
-                {
-                    byte[] imageData = (byte[])row["Image"];
-                    using (MemoryStream ms = new MemoryStream(imageData))
-                    {
-                        Image Image = Image.FromStream(ms);
-                        c.pbProduct.Image = Image;
-                    }
-                }
-                c.lblName.Text = row["Product_Name"].ToString();
-                c.lblPrice.Text = row["Price"].ToString();
-                c.lblPrice.Text = row["Price"].ToString();
-                c.lblId.Text = row["Id"].ToString();
-                flowLayoutPanel1.Controls.Add(c);
-            }
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            flowLayoutPanel1.Controls.Clear();
+            ProductControl("DESSERT");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
-            string data = "SELECT * FROM Products WHERE Product_Name LIKE'" + textBox1.Text + "%'";
-            SqlConnection conn = GetConnection();
-            SqlCommand cmd = new SqlCommand(data, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            conn.Close();
-            Product c = new Product();
-            foreach (DataRow row in dt.Rows)
+            if (textBox1.Text != "")
             {
-                if (row["Available"].ToString() != "Yes")
+                Product c = new Product();
+                string data = "SELECT * FROM Products WHERE Product_Name LIKE'" + textBox1.Text + "%'";
+                SqlConnection conn = GetConnection();
+                SqlCommand cmd = new SqlCommand(data, conn);
+                SqlDataReader row = cmd.ExecuteReader();
+                while (row.Read())
                 {
-                    continue;
-                }
-                if (row["Image"] != DBNull.Value)
-                {
-                    byte[] imageData = (byte[])row["Image"];
-                    using (MemoryStream ms = new MemoryStream(imageData))
+                    if (row["Available"].ToString() != "Yes")
                     {
-                        Image Image = Image.FromStream(ms);
-                        c.pbProduct.Image = Image;
+                        continue;
                     }
+                    if (row["Image"] != DBNull.Value)
+                    {
+                        byte[] imageData = (byte[])row["Image"];
+                        using (MemoryStream ms = new MemoryStream(imageData))
+                        {
+                            Image Image = Image.FromStream(ms);
+                            c.pbProduct.Image = Image;
+                        }
+                    }
+                    c.lblName.Text = row["Product_Name"].ToString();
+                    c.lblPrice.Text = row["Price"].ToString();
+                    c.lblPrice.Text = row["Price"].ToString();
+                    c.lblId.Text = row["Id"].ToString();
+                    flowLayoutPanel1.Controls.Add(c);
                 }
-                else
-                {
-                    c.pbProduct.Image = null;
-                }
-                c.lblName.Text = row["Product_Name"].ToString();
-                c.lblPrice.Text = row["Price"].ToString();
-                c.lblPrice.Text = row["Price"].ToString();
-                c.lblId.Text = row["Id"].ToString();
-                flowLayoutPanel1.Controls.Add(c);
+                conn.Close();
             }
-            if (textBox1.Text == "")
+            else
             {
-                button1_Click(sender, e);
+                ProductControl("ALL");
             }
         }
     }

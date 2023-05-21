@@ -45,6 +45,7 @@ namespace Fastfood
 
         public void Table()
         {
+            textBox1.Text = "";
             int i = tableProduct.Rows.Count - 1;
             while (tableProduct.Rows.Count > 0)
             {

@@ -16,7 +16,6 @@ namespace Fastfood
         Manage manage = new Manage();
         Transactions records = new Transactions();
         Account account = new Account();
-        formPOS pos = new formPOS();
         public formMain()
         {
             InitializeComponent();
@@ -58,6 +57,7 @@ namespace Fastfood
 
         private void btnOrder_Click(object sender, EventArgs e)
         {
+            formPOS pos = new formPOS();
             this.Hide();
             pos.ShowDialog();
             this.Show();
