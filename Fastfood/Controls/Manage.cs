@@ -11,7 +11,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
-using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Fastfood
@@ -46,21 +45,37 @@ namespace Fastfood
 
         public void Table()
         {
-            string data = "SELECT * FROM Products";
+            int i = tableProduct.Rows.Count - 1;
+            while (tableProduct.Rows.Count > 0)
+            {
+                tableProduct.Rows.RemoveAt(i);
+                i--;
+            }
+            string data = "SELECT Id, Category, Product_Name, Price, Image, Available FROM Products";
             SqlConnection conn = GetConnection();
             SqlCommand cmd = new SqlCommand(data, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            dt.Columns.Add("Picture", Type.GetType("System.Byte[]")!);
-            foreach (DataRow row in dt.Rows)
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
             {
-                if (File.Exists(row["Image"].ToString()))
+                string Id = (string)reader["Id"];
+                string Category = (string)reader["Category"];
+                string Product_Name = (string)reader["Product_Name"];
+                string Price = (string)reader["Price"];
+                string Available = (string)reader["Available"];
+                if (reader["Image"] != DBNull.Value)
                 {
-                    row["Picture"] = File.ReadAllBytes(row["Image"].ToString()!);
+                    byte[] imageData = (byte[])reader["Image"];
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        Image Image = Image.FromStream(ms);
+                        tableProduct.Rows.Add(Id, Category, Product_Name, Price, Image, Available);
+                    }
+                }
+                else
+                {
+                    tableProduct.Rows.Add(Id, Category, Product_Name, Price, null, Available);
                 }
             }
-            tableProduct.DataSource = dt;
             conn.Close();
         }
         private void button4_Click(object sender, EventArgs e)
@@ -106,25 +121,45 @@ namespace Fastfood
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0)
+            if (e.ColumnIndex == 6)
             {
                 formEditProduct f = new formEditProduct();
-                f.tbId.Text = tableProduct.Rows[e.RowIndex].Cells[2].Value.ToString();
-                f.cbCategory.Text = tableProduct.Rows[e.RowIndex].Cells[3].Value.ToString();
-                f.tbName.Text = tableProduct.Rows[e.RowIndex].Cells[4].Value.ToString();
-                f.tbPrice.Text = tableProduct.Rows[e.RowIndex].Cells[5].Value.ToString();
-                f.tbImage.Text = tableProduct.Rows[e.RowIndex].Cells[6].Value.ToString();
-                f.cbAvailable.Text = tableProduct.Rows[e.RowIndex].Cells[7].Value.ToString();
+                string data = "SELECT Id, Category, Product_Name, Price, Image, Available FROM Products";
+                SqlConnection conn = GetConnection();
+                SqlCommand cmd = new SqlCommand(data, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    if (tableProduct.Rows[e.RowIndex].Cells[0].Value.ToString() == reader["Id"].ToString())
+                    {
+                        f.tbId.Text = (string)reader["Id"];
+                        f.cbCategory.Text = (string)reader["Category"];
+                        f.tbName.Text = (string)reader["Product_Name"];
+                        f.tbPrice.Text = (string)reader["Price"];
+                        f.cbAvailable.Text = (string)reader["Available"];
+                        if (reader["Image"] != DBNull.Value)
+                        {
+                            byte[] imageData = (byte[])reader["Image"];
+                            using (MemoryStream ms = new MemoryStream(imageData))
+                            {
+                                f.pbImage.Image = System.Drawing.Image.FromStream(ms);
+                                f.pbImage.SizeMode = PictureBoxSizeMode.StretchImage;
+                            }
+                        } 
+                        break;
+                    }
+                }
+                conn.Close();
                 f.ShowDialog();
                 Table();
                 f.Close();
                 return;
             }
-            if (e.ColumnIndex == 1)
+            if (e.ColumnIndex == 7)
             {
                 if (MessageBox.Show("Are you sure you want to delete this product?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                    DeleteProduct(tableProduct.Rows[e.RowIndex].Cells[3].Value.ToString()!);
+                    DeleteProduct(tableProduct.Rows[e.RowIndex].Cells[0].Value.ToString()!);
                 }
                 Table();
                 return;

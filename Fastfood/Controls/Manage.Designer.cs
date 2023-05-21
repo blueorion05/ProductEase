@@ -33,11 +33,10 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manage));
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Manage));
             DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
             pbHeader = new PictureBox();
             pbFooter = new PictureBox();
             btnAdd = new Button();
@@ -53,9 +52,8 @@
             tableProductC5 = new DataGridViewTextBoxColumn();
             Product_Name = new DataGridViewTextBoxColumn();
             tableProductC6 = new DataGridViewTextBoxColumn();
-            tableProductC7 = new DataGridViewTextBoxColumn();
+            tableProductC7 = new DataGridViewImageColumn();
             Available = new DataGridViewTextBoxColumn();
-            Picture = new DataGridViewImageColumn();
             Edit = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)pbHeader).BeginInit();
@@ -145,7 +143,7 @@
             tableProduct.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             tableProduct.BackgroundColor = Color.White;
             tableProduct.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            tableProduct.Columns.AddRange(new DataGridViewColumn[] { tableProductC4, tableProductC5, Product_Name, tableProductC6, tableProductC7, Available, Picture, Edit, Delete });
+            tableProduct.Columns.AddRange(new DataGridViewColumn[] { tableProductC4, tableProductC5, Product_Name, tableProductC6, tableProductC7, Available, Edit, Delete });
             tableProduct.GridColor = Color.Black;
             tableProduct.Location = new Point(3, 59);
             tableProduct.MultiSelect = false;
@@ -198,11 +196,16 @@
             // tableProductC7
             // 
             tableProductC7.DataPropertyName = "Image";
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.NullValue = resources.GetObject("dataGridViewCellStyle5.NullValue");
             tableProductC7.DefaultCellStyle = dataGridViewCellStyle5;
-            tableProductC7.HeaderText = "Image Path";
+            tableProductC7.HeaderText = "Image";
+            tableProductC7.ImageLayout = DataGridViewImageCellLayout.Stretch;
             tableProductC7.Name = "tableProductC7";
             tableProductC7.ReadOnly = true;
+            tableProductC7.Resizable = DataGridViewTriState.True;
+            tableProductC7.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // Available
             // 
@@ -213,27 +216,15 @@
             Available.Name = "Available";
             Available.ReadOnly = true;
             // 
-            // Picture
-            // 
-            Picture.DataPropertyName = "Picture";
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.NullValue = resources.GetObject("dataGridViewCellStyle7.NullValue");
-            Picture.DefaultCellStyle = dataGridViewCellStyle7;
-            Picture.HeaderText = "Image";
-            Picture.ImageLayout = DataGridViewImageCellLayout.Stretch;
-            Picture.Name = "Picture";
-            Picture.ReadOnly = true;
-            // 
             // Edit
             // 
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(0, 150, 136);
-            dataGridViewCellStyle8.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(0, 150, 136);
-            dataGridViewCellStyle8.SelectionForeColor = Color.White;
-            Edit.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.FromArgb(0, 150, 136);
+            dataGridViewCellStyle7.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(0, 150, 136);
+            dataGridViewCellStyle7.SelectionForeColor = Color.White;
+            Edit.DefaultCellStyle = dataGridViewCellStyle7;
             Edit.FlatStyle = FlatStyle.Flat;
             Edit.HeaderText = "";
             Edit.Name = "Edit";
@@ -243,13 +234,13 @@
             // 
             // Delete
             // 
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(219, 88, 96);
-            dataGridViewCellStyle9.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(219, 88, 96);
-            dataGridViewCellStyle9.SelectionForeColor = Color.White;
-            Delete.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(219, 88, 96);
+            dataGridViewCellStyle8.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(219, 88, 96);
+            dataGridViewCellStyle8.SelectionForeColor = Color.White;
+            Delete.DefaultCellStyle = dataGridViewCellStyle8;
             Delete.FlatStyle = FlatStyle.Flat;
             Delete.HeaderText = "";
             Delete.Name = "Delete";
@@ -293,9 +284,8 @@
         private DataGridViewTextBoxColumn tableProductC5;
         private DataGridViewTextBoxColumn Product_Name;
         private DataGridViewTextBoxColumn tableProductC6;
-        private DataGridViewTextBoxColumn tableProductC7;
+        private DataGridViewImageColumn tableProductC7;
         private DataGridViewTextBoxColumn Available;
-        private DataGridViewImageColumn Picture;
         private DataGridViewButtonColumn Edit;
         private DataGridViewButtonColumn Delete;
     }

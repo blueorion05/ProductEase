@@ -19,7 +19,7 @@ namespace Fastfood
             InitializeComponent();
         }
 
-        public SqlConnection GetConnection()
+        private SqlConnection GetConnection()
         {
             string sql = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.Combine(Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName, "Database", "ProductEase.mdf") + ";Integrated Security=True";
             SqlConnection conn = new SqlConnection(sql);
@@ -34,7 +34,7 @@ namespace Fastfood
             return conn;
         }
 
-        public DataTable GetData()
+        private DataTable GetData()
         {
             string data = "SELECT * FROM Products";
             SqlConnection conn = GetConnection();
@@ -146,18 +146,24 @@ namespace Fastfood
             foreach (DataRow row in data.Rows)
             {
                 Product c = new Product();
-                if (File.Exists(row["Image"].ToString()))
+                if (row["Available"].ToString() != "Yes")
                 {
-                    c.pbProduct.BackgroundImage = System.Drawing.Image.FromFile(row["Image"].ToString()!);
+                    continue;
+                }
+                if (row["Image"] != DBNull.Value)
+                {
+                    byte[] imageData = (byte[])row["Image"];
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        Image Image = Image.FromStream(ms);
+                        c.pbProduct.Image = Image;
+                    }
                 }
                 c.lblName.Text = row["Product_Name"].ToString();
                 c.lblPrice.Text = row["Price"].ToString();
                 c.lblPrice.Text = row["Price"].ToString();
                 c.lblId.Text = row["Id"].ToString();
-                if (row["Available"].ToString() == "Yes")
-                {
-                    flowLayoutPanel1.Controls.Add(c);
-                }
+                flowLayoutPanel1.Controls.Add(c);
             }
         }
 
@@ -168,21 +174,28 @@ namespace Fastfood
             foreach (DataRow row in data.Rows)
             {
                 Product c = new Product();
-                if (File.Exists(row["Image"].ToString()))
+                if (row["Available"].ToString() != "Yes")
                 {
-                    c.pbProduct.BackgroundImage = System.Drawing.Image.FromFile(row["Image"].ToString()!);
+                    continue;
+                }
+                if (row["Category"].ToString() != "Food")
+                {
+                    continue;
+                }
+                if (row["Image"] != DBNull.Value)
+                {
+                    byte[] imageData = (byte[])row["Image"];
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        Image Image = Image.FromStream(ms);
+                        c.pbProduct.Image = Image;
+                    }
                 }
                 c.lblName.Text = row["Product_Name"].ToString();
                 c.lblPrice.Text = row["Price"].ToString();
                 c.lblPrice.Text = row["Price"].ToString();
                 c.lblId.Text = row["Id"].ToString();
-                if (row["Category"].ToString() == "Food")
-                {
-                    if (row["Available"].ToString() == "Yes")
-                    {
-                        flowLayoutPanel1.Controls.Add(c);
-                    }
-                }
+                flowLayoutPanel1.Controls.Add(c);
             }
         }
 
@@ -193,21 +206,28 @@ namespace Fastfood
             foreach (DataRow row in data.Rows)
             {
                 Product c = new Product();
-                if (File.Exists(row["Image"].ToString()))
+                if (row["Available"].ToString() != "Yes")
                 {
-                    c.pbProduct.BackgroundImage = System.Drawing.Image.FromFile(row["Image"].ToString()!);
+                    continue;
+                }
+                if (row["Category"].ToString() != "Drinks")
+                {
+                    continue;
+                }
+                if (row["Image"] != DBNull.Value)
+                {
+                    byte[] imageData = (byte[])row["Image"];
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        Image Image = Image.FromStream(ms);
+                        c.pbProduct.Image = Image;
+                    }
                 }
                 c.lblName.Text = row["Product_Name"].ToString();
                 c.lblPrice.Text = row["Price"].ToString();
                 c.lblPrice.Text = row["Price"].ToString();
                 c.lblId.Text = row["Id"].ToString();
-                if (row["Category"].ToString() == "Drinks")
-                {
-                    if (row["Available"].ToString() == "Yes")
-                    {
-                        flowLayoutPanel1.Controls.Add(c);
-                    }
-                }
+                flowLayoutPanel1.Controls.Add(c);
             }
         }
 
@@ -218,21 +238,28 @@ namespace Fastfood
             foreach (DataRow row in data.Rows)
             {
                 Product c = new Product();
-                if (File.Exists(row["Image"].ToString()))
+                if (row["Available"].ToString() != "Yes")
                 {
-                    c.pbProduct.BackgroundImage = System.Drawing.Image.FromFile(row["Image"].ToString()!);
+                    continue;
+                }
+                if (row["Category"].ToString() != "Dessert")
+                {
+                    continue;
+                }
+                if (row["Image"] != DBNull.Value)
+                {
+                    byte[] imageData = (byte[])row["Image"];
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        Image Image = Image.FromStream(ms);
+                        c.pbProduct.Image = Image;
+                    }
                 }
                 c.lblName.Text = row["Product_Name"].ToString();
                 c.lblPrice.Text = row["Price"].ToString();
                 c.lblPrice.Text = row["Price"].ToString();
                 c.lblId.Text = row["Id"].ToString();
-                if (row["Category"].ToString() == "Dessert")
-                {
-                    if (row["Available"].ToString() == "Yes")
-                    {
-                        flowLayoutPanel1.Controls.Add(c);
-                    }
-                }
+                flowLayoutPanel1.Controls.Add(c);
             }
         }
 

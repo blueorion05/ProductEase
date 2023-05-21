@@ -32,7 +32,6 @@
             cbAvailable = new ComboBox();
             btnSave = new Button();
             lblAvailable = new Label();
-            lblImage = new Label();
             cbCategory = new ComboBox();
             tbImage = new TextBox();
             btnBrowse = new Button();
@@ -61,7 +60,7 @@
             cbAvailable.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbAvailable.FormattingEnabled = true;
             cbAvailable.Items.AddRange(new object[] { "Yes", "No" });
-            cbAvailable.Location = new Point(148, 176);
+            cbAvailable.Location = new Point(148, 146);
             cbAvailable.Name = "cbAvailable";
             cbAvailable.Size = new Size(201, 25);
             cbAvailable.TabIndex = 48;
@@ -86,22 +85,11 @@
             lblAvailable.AutoSize = true;
             lblAvailable.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblAvailable.ForeColor = Color.White;
-            lblAvailable.Location = new Point(27, 178);
+            lblAvailable.Location = new Point(27, 148);
             lblAvailable.Name = "lblAvailable";
             lblAvailable.Size = new Size(89, 17);
             lblAvailable.TabIndex = 46;
             lblAvailable.Text = "Is Available?";
-            // 
-            // lblImage
-            // 
-            lblImage.AutoSize = true;
-            lblImage.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblImage.ForeColor = Color.White;
-            lblImage.Location = new Point(27, 149);
-            lblImage.Name = "lblImage";
-            lblImage.Size = new Size(88, 17);
-            lblImage.TabIndex = 45;
-            lblImage.Text = "Image Path:";
             // 
             // cbCategory
             // 
@@ -117,12 +105,13 @@
             // tbImage
             // 
             tbImage.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            tbImage.Location = new Point(148, 147);
+            tbImage.Location = new Point(370, 197);
             tbImage.Name = "tbImage";
-            tbImage.PlaceholderText = "Click browse to add image path.";
+            tbImage.PlaceholderText = "Browse to add/replace image.";
             tbImage.ReadOnly = true;
-            tbImage.Size = new Size(132, 22);
+            tbImage.Size = new Size(166, 22);
             tbImage.TabIndex = 43;
+            tbImage.TextChanged += tbImage_TextChanged;
             // 
             // btnBrowse
             // 
@@ -131,7 +120,7 @@
             btnBrowse.FlatStyle = FlatStyle.Flat;
             btnBrowse.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnBrowse.ForeColor = Color.White;
-            btnBrowse.Location = new Point(407, 201);
+            btnBrowse.Location = new Point(370, 221);
             btnBrowse.Name = "btnBrowse";
             btnBrowse.Size = new Size(97, 35);
             btnBrowse.TabIndex = 41;
@@ -244,9 +233,9 @@
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             btnClear.ForeColor = Color.White;
-            btnClear.Location = new Point(286, 147);
+            btnClear.Location = new Point(473, 221);
             btnClear.Name = "btnClear";
-            btnClear.Size = new Size(63, 22);
+            btnClear.Size = new Size(63, 35);
             btnClear.TabIndex = 51;
             btnClear.Text = "CLEAR";
             btnClear.UseVisualStyleBackColor = false;
@@ -294,7 +283,7 @@
             lblRequired4.BackColor = Color.Transparent;
             lblRequired4.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblRequired4.ForeColor = Color.Red;
-            lblRequired4.Location = new Point(130, 179);
+            lblRequired4.Location = new Point(130, 149);
             lblRequired4.Name = "lblRequired4";
             lblRequired4.Size = new Size(14, 17);
             lblRequired4.TabIndex = 56;
@@ -306,7 +295,7 @@
             lblRequired5.BackColor = Color.Transparent;
             lblRequired5.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblRequired5.ForeColor = Color.Red;
-            lblRequired5.Location = new Point(208, 204);
+            lblRequired5.Location = new Point(208, 174);
             lblRequired5.Name = "lblRequired5";
             lblRequired5.Size = new Size(14, 17);
             lblRequired5.TabIndex = 57;
@@ -318,7 +307,7 @@
             lblRequired.BackColor = Color.Transparent;
             lblRequired.Font = new Font("Century Gothic", 8.25F, FontStyle.Italic, GraphicsUnit.Point);
             lblRequired.ForeColor = Color.White;
-            lblRequired.Location = new Point(148, 201);
+            lblRequired.Location = new Point(148, 171);
             lblRequired.Name = "lblRequired";
             lblRequired.Size = new Size(64, 15);
             lblRequired.TabIndex = 58;
@@ -342,7 +331,6 @@
             Controls.Add(cbAvailable);
             Controls.Add(btnSave);
             Controls.Add(lblAvailable);
-            Controls.Add(lblImage);
             Controls.Add(cbCategory);
             Controls.Add(tbImage);
             Controls.Add(btnBrowse);
@@ -368,7 +356,6 @@
         private ComboBox cbAvailable;
         private Button btnSave;
         private Label lblAvailable;
-        private Label lblImage;
         private ComboBox cbCategory;
         private TextBox tbImage;
         private Button btnBrowse;
