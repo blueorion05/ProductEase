@@ -60,8 +60,14 @@
             OgPrice = new DataGridViewTextBoxColumn();
             Id = new DataGridViewTextBoxColumn();
             panel6 = new Panel();
+            textBox3 = new TextBox();
+            label2 = new Label();
+            textBox2 = new TextBox();
+            label1 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label3 = new Label();
             lbl7amount = new Label();
-            lbl6total = new Label();
             btn1pay = new Button();
             lbl2orderno = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
@@ -253,6 +259,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1064, 53);
             panel2.TabIndex = 24;
+            panel2.Paint += panel2_Paint;
             // 
             // button9
             // 
@@ -323,9 +330,12 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridView1.ShowEditingIcon = false;
-            dataGridView1.Size = new Size(339, 209);
+            dataGridView1.Size = new Size(339, 194);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellValueChanged += dataGridView1_CellValueChanged;
+            dataGridView1.CurrentCellChanged += dataGridView1_CurrentCellChanged;
+            dataGridView1.RowsAdded += dataGridView1_RowsAdded;
             // 
             // Product_Name
             // 
@@ -435,14 +445,109 @@
             // panel6
             // 
             panel6.BackColor = Color.White;
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(textBox3);
+            panel6.Controls.Add(label2);
+            panel6.Controls.Add(textBox2);
+            panel6.Controls.Add(label1);
+            panel6.Controls.Add(label4);
+            panel6.Controls.Add(label5);
+            panel6.Controls.Add(label3);
             panel6.Controls.Add(lbl7amount);
-            panel6.Controls.Add(lbl6total);
             panel6.Controls.Add(btn1pay);
             panel6.Dock = DockStyle.Bottom;
-            panel6.Location = new Point(0, 226);
+            panel6.Location = new Point(0, 211);
             panel6.Name = "panel6";
-            panel6.Size = new Size(339, 114);
+            panel6.Size = new Size(339, 129);
             panel6.TabIndex = 3;
+            panel6.Paint += panel6_Paint;
+            // 
+            // textBox3
+            // 
+            textBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox3.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox3.Location = new Point(110, 36);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(126, 23);
+            textBox3.TabIndex = 33;
+            textBox3.Text = "0";
+            // 
+            // label2
+            // 
+            label2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.Black;
+            label2.Location = new Point(2, 39);
+            label2.Name = "label2";
+            label2.Size = new Size(72, 17);
+            label2.TabIndex = 32;
+            label2.Text = "Discount: ";
+            // 
+            // textBox2
+            // 
+            textBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox2.Location = new Point(110, 65);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(126, 23);
+            textBox2.TabIndex = 29;
+            textBox2.TextChanged += textBox2_TextChanged;
+            textBox2.KeyPress += textBox2_KeyPress;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.Black;
+            label1.Location = new Point(2, 68);
+            label1.Name = "label1";
+            label1.Size = new Size(112, 17);
+            label1.TabIndex = 28;
+            label1.Text = "Cash Tendered: ";
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(2, 99);
+            label4.Name = "label4";
+            label4.Size = new Size(65, 17);
+            label4.TabIndex = 27;
+            label4.Text = "Change:";
+            // 
+            // label5
+            // 
+            label5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.Black;
+            label5.Location = new Point(110, 96);
+            label5.Name = "label5";
+            label5.Size = new Size(69, 20);
+            label5.TabIndex = 26;
+            label5.Text = "Php 0.00";
+            // 
+            // label3
+            // 
+            label3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(2, 13);
+            label3.Name = "label3";
+            label3.Size = new Size(94, 17);
+            label3.TabIndex = 25;
+            label3.Text = "Amount Due:";
+            label3.Click += label3_Click;
             // 
             // lbl7amount
             // 
@@ -451,23 +556,12 @@
             lbl7amount.BackColor = Color.Transparent;
             lbl7amount.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lbl7amount.ForeColor = Color.Black;
-            lbl7amount.Location = new Point(147, 16);
+            lbl7amount.Location = new Point(110, 8);
             lbl7amount.Name = "lbl7amount";
             lbl7amount.Size = new Size(89, 22);
             lbl7amount.TabIndex = 10;
             lbl7amount.Text = "Php 0.00";
-            // 
-            // lbl6total
-            // 
-            lbl6total.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            lbl6total.AutoSize = true;
-            lbl6total.BackColor = Color.Transparent;
-            lbl6total.ForeColor = Color.Black;
-            lbl6total.Location = new Point(105, 23);
-            lbl6total.Name = "lbl6total";
-            lbl6total.Size = new Size(37, 17);
-            lbl6total.TabIndex = 9;
-            lbl6total.Text = "Total";
+            lbl7amount.Click += lbl7amount_Click;
             // 
             // btn1pay
             // 
@@ -477,9 +571,9 @@
             btn1pay.FlatStyle = FlatStyle.Flat;
             btn1pay.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             btn1pay.ForeColor = Color.White;
-            btn1pay.Location = new Point(110, 55);
+            btn1pay.Location = new Point(242, 3);
             btn1pay.Name = "btn1pay";
-            btn1pay.Size = new Size(131, 53);
+            btn1pay.Size = new Size(92, 119);
             btn1pay.TabIndex = 8;
             btn1pay.Text = "PAY";
             btn1pay.UseVisualStyleBackColor = false;
@@ -559,7 +653,6 @@
         private Label lbl2orderno;
         private Panel panel6;
         private Button btn1pay;
-        private Label lbl6total;
         private Label lbl7amount;
         private FlowLayoutPanel flowLayoutPanel1;
         private DataGridViewTextBoxColumn Product_Name;
@@ -570,5 +663,12 @@
         private DataGridViewButtonColumn Delete;
         private DataGridViewTextBoxColumn OgPrice;
         private DataGridViewTextBoxColumn Id;
+        private Label label4;
+        private Label label5;
+        private Label label3;
+        private TextBox textBox2;
+        private Label label1;
+        private TextBox textBox3;
+        private Label label2;
     }
 }

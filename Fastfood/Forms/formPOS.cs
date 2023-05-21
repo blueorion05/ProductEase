@@ -68,6 +68,9 @@ namespace Fastfood
                 Products.Add(c.lblId.Text, 1);
                 AddNew(c);
             }
+            AmountDue();
+            textBox2.Text = "";
+            label5.Text = "0";
         }
 
         private void AddNew(Product c)
@@ -78,6 +81,25 @@ namespace Fastfood
             dataGridView1.Rows[rowIndex].Cells["Quantity"].Value = 1;
             dataGridView1.Rows[rowIndex].Cells["Price"].Value = c.lblPrice.Text;
             dataGridView1.Rows[rowIndex].Cells["OgPrice"].Value = c.lblPrice.Text;
+        }
+
+        private void AmountDue()
+        {
+            decimal totalAmount = 0;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                decimal price = decimal.Parse(dataGridView1.Rows[i].Cells["Price"].Value.ToString()!);
+                totalAmount += price;
+            }
+            UpdateAmountDue(totalAmount);
+        }
+
+        private void UpdateAmountDue(decimal totalAmount)
+        {
+            decimal discount = decimal.Parse(textBox3.Text);
+            decimal amountDue = totalAmount - discount;
+
+            lbl7amount.Text = amountDue.ToString();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -162,6 +184,9 @@ namespace Fastfood
                 price = Convert.ToDouble(dataGridView1.Rows[row].Cells["OgPrice"].Value) * quantity;
                 dataGridView1.Rows[row].Cells["Quantity"].Value = quantity;
                 dataGridView1.Rows[row].Cells["Price"].Value = price;
+                AmountDue();
+                textBox2.Text = "";
+                label5.Text = "0";
             }
             if (e.ColumnIndex == 4)
             {
@@ -177,12 +202,18 @@ namespace Fastfood
                     Products.Remove(dataGridView1.Rows[row].Cells["Id"].Value.ToString()!);
                     dataGridView1.Rows.RemoveAt(row);
                 }
+                AmountDue();
+                textBox2.Text = "";
+                label5.Text = "0";
             }
             if (e.ColumnIndex == 5)
             {
                 row = dataGridView1.SelectedCells[0].RowIndex;
                 Products.Remove(dataGridView1.Rows[row].Cells["Id"].Value.ToString()!);
                 dataGridView1.Rows.RemoveAt(row);
+                AmountDue();
+                textBox2.Text = "";
+                label5.Text = "0";
             }
         }
 
@@ -197,6 +228,9 @@ namespace Fastfood
                     dataGridView1.Rows.RemoveAt(i);
                     i--;
                 }
+                AmountDue();
+                textBox2.Text = "";
+                label5.Text = "0";
             }
         }
 
@@ -265,6 +299,59 @@ namespace Fastfood
             {
                 ProductControl("ALL");
             }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbl7amount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CurrentCellChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                Change();
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Change()
+        {
+            label5.Text = (Convert.ToDouble(textBox2.Text) - Convert.ToDouble(lbl7amount.Text)).ToString();
         }
     }
 }
