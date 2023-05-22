@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -69,6 +71,11 @@ namespace Fastfood
                 AddNew(c);
             }
             AmountDue();
+            ClearCashTendered();
+        }
+
+        private void ClearCashTendered()
+        {
             textBox2.Text = "";
             label5.Text = "";
         }
@@ -215,8 +222,7 @@ namespace Fastfood
                 dataGridView1.Rows[row].Cells["Quantity"].Value = quantity;
                 dataGridView1.Rows[row].Cells["Price"].Value = price;
                 AmountDue();
-                textBox2.Text = "";
-                label5.Text = "";
+                ClearCashTendered();
             }
             if (e.ColumnIndex == 4)
             {
@@ -233,8 +239,7 @@ namespace Fastfood
                     dataGridView1.Rows.RemoveAt(row);
                 }
                 AmountDue();
-                textBox2.Text = "";
-                label5.Text = "";
+                ClearCashTendered();
             }
             if (e.ColumnIndex == 5)
             {
@@ -242,8 +247,7 @@ namespace Fastfood
                 Products.Remove(dataGridView1.Rows[row].Cells["Id"].Value.ToString()!);
                 dataGridView1.Rows.RemoveAt(row);
                 AmountDue();
-                textBox2.Text = "";
-                label5.Text = "";
+                ClearCashTendered();
             }
         }
 
@@ -260,37 +264,38 @@ namespace Fastfood
                 }
                 AmountDue();
                 textBox3.Text = "0";
-                textBox2.Text = "";
-                label5.Text = "";
+                ClearCashTendered();
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            flowLayoutPanel1.Controls.Clear();
+            FlowLayoutPanelClear();
             ProductControl("ALL");
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            flowLayoutPanel1.Controls.Clear();
+            FlowLayoutPanelClear();
             ProductControl("FOOD");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            textBox1.Text = "";
-            flowLayoutPanel1.Controls.Clear();
+            FlowLayoutPanelClear();
             ProductControl("DRINKS");
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            FlowLayoutPanelClear();
+            ProductControl("DESSERT");
+        }
+
+        private void FlowLayoutPanelClear()
+        {
             textBox1.Text = "";
             flowLayoutPanel1.Controls.Clear();
-            ProductControl("DESSERT");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -346,15 +351,13 @@ namespace Fastfood
                     else
                     {
                         MessageBox.Show("Cash received is less than the amount due.");
-                        textBox2.Text = "";
-                        label5.Text = "";
+                        ClearCashTendered();
                     }
                 }
                 catch
                 {
                     MessageBox.Show("Enter a valid cash amount.");
-                    textBox2.Text = "";
-                    label5.Text = "";
+                    ClearCashTendered();
                 }
             }
         }
@@ -401,6 +404,17 @@ namespace Fastfood
                     AmountDue();
                 }
             }
+        }
+
+        private void btn1pay_Click(object sender, EventArgs e)
+        {
+            Receipt r = new Receipt();
+            r.lblAmountDue.Text = lbl7amount.Text;
+            r.lblDiscount.Text = textBox3.Text;
+            r.lblCash.Text = textBox2.Text;
+            r.lblChange.Text = label5.Text;
+            formReceipt f = new formReceipt(r);
+            f.Show();
         }
     }
 }

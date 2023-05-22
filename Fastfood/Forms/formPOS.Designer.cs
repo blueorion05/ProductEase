@@ -570,6 +570,7 @@
             btn1pay.TabIndex = 8;
             btn1pay.Text = "PAY";
             btn1pay.UseVisualStyleBackColor = false;
+            btn1pay.Click += btn1pay_Click;
             // 
             // lbl2orderno
             // 
@@ -646,7 +647,7 @@
         private Label lbl2orderno;
         private Panel panel6;
         private Button btn1pay;
-        private Label lbl7amount;
+        public Label lbl7amount;
         private FlowLayoutPanel flowLayoutPanel1;
         private DataGridViewTextBoxColumn Product_Name;
         private DataGridViewTextBoxColumn Quantity;
@@ -657,11 +658,11 @@
         private DataGridViewTextBoxColumn OgPrice;
         private DataGridViewTextBoxColumn Id;
         private Label label4;
-        private Label label5;
+        public Label label5;
         private Label label3;
-        private TextBox textBox2;
+        public TextBox textBox2;
         private Label label1;
-        private TextBox textBox3;
+        public TextBox textBox3;
         private Label label2;
     }
 }
