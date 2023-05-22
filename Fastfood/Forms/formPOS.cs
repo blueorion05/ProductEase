@@ -413,6 +413,17 @@ namespace Fastfood
             r.lblDiscount.Text = textBox3.Text;
             r.lblCash.Text = textBox2.Text;
             r.lblChange.Text = label5.Text;
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                r.dataGridView1.Rows.Add();
+                r.dataGridView1.Rows[i].Cells["Id"].Value = dataGridView1.Rows[i].Cells["Id"].Value;
+                r.dataGridView1.Rows[i].Cells["Product_Name"].Value = dataGridView1.Rows[i].Cells["Product_Name"].Value;
+                r.dataGridView1.Rows[i].Cells["Quantity"].Value = dataGridView1.Rows[i].Cells["Quantity"].Value;
+                r.dataGridView1.Rows[i].Cells["Price"].Value = dataGridView1.Rows[i].Cells["OgPrice"].Value;
+                r.dataGridView1.Rows[i].Cells["Amount"].Value = dataGridView1.Rows[i].Cells["Price"].Value;
+                r.dataGridView1.Height += r.dataGridView1.Rows[i].Height;
+                r.Height += r.dataGridView1.Rows[i].Height;
+            }
             formReceipt f = new formReceipt(r);
             f.Show();
         }

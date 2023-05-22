@@ -15,6 +15,11 @@ namespace Fastfood
         public formReceipt(Receipt r)
         {
             InitializeComponent();
+            /*Image image = r.ConvertToImage();
+            PictureBox pb = new PictureBox();
+            pb.SizeMode = PictureBoxSizeMode.AutoSize;
+            pb.Image = image;
+            panel1.Controls.Add(pb);*/
             panel1.Controls.Add(r);
         }
 

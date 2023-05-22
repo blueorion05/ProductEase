@@ -40,7 +40,7 @@
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.AutoScroll = true;
-            panel1.BackColor = Color.White;
+            panel1.BackColor = Color.FromArgb(25, 26, 62);
             panel1.Location = new Point(5, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(354, 476);
@@ -124,7 +124,7 @@
 
         #endregion
 
-        private Panel panel1;
+        public Panel panel1;
         private Panel panel2;
         private Button button4;
         private Button button2;

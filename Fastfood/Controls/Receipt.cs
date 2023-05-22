@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Fastfood
 {
@@ -17,9 +18,11 @@ namespace Fastfood
             InitializeComponent();
         }
 
-        private void Receipt_Load(object sender, EventArgs e)
+        public Image ConvertToImage()
         {
-
+            Bitmap bitmap = new Bitmap(this.Width, this.Height);
+            DrawToBitmap(bitmap, new Rectangle(0, 0, this.Width, this.Height));
+            return bitmap;
         }
     }
 }
