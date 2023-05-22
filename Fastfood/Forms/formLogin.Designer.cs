@@ -84,6 +84,7 @@
             lblWelcome.TabIndex = 10;
             lblWelcome.Text = "WELCOME";
             lblWelcome.TextAlign = ContentAlignment.MiddleCenter;
+            lblWelcome.Click += lblWelcome_Click;
             // 
             // tbUser
             // 
@@ -136,6 +137,7 @@
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(207, 386);
             panelHeader.TabIndex = 11;
+            panelHeader.Click += panelHeader_Click;
             // 
             // formLogin
             // 
@@ -154,6 +156,7 @@
             Name = "formLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
+            Click += formLogin_Click;
             Enter += btnlogin_Click;
             KeyPress += formLogin_KeyPress;
             ((System.ComponentModel.ISupportInitialize)pbUser).EndInit();

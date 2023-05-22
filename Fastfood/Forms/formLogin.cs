@@ -15,6 +15,7 @@ namespace Fastfood
         private void btnlogin_Click(object sender, EventArgs e)
         {
             String username, password;
+            bool valid = false;
             username = tbUser.Text;
             password = tbPass.Text;
             try
@@ -22,21 +23,33 @@ namespace Fastfood
                 conn.Open();
                 String match = "SELECT * FROM Login WHERE username = '" + tbUser.Text + "' AND password = '" + tbPass.Text + "'";
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(match, conn);
-                DataTable dataTable = new DataTable();
-                sqlDataAdapter.Fill(dataTable);
-                if (dataTable.Rows.Count > 0)
+                DataTable dt = new DataTable();
+                sqlDataAdapter.Fill(dt);
+                foreach (DataRow row in dt.Rows)
                 {
-                    username = tbUser.Text;
-                    password = tbPass.Text;
+                    string user = row["Username"].ToString()!;
+                    string pass = row["Password"].ToString()!;
 
-                    this.Hide();
-                    formMain f = new formMain();
-                    f.ShowDialog();
-                    tbUser.Text = null;
-                    tbPass.Text = null;
-                    this.Show();
+                    if (user == tbUser.Text && pass == tbPass.Text)
+                    {
+                        valid = true;
+                        username = tbUser.Text;
+                        password = tbPass.Text;
+
+                        this.Hide();
+                        formMain f = new formMain();
+                        f.ShowDialog();
+                        tbUser.Text = null;
+                        tbPass.Text = null;
+                        this.Show();
+                        break;
+                    }
+                    else
+                    {
+                        valid = false;
+                    }
                 }
-                else
+                if (valid == false)
                 {
                     MessageBox.Show("Invalid username/password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     tbUser.Text = "";
@@ -88,6 +101,21 @@ namespace Fastfood
             {
                 OnEnter(EventArgs.Empty);
             }
+        }
+
+        private void formLogin_Click(object sender, EventArgs e)
+        {
+            lblWelcome.Focus();
+        }
+
+        private void lblWelcome_Click(object sender, EventArgs e)
+        {
+            lblWelcome.Focus();
+        }
+
+        private void panelHeader_Click(object sender, EventArgs e)
+        {
+            lblWelcome.Focus();
         }
     }
 }
