@@ -31,7 +31,6 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
             Date = new DataGridViewTextBoxColumn();
@@ -42,9 +41,11 @@
             CashTendered = new DataGridViewTextBoxColumn();
             Change = new DataGridViewTextBoxColumn();
             Receipt = new DataGridViewButtonColumn();
-            label2 = new Label();
-            button3 = new Button();
+            pbFooter = new PictureBox();
+            pbHeader = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbFooter).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbHeader).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
@@ -55,6 +56,7 @@
             dataGridView1.AllowUserToResizeRows = false;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = Color.White;
             dataGridViewCellStyle1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -65,33 +67,29 @@
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Date, Id, Products, AmountDue, Discount, CashTendered, Change, Receipt });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Window;
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView1.GridColor = SystemColors.ActiveCaptionText;
-            dataGridView1.Location = new Point(3, 43);
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.GridColor = Color.Black;
+            dataGridView1.Location = new Point(3, 59);
+            dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.White;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.RowTemplate.Height = 50;
             dataGridView1.RowTemplate.ReadOnly = true;
-            dataGridView1.Size = new Size(1058, 608);
+            dataGridView1.ShowEditingIcon = false;
+            dataGridView1.Size = new Size(1058, 536);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.RowHeightInfoNeeded += dataGridView1_RowHeightInfoNeeded;
@@ -151,55 +149,61 @@
             dataGridViewCellStyle2.BackColor = Color.FromArgb(0, 150, 136);
             dataGridViewCellStyle2.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 170, 170);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 150, 136);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
             Receipt.DefaultCellStyle = dataGridViewCellStyle2;
+            Receipt.FlatStyle = FlatStyle.Flat;
             Receipt.HeaderText = "Receipt";
             Receipt.Name = "Receipt";
             Receipt.ReadOnly = true;
             Receipt.Resizable = DataGridViewTriState.False;
             Receipt.Text = "View";
+            Receipt.UseColumnTextForButtonValue = true;
             // 
-            // label2
+            // pbFooter
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(3, 13);
-            label2.Name = "label2";
-            label2.Size = new Size(136, 21);
-            label2.TabIndex = 7;
-            label2.Text = "ORDER HISTORY";
-            label2.Click += label2_Click;
+            pbFooter.BackColor = Color.FromArgb(0, 150, 136);
+            pbFooter.BackgroundImageLayout = ImageLayout.None;
+            pbFooter.Dock = DockStyle.Bottom;
+            pbFooter.Location = new Point(0, 601);
+            pbFooter.Name = "pbFooter";
+            pbFooter.Size = new Size(1064, 53);
+            pbFooter.TabIndex = 17;
+            pbFooter.TabStop = false;
             // 
-            // button3
+            // pbHeader
             // 
-            button3.Location = new Point(161, 14);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 3;
-            button3.Text = "SEARCH";
-            button3.UseVisualStyleBackColor = true;
+            pbHeader.BackColor = Color.FromArgb(0, 150, 136);
+            pbHeader.BackgroundImageLayout = ImageLayout.None;
+            pbHeader.Dock = DockStyle.Top;
+            pbHeader.Location = new Point(0, 0);
+            pbHeader.Name = "pbHeader";
+            pbHeader.Size = new Size(1064, 53);
+            pbHeader.TabIndex = 16;
+            pbHeader.TabStop = false;
             // 
             // Transactions
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
-            Controls.Add(button3);
-            Controls.Add(label2);
             Controls.Add(dataGridView1);
+            Controls.Add(pbFooter);
+            Controls.Add(pbHeader);
             Name = "Transactions";
             Size = new Size(1064, 654);
             Load += controlRecords_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbFooter).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbHeader).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private DataGridView dataGridView1;
-        private Label label2;
-        private Button button3;
+        private PictureBox pbFooter;
+        private PictureBox pbHeader;
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Products;

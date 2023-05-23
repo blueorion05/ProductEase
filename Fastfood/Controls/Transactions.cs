@@ -42,7 +42,7 @@ namespace Fastfood
                 string Discount = (string)reader["Discount"];
                 string CashTendered = (string)reader["CashTendered"];
                 string Change = (string)reader["Change"];
-                dataGridView1.Rows.Add(Date, Id, Products, AmountDue, Discount, CashTendered, Change, null);
+                dataGridView1.Rows.Add(Date, Id, Products, AmountDue, Discount, CashTendered, Change);
             }
             conn.Close();
         }

@@ -88,6 +88,7 @@
             btnPrint.TabIndex = 22;
             btnPrint.Text = "Print";
             btnPrint.UseVisualStyleBackColor = false;
+            btnPrint.Click += btnPrint_Click;
             // 
             // btnCancel
             // 

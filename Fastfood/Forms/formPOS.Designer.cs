@@ -267,7 +267,7 @@
             // 
             // lblDateTime
             // 
-            lblDateTime.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblDateTime.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             lblDateTime.AutoSize = true;
             lblDateTime.BackColor = Color.Transparent;
             lblDateTime.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
