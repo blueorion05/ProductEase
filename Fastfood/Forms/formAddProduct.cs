@@ -22,25 +22,11 @@ namespace Fastfood
             InitializeComponent();
         }
 
-        public SqlConnection GetConnection()
-        {
-            string sql = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.Combine(Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName, "Database", "ProductEase.mdf") + ";Integrated Security=True";
-            SqlConnection conn = new SqlConnection(sql);
-            try
-            {
-                conn.Open();
-            }
-            catch
-            {
-                MessageBox.Show("Error");
-            }
-            return conn;
-        }
-
         public void AddFood()
         {
             string addProduct = "INSERT INTO Products VALUES (@Id, @Category, @Product_Name, @Price, @Image, @Available)";
-            SqlConnection conn = GetConnection();
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
             SqlCommand cmd = new SqlCommand(addProduct, conn);
             cmd.CommandType = CommandType.Text;
             byte[]? imageData = CompressImage(tbImage.Text, 800, 600, 80);
@@ -85,7 +71,8 @@ namespace Fastfood
         Rand:
             Random rand = new Random();
             int Id = rand.Next(10000, 99999);
-            SqlConnection conn = GetConnection();
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
             SqlCommand cmd = new SqlCommand("SELECT COUNT(*) FROM Products WHERE Id = @Id", conn);
             cmd.Parameters.AddWithValue("@Id", Id);
             int count = (int)cmd.ExecuteScalar();

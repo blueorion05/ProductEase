@@ -5,7 +5,6 @@ namespace Fastfood
 {
     public partial class formLogin : Form
     {
-        public SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.Combine(Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName, "Database", "ProductEase.mdf") + ";Integrated Security=True");
 
         public formLogin()
         {
@@ -18,9 +17,10 @@ namespace Fastfood
             bool valid = false;
             username = tbUser.Text;
             password = tbPass.Text;
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
             try
             {
-                conn.Open();
                 String match = "SELECT * FROM Login WHERE username = '" + tbUser.Text + "' AND password = '" + tbPass.Text + "'";
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(match, conn);
                 DataTable dt = new DataTable();

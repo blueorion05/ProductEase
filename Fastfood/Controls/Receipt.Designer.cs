@@ -53,12 +53,15 @@
             Quantity = new DataGridViewTextBoxColumn();
             Price = new DataGridViewTextBoxColumn();
             Amount = new DataGridViewTextBoxColumn();
+            lblId = new Label();
+            panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(lblId);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
@@ -256,6 +259,15 @@
             Amount.ReadOnly = true;
             Amount.Width = 67;
             // 
+            // lblId
+            // 
+            lblId.AutoSize = true;
+            lblId.Location = new Point(0, 53);
+            lblId.Name = "lblId";
+            lblId.Size = new Size(65, 17);
+            lblId.TabIndex = 0;
+            lblId.Text = "Order No.";
+            // 
             // Receipt
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -269,6 +281,8 @@
             Name = "Receipt";
             Size = new Size(336, 300);
             Resize += Receipt_Resize;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -295,5 +309,6 @@
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Price;
         private DataGridViewTextBoxColumn Amount;
+        public Label lblId;
     }
 }

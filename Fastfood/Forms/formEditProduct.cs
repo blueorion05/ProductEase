@@ -22,25 +22,11 @@ namespace Fastfood
             InitializeComponent();
         }
 
-        public SqlConnection GetConnection()
-        {
-            string sql = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.Combine(Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName, "Database", "ProductEase.mdf") + ";Integrated Security=True";
-            SqlConnection conn = new SqlConnection(sql);
-            try
-            {
-                conn.Open();
-            }
-            catch
-            {
-                MessageBox.Show("Error");
-            }
-            return conn;
-        }
-
         public void EditProduct()
         {
             string editProduct = "UPDATE Products SET Category = @Category, Product_Name = @Product_Name, Price = @Price, Available = @Available";
-            SqlConnection conn = GetConnection();
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
             byte[]? imageData = CompressImage(tbImage.Text, 800, 600, 80);
 
             if (imageData != null)

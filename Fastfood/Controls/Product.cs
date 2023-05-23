@@ -26,25 +26,11 @@ namespace Fastfood
             f.controlProduct_Click(c);
         }
 
-        public SqlConnection GetConnection()
-        {
-            string sql = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.Combine(Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName, "Database", "ProductEase.mdf") + ";Integrated Security=True";
-            SqlConnection conn = new SqlConnection(sql);
-            try
-            {
-                conn.Open();
-            }
-            catch
-            {
-                MessageBox.Show("Error");
-            }
-            return conn;
-        }
-
         public DataTable GetData()
         {
             string data = "SELECT * FROM Products";
-            SqlConnection conn = GetConnection();
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
             SqlCommand cmd = new SqlCommand(data, conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();

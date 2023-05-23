@@ -37,7 +37,7 @@ namespace Fastfood
 
         private void Receipt_Resize(object sender, EventArgs e)
         {
-            lblAmountDue.Focus();
+
         }
     }
 }

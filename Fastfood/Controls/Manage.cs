@@ -23,21 +23,6 @@ namespace Fastfood
             Table();
         }
 
-        public SqlConnection GetConnection()
-        {
-            string sql = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.Combine(Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName, "Database", "ProductEase.mdf") + ";Integrated Security=True";
-            SqlConnection conn = new SqlConnection(sql);
-            try
-            {
-                conn.Open();
-            }
-            catch
-            {
-                MessageBox.Show("Error");
-            }
-            return conn;
-        }
-
         private void controlManage_Load(object sender, EventArgs e)
         {
 
@@ -53,7 +38,8 @@ namespace Fastfood
                 i--;
             }
             string data = "SELECT Id, Category, Product_Name, Price, Image, Available FROM Products";
-            SqlConnection conn = GetConnection();
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
             SqlCommand cmd = new SqlCommand(data, conn);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
@@ -90,7 +76,8 @@ namespace Fastfood
         public void DeleteProduct(string Id)
         {
             string del = "DELETE FROM Products WHERE Id = @Id";
-            SqlConnection conn = GetConnection();
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
             SqlCommand cmd = new SqlCommand(del, conn);
             cmd.CommandType = CommandType.Text;
 
@@ -126,7 +113,8 @@ namespace Fastfood
             {
                 formEditProduct f = new formEditProduct();
                 string data = "SELECT Id, Category, Product_Name, Price, Image, Available FROM Products";
-                SqlConnection conn = GetConnection();
+                Connection sql = new Connection();
+                SqlConnection conn = sql.GetConnection();
                 SqlCommand cmd = new SqlCommand(data, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -177,7 +165,8 @@ namespace Fastfood
                 i--;
             }
             string data = "SELECT * FROM Products WHERE Product_Name LIKE'" + textBox1.Text + "%'";
-            SqlConnection conn = GetConnection();
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
             SqlCommand cmd = new SqlCommand(data, conn);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())

@@ -72,6 +72,7 @@
             button2.TabIndex = 23;
             button2.Text = "Confirm";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // button1
             // 

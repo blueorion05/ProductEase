@@ -50,6 +50,7 @@
             panel2 = new Panel();
             button9 = new Button();
             panel4 = new Panel();
+            lblTransactionId = new Label();
             dataGridView1 = new DataGridView();
             Product_Name = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
@@ -279,6 +280,7 @@
             // panel4
             // 
             panel4.BackColor = Color.White;
+            panel4.Controls.Add(lblTransactionId);
             panel4.Controls.Add(dataGridView1);
             panel4.Controls.Add(panel6);
             panel4.Controls.Add(lbl2orderno);
@@ -287,6 +289,18 @@
             panel4.Name = "panel4";
             panel4.Size = new Size(339, 340);
             panel4.TabIndex = 25;
+            // 
+            // lblTransactionId
+            // 
+            lblTransactionId.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblTransactionId.AutoSize = true;
+            lblTransactionId.BackColor = Color.Transparent;
+            lblTransactionId.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTransactionId.ForeColor = Color.Black;
+            lblTransactionId.Location = new Point(69, 0);
+            lblTransactionId.Name = "lblTransactionId";
+            lblTransactionId.Size = new Size(0, 17);
+            lblTransactionId.TabIndex = 4;
             // 
             // dataGridView1
             // 
@@ -664,5 +678,6 @@
         private Label label1;
         public TextBox textBox3;
         private Label label2;
+        private Label lblTransactionId;
     }
 }

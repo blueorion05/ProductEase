@@ -16,31 +16,18 @@ namespace Fastfood
     public partial class formPOS : Form
     {
         Dictionary<string, int> Products = new Dictionary<string, int>();
+        public static formPOS? Instance { get; private set; }
         public formPOS()
         {
             InitializeComponent();
             ProductControl("ALL");
         }
 
-        private SqlConnection GetConnection()
-        {
-            string sql = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + Path.Combine(Directory.GetParent(AppContext.BaseDirectory)!.Parent!.Parent!.Parent!.FullName, "Database", "ProductEase.mdf") + ";Integrated Security=True";
-            SqlConnection conn = new SqlConnection(sql);
-            try
-            {
-                conn.Open();
-            }
-            catch
-            {
-                MessageBox.Show("Error");
-            }
-            return conn;
-        }
-
         private DataTable GetData()
         {
             string data = "SELECT * FROM Products";
-            SqlConnection conn = GetConnection();
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
             SqlCommand cmd = new SqlCommand(data, conn);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -146,7 +133,21 @@ namespace Fastfood
 
         private void formPOS_Load(object sender, EventArgs e)
         {
-
+            Instance = this;
+            string transId = "SELECT TOP 1 [Id] FROM [Transactions] ORDER BY [Id] DESC";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(transId, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                lblTransactionId.Text = (Convert.ToInt32(reader["Id"]) + 1).ToString();
+            }
+            else
+            {
+                lblTransactionId.Text = "1";
+            }
+            conn.Close();
         }
 
         private void ProductControl(string category)
@@ -305,7 +306,8 @@ namespace Fastfood
             {
                 Product c = new Product();
                 string data = "SELECT * FROM Products WHERE Product_Name LIKE'" + textBox1.Text + "%'";
-                SqlConnection conn = GetConnection();
+                Connection sql = new Connection();
+                SqlConnection conn = sql.GetConnection();
                 SqlCommand cmd = new SqlCommand(data, conn);
                 SqlDataReader row = cmd.ExecuteReader();
                 while (row.Read())
@@ -408,26 +410,34 @@ namespace Fastfood
 
         private void btn1pay_Click(object sender, EventArgs e)
         {
-            Receipt r = new Receipt();
-            r.lblAmountDue.Text = lbl7amount.Text;
-            r.lblDiscount.Text = textBox3.Text;
-            r.lblCash.Text = textBox2.Text;
-            r.lblChange.Text = label5.Text;
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            try
             {
-                r.dataGridView1.Rows.Add();
-                r.dataGridView1.Rows[i].Cells["Empty"].Value = "";
-                r.dataGridView1.Rows[i].Cells["Id"].Value = dataGridView1.Rows[i].Cells["Id"].Value;
-                r.dataGridView1.Rows[i].Cells["Product_Name"].Value = dataGridView1.Rows[i].Cells["Product_Name"].Value;
-                r.dataGridView1.Rows[i].Cells["Quantity"].Value = dataGridView1.Rows[i].Cells["Quantity"].Value;
-                r.dataGridView1.Rows[i].Cells["Price"].Value = dataGridView1.Rows[i].Cells["OgPrice"].Value;
-                r.dataGridView1.Rows[i].Cells["Amount"].Value = dataGridView1.Rows[i].Cells["Price"].Value;
-                r.dataGridView1.Height += r.dataGridView1.Rows[i].Height;
-                r.Height += r.dataGridView1.Rows[i].Height;
+                Receipt r = new Receipt();
+                r.lblId.Text = lblTransactionId.Text;
+                r.lblAmountDue.Text = lbl7amount.Text;
+                r.lblDiscount.Text = textBox3.Text;
+                r.lblCash.Text = textBox2.Text;
+                r.lblChange.Text = label5.Text;
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    r.dataGridView1.Rows.Add();
+                    r.dataGridView1.Rows[i].Cells["Empty"].Value = "";
+                    r.dataGridView1.Rows[i].Cells["Id"].Value = dataGridView1.Rows[i].Cells["Id"].Value;
+                    r.dataGridView1.Rows[i].Cells["Product_Name"].Value = dataGridView1.Rows[i].Cells["Product_Name"].Value;
+                    r.dataGridView1.Rows[i].Cells["Quantity"].Value = dataGridView1.Rows[i].Cells["Quantity"].Value;
+                    r.dataGridView1.Rows[i].Cells["Price"].Value = dataGridView1.Rows[i].Cells["OgPrice"].Value;
+                    r.dataGridView1.Rows[i].Cells["Amount"].Value = dataGridView1.Rows[i].Cells["Price"].Value;
+                    r.dataGridView1.Height += r.dataGridView1.Rows[i].Height;
+                    r.Height += r.dataGridView1.Rows[i].Height;
+                }
+                r.dataGridView1.Rows[0].Cells[0].Selected = false;
+                formReceipt f = new formReceipt(r);
+                f.Show();
             }
-            r.dataGridView1.Rows[0].Cells[0].Selected = false;
-            formReceipt f = new formReceipt(r);
-            f.Show();
+            catch
+            {
+                MessageBox.Show("Transaction is Invalid.");
+            }
         }
     }
 }
