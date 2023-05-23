@@ -16,7 +16,6 @@ namespace Fastfood
     public partial class formPOS : Form
     {
         Dictionary<string, int> Products = new Dictionary<string, int>();
-        public static formPOS? Instance { get; private set; }
         public formPOS()
         {
             InitializeComponent();
@@ -133,7 +132,11 @@ namespace Fastfood
 
         private void formPOS_Load(object sender, EventArgs e)
         {
-            Instance = this;
+            ClearPOS();
+        }
+
+        public void ClearPOS()
+        {
             string transId = "SELECT TOP 1 [Id] FROM [Transactions] ORDER BY [Id] DESC";
             Connection sql = new Connection();
             SqlConnection conn = sql.GetConnection();
@@ -148,6 +151,17 @@ namespace Fastfood
                 lblTransactionId.Text = "1";
             }
             conn.Close();
+
+            Products.Clear();
+            int i = dataGridView1.Rows.Count - 1;
+            while (dataGridView1.Rows.Count > 0)
+            {
+                dataGridView1.Rows.RemoveAt(i);
+                i--;
+            }
+            AmountDue();
+            textBox3.Text = "0";
+            ClearCashTendered();
         }
 
         private void ProductControl(string category)
@@ -256,16 +270,7 @@ namespace Fastfood
         {
             if (MessageBox.Show("Are you sure you want to cancel this transaction?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
             {
-                Products.Clear();
-                int i = dataGridView1.Rows.Count - 1;
-                while (dataGridView1.Rows.Count > 0)
-                {
-                    dataGridView1.Rows.RemoveAt(i);
-                    i--;
-                }
-                AmountDue();
-                textBox3.Text = "0";
-                ClearCashTendered();
+                ClearPOS();
             }
         }
 
@@ -431,7 +436,7 @@ namespace Fastfood
                     r.Height += r.dataGridView1.Rows[i].Height;
                 }
                 r.dataGridView1.Rows[0].Cells[0].Selected = false;
-                formReceipt f = new formReceipt(r);
+                formReceipt f = new formReceipt(r, this);
                 f.Show();
             }
             catch

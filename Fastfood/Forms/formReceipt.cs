@@ -17,12 +17,14 @@ namespace Fastfood
     public partial class formReceipt : Form
     {
         Receipt receipt = new Receipt();
+        formPOS formPOS = new formPOS();
         string products = "";
-        public formReceipt(Receipt r)
+        public formReceipt(Receipt r, formPOS f)
         {
             InitializeComponent();
             panel1.Controls.Add(r);
             receipt = r;
+            formPOS = f;
         }
 
         private void formReceipt_Load(object sender, EventArgs e)
@@ -80,9 +82,7 @@ namespace Fastfood
             {
                 conn.Close();
                 this.Close();
-                formPOS.Instance!.Close();
-                formPOS f = new formPOS();
-                f.Show();
+                formPOS.ClearPOS();
             }
         }
     }
