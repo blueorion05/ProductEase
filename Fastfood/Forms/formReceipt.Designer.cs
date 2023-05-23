@@ -30,9 +30,9 @@
         {
             panel1 = new Panel();
             panel2 = new Panel();
-            button2 = new Button();
-            button1 = new Button();
-            button4 = new Button();
+            btnConfirm = new Button();
+            btnPrint = new Button();
+            btnCancel = new Button();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -49,61 +49,61 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(0, 150, 136);
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(button1);
-            panel2.Controls.Add(button4);
+            panel2.Controls.Add(btnConfirm);
+            panel2.Controls.Add(btnPrint);
+            panel2.Controls.Add(btnCancel);
             panel2.Dock = DockStyle.Right;
             panel2.Location = new Point(364, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(126, 500);
             panel2.TabIndex = 21;
             // 
-            // button2
+            // btnConfirm
             // 
-            button2.BackColor = Color.FromArgb(0, 150, 136);
-            button2.Dock = DockStyle.Bottom;
-            button2.FlatAppearance.BorderSize = 0;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(0, 341);
-            button2.Name = "button2";
-            button2.Size = new Size(126, 53);
-            button2.TabIndex = 23;
-            button2.Text = "Confirm";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
+            btnConfirm.BackColor = Color.FromArgb(0, 150, 136);
+            btnConfirm.Dock = DockStyle.Bottom;
+            btnConfirm.FlatAppearance.BorderSize = 0;
+            btnConfirm.FlatStyle = FlatStyle.Flat;
+            btnConfirm.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnConfirm.ForeColor = Color.White;
+            btnConfirm.Location = new Point(0, 341);
+            btnConfirm.Name = "btnConfirm";
+            btnConfirm.Size = new Size(126, 53);
+            btnConfirm.TabIndex = 23;
+            btnConfirm.Text = "Confirm";
+            btnConfirm.UseVisualStyleBackColor = false;
+            btnConfirm.Click += button2_Click;
             // 
-            // button1
+            // btnPrint
             // 
-            button1.BackColor = Color.FromArgb(0, 150, 136);
-            button1.Dock = DockStyle.Bottom;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(0, 394);
-            button1.Name = "button1";
-            button1.Size = new Size(126, 53);
-            button1.TabIndex = 22;
-            button1.Text = "Print";
-            button1.UseVisualStyleBackColor = false;
+            btnPrint.BackColor = Color.FromArgb(0, 150, 136);
+            btnPrint.Dock = DockStyle.Bottom;
+            btnPrint.FlatAppearance.BorderSize = 0;
+            btnPrint.FlatStyle = FlatStyle.Flat;
+            btnPrint.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnPrint.ForeColor = Color.White;
+            btnPrint.Location = new Point(0, 394);
+            btnPrint.Name = "btnPrint";
+            btnPrint.Size = new Size(126, 53);
+            btnPrint.TabIndex = 22;
+            btnPrint.Text = "Print";
+            btnPrint.UseVisualStyleBackColor = false;
             // 
-            // button4
+            // btnCancel
             // 
-            button4.BackColor = Color.FromArgb(0, 150, 136);
-            button4.Dock = DockStyle.Bottom;
-            button4.FlatAppearance.BorderSize = 0;
-            button4.FlatStyle = FlatStyle.Flat;
-            button4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            button4.ForeColor = Color.White;
-            button4.Location = new Point(0, 447);
-            button4.Name = "button4";
-            button4.Size = new Size(126, 53);
-            button4.TabIndex = 21;
-            button4.Text = "Cancel";
-            button4.UseVisualStyleBackColor = false;
-            button4.Click += button4_Click;
+            btnCancel.BackColor = Color.FromArgb(0, 150, 136);
+            btnCancel.Dock = DockStyle.Bottom;
+            btnCancel.FlatAppearance.BorderSize = 0;
+            btnCancel.FlatStyle = FlatStyle.Flat;
+            btnCancel.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCancel.ForeColor = Color.White;
+            btnCancel.Location = new Point(0, 447);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(126, 53);
+            btnCancel.TabIndex = 21;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = false;
+            btnCancel.Click += button4_Click;
             // 
             // formReceipt
             // 
@@ -127,8 +127,8 @@
 
         public Panel panel1;
         private Panel panel2;
-        private Button button4;
-        private Button button2;
-        private Button button1;
+        public Button btnCancel;
+        public Button btnConfirm;
+        public Button btnPrint;
     }
 }

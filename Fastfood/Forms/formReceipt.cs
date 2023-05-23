@@ -19,24 +19,27 @@ namespace Fastfood
         Receipt receipt = new Receipt();
         formPOS formPOS = new formPOS();
         string products = "";
-        public formReceipt(Receipt r, formPOS f)
+        public formReceipt(Receipt? r, formPOS? f)
         {
             InitializeComponent();
             panel1.Controls.Add(r);
-            receipt = r;
-            formPOS = f;
+            receipt = r!;
+            formPOS = f!;
         }
 
         private void formReceipt_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < receipt.dataGridView1.Rows.Count; i++)
+            if (receipt != null)
             {
-                products += (receipt.dataGridView1.Rows[i].Cells["Quantity"].Value).ToString();
-                products += "x ";
-                products += (receipt.dataGridView1.Rows[i].Cells["Product_Name"].Value).ToString();
-                products += "(";
-                products += (receipt.dataGridView1.Rows[i].Cells["Amount"].Value).ToString();
-                products += ")\n";
+                for (int i = 0; i < receipt.dataGridView1.Rows.Count; i++)
+                {
+                    products += (receipt.dataGridView1.Rows[i].Cells["Quantity"].Value).ToString();
+                    products += "x ";
+                    products += (receipt.dataGridView1.Rows[i].Cells["Product_Name"].Value).ToString();
+                    products += "(";
+                    products += (receipt.dataGridView1.Rows[i].Cells["Amount"].Value).ToString();
+                    products += ")\n";
+                }
             }
         }
 
