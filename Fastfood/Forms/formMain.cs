@@ -14,7 +14,6 @@ namespace Fastfood
     {
         Home home = new Home();
         Manage manage = new Manage();
-        Transactions records = new Transactions();
         Account account = new Account();
         public formMain()
         {
@@ -67,6 +66,7 @@ namespace Fastfood
         {
             if (pbActive.BackgroundImage != btnTransactions.Image)
             {
+                Transactions records = new Transactions();
                 ButtonColor();
                 btnTransactions.BackColor = Color.FromArgb(0, 150, 136);
                 pbActive.BackgroundImage = btnTransactions.Image;

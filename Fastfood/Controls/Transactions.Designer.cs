@@ -29,81 +29,80 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            groupBox1 = new GroupBox();
-            button2 = new Button();
-            button1 = new Button();
-            comboBox1 = new ComboBox();
-            panel1 = new Panel();
-            label1 = new Label();
+            Id = new DataGridViewTextBoxColumn();
+            Products = new DataGridViewTextBoxColumn();
+            AmountDue = new DataGridViewTextBoxColumn();
+            Discount = new DataGridViewTextBoxColumn();
+            CashTendered = new DataGridViewTextBoxColumn();
+            Change = new DataGridViewTextBoxColumn();
+            Receipt = new DataGridViewImageColumn();
             label2 = new Label();
             button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
             // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, Products, AmountDue, Discount, CashTendered, Change, Receipt });
+            dataGridView1.GridColor = SystemColors.ActiveCaptionText;
             dataGridView1.Location = new Point(34, 128);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(341, 480);
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridView1.RowTemplate.Height = 100;
+            dataGridView1.Size = new Size(909, 480);
             dataGridView1.TabIndex = 0;
             // 
-            // groupBox1
+            // Id
             // 
-            groupBox1.Controls.Add(button2);
-            groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(comboBox1);
-            groupBox1.Location = new Point(596, 92);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(284, 30);
-            groupBox1.TabIndex = 3;
-            groupBox1.TabStop = false;
+            Id.HeaderText = "Id";
+            Id.Name = "Id";
+            Id.ReadOnly = true;
             // 
-            // button2
+            // Products
             // 
-            button2.Location = new Point(214, 7);
-            button2.Name = "button2";
-            button2.Size = new Size(66, 23);
-            button2.TabIndex = 2;
-            button2.Text = "REFRESH";
-            button2.UseVisualStyleBackColor = true;
+            Products.HeaderText = "Products";
+            Products.Name = "Products";
+            Products.ReadOnly = true;
             // 
-            // button1
+            // AmountDue
             // 
-            button1.Location = new Point(133, 7);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "SEARCH";
-            button1.UseVisualStyleBackColor = true;
+            AmountDue.HeaderText = "Amount Due";
+            AmountDue.Name = "AmountDue";
+            AmountDue.ReadOnly = true;
             // 
-            // comboBox1
+            // Discount
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(6, 7);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 0;
+            Discount.HeaderText = "Discount";
+            Discount.Name = "Discount";
+            Discount.ReadOnly = true;
             // 
-            // panel1
+            // CashTendered
             // 
-            panel1.BackColor = Color.DarkGray;
-            panel1.Location = new Point(424, 128);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(537, 235);
-            panel1.TabIndex = 5;
+            CashTendered.HeaderText = "Cash Tendered";
+            CashTendered.Name = "CashTendered";
+            CashTendered.ReadOnly = true;
             // 
-            // label1
+            // Change
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Century Gothic", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(602, 75);
-            label1.Name = "label1";
-            label1.Size = new Size(119, 21);
-            label1.TabIndex = 6;
-            label1.Text = "PRODUCT LIST";
+            Change.HeaderText = "Change";
+            Change.Name = "Change";
+            Change.ReadOnly = true;
+            // 
+            // Receipt
+            // 
+            Receipt.HeaderText = "Receipt";
+            Receipt.ImageLayout = DataGridViewImageCellLayout.Stretch;
+            Receipt.Name = "Receipt";
+            Receipt.ReadOnly = true;
             // 
             // label2
             // 
@@ -125,22 +124,18 @@
             button3.Text = "SEARCH";
             button3.UseVisualStyleBackColor = true;
             // 
-            // controlRecords
+            // Transactions
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             Controls.Add(button3);
             Controls.Add(label2);
-            Controls.Add(label1);
-            Controls.Add(panel1);
-            Controls.Add(groupBox1);
             Controls.Add(dataGridView1);
-            Name = "controlRecords";
+            Name = "Transactions";
             Size = new Size(1064, 654);
             Load += controlRecords_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -148,13 +143,14 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private GroupBox groupBox1;
-        private Button button2;
-        private Button button1;
-        private ComboBox comboBox1;
-        private Panel panel1;
-        private Label label1;
         private Label label2;
         private Button button3;
+        private DataGridViewTextBoxColumn Id;
+        private DataGridViewTextBoxColumn Products;
+        private DataGridViewTextBoxColumn AmountDue;
+        private DataGridViewTextBoxColumn Discount;
+        private DataGridViewTextBoxColumn CashTendered;
+        private DataGridViewTextBoxColumn Change;
+        private DataGridViewImageColumn Receipt;
     }
 }
