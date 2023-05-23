@@ -34,6 +34,7 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             panel1 = new Panel();
             panel2 = new Panel();
             panel3 = new Panel();
@@ -46,6 +47,7 @@
             lblDiscount = new Label();
             lblAmountDue = new Label();
             dataGridView1 = new DataGridView();
+            Empty = new DataGridViewTextBoxColumn();
             Id = new DataGridViewTextBoxColumn();
             Product_Name = new DataGridViewTextBoxColumn();
             Quantity = new DataGridViewTextBoxColumn();
@@ -172,30 +174,42 @@
             dataGridViewCellStyle1.BackColor = Color.White;
             dataGridViewCellStyle1.Font = new Font("Century Gothic", 7F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionBackColor = Color.White;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id, Product_Name, Quantity, Price, Amount });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Empty, Id, Product_Name, Quantity, Price, Amount });
             dataGridView1.Dock = DockStyle.Top;
             dataGridView1.Enabled = false;
             dataGridView1.GridColor = Color.White;
             dataGridView1.Location = new Point(0, 73);
+            dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.ScrollBars = ScrollBars.None;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
             dataGridView1.Size = new Size(336, 21);
             dataGridView1.TabIndex = 8;
+            dataGridView1.CellEnter += dataGridView1_CellEnter;
+            dataGridView1.Enter += dataGridView1_Enter;
+            // 
+            // Empty
+            // 
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            Empty.DefaultCellStyle = dataGridViewCellStyle2;
+            Empty.HeaderText = "";
+            Empty.Name = "Empty";
+            Empty.ReadOnly = true;
+            Empty.Width = 5;
             // 
             // Id
             // 
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 7F, FontStyle.Regular, GraphicsUnit.Point);
-            Id.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            Id.DefaultCellStyle = dataGridViewCellStyle3;
             Id.FillWeight = 108.8427F;
             Id.HeaderText = "Id";
             Id.Name = "Id";
@@ -204,8 +218,8 @@
             // 
             // Product_Name
             // 
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 7F, FontStyle.Regular, GraphicsUnit.Point);
-            Product_Name.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            Product_Name.DefaultCellStyle = dataGridViewCellStyle4;
             Product_Name.FillWeight = 99.6004639F;
             Product_Name.HeaderText = "Product Name";
             Product_Name.Name = "Product_Name";
@@ -214,8 +228,8 @@
             // 
             // Quantity
             // 
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 7F, FontStyle.Regular, GraphicsUnit.Point);
-            Quantity.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            Quantity.DefaultCellStyle = dataGridViewCellStyle5;
             Quantity.FillWeight = 95.62374F;
             Quantity.HeaderText = "Quantity";
             Quantity.Name = "Quantity";
@@ -224,8 +238,8 @@
             // 
             // Price
             // 
-            dataGridViewCellStyle5.Font = new Font("Century Gothic", 7F, FontStyle.Regular, GraphicsUnit.Point);
-            Price.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            Price.DefaultCellStyle = dataGridViewCellStyle6;
             Price.FillWeight = 95.93309F;
             Price.HeaderText = "Price";
             Price.Name = "Price";
@@ -234,8 +248,8 @@
             // 
             // Amount
             // 
-            dataGridViewCellStyle6.Font = new Font("Century Gothic", 7F, FontStyle.Regular, GraphicsUnit.Point);
-            Amount.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Font = new Font("Century Gothic", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            Amount.DefaultCellStyle = dataGridViewCellStyle7;
             Amount.FillWeight = 100.000015F;
             Amount.HeaderText = "Amount";
             Amount.Name = "Amount";
@@ -254,6 +268,7 @@
             Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "Receipt";
             Size = new Size(336, 300);
+            Resize += Receipt_Resize;
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -274,6 +289,7 @@
         public Label lblDiscount;
         public Label lblAmountDue;
         public DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn Empty;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Product_Name;
         private DataGridViewTextBoxColumn Quantity;

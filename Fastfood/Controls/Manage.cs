@@ -147,6 +147,7 @@ namespace Fastfood
                                 f.pbImage.SizeMode = PictureBoxSizeMode.StretchImage;
                             }
                         }
+                        f.tbName.Select(0, 0);
                         break;
                     }
                 }
@@ -201,6 +202,11 @@ namespace Fastfood
                 }
             }
             conn.Close();
+        }
+
+        private void Manage_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

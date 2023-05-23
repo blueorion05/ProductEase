@@ -42,7 +42,7 @@ namespace Fastfood
             string editProduct = "UPDATE Products SET Category = @Category, Product_Name = @Product_Name, Price = @Price, Available = @Available";
             SqlConnection conn = GetConnection();
             byte[]? imageData = CompressImage(tbImage.Text, 800, 600, 80);
-            
+
             if (imageData != null)
             {
                 editProduct += ", Image = @Image";
@@ -84,7 +84,7 @@ namespace Fastfood
 
         private void button4_Click(object sender, EventArgs e)
         {
-            tbPrice.Text = tbPrice.Text.Replace(" ", ""); 
+            tbPrice.Text = tbPrice.Text.Replace(" ", "");
             if (cbCategory.Text == "" || tbName.Text == "" || tbPrice.Text == "" || cbAvailable.Text == "")
             {
                 MessageBox.Show("Make sure to fill all with *.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -194,6 +194,11 @@ namespace Fastfood
                 }
             }
             return null!;
+        }
+
+        private void formEditProduct_Click(object sender, EventArgs e)
+        {
+            lblId.Focus();
         }
     }
 }

@@ -275,6 +275,7 @@
             Name = "Manage";
             Size = new Size(1064, 654);
             Load += controlManage_Load;
+            Click += Manage_Click;
             ((System.ComponentModel.ISupportInitialize)pbHeader).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbFooter).EndInit();
             ((System.ComponentModel.ISupportInitialize)tableProduct).EndInit();

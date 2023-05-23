@@ -219,5 +219,10 @@ namespace Fastfood
         {
 
         }
+
+        private void formAddProduct_Click(object sender, EventArgs e)
+        {
+            lblId.Focus();
+        }
     }
 }

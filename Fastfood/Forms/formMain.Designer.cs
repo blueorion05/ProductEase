@@ -322,7 +322,7 @@
 
         #endregion
 
-        private Label lbl1Company;
+        public Label lbl1Company;
         public Panel panelMain;
         private Panel panelHeader;
         private Button btnExit;

@@ -416,6 +416,7 @@ namespace Fastfood
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 r.dataGridView1.Rows.Add();
+                r.dataGridView1.Rows[i].Cells["Empty"].Value = "";
                 r.dataGridView1.Rows[i].Cells["Id"].Value = dataGridView1.Rows[i].Cells["Id"].Value;
                 r.dataGridView1.Rows[i].Cells["Product_Name"].Value = dataGridView1.Rows[i].Cells["Product_Name"].Value;
                 r.dataGridView1.Rows[i].Cells["Quantity"].Value = dataGridView1.Rows[i].Cells["Quantity"].Value;
@@ -424,6 +425,7 @@ namespace Fastfood
                 r.dataGridView1.Height += r.dataGridView1.Rows[i].Height;
                 r.Height += r.dataGridView1.Rows[i].Height;
             }
+            r.dataGridView1.Rows[0].Cells[0].Selected = false;
             formReceipt f = new formReceipt(r);
             f.Show();
         }

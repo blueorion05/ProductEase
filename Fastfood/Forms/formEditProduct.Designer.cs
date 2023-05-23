@@ -231,6 +231,7 @@
             // 
             // tbImage
             // 
+            tbImage.Enabled = false;
             tbImage.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbImage.Location = new Point(370, 197);
             tbImage.Name = "tbImage";
@@ -294,6 +295,7 @@
             // 
             // tbId
             // 
+            tbId.Enabled = false;
             tbId.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             tbId.Location = new Point(148, 60);
             tbId.Name = "tbId";
@@ -357,6 +359,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "formEditProduct";
             Load += formEditProduct_Load;
+            Click += formEditProduct_Click;
             ((System.ComponentModel.ISupportInitialize)pbImage).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -385,7 +388,7 @@
         private Label lblPrice;
         public TextBox tbName;
         public TextBox tbId;
-        private Label lblId;
+        public Label lblId;
         private Label lblName;
     }
 }
