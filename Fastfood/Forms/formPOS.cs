@@ -100,12 +100,6 @@ namespace Fastfood
         {
             decimal discount, amountDue;
 
-            textBox3.Text = textBox3.Text.Replace(" ", "");
-
-            if (textBox3.Text == "")
-            {
-                textBox3.Text = "0";
-            }
             if (textBox3.Text.EndsWith("%"))
             {
                 discount = totalAmount * Convert.ToDecimal(textBox3.Text.Replace("%", "")) / 100;
@@ -348,24 +342,29 @@ namespace Fastfood
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                try
+                VerifyCashTendered();
+            }
+        }
+
+        private void VerifyCashTendered()
+        {
+            try
+            {
+                textBox2.Text = textBox2.Text.Replace(" ", "");
+                if (Convert.ToDouble(textBox2.Text) >= Convert.ToDouble(lbl7amount.Text))
                 {
-                    textBox2.Text = textBox2.Text.Replace(" ", "");
-                    if (Convert.ToDouble(textBox2.Text) >= Convert.ToDouble(lbl7amount.Text))
-                    {
-                        Change();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Cash received is less than the amount due.");
-                        ClearCashTendered();
-                    }
+                    Change();
                 }
-                catch
+                else
                 {
-                    MessageBox.Show("Enter a valid cash amount.");
+                    MessageBox.Show("Cash received is less than the amount due.");
                     ClearCashTendered();
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Enter a valid cash amount.");
+                ClearCashTendered();
             }
         }
 
@@ -383,13 +382,23 @@ namespace Fastfood
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                try
+                VerifyDiscount();
+            }
+        }
+
+        private void VerifyDiscount()
+        {
+            try
+            {
+                textBox3.Text = textBox3.Text.Replace(" ", "");
+
+                if (textBox3.Text == "")
                 {
-                    if (textBox3.Text == "")
-                    {
-                        textBox3.Text = "0";
-                    }
-                    if (Convert.ToDecimal(textBox3.Text) >= 0)
+                    textBox3.Text = "0";
+                }
+                if (textBox3.Text.EndsWith("%"))
+                {
+                    if (Convert.ToDouble(textBox3.Text.Replace("%", "")) >= 0)
                     {
                         AmountDue();
                         if (label5.Text != "" && textBox2.Text != "")
@@ -404,12 +413,26 @@ namespace Fastfood
                         AmountDue();
                     }
                 }
-                catch
+                else if (Convert.ToDouble(textBox3.Text) >= 0)
+                {
+                    AmountDue();
+                    if (label5.Text != "" && textBox2.Text != "")
+                    {
+                        Change();
+                    }
+                }
+                else
                 {
                     MessageBox.Show("Invalid discount.");
                     textBox3.Text = "0";
                     AmountDue();
                 }
+            }
+            catch
+            {
+                MessageBox.Show("Invalid discount.");
+                textBox3.Text = "0";
+                AmountDue();
             }
         }
 
@@ -417,32 +440,49 @@ namespace Fastfood
         {
             try
             {
-                Receipt r = new Receipt();
-                r.lblId.Text = lblTransactionId.Text;
-                r.lblAmountDue.Text = lbl7amount.Text;
-                r.lblDiscount.Text = textBox3.Text;
-                r.lblCash.Text = textBox2.Text;
-                r.lblChange.Text = label5.Text;
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                if (textBox2.Text != "")
                 {
-                    r.dataGridView1.Rows.Add();
-                    r.dataGridView1.Rows[i].Cells["Empty"].Value = "";
-                    r.dataGridView1.Rows[i].Cells["Id"].Value = dataGridView1.Rows[i].Cells["Id"].Value;
-                    r.dataGridView1.Rows[i].Cells["Product_Name"].Value = dataGridView1.Rows[i].Cells["Product_Name"].Value;
-                    r.dataGridView1.Rows[i].Cells["Quantity"].Value = dataGridView1.Rows[i].Cells["Quantity"].Value;
-                    r.dataGridView1.Rows[i].Cells["Price"].Value = dataGridView1.Rows[i].Cells["OgPrice"].Value;
-                    r.dataGridView1.Rows[i].Cells["Amount"].Value = dataGridView1.Rows[i].Cells["Price"].Value;
-                    r.dataGridView1.Height += r.dataGridView1.Rows[i].Height;
-                    r.Height += r.dataGridView1.Rows[i].Height;
+                    Receipt r = new Receipt();
+                    r.lblId.Text = lblTransactionId.Text;
+                    r.lblAmountDue.Text = lbl7amount.Text;
+                    r.lblDiscount.Text = textBox3.Text;
+                    r.lblCash.Text = textBox2.Text;
+                    r.lblChange.Text = label5.Text;
+                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                    {
+                        r.dataGridView1.Rows.Add();
+                        r.dataGridView1.Rows[i].Cells["Empty"].Value = "";
+                        r.dataGridView1.Rows[i].Cells["Id"].Value = dataGridView1.Rows[i].Cells["Id"].Value;
+                        r.dataGridView1.Rows[i].Cells["Product_Name"].Value = dataGridView1.Rows[i].Cells["Product_Name"].Value;
+                        r.dataGridView1.Rows[i].Cells["Quantity"].Value = dataGridView1.Rows[i].Cells["Quantity"].Value;
+                        r.dataGridView1.Rows[i].Cells["Price"].Value = dataGridView1.Rows[i].Cells["OgPrice"].Value;
+                        r.dataGridView1.Rows[i].Cells["Amount"].Value = dataGridView1.Rows[i].Cells["Price"].Value;
+                        r.dataGridView1.Height += r.dataGridView1.Rows[i].Height;
+                        r.Height += r.dataGridView1.Rows[i].Height;
+                    }
+                    r.dataGridView1.Rows[0].Cells[0].Selected = false;
+                    formReceipt f = new formReceipt(r, this);
+                    f.Show();
                 }
-                r.dataGridView1.Rows[0].Cells[0].Selected = false;
-                formReceipt f = new formReceipt(r, this);
-                f.Show();
+                else
+                {
+                    MessageBox.Show("Cash Tendered is Empty.");
+                }
             }
             catch
             {
                 MessageBox.Show("Transaction is Invalid.");
             }
+        }
+
+        private void textBox2_Leave(object sender, EventArgs e)
+        {
+            VerifyCashTendered();
+        }
+
+        private void textBox3_Leave(object sender, EventArgs e)
+        {
+            VerifyDiscount();
         }
     }
 }

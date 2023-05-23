@@ -481,6 +481,7 @@
             textBox3.TabIndex = 33;
             textBox3.Text = "0";
             textBox3.KeyPress += textBox3_KeyPress;
+            textBox3.Leave += textBox3_Leave;
             // 
             // label2
             // 
@@ -505,6 +506,7 @@
             textBox2.TabIndex = 29;
             textBox2.TextChanged += textBox2_TextChanged;
             textBox2.KeyPress += textBox2_KeyPress;
+            textBox2.Leave += textBox2_Leave;
             // 
             // label1
             // 
