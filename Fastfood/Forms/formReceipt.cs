@@ -36,7 +36,7 @@ namespace Fastfood
                 products += (receipt.dataGridView1.Rows[i].Cells["Product_Name"].Value).ToString();
                 products += "(";
                 products += (receipt.dataGridView1.Rows[i].Cells["Amount"].Value).ToString();
-                products += ")\n\r";
+                products += ")\n";
             }
         }
 
@@ -56,7 +56,7 @@ namespace Fastfood
                 imageData = stream.ToArray();
             }
 
-            string addProduct = "INSERT INTO Transactions VALUES (@Id, @Products, @AmountDue, @Discount, @CashTendered, @Change, @Receipt)";
+            string addProduct = "INSERT INTO Transactions VALUES (@DateTime, @Id, @Products, @AmountDue, @Discount, @CashTendered, @Change, @Receipt)";
             Connection sql = new Connection();
             SqlConnection conn = sql.GetConnection();
             SqlCommand cmd = new SqlCommand(addProduct, conn);
@@ -64,6 +64,7 @@ namespace Fastfood
 
             try
             {
+                cmd.Parameters.Add("@DateTime", SqlDbType.VarChar).Value = receipt.lblDate.Text;
                 cmd.Parameters.Add("@Id", SqlDbType.Int).Value = Convert.ToInt32(receipt.lblId.Text);
                 cmd.Parameters.Add("@Products", SqlDbType.VarChar).Value = products;
                 cmd.Parameters.Add("@AmountDue", SqlDbType.VarChar).Value = receipt.lblAmountDue.Text;

@@ -443,6 +443,7 @@ namespace Fastfood
                 if (textBox2.Text != "")
                 {
                     Receipt r = new Receipt();
+                    r.lblDate.Text = lblDateTime.Text;
                     r.lblId.Text = lblTransactionId.Text;
                     r.lblAmountDue.Text = lbl7amount.Text;
                     r.lblDiscount.Text = textBox3.Text;
@@ -483,6 +484,11 @@ namespace Fastfood
         private void textBox3_Leave(object sender, EventArgs e)
         {
             VerifyDiscount();
+        }
+
+        private void timerDateTime_Tick(object sender, EventArgs e)
+        {
+            lblDateTime.Text = DateTime.Now.ToString("dd-MMM-yyyy hh:mm:ss tt");
         }
     }
 }

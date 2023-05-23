@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formPOS));
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
@@ -48,6 +49,7 @@
             panel1 = new Panel();
             panel3 = new Panel();
             panel2 = new Panel();
+            lblDateTime = new Label();
             button9 = new Button();
             panel4 = new Panel();
             lblTransactionId = new Label();
@@ -72,6 +74,7 @@
             btn1pay = new Button();
             lbl2orderno = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            timerDateTime = new System.Windows.Forms.Timer(components);
             panelHeader.SuspendLayout();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -254,12 +257,29 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(0, 150, 136);
+            panel2.Controls.Add(lblDateTime);
             panel2.Controls.Add(button9);
             panel2.Dock = DockStyle.Bottom;
             panel2.Location = new Point(0, 457);
             panel2.Name = "panel2";
             panel2.Size = new Size(1064, 53);
             panel2.TabIndex = 24;
+            // 
+            // lblDateTime
+            // 
+            lblDateTime.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblDateTime.AutoSize = true;
+            lblDateTime.BackColor = Color.Transparent;
+            lblDateTime.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDateTime.ForeColor = Color.White;
+            lblDateTime.Location = new Point(848, 16);
+            lblDateTime.MaximumSize = new Size(216, 0);
+            lblDateTime.MinimumSize = new Size(216, 0);
+            lblDateTime.Name = "lblDateTime";
+            lblDateTime.Padding = new Padding(0, 0, 0, 20);
+            lblDateTime.Size = new Size(216, 37);
+            lblDateTime.TabIndex = 26;
+            lblDateTime.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button9
             // 
@@ -612,6 +632,12 @@
             flowLayoutPanel1.Size = new Size(725, 340);
             flowLayoutPanel1.TabIndex = 26;
             // 
+            // timerDateTime
+            // 
+            timerDateTime.Enabled = true;
+            timerDateTime.Interval = 1000;
+            timerDateTime.Tick += timerDateTime_Tick;
+            // 
             // formPOS
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
@@ -634,6 +660,7 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -681,5 +708,7 @@
         public TextBox textBox3;
         private Label label2;
         private Label lblTransactionId;
+        private Label lblDateTime;
+        private System.Windows.Forms.Timer timerDateTime;
     }
 }

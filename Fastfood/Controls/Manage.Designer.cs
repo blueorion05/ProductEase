@@ -48,6 +48,7 @@
             Price = new DataGridViewTextBoxColumn();
             Image = new DataGridViewTextBoxColumn();
             tableProduct = new DataGridView();
+            textBox1 = new TextBox();
             tableProductC4 = new DataGridViewTextBoxColumn();
             tableProductC5 = new DataGridViewTextBoxColumn();
             Product_Name = new DataGridViewTextBoxColumn();
@@ -56,7 +57,6 @@
             Available = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
-            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pbHeader).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbFooter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tableProduct).BeginInit();
@@ -158,6 +158,18 @@
             tableProduct.TabIndex = 0;
             tableProduct.CellContentClick += dataGridView1_CellContentClick;
             // 
+            // textBox1
+            // 
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox1.BackColor = Color.White;
+            textBox1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(115, 16);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Search Product Name here.";
+            textBox1.Size = new Size(422, 22);
+            textBox1.TabIndex = 23;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
             // tableProductC4
             // 
             tableProductC4.DataPropertyName = "Id";
@@ -166,6 +178,7 @@
             tableProductC4.HeaderText = "Id";
             tableProductC4.Name = "tableProductC4";
             tableProductC4.ReadOnly = true;
+            tableProductC4.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // tableProductC5
             // 
@@ -175,6 +188,7 @@
             tableProductC5.HeaderText = "Category";
             tableProductC5.Name = "tableProductC5";
             tableProductC5.ReadOnly = true;
+            tableProductC5.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // Product_Name
             // 
@@ -184,6 +198,7 @@
             Product_Name.HeaderText = "Product Name";
             Product_Name.Name = "Product_Name";
             Product_Name.ReadOnly = true;
+            Product_Name.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // tableProductC6
             // 
@@ -193,6 +208,7 @@
             tableProductC6.HeaderText = "Price";
             tableProductC6.Name = "tableProductC6";
             tableProductC6.ReadOnly = true;
+            tableProductC6.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // tableProductC7
             // 
@@ -216,6 +232,7 @@
             Available.HeaderText = "Is Available?";
             Available.Name = "Available";
             Available.ReadOnly = true;
+            Available.SortMode = DataGridViewColumnSortMode.NotSortable;
             // 
             // Edit
             // 
@@ -248,18 +265,6 @@
             Delete.ReadOnly = true;
             Delete.Text = "Delete";
             Delete.UseColumnTextForButtonValue = true;
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.BackColor = Color.White;
-            textBox1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(115, 16);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Search Product Name here.";
-            textBox1.Size = new Size(422, 22);
-            textBox1.TabIndex = 23;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // Manage
             // 
@@ -296,6 +301,7 @@
         private DataGridViewTextBoxColumn Price;
         private DataGridViewTextBoxColumn Image;
         public DataGridView tableProduct;
+        private TextBox textBox1;
         private DataGridViewTextBoxColumn tableProductC4;
         private DataGridViewTextBoxColumn tableProductC5;
         private DataGridViewTextBoxColumn Product_Name;
@@ -304,6 +310,5 @@
         private DataGridViewTextBoxColumn Available;
         private DataGridViewButtonColumn Edit;
         private DataGridViewButtonColumn Delete;
-        private TextBox textBox1;
     }
 }

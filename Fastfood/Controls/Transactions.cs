@@ -28,13 +28,14 @@ namespace Fastfood
                 dataGridView1.Rows.RemoveAt(i);
                 i--;
             }
-            string data = "SELECT Id, Products, AmountDue, Discount, CashTendered, Change, Receipt FROM Transactions";
+            string data = "SELECT Date, Id, Products, AmountDue, Discount, CashTendered, Change, Receipt FROM Transactions";
             Connection sql = new Connection();
             SqlConnection conn = sql.GetConnection();
             SqlCommand cmd = new SqlCommand(data, conn);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
+                string Date = (string)reader["Date"];
                 string Id = reader["Id"].ToString()!;
                 string Products = (string)reader["Products"];
                 string AmountDue = (string)reader["AmountDue"];
@@ -47,7 +48,7 @@ namespace Fastfood
                     using (MemoryStream ms = new MemoryStream(imageData))
                     {
                         Image Image = Image.FromStream(ms);
-                        dataGridView1.Rows.Add(Id, Products, AmountDue, Discount, CashTendered, Change, Image);
+                        dataGridView1.Rows.Add(Date, Id, Products, AmountDue, Discount, CashTendered, Change, Image);
                     }
                 }
             }

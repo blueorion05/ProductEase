@@ -36,6 +36,7 @@
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            lblId = new Label();
             panel2 = new Panel();
             panel3 = new Panel();
             label1 = new Label();
@@ -53,7 +54,7 @@
             Quantity = new DataGridViewTextBoxColumn();
             Price = new DataGridViewTextBoxColumn();
             Amount = new DataGridViewTextBoxColumn();
-            lblId = new Label();
+            lblDate = new Label();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -61,12 +62,22 @@
             // 
             // panel1
             // 
+            panel1.Controls.Add(lblDate);
             panel1.Controls.Add(lblId);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(336, 73);
             panel1.TabIndex = 0;
+            // 
+            // lblId
+            // 
+            lblId.AutoSize = true;
+            lblId.Location = new Point(0, 53);
+            lblId.Name = "lblId";
+            lblId.Size = new Size(65, 17);
+            lblId.TabIndex = 0;
+            lblId.Text = "Order No.";
             // 
             // panel2
             // 
@@ -259,14 +270,14 @@
             Amount.ReadOnly = true;
             Amount.Width = 67;
             // 
-            // lblId
+            // lblDate
             // 
-            lblId.AutoSize = true;
-            lblId.Location = new Point(0, 53);
-            lblId.Name = "lblId";
-            lblId.Size = new Size(65, 17);
-            lblId.TabIndex = 0;
-            lblId.Text = "Order No.";
+            lblDate.AutoSize = true;
+            lblDate.Location = new Point(0, 36);
+            lblDate.Name = "lblDate";
+            lblDate.Size = new Size(65, 17);
+            lblDate.TabIndex = 1;
+            lblDate.Text = "DateTime";
             // 
             // Receipt
             // 
@@ -310,5 +321,6 @@
         private DataGridViewTextBoxColumn Price;
         private DataGridViewTextBoxColumn Amount;
         public Label lblId;
+        public Label lblDate;
     }
 }

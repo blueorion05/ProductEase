@@ -195,7 +195,7 @@ namespace Fastfood
 
         private void Manage_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
