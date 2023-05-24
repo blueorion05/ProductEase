@@ -33,7 +33,7 @@ namespace Fastfood
 
             try
             {
-                cmd.Parameters.Add("@Id", SqlDbType.VarChar).Value = lblIdNum.Text;
+                cmd.Parameters.Add("@Id", SqlDbType.VarChar).Value = tbId.Text;
                 cmd.Parameters.Add("@Category", SqlDbType.VarChar).Value = cbCategory.Text;
                 cmd.Parameters.Add("@Product_Name", SqlDbType.VarChar).Value = tbName.Text;
                 cmd.Parameters.Add("@Price", SqlDbType.VarChar).Value = tbPrice.Text;
@@ -63,7 +63,7 @@ namespace Fastfood
 
         private void formAddProduct_Load(object sender, EventArgs e)
         {
-            lblIdNum.Text = IdCheck();
+            tbId.Text = IdCheck();
         }
 
         private string IdCheck()
@@ -210,19 +210,6 @@ namespace Fastfood
         private void formAddProduct_Click(object sender, EventArgs e)
         {
             lblId.Focus();
-        }
-
-        private void btnEdit_Click(object sender, EventArgs e)
-        {
-            formAddProduct f = this;
-            Category c = new Category(f);
-            foreach (var category in cbCategory.Items)
-            {
-                string Category = category.ToString()!;
-                c.tableCategory.Rows.Add(Category);
-            }
-            this.Controls.Add(c);
-            c.BringToFront();
         }
     }
 }

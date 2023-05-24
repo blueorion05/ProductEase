@@ -49,9 +49,9 @@
             lblCategory = new Label();
             lblPrice = new Label();
             tbName = new TextBox();
+            tbId = new TextBox();
             lblId = new Label();
             lblName = new Label();
-            lblIdNum = new Label();
             ((System.ComponentModel.ISupportInitialize)pbImage).BeginInit();
             SuspendLayout();
             // 
@@ -121,7 +121,7 @@
             lblRequired1.BackColor = Color.Transparent;
             lblRequired1.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblRequired1.ForeColor = Color.Red;
-            lblRequired1.Location = new Point(130, 62);
+            lblRequired1.Location = new Point(130, 34);
             lblRequired1.Name = "lblRequired1";
             lblRequired1.Size = new Size(14, 17);
             lblRequired1.TabIndex = 76;
@@ -224,7 +224,7 @@
             cbCategory.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbCategory.FormattingEnabled = true;
             cbCategory.Items.AddRange(new object[] { "Food", "Drinks", "Dessert" });
-            cbCategory.Location = new Point(148, 58);
+            cbCategory.Location = new Point(148, 31);
             cbCategory.Name = "cbCategory";
             cbCategory.Size = new Size(201, 25);
             cbCategory.TabIndex = 68;
@@ -239,7 +239,6 @@
             tbImage.ReadOnly = true;
             tbImage.Size = new Size(166, 22);
             tbImage.TabIndex = 67;
-            tbImage.TextChanged += tbImage_TextChanged;
             // 
             // btnBrowse
             // 
@@ -269,7 +268,7 @@
             lblCategory.AutoSize = true;
             lblCategory.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblCategory.ForeColor = Color.White;
-            lblCategory.Location = new Point(27, 61);
+            lblCategory.Location = new Point(27, 33);
             lblCategory.Name = "lblCategory";
             lblCategory.Size = new Size(73, 17);
             lblCategory.TabIndex = 64;
@@ -294,12 +293,22 @@
             tbName.Size = new Size(201, 22);
             tbName.TabIndex = 62;
             // 
+            // tbId
+            // 
+            tbId.Enabled = false;
+            tbId.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tbId.Location = new Point(148, 60);
+            tbId.Name = "tbId";
+            tbId.ReadOnly = true;
+            tbId.Size = new Size(201, 22);
+            tbId.TabIndex = 61;
+            // 
             // lblId
             // 
             lblId.AutoSize = true;
             lblId.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblId.ForeColor = Color.White;
-            lblId.Location = new Point(27, 31);
+            lblId.Location = new Point(27, 62);
             lblId.Name = "lblId";
             lblId.Size = new Size(80, 17);
             lblId.TabIndex = 60;
@@ -316,23 +325,12 @@
             lblName.TabIndex = 59;
             lblName.Text = "Product name:";
             // 
-            // lblIdNum
-            // 
-            lblIdNum.AutoSize = true;
-            lblIdNum.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblIdNum.ForeColor = Color.White;
-            lblIdNum.Location = new Point(148, 29);
-            lblIdNum.Name = "lblIdNum";
-            lblIdNum.Size = new Size(0, 17);
-            lblIdNum.TabIndex = 82;
-            // 
             // formEditProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(25, 26, 62);
             ClientSize = new Size(567, 342);
-            Controls.Add(lblIdNum);
             Controls.Add(lblRequired);
             Controls.Add(lblRequired5);
             Controls.Add(lblRequired4);
@@ -353,6 +351,7 @@
             Controls.Add(lblCategory);
             Controls.Add(lblPrice);
             Controls.Add(tbName);
+            Controls.Add(tbId);
             Controls.Add(lblId);
             Controls.Add(lblName);
             FormBorderStyle = FormBorderStyle.None;
@@ -388,8 +387,8 @@
         private Label lblCategory;
         private Label lblPrice;
         public TextBox tbName;
+        public TextBox tbId;
         public Label lblId;
         private Label lblName;
-        public Label lblIdNum;
     }
 }

@@ -39,6 +39,7 @@
             lblCategory = new Label();
             lblPrice = new Label();
             tbName = new TextBox();
+            tbId = new TextBox();
             lblId = new Label();
             lblName = new Label();
             btnCancel = new Button();
@@ -50,8 +51,6 @@
             lblRequired4 = new Label();
             lblRequired5 = new Label();
             lblRequired = new Label();
-            lblIdNum = new Label();
-            btnEdit = new Button();
             ((System.ComponentModel.ISupportInitialize)pbImage).BeginInit();
             SuspendLayout();
             // 
@@ -98,9 +97,9 @@
             cbCategory.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             cbCategory.FormattingEnabled = true;
             cbCategory.Items.AddRange(new object[] { "Food", "Drinks", "Dessert" });
-            cbCategory.Location = new Point(148, 58);
+            cbCategory.Location = new Point(148, 31);
             cbCategory.Name = "cbCategory";
-            cbCategory.Size = new Size(154, 25);
+            cbCategory.Size = new Size(201, 25);
             cbCategory.TabIndex = 44;
             // 
             // tbImage
@@ -143,7 +142,7 @@
             lblCategory.AutoSize = true;
             lblCategory.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblCategory.ForeColor = Color.White;
-            lblCategory.Location = new Point(27, 60);
+            lblCategory.Location = new Point(27, 33);
             lblCategory.Name = "lblCategory";
             lblCategory.Size = new Size(73, 17);
             lblCategory.TabIndex = 39;
@@ -168,12 +167,22 @@
             tbName.Size = new Size(201, 22);
             tbName.TabIndex = 37;
             // 
+            // tbId
+            // 
+            tbId.Enabled = false;
+            tbId.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tbId.Location = new Point(148, 60);
+            tbId.Name = "tbId";
+            tbId.ReadOnly = true;
+            tbId.Size = new Size(201, 22);
+            tbId.TabIndex = 36;
+            // 
             // lblId
             // 
             lblId.AutoSize = true;
             lblId.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblId.ForeColor = Color.White;
-            lblId.Location = new Point(27, 31);
+            lblId.Location = new Point(27, 62);
             lblId.Name = "lblId";
             lblId.Size = new Size(80, 17);
             lblId.TabIndex = 35;
@@ -240,7 +249,7 @@
             lblRequired1.BackColor = Color.Transparent;
             lblRequired1.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblRequired1.ForeColor = Color.Red;
-            lblRequired1.Location = new Point(130, 61);
+            lblRequired1.Location = new Point(130, 34);
             lblRequired1.Name = "lblRequired1";
             lblRequired1.Size = new Size(14, 17);
             lblRequired1.TabIndex = 52;
@@ -306,39 +315,12 @@
             lblRequired.TabIndex = 58;
             lblRequired.Text = "Fill all with ";
             // 
-            // lblIdNum
-            // 
-            lblIdNum.AutoSize = true;
-            lblIdNum.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblIdNum.ForeColor = Color.White;
-            lblIdNum.Location = new Point(148, 31);
-            lblIdNum.Name = "lblIdNum";
-            lblIdNum.Size = new Size(0, 17);
-            lblIdNum.TabIndex = 59;
-            // 
-            // btnEdit
-            // 
-            btnEdit.BackColor = Color.FromArgb(0, 150, 136);
-            btnEdit.FlatAppearance.BorderSize = 0;
-            btnEdit.FlatStyle = FlatStyle.Flat;
-            btnEdit.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnEdit.ForeColor = Color.White;
-            btnEdit.Location = new Point(308, 58);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(41, 25);
-            btnEdit.TabIndex = 84;
-            btnEdit.Text = "EDIT";
-            btnEdit.UseVisualStyleBackColor = false;
-            btnEdit.Click += btnEdit_Click;
-            // 
             // formAddProduct
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(25, 26, 62);
             ClientSize = new Size(567, 342);
-            Controls.Add(btnEdit);
-            Controls.Add(lblIdNum);
             Controls.Add(lblRequired);
             Controls.Add(lblRequired5);
             Controls.Add(lblRequired4);
@@ -358,6 +340,7 @@
             Controls.Add(lblCategory);
             Controls.Add(lblPrice);
             Controls.Add(tbName);
+            Controls.Add(tbId);
             Controls.Add(lblId);
             Controls.Add(lblName);
             FormBorderStyle = FormBorderStyle.None;
@@ -383,6 +366,7 @@
         private Label lblCategory;
         private Label lblPrice;
         private TextBox tbName;
+        private TextBox tbId;
         private Label lblId;
         private Label lblName;
         private Button btnCancel;
@@ -394,7 +378,5 @@
         private Label lblRequired4;
         private Label lblRequired5;
         private Label lblRequired;
-        private Label lblIdNum;
-        private Button btnEdit;
     }
 }

@@ -121,7 +121,7 @@ namespace Fastfood
                 {
                     if (tableProduct.Rows[e.RowIndex].Cells[0].Value.ToString() == reader["Id"].ToString())
                     {
-                        f.lblIdNum.Text = (string)reader["Id"];
+                        f.tbId.Text = (string)reader["Id"];
                         f.cbCategory.Text = (string)reader["Category"];
                         f.tbName.Text = (string)reader["Product_Name"];
                         f.tbPrice.Text = (string)reader["Price"];
