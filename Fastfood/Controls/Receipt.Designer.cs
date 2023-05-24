@@ -36,6 +36,7 @@
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
             panel1 = new Panel();
+            lblDate = new Label();
             lblId = new Label();
             panel2 = new Panel();
             panel3 = new Panel();
@@ -54,7 +55,6 @@
             Quantity = new DataGridViewTextBoxColumn();
             Price = new DataGridViewTextBoxColumn();
             Amount = new DataGridViewTextBoxColumn();
-            lblDate = new Label();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -69,6 +69,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(336, 73);
             panel1.TabIndex = 0;
+            // 
+            // lblDate
+            // 
+            lblDate.AutoSize = true;
+            lblDate.Location = new Point(0, 36);
+            lblDate.Name = "lblDate";
+            lblDate.Size = new Size(65, 17);
+            lblDate.TabIndex = 1;
+            lblDate.Text = "DateTime";
             // 
             // lblId
             // 
@@ -245,7 +254,7 @@
             dataGridViewCellStyle5.Font = new Font("Century Gothic", 7F, FontStyle.Regular, GraphicsUnit.Point);
             Quantity.DefaultCellStyle = dataGridViewCellStyle5;
             Quantity.FillWeight = 95.62374F;
-            Quantity.HeaderText = "Quantity";
+            Quantity.HeaderText = "Qty";
             Quantity.Name = "Quantity";
             Quantity.ReadOnly = true;
             Quantity.Width = 65;
@@ -269,15 +278,6 @@
             Amount.Name = "Amount";
             Amount.ReadOnly = true;
             Amount.Width = 67;
-            // 
-            // lblDate
-            // 
-            lblDate.AutoSize = true;
-            lblDate.Location = new Point(0, 36);
-            lblDate.Name = "lblDate";
-            lblDate.Size = new Size(65, 17);
-            lblDate.TabIndex = 1;
-            lblDate.Text = "DateTime";
             // 
             // Receipt
             // 
@@ -314,13 +314,13 @@
         public Label lblDiscount;
         public Label lblAmountDue;
         public DataGridView dataGridView1;
+        public Label lblId;
+        public Label lblDate;
         private DataGridViewTextBoxColumn Empty;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Product_Name;
         private DataGridViewTextBoxColumn Quantity;
         private DataGridViewTextBoxColumn Price;
         private DataGridViewTextBoxColumn Amount;
-        public Label lblId;
-        public Label lblDate;
     }
 }

@@ -44,7 +44,7 @@ namespace Fastfood
 
             try
             {
-                cmd.Parameters.AddWithValue("@Id", SqlDbType.VarChar).Value = tbId.Text;
+                cmd.Parameters.AddWithValue("@Id", SqlDbType.VarChar).Value = lblIdNum.Text;
                 cmd.Parameters.AddWithValue("@Category", SqlDbType.VarChar).Value = cbCategory.Text;
                 cmd.Parameters.AddWithValue("@Product_Name", SqlDbType.VarChar).Value = tbName.Text;
                 cmd.Parameters.AddWithValue("@Price", SqlDbType.VarChar).Value = tbPrice.Text;

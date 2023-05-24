@@ -279,7 +279,7 @@
             lblDateTime.Padding = new Padding(0, 0, 0, 20);
             lblDateTime.Size = new Size(216, 37);
             lblDateTime.TabIndex = 26;
-            lblDateTime.TextAlign = ContentAlignment.MiddleCenter;
+            lblDateTime.TextAlign = ContentAlignment.MiddleRight;
             // 
             // button9
             // 
@@ -334,9 +334,9 @@
             dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.White;
             dataGridViewCellStyle1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.ForeColor = Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.SelectionForeColor = Color.Black;
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
@@ -361,11 +361,13 @@
             dataGridViewCellStyle6.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
             dataGridView1.ShowEditingIcon = false;
             dataGridView1.Size = new Size(339, 194);
             dataGridView1.TabIndex = 1;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellMouseDown += dataGridView1_CellMouseDown;
+            dataGridView1.MouseDown += dataGridView1_MouseDown;
             // 
             // Product_Name
             // 
@@ -375,6 +377,7 @@
             Product_Name.MinimumWidth = 135;
             Product_Name.Name = "Product_Name";
             Product_Name.ReadOnly = true;
+            Product_Name.SortMode = DataGridViewColumnSortMode.NotSortable;
             Product_Name.Width = 135;
             // 
             // Quantity
@@ -384,6 +387,7 @@
             Quantity.MinimumWidth = 54;
             Quantity.Name = "Quantity";
             Quantity.ReadOnly = true;
+            Quantity.SortMode = DataGridViewColumnSortMode.NotSortable;
             Quantity.Width = 54;
             // 
             // Price
@@ -394,6 +398,7 @@
             Price.MinimumWidth = 65;
             Price.Name = "Price";
             Price.ReadOnly = true;
+            Price.SortMode = DataGridViewColumnSortMode.NotSortable;
             Price.Width = 65;
             // 
             // Add
@@ -414,7 +419,6 @@
             Add.Name = "Add";
             Add.ReadOnly = true;
             Add.Resizable = DataGridViewTriState.True;
-            Add.SortMode = DataGridViewColumnSortMode.Automatic;
             Add.UseColumnTextForButtonValue = true;
             Add.Width = 27;
             // 
@@ -463,6 +467,7 @@
             OgPrice.HeaderText = "";
             OgPrice.Name = "OgPrice";
             OgPrice.ReadOnly = true;
+            OgPrice.SortMode = DataGridViewColumnSortMode.NotSortable;
             OgPrice.Visible = false;
             // 
             // Id
@@ -470,6 +475,7 @@
             Id.HeaderText = "";
             Id.Name = "Id";
             Id.ReadOnly = true;
+            Id.SortMode = DataGridViewColumnSortMode.NotSortable;
             Id.Visible = false;
             // 
             // panel6
@@ -692,14 +698,6 @@
         private Button btn1pay;
         public Label lbl7amount;
         private FlowLayoutPanel flowLayoutPanel1;
-        private DataGridViewTextBoxColumn Product_Name;
-        private DataGridViewTextBoxColumn Quantity;
-        private DataGridViewTextBoxColumn Price;
-        private DataGridViewButtonColumn Add;
-        private DataGridViewButtonColumn Reduce;
-        private DataGridViewButtonColumn Delete;
-        private DataGridViewTextBoxColumn OgPrice;
-        private DataGridViewTextBoxColumn Id;
         private Label label4;
         public Label label5;
         private Label label3;
@@ -710,5 +708,13 @@
         private Label lblTransactionId;
         private Label lblDateTime;
         private System.Windows.Forms.Timer timerDateTime;
+        private DataGridViewTextBoxColumn Product_Name;
+        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewTextBoxColumn Price;
+        private DataGridViewButtonColumn Add;
+        private DataGridViewButtonColumn Reduce;
+        private DataGridViewButtonColumn Delete;
+        private DataGridViewTextBoxColumn OgPrice;
+        private DataGridViewTextBoxColumn Id;
     }
 }

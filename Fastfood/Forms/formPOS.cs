@@ -490,5 +490,15 @@ namespace Fastfood
         {
             lblDateTime.Text = DateTime.Now.ToString("dd-MMM-yyyy hh:mm:ss tt");
         }
+
+        private void dataGridView1_MouseDown(object sender, MouseEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+        }
     }
 }
