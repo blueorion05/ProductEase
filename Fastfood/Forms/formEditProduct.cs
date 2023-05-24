@@ -77,11 +77,12 @@ namespace Fastfood
             }
             else
             {
-                float valid;
-                if (float.TryParse(tbPrice.Text, out valid))
+                double valid;
+                if (double.TryParse(tbPrice.Text, out valid))
                 {
-                    if (Convert.ToDecimal(tbPrice.Text) >= 0)
+                    if (Convert.ToDouble(tbPrice.Text) >= 0)
                     {
+                        tbPrice.Text = Convert.ToDouble(tbPrice.Text).ToString("0.00");
                         EditProduct();
                         this.Hide();
                     }

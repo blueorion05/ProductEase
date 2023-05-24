@@ -47,7 +47,7 @@ namespace Fastfood
                         quantity++;
                         double price = Convert.ToDouble(c.lblPrice.Text) * quantity;
                         dataGridView1.Rows[i].Cells["Quantity"].Value = quantity;
-                        dataGridView1.Rows[i].Cells["Price"].Value = price;
+                        dataGridView1.Rows[i].Cells["Price"].Value = price.ToString("0.00");
                     }
                 }
             }
@@ -62,8 +62,8 @@ namespace Fastfood
 
         private void ClearCashTendered()
         {
-            textBox2.Text = "";
-            label5.Text = "";
+            tbCash.Text = "";
+            lblChange.Text = "";
         }
 
         private void AddNew(Product c)
@@ -80,10 +80,10 @@ namespace Fastfood
         {
             try
             {
-                decimal totalAmount = 0;
+                double totalAmount = 0;
                 for (int i = 0; i < dataGridView1.Rows.Count; i++)
                 {
-                    decimal price = decimal.Parse(dataGridView1.Rows[i].Cells["Price"].Value.ToString()!);
+                    double price = double.Parse(dataGridView1.Rows[i].Cells["Price"].Value.ToString()!);
                     totalAmount += price;
                 }
                 UpdateAmountDue(totalAmount);
@@ -91,31 +91,31 @@ namespace Fastfood
             catch
             {
                 MessageBox.Show("Invalid discount.");
-                textBox3.Text = "0";
+                tbDiscount.Text = "0";
                 AmountDue();
             }
         }
 
-        private void UpdateAmountDue(decimal totalAmount)
+        private void UpdateAmountDue(double totalAmount)
         {
-            decimal discount, amountDue;
+            double discount, amountDue;
 
-            if (textBox3.Text.EndsWith("%"))
+            if (tbDiscount.Text.EndsWith("%"))
             {
-                discount = totalAmount * Convert.ToDecimal(textBox3.Text.Replace("%", "")) / 100;
+                discount = totalAmount * Convert.ToDouble(tbDiscount.Text.Replace("%", "")) / 100;
             }
             else
             {
-                discount = decimal.Parse(textBox3.Text);
+                discount = double.Parse(tbDiscount.Text);
             }
             amountDue = totalAmount - discount;
             if (amountDue >= 0)
             {
-                lbl7amount.Text = amountDue.ToString();
+                lbl7amount.Text = amountDue.ToString("0.00");
             }
             else
             {
-                lbl7amount.Text = "0";
+                lbl7amount.Text = "0.00";
             }
         }
 
@@ -154,7 +154,7 @@ namespace Fastfood
                 i--;
             }
             AmountDue();
-            textBox3.Text = "0";
+            tbDiscount.Text = "0";
             ClearCashTendered();
         }
 
@@ -229,7 +229,7 @@ namespace Fastfood
                 quantity++;
                 price = Convert.ToDouble(dataGridView1.Rows[row].Cells["OgPrice"].Value) * quantity;
                 dataGridView1.Rows[row].Cells["Quantity"].Value = quantity;
-                dataGridView1.Rows[row].Cells["Price"].Value = price;
+                dataGridView1.Rows[row].Cells["Price"].Value = price.ToString("0.00");
                 AmountDue();
                 ClearCashTendered();
             }
@@ -240,7 +240,7 @@ namespace Fastfood
                 quantity--;
                 price = Convert.ToDouble(dataGridView1.Rows[row].Cells["OgPrice"].Value) * quantity;
                 dataGridView1.Rows[row].Cells["Quantity"].Value = quantity;
-                dataGridView1.Rows[row].Cells["Price"].Value = price;
+                dataGridView1.Rows[row].Cells["Price"].Value = price.ToString("0.00");
                 if (Convert.ToInt32(dataGridView1.Rows[row].Cells["Quantity"].Value) == 0)
                 {
                     row = dataGridView1.SelectedCells[0].RowIndex;
@@ -350,8 +350,8 @@ namespace Fastfood
         {
             try
             {
-                textBox2.Text = textBox2.Text.Replace(" ", "");
-                if (Convert.ToDouble(textBox2.Text) >= Convert.ToDouble(lbl7amount.Text))
+                tbCash.Text = tbCash.Text.Replace(" ", "");
+                if (Convert.ToDouble(tbCash.Text) >= Convert.ToDouble(lbl7amount.Text))
                 {
                     Change();
                 }
@@ -375,7 +375,7 @@ namespace Fastfood
 
         private void Change()
         {
-            label5.Text = (Convert.ToDouble(textBox2.Text) - Convert.ToDouble(lbl7amount.Text)).ToString();
+            lblChange.Text = Convert.ToDouble((Convert.ToDouble(tbCash.Text) - Convert.ToDouble(lbl7amount.Text))).ToString("0.00");
         }
 
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
@@ -390,18 +390,18 @@ namespace Fastfood
         {
             try
             {
-                textBox3.Text = textBox3.Text.Replace(" ", "");
+                tbDiscount.Text = tbDiscount.Text.Replace(" ", "");
 
-                if (textBox3.Text == "")
+                if (tbDiscount.Text == "")
                 {
-                    textBox3.Text = "0";
+                    tbDiscount.Text = "0";
                 }
-                if (textBox3.Text.EndsWith("%"))
+                if (tbDiscount.Text.EndsWith("%"))
                 {
-                    if (Convert.ToDouble(textBox3.Text.Replace("%", "")) >= 0)
+                    if (Convert.ToDouble(tbDiscount.Text.Replace("%", "")) >= 0)
                     {
                         AmountDue();
-                        if (label5.Text != "" && textBox2.Text != "")
+                        if (lblChange.Text != "" && tbCash.Text != "")
                         {
                             Change();
                         }
@@ -409,14 +409,14 @@ namespace Fastfood
                     else
                     {
                         MessageBox.Show("Invalid discount.");
-                        textBox3.Text = "0";
+                        tbDiscount.Text = "0";
                         AmountDue();
                     }
                 }
-                else if (Convert.ToDouble(textBox3.Text) >= 0)
+                else if (Convert.ToDouble(tbDiscount.Text) >= 0)
                 {
                     AmountDue();
-                    if (label5.Text != "" && textBox2.Text != "")
+                    if (lblChange.Text != "" && tbCash.Text != "")
                     {
                         Change();
                     }
@@ -424,14 +424,14 @@ namespace Fastfood
                 else
                 {
                     MessageBox.Show("Invalid discount.");
-                    textBox3.Text = "0";
+                    tbDiscount.Text = "0";
                     AmountDue();
                 }
             }
             catch
             {
                 MessageBox.Show("Invalid discount.");
-                textBox3.Text = "0";
+                tbDiscount.Text = "0";
                 AmountDue();
             }
         }
@@ -440,24 +440,31 @@ namespace Fastfood
         {
             try
             {
-                if (textBox2.Text != "")
+                if (tbCash.Text != "")
                 {
                     Receipt r = new Receipt();
                     r.lblDate.Text = lblDateTime.Text;
                     r.lblId.Text = lblTransactionId.Text;
-                    r.lblAmountDue.Text = lbl7amount.Text;
-                    r.lblDiscount.Text = textBox3.Text;
-                    r.lblCash.Text = textBox2.Text;
-                    r.lblChange.Text = label5.Text;
+                    r.lblAmountDue.Text = Convert.ToDouble(lbl7amount.Text).ToString("0.00");
+                    if (tbDiscount.Text.ToString().Contains("%"))
+                    {
+                        r.label3.Text = "  :Discount";
+                        r.lblDiscount.Text = tbDiscount.Text;
+                    }
+                    else
+                    {
+                        r.lblDiscount.Text = Convert.ToDouble(tbDiscount.Text).ToString("0.00");
+                    }
+                    r.lblCash.Text = Convert.ToDouble(tbCash.Text).ToString("0.00");
+                    r.lblChange.Text = Convert.ToDouble(lblChange.Text).ToString("0.00");
                     for (int i = 0; i < dataGridView1.Rows.Count; i++)
                     {
                         r.dataGridView1.Rows.Add();
                         r.dataGridView1.Rows[i].Cells["Empty"].Value = "";
-                        r.dataGridView1.Rows[i].Cells["Id"].Value = dataGridView1.Rows[i].Cells["Id"].Value;
                         r.dataGridView1.Rows[i].Cells["Product_Name"].Value = dataGridView1.Rows[i].Cells["Product_Name"].Value;
                         r.dataGridView1.Rows[i].Cells["Quantity"].Value = dataGridView1.Rows[i].Cells["Quantity"].Value;
-                        r.dataGridView1.Rows[i].Cells["Price"].Value = dataGridView1.Rows[i].Cells["OgPrice"].Value;
-                        r.dataGridView1.Rows[i].Cells["Amount"].Value = dataGridView1.Rows[i].Cells["Price"].Value;
+                        r.dataGridView1.Rows[i].Cells["Price"].Value = "₱ " + dataGridView1.Rows[i].Cells["OgPrice"].Value;
+                        r.dataGridView1.Rows[i].Cells["Amount"].Value = "₱ " + dataGridView1.Rows[i].Cells["Price"].Value;
                         r.dataGridView1.Height += r.dataGridView1.Rows[i].Height;
                         r.Height += r.dataGridView1.Rows[i].Height;
                     }

@@ -39,7 +39,7 @@ namespace Fastfood
                     products += "x ";
                     products += (receipt.dataGridView1.Rows[i].Cells["Product_Name"].Value).ToString();
                     products += "(";
-                    products += (receipt.dataGridView1.Rows[i].Cells["Amount"].Value).ToString();
+                    products += (receipt.dataGridView1.Rows[i].Cells["Amount"].Value).ToString()!.Replace("₱ ", "");
                     products += ")\n";
                 }
             }
