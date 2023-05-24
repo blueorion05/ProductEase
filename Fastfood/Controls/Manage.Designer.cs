@@ -48,6 +48,7 @@
             Price = new DataGridViewTextBoxColumn();
             Image = new DataGridViewTextBoxColumn();
             tableProduct = new DataGridView();
+            textBox1 = new TextBox();
             tableProductC4 = new DataGridViewTextBoxColumn();
             tableProductC5 = new DataGridViewTextBoxColumn();
             Product_Name = new DataGridViewTextBoxColumn();
@@ -56,7 +57,6 @@
             Available = new DataGridViewTextBoxColumn();
             Edit = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
-            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pbHeader).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbFooter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)tableProduct).BeginInit();
@@ -158,6 +158,18 @@
             tableProduct.TabIndex = 0;
             tableProduct.CellContentClick += dataGridView1_CellContentClick;
             // 
+            // textBox1
+            // 
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox1.BackColor = Color.White;
+            textBox1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(115, 16);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Search Product Name here.";
+            textBox1.Size = new Size(422, 22);
+            textBox1.TabIndex = 23;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
             // tableProductC4
             // 
             tableProductC4.DataPropertyName = "Id";
@@ -210,7 +222,6 @@
             tableProductC7.Name = "tableProductC7";
             tableProductC7.ReadOnly = true;
             tableProductC7.Resizable = DataGridViewTriState.True;
-            tableProductC7.SortMode = DataGridViewColumnSortMode.Automatic;
             // 
             // Available
             // 
@@ -253,18 +264,6 @@
             Delete.ReadOnly = true;
             Delete.Text = "Delete";
             Delete.UseColumnTextForButtonValue = true;
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.BackColor = Color.White;
-            textBox1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(115, 16);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Search Product Name here.";
-            textBox1.Size = new Size(422, 22);
-            textBox1.TabIndex = 23;
-            textBox1.TextChanged += textBox1_TextChanged;
             // 
             // Manage
             // 
