@@ -41,7 +41,7 @@
             panelMenu = new Panel();
             lblDateTime = new Label();
             btnLogout = new Button();
-            btnAccount = new Button();
+            btnSettings = new Button();
             btnTransactions = new Button();
             btnPOS = new Button();
             btnManage = new Button();
@@ -167,7 +167,7 @@
             panelMenu.BackColor = Color.FromArgb(31, 30, 68);
             panelMenu.Controls.Add(lblDateTime);
             panelMenu.Controls.Add(btnLogout);
-            panelMenu.Controls.Add(btnAccount);
+            panelMenu.Controls.Add(btnSettings);
             panelMenu.Controls.Add(btnTransactions);
             panelMenu.Controls.Add(btnPOS);
             panelMenu.Controls.Add(btnManage);
@@ -213,25 +213,25 @@
             btnLogout.UseVisualStyleBackColor = false;
             btnLogout.Click += btnLogout_Click;
             // 
-            // btnAccount
+            // btnSettings
             // 
-            btnAccount.BackColor = Color.FromArgb(31, 30, 68);
-            btnAccount.FlatAppearance.BorderSize = 0;
-            btnAccount.FlatStyle = FlatStyle.Flat;
-            btnAccount.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            btnAccount.ForeColor = Color.White;
-            btnAccount.Image = (Image)resources.GetObject("btnAccount.Image");
-            btnAccount.ImageAlign = ContentAlignment.MiddleLeft;
-            btnAccount.Location = new Point(0, 344);
-            btnAccount.Name = "btnAccount";
-            btnAccount.Padding = new Padding(15, 0, 0, 0);
-            btnAccount.Size = new Size(217, 64);
-            btnAccount.TabIndex = 11;
-            btnAccount.Text = "     Account";
-            btnAccount.TextAlign = ContentAlignment.MiddleLeft;
-            btnAccount.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnAccount.UseVisualStyleBackColor = false;
-            btnAccount.Click += btnAccount_Click;
+            btnSettings.BackColor = Color.FromArgb(31, 30, 68);
+            btnSettings.FlatAppearance.BorderSize = 0;
+            btnSettings.FlatStyle = FlatStyle.Flat;
+            btnSettings.Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSettings.ForeColor = Color.White;
+            btnSettings.Image = (Image)resources.GetObject("btnSettings.Image");
+            btnSettings.ImageAlign = ContentAlignment.MiddleLeft;
+            btnSettings.Location = new Point(0, 344);
+            btnSettings.Name = "btnSettings";
+            btnSettings.Padding = new Padding(15, 0, 0, 0);
+            btnSettings.Size = new Size(217, 64);
+            btnSettings.TabIndex = 11;
+            btnSettings.Text = "     Settings";
+            btnSettings.TextAlign = ContentAlignment.MiddleLeft;
+            btnSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSettings.UseVisualStyleBackColor = false;
+            btnSettings.Click += btnAccount_Click;
             // 
             // btnTransactions
             // 
@@ -353,7 +353,7 @@
         private Panel panelMenu;
         private Button btnHome;
         private Button btnLogout;
-        private Button btnAccount;
+        private Button btnSettings;
         private Button btnTransactions;
         private Button btnPOS;
         private Button btnManage;

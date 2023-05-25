@@ -16,7 +16,7 @@ namespace Fastfood
     {
         Home home = new Home();
         Manage manage = new Manage();
-        Account account = new Account();
+        Settings account = new Settings();
         public formMain()
         {
             InitializeComponent();
@@ -63,10 +63,10 @@ namespace Fastfood
             formPOS pos = new formPOS();
             this.Hide();
             pos.ShowDialog();
-            this.Show();
+            this.ShowDialog();
         }
 
-        private void btnRecords_Click(object sender, EventArgs e)
+        public void btnRecords_Click(object sender, EventArgs e)
         {
             if (pbActive.BackgroundImage != btnTransactions.Image)
             {
@@ -82,11 +82,11 @@ namespace Fastfood
 
         private void btnAccount_Click(object sender, EventArgs e)
         {
-            if (pbActive.BackgroundImage != btnAccount.Image)
+            if (pbActive.BackgroundImage != btnSettings.Image)
             {
                 ButtonColor();
-                btnAccount.BackColor = Color.FromArgb(0, 150, 136);
-                pbActive.BackgroundImage = btnAccount.Image;
+                btnSettings.BackColor = Color.FromArgb(0, 150, 136);
+                pbActive.BackgroundImage = btnSettings.Image;
                 panelMain.Controls.Clear();
                 account.Dock = DockStyle.Fill;
                 panelMain.Controls.Add(account);
@@ -105,7 +105,7 @@ namespace Fastfood
             btnManage.BackColor = panelMenu.BackColor;
             btnPOS.BackColor = panelMenu.BackColor;
             btnTransactions.BackColor = panelMenu.BackColor;
-            btnAccount.BackColor = panelMenu.BackColor;
+            btnSettings.BackColor = panelMenu.BackColor;
             btnLogout.BackColor = panelMenu.BackColor;
         }
 

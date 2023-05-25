@@ -136,7 +136,7 @@
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             button5.ForeColor = Color.White;
-            button5.Image = (Image)resources.GetObject("button5.Image");
+            button5.Image = ProductEase.Properties.Resources.close;
             button5.Location = new Point(1034, 0);
             button5.Name = "button5";
             button5.Size = new Size(30, 25);
