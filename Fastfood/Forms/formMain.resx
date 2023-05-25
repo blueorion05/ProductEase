@@ -58,20 +58,26 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="button1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAADNJREFUOE9jGDzg////b4GYWPAGqg0BQKJQJkGAVe2oAaMGgAA1DHgDkiASYCbl
+        AQIMDACc8a8GdhIH4wAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btnMinimize.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAADFJREFUSEtjGAWjYBSMAjLA////g4G4mkwcDDUGNwApQtNECiZswSgYBaNgFKAD
-        BgYAHLJuYZ2OmuYAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAChJREFUOE9jGAXDCvz//78TiFcRiTuh2hAAJIimCB/GNGAUDF3AwAAAHElXJXiW
+        8G0AAAAASUVORK5CYII=
 </value>
   </data>
   <data name="btnExit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        DAAACwwBP0AiyAAAALdJREFUSEvtlW0KgzAQRHOutkI9rGfrMdIX2A0DqXQ36j8fBMzu7IxfaLlJUWvd
-        WC/bpmmzzcO2IzQfrA/rbaUwzDxDswjSIWhj5g7CcAianLnDgIesVhqgN2fuiMEQIr05c0eMeojUjpk7
-        YrjK8TnmDoaLGbe1WPk8Lg3AsN8WOd59u1KIYb/nUjsWIkbDA5XeXIgY7L4tEc1PMoNoct8uhOmzQhsL
-        QTB3ycDM/xCa1/5wbkZK+QI1hFmwLJSMDgAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        DAAACwwBP0AiyAAAAHdJREFUOE/NkkEKgDAMBPst/+RBb77eOIG0IjGlmoMOBNrNbkpLy38QkYmabRui
+        HvXa9sQaO7Wa5NCeee4PorFQymZSAy3sXcDgjKzHwhWMLUA9C1cI1Pt23yUkNYDA+ytgdAHWY0MwhEa0
+        /hAauY+EmPvKH1HKARI15dGW9ielAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="btnLogout.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

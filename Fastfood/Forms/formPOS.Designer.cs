@@ -37,6 +37,7 @@
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             panelHeader = new Panel();
+            button6 = new Button();
             lbl1Company = new Label();
             button5 = new Button();
             btnMinimize = new Button();
@@ -87,6 +88,7 @@
             // panelHeader
             // 
             panelHeader.BackColor = Color.FromArgb(25, 26, 62);
+            panelHeader.Controls.Add(button6);
             panelHeader.Controls.Add(lbl1Company);
             panelHeader.Controls.Add(button5);
             panelHeader.Controls.Add(btnMinimize);
@@ -96,6 +98,22 @@
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1064, 64);
             panelHeader.TabIndex = 9;
+            // 
+            // button6
+            // 
+            button6.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button6.BackColor = Color.Transparent;
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            button6.ForeColor = Color.White;
+            button6.Image = (Image)resources.GetObject("button6.Image");
+            button6.Location = new Point(1002, 0);
+            button6.Name = "button6";
+            button6.Size = new Size(30, 25);
+            button6.TabIndex = 26;
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
             // 
             // lbl1Company
             // 
@@ -716,5 +734,6 @@
         private DataGridViewButtonColumn Delete;
         private DataGridViewTextBoxColumn OgPrice;
         private DataGridViewTextBoxColumn Id;
+        private Button button6;
     }
 }

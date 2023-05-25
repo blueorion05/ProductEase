@@ -33,6 +33,7 @@
             lbl1Company = new Label();
             panelMain = new Panel();
             panelHeader = new Panel();
+            button1 = new Button();
             pbActive = new PictureBox();
             btnMinimize = new Button();
             btnExit = new Button();
@@ -71,6 +72,7 @@
             // 
             // panelMain
             // 
+            panelMain.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panelMain.BackColor = Color.WhiteSmoke;
             panelMain.Location = new Point(215, 66);
             panelMain.Name = "panelMain";
@@ -79,7 +81,9 @@
             // 
             // panelHeader
             // 
+            panelHeader.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelHeader.BackColor = Color.FromArgb(25, 26, 62);
+            panelHeader.Controls.Add(button1);
             panelHeader.Controls.Add(pbActive);
             panelHeader.Controls.Add(btnMinimize);
             panelHeader.Controls.Add(btnExit);
@@ -87,6 +91,24 @@
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1064, 64);
             panelHeader.TabIndex = 8;
+            panelHeader.Paint += panelHeader_Paint;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            button1.BackColor = Color.Transparent;
+            button1.BackgroundImageLayout = ImageLayout.Center;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(1000, 0);
+            button1.Name = "button1";
+            button1.Size = new Size(30, 25);
+            button1.TabIndex = 17;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // pbActive
             // 
@@ -106,7 +128,7 @@
             btnMinimize.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnMinimize.ForeColor = Color.White;
             btnMinimize.Image = (Image)resources.GetObject("btnMinimize.Image");
-            btnMinimize.Location = new Point(1000, 0);
+            btnMinimize.Location = new Point(968, 0);
             btnMinimize.Name = "btnMinimize";
             btnMinimize.Size = new Size(30, 25);
             btnMinimize.TabIndex = 1;
@@ -141,6 +163,7 @@
             // 
             // panelMenu
             // 
+            panelMenu.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panelMenu.BackColor = Color.FromArgb(31, 30, 68);
             panelMenu.Controls.Add(lblDateTime);
             panelMenu.Controls.Add(btnLogout);
@@ -156,9 +179,9 @@
             // 
             // lblDateTime
             // 
+            lblDateTime.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             lblDateTime.AutoSize = true;
             lblDateTime.BackColor = Color.Transparent;
-            lblDateTime.Dock = DockStyle.Bottom;
             lblDateTime.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblDateTime.ForeColor = Color.White;
             lblDateTime.Location = new Point(0, 616);
@@ -338,5 +361,6 @@
         private PictureBox pbActive;
         private Label lblDateTime;
         private System.Windows.Forms.Timer timerDateTime;
+        private Button button1;
     }
 }

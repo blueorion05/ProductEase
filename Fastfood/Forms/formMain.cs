@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProductEase.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.PropertyGridInternal;
 
 namespace Fastfood
 {
@@ -38,6 +40,7 @@ namespace Fastfood
                 btnHome.BackColor = Color.FromArgb(0, 150, 136);
                 pbActive.BackgroundImage = btnHome.Image;
                 panelMain.Controls.Clear();
+                home.Dock = DockStyle.Fill;
                 panelMain.Controls.Add(home);
             }
         }
@@ -50,6 +53,7 @@ namespace Fastfood
                 btnManage.BackColor = Color.FromArgb(0, 150, 136);
                 pbActive.BackgroundImage = btnManage.Image;
                 panelMain.Controls.Clear();
+                manage.Dock = DockStyle.Fill;
                 panelMain.Controls.Add(manage);
             }
         }
@@ -71,6 +75,7 @@ namespace Fastfood
                 btnTransactions.BackColor = Color.FromArgb(0, 150, 136);
                 pbActive.BackgroundImage = btnTransactions.Image;
                 panelMain.Controls.Clear();
+                records.Dock = DockStyle.Fill;
                 panelMain.Controls.Add(records);
             }
         }
@@ -83,6 +88,7 @@ namespace Fastfood
                 btnAccount.BackColor = Color.FromArgb(0, 150, 136);
                 pbActive.BackgroundImage = btnAccount.Image;
                 panelMain.Controls.Clear();
+                account.Dock = DockStyle.Fill;
                 panelMain.Controls.Add(account);
             }
         }
@@ -111,6 +117,25 @@ namespace Fastfood
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblDateTime.Text = DateTime.Now.ToString("dd-MMM-yyyy hh:mm:ss tt");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+                button1.Image = Resources.restoredown;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+                button1.Image = Resources.maximize;
+            }
+        }
+
+        private void panelHeader_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

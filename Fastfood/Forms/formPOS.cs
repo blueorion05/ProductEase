@@ -303,7 +303,6 @@ namespace Fastfood
             flowLayoutPanel1.Controls.Clear();
             if (textBox1.Text != "")
             {
-                Product c = new Product();
                 string data = "SELECT * FROM Products WHERE Product_Name LIKE'" + textBox1.Text + "%'";
                 Connection sql = new Connection();
                 SqlConnection conn = sql.GetConnection();
@@ -311,6 +310,7 @@ namespace Fastfood
                 SqlDataReader row = cmd.ExecuteReader();
                 while (row.Read())
                 {
+                    Product c = new Product();
                     if (row["Available"].ToString() != "Yes")
                     {
                         continue;
@@ -506,6 +506,11 @@ namespace Fastfood
         private void dataGridView1_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
 
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
