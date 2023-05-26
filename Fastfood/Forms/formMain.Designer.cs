@@ -81,15 +81,15 @@
             // 
             // panelHeader
             // 
-            panelHeader.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelHeader.BackColor = Color.FromArgb(25, 26, 62);
             panelHeader.Controls.Add(button1);
             panelHeader.Controls.Add(pbActive);
             panelHeader.Controls.Add(btnMinimize);
             panelHeader.Controls.Add(btnExit);
-            panelHeader.Location = new Point(215, 3);
+            panelHeader.Dock = DockStyle.Right;
+            panelHeader.Location = new Point(215, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1064, 64);
+            panelHeader.Size = new Size(1065, 720);
             panelHeader.TabIndex = 8;
             panelHeader.Paint += panelHeader_Paint;
             // 
@@ -103,7 +103,7 @@
             button1.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
             button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(1000, 0);
+            button1.Location = new Point(1003, 0);
             button1.Name = "button1";
             button1.Size = new Size(30, 25);
             button1.TabIndex = 17;
@@ -128,7 +128,7 @@
             btnMinimize.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnMinimize.ForeColor = Color.White;
             btnMinimize.Image = (Image)resources.GetObject("btnMinimize.Image");
-            btnMinimize.Location = new Point(968, 0);
+            btnMinimize.Location = new Point(971, 0);
             btnMinimize.Name = "btnMinimize";
             btnMinimize.Size = new Size(30, 25);
             btnMinimize.TabIndex = 1;
@@ -145,7 +145,7 @@
             btnExit.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnExit.ForeColor = Color.White;
             btnExit.Image = (Image)resources.GetObject("btnExit.Image");
-            btnExit.Location = new Point(1032, 0);
+            btnExit.Location = new Point(1035, 0);
             btnExit.Name = "btnExit";
             btnExit.Size = new Size(30, 25);
             btnExit.TabIndex = 0;

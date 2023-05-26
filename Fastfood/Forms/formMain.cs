@@ -14,9 +14,6 @@ namespace Fastfood
 {
     public partial class formMain : Form
     {
-        Home home = new Home();
-        Manage manage = new Manage();
-        Settings account = new Settings();
         public formMain()
         {
             InitializeComponent();
@@ -36,6 +33,7 @@ namespace Fastfood
         {
             if (pbActive.BackgroundImage != btnHome.Image)
             {
+                Home home = new Home();
                 ButtonColor();
                 btnHome.BackColor = Color.FromArgb(0, 150, 136);
                 pbActive.BackgroundImage = btnHome.Image;
@@ -49,6 +47,7 @@ namespace Fastfood
         {
             if (pbActive.BackgroundImage != btnManage.Image)
             {
+                Manage manage = new Manage();
                 ButtonColor();
                 btnManage.BackColor = Color.FromArgb(0, 150, 136);
                 pbActive.BackgroundImage = btnManage.Image;
@@ -63,7 +62,8 @@ namespace Fastfood
             formPOS pos = new formPOS();
             this.Hide();
             pos.ShowDialog();
-            this.ShowDialog();
+            btnHome_Click(sender, e);
+            this.Show();
         }
 
         public void btnRecords_Click(object sender, EventArgs e)
@@ -80,17 +80,15 @@ namespace Fastfood
             }
         }
 
-        private void btnAccount_Click(object sender, EventArgs e)
+        public void btnAccount_Click(object sender, EventArgs e)
         {
-            if (pbActive.BackgroundImage != btnSettings.Image)
-            {
-                ButtonColor();
-                btnSettings.BackColor = Color.FromArgb(0, 150, 136);
-                pbActive.BackgroundImage = btnSettings.Image;
-                panelMain.Controls.Clear();
-                account.Dock = DockStyle.Fill;
-                panelMain.Controls.Add(account);
-            }
+            Settings settings = new Settings(this);
+            ButtonColor();
+            btnSettings.BackColor = Color.FromArgb(0, 150, 136);
+            pbActive.BackgroundImage = btnSettings.Image;
+            panelMain.Controls.Clear();
+            settings.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(settings);
         }
 
         private void btnLogout_Click(object sender, EventArgs e)

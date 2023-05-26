@@ -28,245 +28,108 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btnCancel = new Button();
-            btnSave = new Button();
-            TB5 = new TextBox();
-            label7 = new Label();
-            TB4 = new TextBox();
-            label5 = new Label();
-            TB2 = new TextBox();
-            label4 = new Label();
-            TB1 = new TextBox();
-            label3 = new Label();
-            textBox3 = new TextBox();
-            lblConfirmPass = new Label();
-            textBox2 = new TextBox();
-            label2 = new Label();
-            textBox4 = new TextBox();
-            label1 = new Label();
-            textBox1 = new TextBox();
-            label6 = new Label();
-            textBox5 = new TextBox();
-            label8 = new Label();
+            lblEmailTag = new Label();
+            lblLandlineTag = new Label();
+            lblAddressTag = new Label();
+            lblNameTag = new Label();
+            lblCpNumTag = new Label();
+            lblStoreHoursTag = new Label();
             pbFooter = new PictureBox();
             pbHeader = new PictureBox();
+            label9 = new Label();
+            lblPass = new Label();
+            lblStoreHours = new Label();
+            lblCpNum = new Label();
+            lblEmail = new Label();
+            lblLandline = new Label();
+            lblAddress = new Label();
+            lblName = new Label();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
+            button4 = new Button();
+            button5 = new Button();
+            button6 = new Button();
+            button7 = new Button();
+            button8 = new Button();
+            lblUser = new Label();
+            lblUserTag = new Label();
             ((System.ComponentModel.ISupportInitialize)pbFooter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbHeader).BeginInit();
             SuspendLayout();
             // 
-            // btnCancel
+            // lblEmailTag
             // 
-            btnCancel.BackColor = Color.FromArgb(0, 150, 136);
-            btnCancel.FlatAppearance.BorderSize = 0;
-            btnCancel.FlatStyle = FlatStyle.Flat;
-            btnCancel.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCancel.ForeColor = Color.White;
-            btnCancel.Location = new Point(105, 601);
-            btnCancel.Name = "btnCancel";
-            btnCancel.Size = new Size(102, 53);
-            btnCancel.TabIndex = 12;
-            btnCancel.Text = "Cancel";
-            btnCancel.UseVisualStyleBackColor = false;
+            lblEmailTag.AutoSize = true;
+            lblEmailTag.BackColor = Color.Transparent;
+            lblEmailTag.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblEmailTag.ForeColor = Color.Black;
+            lblEmailTag.Location = new Point(105, 186);
+            lblEmailTag.Name = "lblEmailTag";
+            lblEmailTag.Size = new Size(42, 17);
+            lblEmailTag.TabIndex = 37;
+            lblEmailTag.Text = "Email:";
+            lblEmailTag.Click += label7_Click;
             // 
-            // btnSave
+            // lblLandlineTag
             // 
-            btnSave.BackColor = Color.FromArgb(0, 150, 136);
-            btnSave.FlatAppearance.BorderSize = 0;
-            btnSave.FlatStyle = FlatStyle.Flat;
-            btnSave.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            btnSave.ForeColor = Color.White;
-            btnSave.Location = new Point(0, 601);
-            btnSave.Name = "btnSave";
-            btnSave.Size = new Size(102, 53);
-            btnSave.TabIndex = 11;
-            btnSave.Text = "Save";
-            btnSave.UseVisualStyleBackColor = false;
-            btnSave.Click += btnSave_Click;
+            lblLandlineTag.AutoSize = true;
+            lblLandlineTag.BackColor = Color.Transparent;
+            lblLandlineTag.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblLandlineTag.ForeColor = Color.Black;
+            lblLandlineTag.Location = new Point(89, 132);
+            lblLandlineTag.Name = "lblLandlineTag";
+            lblLandlineTag.Size = new Size(61, 17);
+            lblLandlineTag.TabIndex = 33;
+            lblLandlineTag.Text = "Landline:";
             // 
-            // TB5
+            // lblAddressTag
             // 
-            TB5.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TB5.Location = new Point(153, 183);
-            TB5.Name = "TB5";
-            TB5.Size = new Size(313, 22);
-            TB5.TabIndex = 38;
+            lblAddressTag.AutoSize = true;
+            lblAddressTag.BackColor = Color.Transparent;
+            lblAddressTag.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAddressTag.ForeColor = Color.Black;
+            lblAddressTag.Location = new Point(89, 102);
+            lblAddressTag.Name = "lblAddressTag";
+            lblAddressTag.Size = new Size(58, 17);
+            lblAddressTag.TabIndex = 31;
+            lblAddressTag.Text = "Address:";
             // 
-            // label7
+            // lblNameTag
             // 
-            label7.AutoSize = true;
-            label7.BackColor = Color.Transparent;
-            label7.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label7.ForeColor = Color.Black;
-            label7.Location = new Point(105, 186);
-            label7.Name = "label7";
-            label7.Size = new Size(42, 17);
-            label7.TabIndex = 37;
-            label7.Text = "Email:";
-            label7.Click += label7_Click;
+            lblNameTag.AutoSize = true;
+            lblNameTag.BackColor = Color.Transparent;
+            lblNameTag.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNameTag.ForeColor = Color.Black;
+            lblNameTag.Location = new Point(42, 74);
+            lblNameTag.Name = "lblNameTag";
+            lblNameTag.Size = new Size(105, 17);
+            lblNameTag.TabIndex = 29;
+            lblNameTag.Text = "Company name:";
             // 
-            // TB4
+            // lblCpNumTag
             // 
-            TB4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TB4.Location = new Point(153, 127);
-            TB4.Name = "TB4";
-            TB4.Size = new Size(313, 22);
-            TB4.TabIndex = 36;
+            lblCpNumTag.AutoSize = true;
+            lblCpNumTag.BackColor = Color.Transparent;
+            lblCpNumTag.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCpNumTag.ForeColor = Color.Black;
+            lblCpNumTag.Location = new Point(52, 160);
+            lblCpNumTag.Name = "lblCpNumTag";
+            lblCpNumTag.Size = new Size(95, 17);
+            lblCpNumTag.TabIndex = 41;
+            lblCpNumTag.Text = "Cellphone No.:";
             // 
-            // label5
+            // lblStoreHoursTag
             // 
-            label5.AutoSize = true;
-            label5.BackColor = Color.Transparent;
-            label5.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label5.ForeColor = Color.Black;
-            label5.Location = new Point(89, 132);
-            label5.Name = "label5";
-            label5.Size = new Size(61, 17);
-            label5.TabIndex = 33;
-            label5.Text = "Landline:";
-            // 
-            // TB2
-            // 
-            TB2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TB2.Location = new Point(153, 97);
-            TB2.Name = "TB2";
-            TB2.Size = new Size(313, 22);
-            TB2.TabIndex = 32;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.Black;
-            label4.Location = new Point(89, 102);
-            label4.Name = "label4";
-            label4.Size = new Size(58, 17);
-            label4.TabIndex = 31;
-            label4.Text = "Address:";
-            // 
-            // TB1
-            // 
-            TB1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            TB1.Location = new Point(153, 69);
-            TB1.Name = "TB1";
-            TB1.Size = new Size(313, 22);
-            TB1.TabIndex = 30;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(42, 74);
-            label3.Name = "label3";
-            label3.Size = new Size(105, 17);
-            label3.TabIndex = 29;
-            label3.Text = "Company name:";
-            // 
-            // textBox3
-            // 
-            textBox3.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(188, 348);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(313, 22);
-            textBox3.TabIndex = 28;
-            textBox3.UseSystemPasswordChar = true;
-            // 
-            // lblConfirmPass
-            // 
-            lblConfirmPass.AutoSize = true;
-            lblConfirmPass.BackColor = Color.Transparent;
-            lblConfirmPass.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            lblConfirmPass.ForeColor = Color.Black;
-            lblConfirmPass.Location = new Point(40, 353);
-            lblConfirmPass.Name = "lblConfirmPass";
-            lblConfirmPass.Size = new Size(142, 17);
-            lblConfirmPass.TabIndex = 27;
-            lblConfirmPass.Text = "Confirm New Password";
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(188, 320);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(313, 22);
-            textBox2.TabIndex = 26;
-            textBox2.UseSystemPasswordChar = true;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(87, 323);
-            label2.Name = "label2";
-            label2.Size = new Size(93, 17);
-            label2.TabIndex = 25;
-            label2.Text = "New Password";
-            // 
-            // textBox4
-            // 
-            textBox4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(188, 292);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(313, 22);
-            textBox4.TabIndex = 24;
-            textBox4.UseSystemPasswordChar = true;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(72, 297);
-            label1.Name = "label1";
-            label1.Size = new Size(110, 17);
-            label1.TabIndex = 23;
-            label1.Text = "Current Password";
-            label1.Click += label1_Click;
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(153, 155);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(313, 22);
-            textBox1.TabIndex = 42;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label6.ForeColor = Color.Black;
-            label6.Location = new Point(52, 160);
-            label6.Name = "label6";
-            label6.Size = new Size(95, 17);
-            label6.TabIndex = 41;
-            label6.Text = "Cellphone No.:";
-            // 
-            // textBox5
-            // 
-            textBox5.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(153, 211);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(313, 22);
-            textBox5.TabIndex = 44;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label8.ForeColor = Color.Black;
-            label8.Location = new Point(69, 214);
-            label8.Name = "label8";
-            label8.Size = new Size(78, 17);
-            label8.TabIndex = 43;
-            label8.Text = "Store Hours:";
+            lblStoreHoursTag.AutoSize = true;
+            lblStoreHoursTag.BackColor = Color.Transparent;
+            lblStoreHoursTag.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblStoreHoursTag.ForeColor = Color.Black;
+            lblStoreHoursTag.Location = new Point(69, 214);
+            lblStoreHoursTag.Name = "lblStoreHoursTag";
+            lblStoreHoursTag.Size = new Size(78, 17);
+            lblStoreHoursTag.TabIndex = 43;
+            lblStoreHoursTag.Text = "Store Hours:";
             // 
             // pbFooter
             // 
@@ -290,33 +153,262 @@
             pbHeader.TabIndex = 45;
             pbHeader.TabStop = false;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.ForeColor = Color.Black;
+            label9.Location = new Point(81, 275);
+            label9.Name = "label9";
+            label9.Size = new Size(66, 17);
+            label9.TabIndex = 53;
+            label9.Text = "Password:";
+            // 
+            // lblPass
+            // 
+            lblPass.BackColor = Color.Transparent;
+            lblPass.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPass.ForeColor = Color.Black;
+            lblPass.Location = new Point(164, 275);
+            lblPass.Name = "lblPass";
+            lblPass.Size = new Size(220, 17);
+            lblPass.TabIndex = 60;
+            lblPass.Text = "********";
+            // 
+            // lblStoreHours
+            // 
+            lblStoreHours.BackColor = Color.Transparent;
+            lblStoreHours.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblStoreHours.ForeColor = Color.Black;
+            lblStoreHours.Location = new Point(164, 214);
+            lblStoreHours.Name = "lblStoreHours";
+            lblStoreHours.Size = new Size(220, 17);
+            lblStoreHours.TabIndex = 59;
+            // 
+            // lblCpNum
+            // 
+            lblCpNum.BackColor = Color.Transparent;
+            lblCpNum.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCpNum.ForeColor = Color.Black;
+            lblCpNum.Location = new Point(164, 160);
+            lblCpNum.Name = "lblCpNum";
+            lblCpNum.Size = new Size(220, 17);
+            lblCpNum.TabIndex = 58;
+            // 
+            // lblEmail
+            // 
+            lblEmail.BackColor = Color.Transparent;
+            lblEmail.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblEmail.ForeColor = Color.Black;
+            lblEmail.Location = new Point(164, 186);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(220, 17);
+            lblEmail.TabIndex = 57;
+            // 
+            // lblLandline
+            // 
+            lblLandline.BackColor = Color.Transparent;
+            lblLandline.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblLandline.ForeColor = Color.Black;
+            lblLandline.Location = new Point(164, 132);
+            lblLandline.Name = "lblLandline";
+            lblLandline.Size = new Size(220, 17);
+            lblLandline.TabIndex = 56;
+            // 
+            // lblAddress
+            // 
+            lblAddress.BackColor = Color.Transparent;
+            lblAddress.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAddress.ForeColor = Color.Black;
+            lblAddress.Location = new Point(164, 102);
+            lblAddress.Name = "lblAddress";
+            lblAddress.Size = new Size(220, 17);
+            lblAddress.TabIndex = 55;
+            // 
+            // lblName
+            // 
+            lblName.BackColor = Color.Transparent;
+            lblName.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblName.ForeColor = Color.Black;
+            lblName.Location = new Point(164, 74);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(220, 17);
+            lblName.TabIndex = 54;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(0, 150, 136);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(386, 74);
+            button1.Name = "button1";
+            button1.Size = new Size(27, 17);
+            button1.TabIndex = 61;
+            button1.Text = "EDIT";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(0, 150, 136);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(386, 102);
+            button2.Name = "button2";
+            button2.Size = new Size(27, 17);
+            button2.TabIndex = 62;
+            button2.Text = "EDIT";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(0, 150, 136);
+            button3.FlatAppearance.BorderSize = 0;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button3.ForeColor = Color.White;
+            button3.Location = new Point(386, 160);
+            button3.Name = "button3";
+            button3.Size = new Size(27, 17);
+            button3.TabIndex = 64;
+            button3.Text = "EDIT";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
+            // button4
+            // 
+            button4.BackColor = Color.FromArgb(0, 150, 136);
+            button4.FlatAppearance.BorderSize = 0;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button4.ForeColor = Color.White;
+            button4.Location = new Point(386, 132);
+            button4.Name = "button4";
+            button4.Size = new Size(27, 17);
+            button4.TabIndex = 63;
+            button4.Text = "EDIT";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.FromArgb(0, 150, 136);
+            button5.FlatAppearance.BorderSize = 0;
+            button5.FlatStyle = FlatStyle.Flat;
+            button5.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button5.ForeColor = Color.White;
+            button5.Location = new Point(386, 275);
+            button5.Name = "button5";
+            button5.Size = new Size(27, 17);
+            button5.TabIndex = 67;
+            button5.Text = "EDIT";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
+            // button6
+            // 
+            button6.BackColor = Color.FromArgb(0, 150, 136);
+            button6.FlatAppearance.BorderSize = 0;
+            button6.FlatStyle = FlatStyle.Flat;
+            button6.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button6.ForeColor = Color.White;
+            button6.Location = new Point(386, 218);
+            button6.Name = "button6";
+            button6.Size = new Size(27, 17);
+            button6.TabIndex = 66;
+            button6.Text = "EDIT";
+            button6.UseVisualStyleBackColor = false;
+            button6.Click += button6_Click;
+            // 
+            // button7
+            // 
+            button7.BackColor = Color.FromArgb(0, 150, 136);
+            button7.FlatAppearance.BorderSize = 0;
+            button7.FlatStyle = FlatStyle.Flat;
+            button7.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button7.ForeColor = Color.White;
+            button7.Location = new Point(386, 188);
+            button7.Name = "button7";
+            button7.Size = new Size(27, 17);
+            button7.TabIndex = 65;
+            button7.Text = "EDIT";
+            button7.UseVisualStyleBackColor = false;
+            button7.Click += button7_Click;
+            // 
+            // button8
+            // 
+            button8.BackColor = Color.FromArgb(0, 150, 136);
+            button8.FlatAppearance.BorderSize = 0;
+            button8.FlatStyle = FlatStyle.Flat;
+            button8.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
+            button8.ForeColor = Color.White;
+            button8.Location = new Point(386, 247);
+            button8.Name = "button8";
+            button8.Size = new Size(27, 17);
+            button8.TabIndex = 78;
+            button8.Text = "EDIT";
+            button8.UseVisualStyleBackColor = false;
+            button8.Click += button8_Click;
+            // 
+            // lblUser
+            // 
+            lblUser.BackColor = Color.Transparent;
+            lblUser.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblUser.ForeColor = Color.Black;
+            lblUser.Location = new Point(164, 247);
+            lblUser.Name = "lblUser";
+            lblUser.Size = new Size(220, 17);
+            lblUser.TabIndex = 77;
+            // 
+            // lblUserTag
+            // 
+            lblUserTag.AutoSize = true;
+            lblUserTag.BackColor = Color.Transparent;
+            lblUserTag.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblUserTag.ForeColor = Color.Black;
+            lblUserTag.Location = new Point(81, 247);
+            lblUserTag.Name = "lblUserTag";
+            lblUserTag.Size = new Size(70, 17);
+            lblUserTag.TabIndex = 76;
+            lblUserTag.Text = "Username:";
+            // 
             // Settings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(btnSave);
-            Controls.Add(btnCancel);
+            Controls.Add(button8);
+            Controls.Add(lblUser);
+            Controls.Add(lblUserTag);
+            Controls.Add(button5);
+            Controls.Add(button6);
+            Controls.Add(button7);
+            Controls.Add(button3);
+            Controls.Add(button4);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(lblPass);
+            Controls.Add(lblStoreHours);
+            Controls.Add(lblCpNum);
+            Controls.Add(lblEmail);
+            Controls.Add(lblLandline);
+            Controls.Add(lblAddress);
+            Controls.Add(lblName);
+            Controls.Add(label9);
             Controls.Add(pbFooter);
             Controls.Add(pbHeader);
-            Controls.Add(textBox5);
-            Controls.Add(label8);
-            Controls.Add(textBox1);
-            Controls.Add(label6);
-            Controls.Add(TB5);
-            Controls.Add(label7);
-            Controls.Add(TB4);
-            Controls.Add(label5);
-            Controls.Add(TB2);
-            Controls.Add(label4);
-            Controls.Add(TB1);
-            Controls.Add(label3);
-            Controls.Add(textBox3);
-            Controls.Add(lblConfirmPass);
-            Controls.Add(textBox2);
-            Controls.Add(label2);
-            Controls.Add(textBox4);
-            Controls.Add(label1);
+            Controls.Add(lblStoreHoursTag);
+            Controls.Add(lblCpNumTag);
+            Controls.Add(lblEmailTag);
+            Controls.Add(lblLandlineTag);
+            Controls.Add(lblAddressTag);
+            Controls.Add(lblNameTag);
             Name = "Settings";
             Size = new Size(1168, 654);
             Load += controlAccount_Load;
@@ -327,27 +419,31 @@
         }
 
         #endregion
-        private Button btnCancel;
-        private Button btnSave;
-        private TextBox TB5;
-        private Label label7;
-        private TextBox TB4;
-        private Label label5;
-        private TextBox TB2;
-        private Label label4;
-        private TextBox TB1;
-        private Label label3;
-        private TextBox textBox3;
-        private Label lblConfirmPass;
-        private TextBox textBox2;
-        private Label label2;
-        private TextBox textBox4;
-        private Label label1;
-        private TextBox textBox1;
-        private Label label6;
-        private TextBox textBox5;
-        private Label label8;
+        private Label lblEmailTag;
+        private Label lblLandlineTag;
+        private Label lblAddressTag;
+        private Label lblNameTag;
+        private Label lblCpNumTag;
+        private Label lblStoreHoursTag;
         private PictureBox pbFooter;
         private PictureBox pbHeader;
+        private Label label9;
+        private Label lblPass;
+        public Label lblStoreHours;
+        public Label lblCpNum;
+        public Label lblEmail;
+        public Label lblLandline;
+        public Label lblAddress;
+        public Label lblName;
+        private Button button1;
+        private Button button2;
+        private Button button3;
+        private Button button4;
+        private Button button5;
+        private Button button6;
+        private Button button7;
+        private Button button8;
+        public Label lblUser;
+        public Label lblUserTag;
     }
 }
