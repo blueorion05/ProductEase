@@ -10,7 +10,7 @@ namespace Fastfood
 {
     internal class Information
     {
-        public void GetInfo(Settings s)
+        public void GetSettingsInfo(Settings s)
         {
             string data = "SELECT Name, Address, Landline, CpNum, Email, StoreHours FROM Information";
             Connection sql = new Connection();
@@ -25,6 +25,19 @@ namespace Fastfood
             s.lblEmail.Text = reader["Email"].ToString();
             s.lblStoreHours.Text = reader["StoreHours"].ToString();
             conn.Close();
+        }
+
+        public string GetName()
+        {
+            string data = "SELECT Name FROM Information";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            string name = reader["Name"].ToString()!;
+            conn.Close();
+            return name;
         }
 
         public void UpdateName(formInformation f)

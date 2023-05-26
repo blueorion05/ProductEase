@@ -19,6 +19,8 @@ namespace Fastfood
         public formPOS()
         {
             InitializeComponent();
+            Information i = new Information();
+            lbl1Company.Text = i.GetName();
             ProductControl("ALL");
         }
 

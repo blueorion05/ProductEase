@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,12 +14,17 @@ namespace Fastfood
     public partial class Settings : UserControl
     {
         formMain main = new formMain();
-        public Settings(formMain formMain)
+        public Settings(formMain f)
         {
             InitializeComponent();
+            main = f;
+            Information();
+        }
+
+        private void Information()
+        {
             Information i = new Information();
-            i.GetInfo(this);
-            main = formMain;
+            i.GetSettingsInfo(this);
         }
 
         private void controlAccount_Load(object sender, EventArgs e)

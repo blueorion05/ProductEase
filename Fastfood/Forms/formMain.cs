@@ -82,6 +82,8 @@ namespace Fastfood
 
         public void btnAccount_Click(object sender, EventArgs e)
         {
+            Information i = new Information();
+            lbl1Company.Text = i.GetName();
             Settings settings = new Settings(this);
             ButtonColor();
             btnSettings.BackColor = Color.FromArgb(0, 150, 136);
