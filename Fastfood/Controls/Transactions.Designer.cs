@@ -43,6 +43,10 @@
             Receipt = new DataGridViewButtonColumn();
             pbFooter = new PictureBox();
             pbHeader = new PictureBox();
+            dtStart = new DateTimePicker();
+            dtEnd = new DateTimePicker();
+            textBox1 = new TextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbFooter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbHeader).BeginInit();
@@ -183,12 +187,80 @@
             pbHeader.Size = new Size(1064, 53);
             pbHeader.TabIndex = 16;
             pbHeader.TabStop = false;
+            pbHeader.Click += pbHeader_Click;
+            // 
+            // dtStart
+            // 
+            dtStart.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            dtStart.CalendarFont = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dtStart.CalendarForeColor = Color.Black;
+            dtStart.CalendarMonthBackground = Color.Transparent;
+            dtStart.CalendarTitleBackColor = Color.Transparent;
+            dtStart.CalendarTitleForeColor = Color.Black;
+            dtStart.CustomFormat = "dd-MMM-yyyy";
+            dtStart.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dtStart.Format = DateTimePickerFormat.Custom;
+            dtStart.Location = new Point(825, 15);
+            dtStart.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
+            dtStart.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
+            dtStart.Name = "dtStart";
+            dtStart.Size = new Size(98, 22);
+            dtStart.TabIndex = 18;
+            dtStart.ValueChanged += dtStart_ValueChanged;
+            // 
+            // dtEnd
+            // 
+            dtEnd.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            dtEnd.CalendarFont = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dtEnd.CalendarForeColor = Color.Black;
+            dtEnd.CalendarMonthBackground = Color.Transparent;
+            dtEnd.CalendarTitleBackColor = Color.Transparent;
+            dtEnd.CalendarTitleForeColor = Color.Black;
+            dtEnd.CustomFormat = "dd-MMM-yyyy";
+            dtEnd.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dtEnd.Format = DateTimePickerFormat.Custom;
+            dtEnd.Location = new Point(951, 15);
+            dtEnd.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
+            dtEnd.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
+            dtEnd.Name = "dtEnd";
+            dtEnd.Size = new Size(98, 22);
+            dtEnd.TabIndex = 19;
+            dtEnd.ValueChanged += dtEnd_ValueChanged;
+            // 
+            // textBox1
+            // 
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox1.BackColor = Color.White;
+            textBox1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(14, 15);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Search Product Name here.";
+            textBox1.Size = new Size(422, 22);
+            textBox1.TabIndex = 24;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label1.BackColor = Color.FromArgb(0, 150, 136);
+            label1.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.ImageAlign = ContentAlignment.TopLeft;
+            label1.Location = new Point(924, 2);
+            label1.Name = "label1";
+            label1.Size = new Size(21, 33);
+            label1.TabIndex = 25;
+            label1.Text = "-";
             // 
             // Transactions
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
+            Controls.Add(label1);
+            Controls.Add(textBox1);
+            Controls.Add(dtEnd);
+            Controls.Add(dtStart);
             Controls.Add(dataGridView1);
             Controls.Add(pbFooter);
             Controls.Add(pbHeader);
@@ -199,6 +271,7 @@
             ((System.ComponentModel.ISupportInitialize)pbFooter).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbHeader).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -214,5 +287,9 @@
         private DataGridViewTextBoxColumn CashTendered;
         private DataGridViewTextBoxColumn Change;
         private DataGridViewButtonColumn Receipt;
+        private DateTimePicker dtStart;
+        private DateTimePicker dtEnd;
+        private TextBox textBox1;
+        private Label label1;
     }
 }

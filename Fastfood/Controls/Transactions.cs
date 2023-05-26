@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,8 @@ namespace Fastfood
         {
             InitializeComponent();
             Table();
+            dtStart.Value = DateTime.Now.AddMonths(-1);
+            dtEnd.Value = DateTime.Now;
         }
 
         public void Table()
@@ -94,6 +97,59 @@ namespace Fastfood
         private void dataGridView1_RowHeightInfoNeeded(object sender, DataGridViewRowHeightInfoNeededEventArgs e)
         {
 
+        }
+
+        private void dtStart_ValueChanged(object sender, EventArgs e)
+        {
+            FilterByDate();
+            dtEnd.MinDate = dtStart.Value;
+        }
+
+        private void dtEnd_ValueChanged(object sender, EventArgs e)
+        {
+            FilterByDate();
+        }
+
+        private void FilterByDate()
+        {
+            DateTime startDate = dtStart.Value.Date;
+            DateTime endDate = dtEnd.Value.Date.AddDays(1).AddSeconds(-1);
+
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                DateTime DDay = Convert.ToDateTime(row.Cells["Date"].Value);
+                if (DDay >= startDate && DDay <= endDate)
+                {
+                    row.Visible = true;
+                }
+                else
+                {
+                    row.Visible = false;
+                }
+            }
+        }
+
+        private void pbHeader_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                DataGridViewCell cell = row.Cells["Products"];
+
+                if (cell.Value != null && cell.Value.ToString()!.ToLower().Contains(textBox1.Text))
+                {
+                    row.Visible = true;
+                }
+                else
+                {
+                    row.Visible = false;
+                }
+            }
         }
     }
 }
