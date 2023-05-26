@@ -25,6 +25,14 @@ namespace Fastfood
             s.lblEmail.Text = reader["Email"].ToString();
             s.lblStoreHours.Text = reader["StoreHours"].ToString();
             conn.Close();
+
+            data = "SELECT username FROM Login";
+            conn = sql.GetConnection();
+            cmd = new SqlCommand(data, conn);
+            reader = cmd.ExecuteReader();
+            reader.Read();
+            s.lblUser.Text = reader["username"].ToString();
+            conn.Close();
         }
 
         public string GetName()
@@ -38,6 +46,19 @@ namespace Fastfood
             string name = reader["Name"].ToString()!;
             conn.Close();
             return name;
+        }
+
+        public string GetPassword()
+        {
+            string data = "SELECT password FROM Login";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            string password = reader["password"].ToString()!;
+            conn.Close();
+            return password;
         }
 
         public void UpdateName(formInformation f)
@@ -113,6 +134,32 @@ namespace Fastfood
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@Id", 1);
             cmd.Parameters.AddWithValue("@StoreHours", SqlDbType.VarChar).Value = f.textBox1.Text;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void UpdateUsername(formInformation f)
+        {
+            string data = "UPDATE Login SET username = @username WHERE Id = @Id";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@Id", 1);
+            cmd.Parameters.AddWithValue("@username", SqlDbType.VarChar).Value = f.textBox1.Text;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void UpdatePassword(formInformation f)
+        {
+            string data = "UPDATE Login SET password = @password WHERE Id = @Id";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@Id", 1);
+            cmd.Parameters.AddWithValue("@password", SqlDbType.VarChar).Value = f.textBox3.Text;
             cmd.ExecuteNonQuery();
             conn.Close();
         }

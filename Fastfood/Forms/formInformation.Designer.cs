@@ -41,7 +41,8 @@
             // textBox3
             // 
             textBox3.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(179, 78);
+            textBox3.ForeColor = Color.Black;
+            textBox3.Location = new Point(157, 81);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(313, 22);
             textBox3.TabIndex = 83;
@@ -52,17 +53,18 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.ForeColor = Color.Black;
-            label3.Location = new Point(31, 83);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(9, 86);
             label3.Name = "label3";
-            label3.Size = new Size(142, 17);
+            label3.Size = new Size(145, 17);
             label3.TabIndex = 82;
-            label3.Text = "Confirm New Password";
+            label3.Text = "Confirm New Password:";
             // 
             // textBox2
             // 
             textBox2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(179, 50);
+            textBox2.ForeColor = Color.Black;
+            textBox2.Location = new Point(157, 53);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(313, 22);
             textBox2.TabIndex = 81;
@@ -73,17 +75,18 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.Black;
-            label2.Location = new Point(78, 53);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(56, 56);
             label2.Name = "label2";
-            label2.Size = new Size(93, 17);
+            label2.Size = new Size(96, 17);
             label2.TabIndex = 80;
-            label2.Text = "New Password";
+            label2.Text = "New Password:";
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(179, 22);
+            textBox1.ForeColor = Color.Black;
+            textBox1.Location = new Point(157, 25);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(313, 22);
             textBox1.TabIndex = 79;
@@ -93,12 +96,13 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(63, 27);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(41, 30);
             label1.Name = "label1";
-            label1.Size = new Size(110, 17);
+            label1.Size = new Size(113, 17);
             label1.TabIndex = 78;
-            label1.Text = "Current Password";
+            label1.Text = "Current Password:";
+            label1.Click += label1_Click;
             // 
             // btnSave
             // 
@@ -134,8 +138,8 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(533, 200);
+            BackColor = Color.FromArgb(25, 26, 62);
+            ClientSize = new Size(490, 200);
             Controls.Add(textBox3);
             Controls.Add(label3);
             Controls.Add(textBox2);
@@ -149,6 +153,7 @@
             Name = "formInformation";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "formInformation";
+            Load += formInformation_Load;
             ResumeLayout(false);
             PerformLayout();
         }

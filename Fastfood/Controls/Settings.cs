@@ -118,6 +118,7 @@ namespace Fastfood
         private void button5_Click(object sender, EventArgs e)
         {
             formInformation f = new formInformation(main);
+            f.textBox1.UseSystemPasswordChar = true;
             f.Show();
         }
 
@@ -125,6 +126,7 @@ namespace Fastfood
         {
             formInformation f = new formInformation(main);
             HideEditPassword(f);
+            f.username = lblUser.Text;
             f.label1.Text = lblUserTag.Text;
             f.textBox1.Text = lblUser.Text;
             f.Show();
