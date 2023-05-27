@@ -61,6 +61,19 @@ namespace Fastfood
             return password;
         }
 
+        public int GetTransacNum()
+        {
+            string data = "SELECT TransacNum FROM Information";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            int num = Convert.ToInt32(reader["TransacNum"]);
+            conn.Close();
+            return num;
+        }
+
         public void UpdateName(formInformation f)
         {
             string data = "UPDATE Information SET Name = @Name WHERE Id = @Id";
@@ -160,6 +173,19 @@ namespace Fastfood
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@Id", 1);
             cmd.Parameters.AddWithValue("@password", SqlDbType.VarChar).Value = f.textBox3.Text;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void UpdateTransacNum(Receipt r)
+        {
+            string data = "UPDATE Information SET TransacNum = @TransacNum WHERE Id = @Id";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@Id", 1);
+            cmd.Parameters.AddWithValue("@TransacNum", SqlDbType.VarChar).Value = r.lblId.Text;
             cmd.ExecuteNonQuery();
             conn.Close();
         }

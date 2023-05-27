@@ -88,6 +88,8 @@ namespace Fastfood
             finally
             {
                 conn.Close();
+                Information info = new Information();
+                info.UpdateTransacNum(receipt);
                 this.Close();
                 formPOS.ClearPOS();
             }

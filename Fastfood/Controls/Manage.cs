@@ -60,10 +60,16 @@ namespace Fastfood
                 }
                 else
                 {
-                    tableProduct.Rows.Add(Id, Category, Product_Name, Price, null, Available);
+                    Image blank = new Bitmap(1, 1);
+                    using (Graphics g = Graphics.FromImage(blank))
+                    {
+                        g.Clear(Color.White);
+                    }
+                    tableProduct.Rows.Add(Id, Category, Product_Name, Price, blank, Available);
                 }
             }
             conn.Close();
+            tableProduct.Sort(tableProduct.Columns["tableProductC5"], ListSortDirection.Descending);
         }
         private void button4_Click(object sender, EventArgs e)
         {

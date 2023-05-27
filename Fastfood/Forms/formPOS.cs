@@ -133,20 +133,8 @@ namespace Fastfood
 
         public void ClearPOS()
         {
-            string transId = "SELECT TOP 1 [Id] FROM [Transactions] ORDER BY [Id] DESC";
-            Connection sql = new Connection();
-            SqlConnection conn = sql.GetConnection();
-            SqlCommand cmd = new SqlCommand(transId, conn);
-            SqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
-            {
-                lblTransactionId.Text = (Convert.ToInt32(reader["Id"]) + 1).ToString();
-            }
-            else
-            {
-                lblTransactionId.Text = "1";
-            }
-            conn.Close();
+            Information info = new Information();
+            lblTransactionId.Text = (info.GetTransacNum() + 1).ToString();
 
             Products.Clear();
             int i = dataGridView1.Rows.Count - 1;
