@@ -57,6 +57,8 @@
             button9 = new Button();
             label1 = new Label();
             label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)pbFooter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbHeader).BeginInit();
             SuspendLayout();
@@ -65,11 +67,11 @@
             // 
             lblEmailTag.AutoSize = true;
             lblEmailTag.BackColor = Color.Transparent;
-            lblEmailTag.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblEmailTag.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblEmailTag.ForeColor = Color.Black;
-            lblEmailTag.Location = new Point(105, 186);
+            lblEmailTag.Location = new Point(105, 231);
             lblEmailTag.Name = "lblEmailTag";
-            lblEmailTag.Size = new Size(42, 17);
+            lblEmailTag.Size = new Size(47, 17);
             lblEmailTag.TabIndex = 37;
             lblEmailTag.Text = "Email:";
             lblEmailTag.Click += label7_Click;
@@ -78,11 +80,11 @@
             // 
             lblLandlineTag.AutoSize = true;
             lblLandlineTag.BackColor = Color.Transparent;
-            lblLandlineTag.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblLandlineTag.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblLandlineTag.ForeColor = Color.Black;
-            lblLandlineTag.Location = new Point(89, 132);
+            lblLandlineTag.Location = new Point(89, 177);
             lblLandlineTag.Name = "lblLandlineTag";
-            lblLandlineTag.Size = new Size(61, 17);
+            lblLandlineTag.Size = new Size(66, 17);
             lblLandlineTag.TabIndex = 33;
             lblLandlineTag.Text = "Landline:";
             // 
@@ -90,11 +92,11 @@
             // 
             lblAddressTag.AutoSize = true;
             lblAddressTag.BackColor = Color.Transparent;
-            lblAddressTag.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAddressTag.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblAddressTag.ForeColor = Color.Black;
-            lblAddressTag.Location = new Point(89, 102);
+            lblAddressTag.Location = new Point(89, 147);
             lblAddressTag.Name = "lblAddressTag";
-            lblAddressTag.Size = new Size(58, 17);
+            lblAddressTag.Size = new Size(61, 17);
             lblAddressTag.TabIndex = 31;
             lblAddressTag.Text = "Address:";
             // 
@@ -102,11 +104,11 @@
             // 
             lblNameTag.AutoSize = true;
             lblNameTag.BackColor = Color.Transparent;
-            lblNameTag.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblNameTag.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblNameTag.ForeColor = Color.Black;
-            lblNameTag.Location = new Point(42, 74);
+            lblNameTag.Location = new Point(42, 119);
             lblNameTag.Name = "lblNameTag";
-            lblNameTag.Size = new Size(105, 17);
+            lblNameTag.Size = new Size(119, 17);
             lblNameTag.TabIndex = 29;
             lblNameTag.Text = "Company name:";
             // 
@@ -114,11 +116,11 @@
             // 
             lblCpNumTag.AutoSize = true;
             lblCpNumTag.BackColor = Color.Transparent;
-            lblCpNumTag.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCpNumTag.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblCpNumTag.ForeColor = Color.Black;
-            lblCpNumTag.Location = new Point(52, 160);
+            lblCpNumTag.Location = new Point(52, 205);
             lblCpNumTag.Name = "lblCpNumTag";
-            lblCpNumTag.Size = new Size(95, 17);
+            lblCpNumTag.Size = new Size(106, 17);
             lblCpNumTag.TabIndex = 41;
             lblCpNumTag.Text = "Cellphone No.:";
             // 
@@ -126,11 +128,11 @@
             // 
             lblStoreHoursTag.AutoSize = true;
             lblStoreHoursTag.BackColor = Color.Transparent;
-            lblStoreHoursTag.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblStoreHoursTag.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblStoreHoursTag.ForeColor = Color.Black;
-            lblStoreHoursTag.Location = new Point(69, 214);
+            lblStoreHoursTag.Location = new Point(69, 259);
             lblStoreHoursTag.Name = "lblStoreHoursTag";
-            lblStoreHoursTag.Size = new Size(78, 17);
+            lblStoreHoursTag.Size = new Size(83, 17);
             lblStoreHoursTag.TabIndex = 43;
             lblStoreHoursTag.Text = "Store Hours:";
             // 
@@ -160,11 +162,11 @@
             // 
             label9.AutoSize = true;
             label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label9.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label9.ForeColor = Color.Black;
-            label9.Location = new Point(81, 379);
+            label9.Location = new Point(84, 461);
             label9.Name = "label9";
-            label9.Size = new Size(66, 17);
+            label9.Size = new Size(73, 17);
             label9.TabIndex = 53;
             label9.Text = "Password:";
             // 
@@ -172,9 +174,9 @@
             // 
             lblPass.BackColor = Color.Transparent;
             lblPass.BorderStyle = BorderStyle.FixedSingle;
-            lblPass.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPass.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblPass.ForeColor = Color.Black;
-            lblPass.Location = new Point(164, 379);
+            lblPass.Location = new Point(164, 461);
             lblPass.Name = "lblPass";
             lblPass.Size = new Size(220, 17);
             lblPass.TabIndex = 60;
@@ -184,9 +186,9 @@
             // 
             lblStoreHours.BackColor = Color.Transparent;
             lblStoreHours.BorderStyle = BorderStyle.FixedSingle;
-            lblStoreHours.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblStoreHours.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblStoreHours.ForeColor = Color.Black;
-            lblStoreHours.Location = new Point(164, 214);
+            lblStoreHours.Location = new Point(164, 259);
             lblStoreHours.Name = "lblStoreHours";
             lblStoreHours.Size = new Size(220, 17);
             lblStoreHours.TabIndex = 59;
@@ -195,9 +197,9 @@
             // 
             lblCpNum.BackColor = Color.Transparent;
             lblCpNum.BorderStyle = BorderStyle.FixedSingle;
-            lblCpNum.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCpNum.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblCpNum.ForeColor = Color.Black;
-            lblCpNum.Location = new Point(164, 160);
+            lblCpNum.Location = new Point(164, 205);
             lblCpNum.Name = "lblCpNum";
             lblCpNum.Size = new Size(220, 17);
             lblCpNum.TabIndex = 58;
@@ -206,9 +208,9 @@
             // 
             lblEmail.BackColor = Color.Transparent;
             lblEmail.BorderStyle = BorderStyle.FixedSingle;
-            lblEmail.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblEmail.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblEmail.ForeColor = Color.Black;
-            lblEmail.Location = new Point(164, 186);
+            lblEmail.Location = new Point(164, 231);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(220, 17);
             lblEmail.TabIndex = 57;
@@ -217,9 +219,9 @@
             // 
             lblLandline.BackColor = Color.Transparent;
             lblLandline.BorderStyle = BorderStyle.FixedSingle;
-            lblLandline.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblLandline.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblLandline.ForeColor = Color.Black;
-            lblLandline.Location = new Point(164, 132);
+            lblLandline.Location = new Point(164, 177);
             lblLandline.Name = "lblLandline";
             lblLandline.Size = new Size(220, 17);
             lblLandline.TabIndex = 56;
@@ -228,9 +230,9 @@
             // 
             lblAddress.BackColor = Color.Transparent;
             lblAddress.BorderStyle = BorderStyle.FixedSingle;
-            lblAddress.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAddress.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblAddress.ForeColor = Color.Black;
-            lblAddress.Location = new Point(164, 102);
+            lblAddress.Location = new Point(164, 147);
             lblAddress.Name = "lblAddress";
             lblAddress.Size = new Size(220, 17);
             lblAddress.TabIndex = 55;
@@ -239,9 +241,9 @@
             // 
             lblName.BackColor = Color.Transparent;
             lblName.BorderStyle = BorderStyle.FixedSingle;
-            lblName.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblName.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblName.ForeColor = Color.Black;
-            lblName.Location = new Point(164, 74);
+            lblName.Location = new Point(164, 119);
             lblName.Name = "lblName";
             lblName.Size = new Size(220, 17);
             lblName.TabIndex = 54;
@@ -253,7 +255,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(386, 74);
+            button1.Location = new Point(386, 119);
             button1.Name = "button1";
             button1.Size = new Size(27, 17);
             button1.TabIndex = 61;
@@ -268,7 +270,7 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(386, 102);
+            button2.Location = new Point(386, 147);
             button2.Name = "button2";
             button2.Size = new Size(27, 17);
             button2.TabIndex = 62;
@@ -283,7 +285,7 @@
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(386, 160);
+            button3.Location = new Point(386, 205);
             button3.Name = "button3";
             button3.Size = new Size(27, 17);
             button3.TabIndex = 64;
@@ -298,7 +300,7 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
             button4.ForeColor = Color.White;
-            button4.Location = new Point(386, 132);
+            button4.Location = new Point(386, 177);
             button4.Name = "button4";
             button4.Size = new Size(27, 17);
             button4.TabIndex = 63;
@@ -313,7 +315,7 @@
             button5.FlatStyle = FlatStyle.Flat;
             button5.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
             button5.ForeColor = Color.White;
-            button5.Location = new Point(386, 379);
+            button5.Location = new Point(386, 461);
             button5.Name = "button5";
             button5.Size = new Size(27, 17);
             button5.TabIndex = 67;
@@ -328,7 +330,7 @@
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
             button6.ForeColor = Color.White;
-            button6.Location = new Point(386, 218);
+            button6.Location = new Point(386, 263);
             button6.Name = "button6";
             button6.Size = new Size(27, 17);
             button6.TabIndex = 66;
@@ -343,7 +345,7 @@
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
             button7.ForeColor = Color.White;
-            button7.Location = new Point(386, 188);
+            button7.Location = new Point(386, 233);
             button7.Name = "button7";
             button7.Size = new Size(27, 17);
             button7.TabIndex = 65;
@@ -358,7 +360,7 @@
             button8.FlatStyle = FlatStyle.Flat;
             button8.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
             button8.ForeColor = Color.White;
-            button8.Location = new Point(386, 351);
+            button8.Location = new Point(386, 433);
             button8.Name = "button8";
             button8.Size = new Size(27, 17);
             button8.TabIndex = 78;
@@ -370,9 +372,9 @@
             // 
             lblUser.BackColor = Color.Transparent;
             lblUser.BorderStyle = BorderStyle.FixedSingle;
-            lblUser.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblUser.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblUser.ForeColor = Color.Black;
-            lblUser.Location = new Point(164, 351);
+            lblUser.Location = new Point(164, 433);
             lblUser.Name = "lblUser";
             lblUser.Size = new Size(220, 17);
             lblUser.TabIndex = 77;
@@ -381,11 +383,11 @@
             // 
             lblUserTag.AutoSize = true;
             lblUserTag.BackColor = Color.Transparent;
-            lblUserTag.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            lblUserTag.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblUserTag.ForeColor = Color.Black;
-            lblUserTag.Location = new Point(81, 351);
+            lblUserTag.Location = new Point(81, 433);
             lblUserTag.Name = "lblUserTag";
-            lblUserTag.Size = new Size(70, 17);
+            lblUserTag.Size = new Size(75, 17);
             lblUserTag.TabIndex = 76;
             lblUserTag.Text = "Username:";
             // 
@@ -396,41 +398,68 @@
             button9.FlatStyle = FlatStyle.Flat;
             button9.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
             button9.ForeColor = Color.White;
-            button9.Location = new Point(821, 218);
+            button9.Location = new Point(1014, 259);
             button9.Name = "button9";
             button9.Size = new Size(27, 17);
             button9.TabIndex = 81;
             button9.Text = "EDIT";
             button9.UseVisualStyleBackColor = false;
+            button9.Click += button9_Click;
             // 
             // label1
             // 
             label1.BackColor = Color.Transparent;
             label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(504, 119);
+            label1.Location = new Point(459, 134);
             label1.Name = "label1";
-            label1.Size = new Size(311, 116);
+            label1.Size = new Size(549, 142);
             label1.TabIndex = 80;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.Black;
-            label2.Location = new Point(504, 102);
+            label2.Location = new Point(459, 117);
             label2.Name = "label2";
-            label2.Size = new Size(48, 17);
+            label2.Size = new Size(52, 17);
             label2.TabIndex = 79;
             label2.Text = "About:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.ForeColor = Color.Black;
+            label3.Location = new Point(26, 78);
+            label3.Name = "label3";
+            label3.Size = new Size(79, 25);
+            label3.TabIndex = 82;
+            label3.Text = "Details";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Century Gothic", 15.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.Black;
+            label4.Location = new Point(26, 389);
+            label4.Name = "label4";
+            label4.Size = new Size(92, 25);
+            label4.TabIndex = 83;
+            label4.Text = "Security";
             // 
             // Settings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(button9);
             Controls.Add(label1);
             Controls.Add(label2);
@@ -499,5 +528,7 @@
         private Button button9;
         public Label label1;
         private Label label2;
+        private Label label3;
+        private Label label4;
     }
 }

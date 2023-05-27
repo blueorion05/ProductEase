@@ -64,6 +64,12 @@ namespace Fastfood
                 main.btnAccount_Click(sender, e);
                 this.Close();
             }
+            else if (label1.Text == "About:")
+            {
+                i.UpdateAbout(this);
+                main.btnAccount_Click(sender, e);
+                this.Close();
+            }
             else if (label1.Text == "Username:")
             {
                 textBox1.Text = textBox1.Text.Trim();

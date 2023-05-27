@@ -12,7 +12,7 @@ namespace Fastfood
     {
         public void GetSettingsInfo(Settings s)
         {
-            string data = "SELECT Name, Address, Landline, CpNum, Email, StoreHours FROM Information";
+            string data = "SELECT Name, Address, Landline, CpNum, Email, StoreHours, About FROM Information";
             Connection sql = new Connection();
             SqlConnection conn = sql.GetConnection();
             SqlCommand cmd = new SqlCommand(data, conn);
@@ -24,6 +24,7 @@ namespace Fastfood
             s.lblCpNum.Text = reader["CpNum"].ToString();
             s.lblEmail.Text = reader["Email"].ToString();
             s.lblStoreHours.Text = reader["StoreHours"].ToString();
+            s.label1.Text = reader["About"].ToString();
             conn.Close();
 
             data = "SELECT username FROM Login";
@@ -147,6 +148,19 @@ namespace Fastfood
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@Id", 1);
             cmd.Parameters.AddWithValue("@StoreHours", SqlDbType.VarChar).Value = f.textBox1.Text;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void UpdateAbout(formInformation f)
+        {
+            string data = "UPDATE Information SET About = @About WHERE Id = @Id";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@Id", 1);
+            cmd.Parameters.AddWithValue("@About", SqlDbType.VarChar).Value = f.textBox1.Text;
             cmd.ExecuteNonQuery();
             conn.Close();
         }

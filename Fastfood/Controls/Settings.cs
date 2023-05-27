@@ -131,5 +131,15 @@ namespace Fastfood
             f.textBox1.Text = lblUser.Text;
             f.Show();
         }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            formInformation f = new formInformation(main);
+            HideEditPassword(f);
+            f.label1.Text = label2.Text;
+            f.textBox1.Multiline = true;
+            f.textBox1.Text = label1.Text;
+            f.Show();
+        }
     }
 }
