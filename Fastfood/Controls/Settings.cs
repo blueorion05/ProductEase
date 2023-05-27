@@ -65,7 +65,7 @@ namespace Fastfood
         {
             formInformation f = new formInformation(main);
             HideEditPassword(f);
-            f.label1.Text = lblNameTag.Text;
+            f.label1.Text += "Company Name";
             f.textBox1.Text = lblName.Text;
             f.Show();
         }
@@ -74,7 +74,7 @@ namespace Fastfood
         {
             formInformation f = new formInformation(main);
             HideEditPassword(f);
-            f.label1.Text = lblAddressTag.Text;
+            f.label1.Text += "Address";
             f.textBox1.Text = lblAddress.Text;
             f.Show();
         }
@@ -83,7 +83,7 @@ namespace Fastfood
         {
             formInformation f = new formInformation(main);
             HideEditPassword(f);
-            f.label1.Text = lblLandlineTag.Text;
+            f.label1.Text += "Landline";
             f.textBox1.Text = lblLandline.Text;
             f.Show();
         }
@@ -92,8 +92,12 @@ namespace Fastfood
         {
             formInformation f = new formInformation(main);
             HideEditPassword(f);
-            f.label1.Text = lblCpNumTag.Text;
+            f.label1.Text += ".Cellphone No";
             f.textBox1.Text = lblCpNum.Text;
+            if (f.textBox1.Text == "")
+            {
+                f.textBox1.Text = "639";
+            }
             f.Show();
         }
 
@@ -101,7 +105,7 @@ namespace Fastfood
         {
             formInformation f = new formInformation(main);
             HideEditPassword(f);
-            f.label1.Text = lblEmailTag.Text;
+            f.label1.Text += "Email";
             f.textBox1.Text = lblEmail.Text;
             f.Show();
         }
@@ -110,7 +114,7 @@ namespace Fastfood
         {
             formInformation f = new formInformation(main);
             HideEditPassword(f);
-            f.label1.Text = lblStoreHoursTag.Text;
+            f.label1.Text += "Store Hours";
             f.textBox1.Text = lblStoreHours.Text;
             f.Show();
         }
@@ -118,6 +122,7 @@ namespace Fastfood
         private void button5_Click(object sender, EventArgs e)
         {
             formInformation f = new formInformation(main);
+            f.label1.Text += "Current Password";
             f.textBox1.UseSystemPasswordChar = true;
             f.Show();
         }
@@ -127,7 +132,7 @@ namespace Fastfood
             formInformation f = new formInformation(main);
             HideEditPassword(f);
             f.username = lblUser.Text;
-            f.label1.Text = lblUserTag.Text;
+            f.label1.Text += "Username";
             f.textBox1.Text = lblUser.Text;
             f.Show();
         }
@@ -136,8 +141,9 @@ namespace Fastfood
         {
             formInformation f = new formInformation(main);
             HideEditPassword(f);
-            f.label1.Text = label2.Text;
+            f.label1.Text += "About";
             f.textBox1.Multiline = true;
+            f.textBox1.Height = 110;
             f.textBox1.Text = label1.Text;
             f.Show();
         }

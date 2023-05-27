@@ -109,8 +109,17 @@ namespace Fastfood
             SqlCommand cmd = new SqlCommand(data, conn);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@Id", 1);
-            cmd.Parameters.AddWithValue("@Landline", SqlDbType.Int).Value = Convert.ToInt32(f.textBox1.Text);
-            cmd.ExecuteNonQuery();
+            int valid;
+            if (int.TryParse(f.textBox1.Text, out valid))
+            {
+                cmd.Parameters.AddWithValue("@Landline", SqlDbType.Int).Value = Convert.ToInt32(f.textBox1.Text);
+                cmd.ExecuteNonQuery();
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@Landline", SqlDbType.Int).Value = DBNull.Value;
+                cmd.ExecuteNonQuery();
+            }
             conn.Close();
         }
 
@@ -122,7 +131,14 @@ namespace Fastfood
             SqlCommand cmd = new SqlCommand(data, conn);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@Id", 1);
-            cmd.Parameters.AddWithValue("@CpNum", SqlDbType.Int).Value = Convert.ToInt32(f.textBox1.Text);
+            if (f.textBox1.Text != "")
+            {
+                cmd.Parameters.AddWithValue("@CpNum", SqlDbType.VarChar).Value = f.textBox1.Text;
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@CpNum", SqlDbType.VarChar).Value = DBNull.Value;
+            }
             cmd.ExecuteNonQuery();
             conn.Close();
         }

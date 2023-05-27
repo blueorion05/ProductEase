@@ -430,41 +430,48 @@ namespace Fastfood
         {
             try
             {
-                if (tbCash.Text != "")
+                if (dataGridView1.Rows.Count > 0)
                 {
-                    Receipt r = new Receipt();
-                    r.lblDate.Text = lblDateTime.Text;
-                    r.lblId.Text = lblTransactionId.Text;
-                    r.lblAmountDue.Text = Convert.ToDouble(lbl7amount.Text).ToString("0.00");
-                    if (tbDiscount.Text.ToString().Contains("%"))
+                    if (tbCash.Text != "")
                     {
-                        r.label3.Text = "  :Discount";
-                        r.lblDiscount.Text = tbDiscount.Text;
+                        Receipt r = new Receipt();
+                        r.lblDate.Text = lblDateTime.Text;
+                        r.lblId.Text = lblTransactionId.Text;
+                        r.lblAmountDue.Text = Convert.ToDouble(lbl7amount.Text).ToString("0.00");
+                        if (tbDiscount.Text.ToString().Contains("%"))
+                        {
+                            r.label3.Text = "  :Discount";
+                            r.lblDiscount.Text = tbDiscount.Text;
+                        }
+                        else
+                        {
+                            r.lblDiscount.Text = Convert.ToDouble(tbDiscount.Text).ToString("0.00");
+                        }
+                        r.lblCash.Text = Convert.ToDouble(tbCash.Text).ToString("0.00");
+                        r.lblChange.Text = Convert.ToDouble(lblChange.Text).ToString("0.00");
+                        for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                        {
+                            r.dataGridView1.Rows.Add();
+                            r.dataGridView1.Rows[i].Cells["Empty"].Value = "";
+                            r.dataGridView1.Rows[i].Cells["Product_Name"].Value = dataGridView1.Rows[i].Cells["Product_Name"].Value;
+                            r.dataGridView1.Rows[i].Cells["Quantity"].Value = dataGridView1.Rows[i].Cells["Quantity"].Value;
+                            r.dataGridView1.Rows[i].Cells["Price"].Value = "₱ " + dataGridView1.Rows[i].Cells["OgPrice"].Value;
+                            r.dataGridView1.Rows[i].Cells["Amount"].Value = "₱ " + dataGridView1.Rows[i].Cells["Price"].Value;
+                            r.dataGridView1.Height += r.dataGridView1.Rows[i].Height;
+                            r.Height += r.dataGridView1.Rows[i].Height;
+                        }
+                        r.dataGridView1.Rows[0].Cells[0].Selected = false;
+                        formReceipt f = new formReceipt(r, this);
+                        f.Show();
                     }
                     else
                     {
-                        r.lblDiscount.Text = Convert.ToDouble(tbDiscount.Text).ToString("0.00");
+                        MessageBox.Show("Cash Tendered is Empty.");
                     }
-                    r.lblCash.Text = Convert.ToDouble(tbCash.Text).ToString("0.00");
-                    r.lblChange.Text = Convert.ToDouble(lblChange.Text).ToString("0.00");
-                    for (int i = 0; i < dataGridView1.Rows.Count; i++)
-                    {
-                        r.dataGridView1.Rows.Add();
-                        r.dataGridView1.Rows[i].Cells["Empty"].Value = "";
-                        r.dataGridView1.Rows[i].Cells["Product_Name"].Value = dataGridView1.Rows[i].Cells["Product_Name"].Value;
-                        r.dataGridView1.Rows[i].Cells["Quantity"].Value = dataGridView1.Rows[i].Cells["Quantity"].Value;
-                        r.dataGridView1.Rows[i].Cells["Price"].Value = "₱ " + dataGridView1.Rows[i].Cells["OgPrice"].Value;
-                        r.dataGridView1.Rows[i].Cells["Amount"].Value = "₱ " + dataGridView1.Rows[i].Cells["Price"].Value;
-                        r.dataGridView1.Height += r.dataGridView1.Rows[i].Height;
-                        r.Height += r.dataGridView1.Rows[i].Height;
-                    }
-                    r.dataGridView1.Rows[0].Cells[0].Selected = false;
-                    formReceipt f = new formReceipt(r, this);
-                    f.Show();
                 }
                 else
                 {
-                    MessageBox.Show("Cash Tendered is Empty.");
+                    MessageBox.Show("There is no product to process.");
                 }
             }
             catch
