@@ -243,6 +243,7 @@
             // 
             // Edit
             // 
+            Edit.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = Color.FromArgb(0, 150, 136);
             dataGridViewCellStyle8.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -254,11 +255,13 @@
             Edit.HeaderText = "";
             Edit.Name = "Edit";
             Edit.ReadOnly = true;
-            Edit.Text = "Edit";
+            Edit.Text = "    Edit    ";
             Edit.UseColumnTextForButtonValue = true;
+            Edit.Width = 5;
             // 
             // Delete
             // 
+            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.BackColor = Color.FromArgb(219, 88, 96);
             dataGridViewCellStyle9.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
@@ -272,12 +275,13 @@
             Delete.ReadOnly = true;
             Delete.Text = "Delete";
             Delete.UseColumnTextForButtonValue = true;
+            Delete.Width = 5;
             // 
             // Manage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.WhiteSmoke;
+            BackColor = Color.White;
             Controls.Add(textBox1);
             Controls.Add(tableProduct);
             Controls.Add(btnAdd);

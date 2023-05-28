@@ -29,10 +29,18 @@
         private void InitializeComponent()
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
+            pbFooter = new PictureBox();
+            pbHeader = new PictureBox();
+            dtStart = new DateTimePicker();
+            dtEnd = new DateTimePicker();
+            textBox1 = new TextBox();
+            label1 = new Label();
             Date = new DataGridViewTextBoxColumn();
             Id = new DataGridViewTextBoxColumn();
             Products = new DataGridViewTextBoxColumn();
@@ -41,12 +49,7 @@
             CashTendered = new DataGridViewTextBoxColumn();
             Change = new DataGridViewTextBoxColumn();
             Receipt = new DataGridViewButtonColumn();
-            pbFooter = new PictureBox();
-            pbHeader = new PictureBox();
-            dtStart = new DateTimePicker();
-            dtEnd = new DateTimePicker();
-            textBox1 = new TextBox();
-            label1 = new Label();
+            Delete = new DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbFooter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbHeader).BeginInit();
@@ -63,108 +66,54 @@
             dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = Color.White;
             dataGridViewCellStyle1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
             dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Date, Id, Products, AmountDue, Discount, CashTendered, Change, Receipt });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Date, Id, Products, AmountDue, Discount, CashTendered, Change, Receipt, Delete });
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.White;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.GridColor = Color.Black;
             dataGridView1.Location = new Point(3, 59);
             dataGridView1.MultiSelect = false;
             dataGridView1.Name = "dataGridView1";
             dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle6;
             dataGridView1.RowTemplate.Height = 50;
             dataGridView1.RowTemplate.ReadOnly = true;
+            dataGridView1.ShowCellToolTips = false;
             dataGridView1.ShowEditingIcon = false;
             dataGridView1.Size = new Size(1058, 536);
             dataGridView1.TabIndex = 0;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellMouseEnter += dataGridView1_CellMouseEnter;
+            dataGridView1.CellMouseLeave += dataGridView1_CellMouseLeave;
             dataGridView1.RowHeightInfoNeeded += dataGridView1_RowHeightInfoNeeded;
-            // 
-            // Date
-            // 
-            Date.HeaderText = "Date";
-            Date.Name = "Date";
-            Date.ReadOnly = true;
-            Date.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Id
-            // 
-            Id.HeaderText = "Id";
-            Id.Name = "Id";
-            Id.ReadOnly = true;
-            Id.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Products
-            // 
-            Products.HeaderText = "Products";
-            Products.Name = "Products";
-            Products.ReadOnly = true;
-            Products.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // AmountDue
-            // 
-            AmountDue.HeaderText = "Amount Due";
-            AmountDue.Name = "AmountDue";
-            AmountDue.ReadOnly = true;
-            AmountDue.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Discount
-            // 
-            Discount.HeaderText = "Discount";
-            Discount.Name = "Discount";
-            Discount.ReadOnly = true;
-            Discount.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // CashTendered
-            // 
-            CashTendered.HeaderText = "Cash Tendered";
-            CashTendered.Name = "CashTendered";
-            CashTendered.ReadOnly = true;
-            CashTendered.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Change
-            // 
-            Change.HeaderText = "Change";
-            Change.Name = "Change";
-            Change.ReadOnly = true;
-            Change.SortMode = DataGridViewColumnSortMode.NotSortable;
-            // 
-            // Receipt
-            // 
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(0, 150, 136);
-            dataGridViewCellStyle2.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 150, 136);
-            dataGridViewCellStyle2.SelectionForeColor = Color.White;
-            Receipt.DefaultCellStyle = dataGridViewCellStyle2;
-            Receipt.FlatStyle = FlatStyle.Flat;
-            Receipt.HeaderText = "Receipt";
-            Receipt.Name = "Receipt";
-            Receipt.ReadOnly = true;
-            Receipt.Resizable = DataGridViewTriState.False;
-            Receipt.Text = "View";
-            Receipt.UseColumnTextForButtonValue = true;
             // 
             // pbFooter
             // 
@@ -252,11 +201,108 @@
             label1.TabIndex = 25;
             label1.Text = "-";
             // 
+            // Date
+            // 
+            Date.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            Date.FillWeight = 579.842468F;
+            Date.HeaderText = "Date";
+            Date.MinimumWidth = 50;
+            Date.Name = "Date";
+            Date.ReadOnly = true;
+            Date.SortMode = DataGridViewColumnSortMode.NotSortable;
+            Date.Width = 50;
+            // 
+            // Id
+            // 
+            Id.FillWeight = 28.4744053F;
+            Id.HeaderText = "Id";
+            Id.Name = "Id";
+            Id.ReadOnly = true;
+            Id.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Products
+            // 
+            Products.FillWeight = 28.4744053F;
+            Products.HeaderText = "Products";
+            Products.Name = "Products";
+            Products.ReadOnly = true;
+            Products.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // AmountDue
+            // 
+            AmountDue.FillWeight = 28.4744053F;
+            AmountDue.HeaderText = "Amount Due";
+            AmountDue.Name = "AmountDue";
+            AmountDue.ReadOnly = true;
+            AmountDue.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Discount
+            // 
+            Discount.FillWeight = 28.4744053F;
+            Discount.HeaderText = "Discount";
+            Discount.Name = "Discount";
+            Discount.ReadOnly = true;
+            Discount.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // CashTendered
+            // 
+            CashTendered.FillWeight = 28.4744053F;
+            CashTendered.HeaderText = "Cash Tendered";
+            CashTendered.Name = "CashTendered";
+            CashTendered.ReadOnly = true;
+            CashTendered.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Change
+            // 
+            Change.FillWeight = 28.4744053F;
+            Change.HeaderText = "Change";
+            Change.Name = "Change";
+            Change.ReadOnly = true;
+            Change.SortMode = DataGridViewColumnSortMode.NotSortable;
+            // 
+            // Receipt
+            // 
+            Receipt.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(0, 150, 136);
+            dataGridViewCellStyle2.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 150, 136);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            Receipt.DefaultCellStyle = dataGridViewCellStyle2;
+            Receipt.FillWeight = 49.3111038F;
+            Receipt.FlatStyle = FlatStyle.Flat;
+            Receipt.HeaderText = "Receipt";
+            Receipt.Name = "Receipt";
+            Receipt.ReadOnly = true;
+            Receipt.Resizable = DataGridViewTriState.False;
+            Receipt.Text = "View";
+            Receipt.UseColumnTextForButtonValue = true;
+            Receipt.Width = 60;
+            // 
+            // Delete
+            // 
+            Delete.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(219, 88, 96);
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(219, 88, 96);
+            dataGridViewCellStyle3.SelectionForeColor = Color.White;
+            Delete.DefaultCellStyle = dataGridViewCellStyle3;
+            Delete.FlatStyle = FlatStyle.Flat;
+            Delete.HeaderText = "";
+            Delete.Name = "Delete";
+            Delete.ReadOnly = true;
+            Delete.Text = "Delete";
+            Delete.UseColumnTextForButtonValue = true;
+            Delete.Width = 5;
+            // 
             // Transactions
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.WhiteSmoke;
+            BackColor = Color.White;
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(dtEnd);
@@ -279,6 +325,10 @@
         private DataGridView dataGridView1;
         private PictureBox pbFooter;
         private PictureBox pbHeader;
+        private DateTimePicker dtStart;
+        private DateTimePicker dtEnd;
+        private TextBox textBox1;
+        private Label label1;
         private DataGridViewTextBoxColumn Date;
         private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn Products;
@@ -287,9 +337,6 @@
         private DataGridViewTextBoxColumn CashTendered;
         private DataGridViewTextBoxColumn Change;
         private DataGridViewButtonColumn Receipt;
-        private DateTimePicker dtStart;
-        private DateTimePicker dtEnd;
-        private TextBox textBox1;
-        private Label label1;
+        private DataGridViewButtonColumn Delete;
     }
 }
