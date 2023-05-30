@@ -322,7 +322,7 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
+        public DataGridView dataGridView1;
         private PictureBox pbFooter;
         private PictureBox pbHeader;
         private DateTimePicker dtStart;

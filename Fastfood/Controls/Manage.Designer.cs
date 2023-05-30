@@ -312,7 +312,7 @@
         private DataGridViewTextBoxColumn Price;
         private DataGridViewTextBoxColumn Image;
         public DataGridView tableProduct;
-        private TextBox textBox1;
+        public TextBox textBox1;
         private DataGridViewTextBoxColumn tableProductC4;
         private DataGridViewTextBoxColumn tableProductC5;
         private DataGridViewTextBoxColumn Product_Name;

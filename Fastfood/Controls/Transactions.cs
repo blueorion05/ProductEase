@@ -15,40 +15,14 @@ namespace Fastfood
 {
     public partial class Transactions : UserControl
     {
+        Information info = new Information();
         DataGridViewCell? pCell = null;
         public Transactions()
         {
             InitializeComponent();
-            Table();
+            info.TransactionTable(this);
             dtStart.Value = DateTime.Now.AddMonths(-1);
             dtEnd.Value = DateTime.Now;
-        }
-
-        public void Table()
-        {
-            int i = dataGridView1.Rows.Count - 1;
-            while (dataGridView1.Rows.Count > 0)
-            {
-                dataGridView1.Rows.RemoveAt(i);
-                i--;
-            }
-            string data = "SELECT Date, Id, Products, AmountDue, Discount, CashTendered, Change FROM Transactions";
-            Connection sql = new Connection();
-            SqlConnection conn = sql.GetConnection();
-            SqlCommand cmd = new SqlCommand(data, conn);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                string Date = (string)reader["Date"];
-                string Id = reader["Id"].ToString()!;
-                string Products = (string)reader["Products"];
-                string AmountDue = (string)reader["AmountDue"];
-                string Discount = (string)reader["Discount"];
-                string CashTendered = (string)reader["CashTendered"];
-                string Change = (string)reader["Change"];
-                dataGridView1.Rows.Add(Date, Id, Products, AmountDue, Discount, CashTendered, Change);
-            }
-            conn.Close();
         }
 
         private void controlRecords_Load(object sender, EventArgs e)
@@ -65,59 +39,15 @@ namespace Fastfood
         {
             if (e.ColumnIndex == 7)
             {
-                formReceipt f = new formReceipt(null, null);
-                f.btnCancel.Text = "Close";
-                f.btnConfirm.Text = "";
-                f.btnConfirm.Enabled = false;
-                string data = "SELECT Id, Receipt FROM Transactions";
-                Connection sql = new Connection();
-                SqlConnection conn = sql.GetConnection();
-                SqlCommand cmd = new SqlCommand(data, conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    if (dataGridView1.Rows[e.RowIndex].Cells["Id"].Value.ToString() == reader["Id"].ToString())
-                    {
-                        byte[] imageData = (byte[])reader["Receipt"];
-                        using (MemoryStream ms = new MemoryStream(imageData))
-                        {
-                            Image Image = Image.FromStream(ms);
-                            PictureBox pb = new PictureBox();
-                            pb.Image = Image;
-                            pb.SizeMode = PictureBoxSizeMode.AutoSize;
-                            f.panel1.Controls.Add(pb);
-                            f.Show();
-                        }
-                    }
-                }
-                conn.Close();
+                info.ViewReceipt(this, e);
                 return;
             }
             if (e.ColumnIndex == 8)
             {
                 if (MessageBox.Show("Are you sure you want to delete this transaction?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                    string del = "DELETE FROM Transactions WHERE Id = @Id";
-                    Connection sql = new Connection();
-                    SqlConnection conn = sql.GetConnection();
-                    SqlCommand cmd = new SqlCommand(del, conn);
-                    cmd.CommandType = CommandType.Text;
-
-                    try
-                    {
-                        cmd.Parameters.Add("@Id", SqlDbType.Int).Value = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Id"].Value);
-                        cmd.ExecuteNonQuery();
-                        MessageBox.Show("Deleted Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (SqlException x)
-                    {
-                        MessageBox.Show("Transaction not Deleted. \n" + x.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    finally
-                    {
-                        conn.Close();
-                    }
-                    Table();
+                    info.DeleteTransaction(this, e);
+                    info.TransactionTable(this);
                 }
                 return;
             }

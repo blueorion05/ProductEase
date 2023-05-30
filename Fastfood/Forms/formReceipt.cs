@@ -17,6 +17,7 @@ namespace Fastfood
 {
     public partial class formReceipt : Form
     {
+        Information info = new Information();
         Receipt receipt = new Receipt();
         formPOS formPOS = new formPOS();
         Bitmap receiptImage = null!;
@@ -61,25 +62,9 @@ namespace Fastfood
                 bmp.Save(stream, System.Drawing.Imaging.ImageFormat.Jpeg);
                 imageData = stream.ToArray();
             }
-
-            string addProduct = "INSERT INTO Transactions VALUES (@DateTime, @Id, @Products, @AmountDue, @Discount, @CashTendered, @Change, @Receipt)";
-            Connection sql = new Connection();
-            SqlConnection conn = sql.GetConnection();
-            SqlCommand cmd = new SqlCommand(addProduct, conn);
-            cmd.CommandType = CommandType.Text;
-
             try
             {
-                cmd.Parameters.Add("@DateTime", SqlDbType.VarChar).Value = receipt.lblDate.Text;
-                cmd.Parameters.Add("@Id", SqlDbType.Int).Value = Convert.ToInt32(receipt.lblId.Text);
-                cmd.Parameters.Add("@Products", SqlDbType.VarChar).Value = products;
-                cmd.Parameters.Add("@AmountDue", SqlDbType.VarChar).Value = receipt.lblAmountDue.Text;
-                cmd.Parameters.Add("@Discount", SqlDbType.VarChar).Value = receipt.lblDiscount.Text;
-                cmd.Parameters.Add("@CashTendered", SqlDbType.VarChar).Value = receipt.lblCash.Text;
-                cmd.Parameters.Add("@Change", SqlDbType.VarChar).Value = receipt.lblChange.Text;
-                cmd.Parameters.Add("@Receipt", SqlDbType.VarBinary).Value = imageData;
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Transaction Success.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                info.AddTransaction(receipt, this, products, imageData);
             }
             catch
             {
@@ -87,7 +72,6 @@ namespace Fastfood
             }
             finally
             {
-                conn.Close();
                 Information info = new Information();
                 info.UpdateTransacNum(receipt);
                 this.Close();

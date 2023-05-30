@@ -14,6 +14,7 @@ namespace Fastfood
     {
         formMain main = new formMain();
         public string username = "";
+        Information info = new Information();
         public formInformation(formMain f)
         {
             InitializeComponent();
@@ -27,22 +28,21 @@ namespace Fastfood
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            Information i = new Information();
             if (label1.Text.Contains("Company name"))
             {
-                i.UpdateName(this);
+                info.UpdateName(this);
                 main.btnAccount_Click(sender, e);
                 this.Close();
             }
             else if (label1.Text.Contains("Address"))
             {
-                i.UpdateAddress(this);
+                info.UpdateAddress(this);
                 main.btnAccount_Click(sender, e);
                 this.Close();
             }
             else if (label1.Text.Contains("Landline"))
             {
-                i.UpdateLandline(this);
+                info.UpdateLandline(this);
                 main.btnAccount_Click(sender, e);
                 this.Close();
             }
@@ -56,7 +56,7 @@ namespace Fastfood
                     {
                         if (textBox1.Text.Length == 12 || textBox1.Text.Length == 0)
                         {
-                            i.UpdateCpNum(this);
+                            info.UpdateCpNum(this);
                             main.btnAccount_Click(sender, e);
                             this.Close();
                         }
@@ -79,13 +79,13 @@ namespace Fastfood
             }
             else if (label1.Text.Contains("Email"))
             {
-                i.UpdateEmail(this);
+                info.UpdateEmail(this);
                 main.btnAccount_Click(sender, e);
                 this.Close();
             }
             else if (label1.Text.Contains("Store Hours"))
             {
-                i.UpdateStoreHours(this);
+                info.UpdateStoreHours(this);
                 main.btnAccount_Click(sender, e);
                 this.Close();
             }
@@ -93,7 +93,7 @@ namespace Fastfood
             {
                 if (textBox1.Text.Length <= 500)
                 {
-                    i.UpdateAbout(this);
+                    info.UpdateAbout(this);
                     main.btnAccount_Click(sender, e);
                     this.Close();
                 }
@@ -107,7 +107,7 @@ namespace Fastfood
                 textBox1.Text = textBox1.Text.Trim();
                 if (textBox1.Text.Length >= 5 && textBox1.Text.Length <= 12)
                 {
-                    i.UpdateUsername(this);
+                    info.UpdateUsername(this);
                     main.btnAccount_Click(sender, e);
                     this.Close();
                 }
@@ -122,13 +122,13 @@ namespace Fastfood
                 textBox3.Text = textBox3.Text.TrimEnd();
                 if (textBox1.Text.Length > 0 && textBox2.Text.Length > 0 && textBox3.Text.Length > 0)
                 {
-                    if (textBox1.Text == i.GetPassword())
+                    if (textBox1.Text == info.GetPassword())
                     {
                         if (textBox3.Text.Length >= 5 && textBox3.Text.Length <= 12)
                         {
                             if (textBox2.Text == textBox3.Text)
                             {
-                                i.UpdatePassword(this);
+                                info.UpdatePassword(this);
                                 this.Close();
                             }
                             else

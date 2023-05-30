@@ -17,48 +17,10 @@ namespace Fastfood
 {
     public partial class formAddProduct : Form
     {
+        Information info = new Information();
         public formAddProduct()
         {
             InitializeComponent();
-        }
-
-        public void AddFood()
-        {
-            string addProduct = "INSERT INTO Products VALUES (@Id, @Category, @Product_Name, @Price, @Image, @Available)";
-            Connection sql = new Connection();
-            SqlConnection conn = sql.GetConnection();
-            SqlCommand cmd = new SqlCommand(addProduct, conn);
-            cmd.CommandType = CommandType.Text;
-            byte[]? imageData = CompressImage(tbImage.Text, 800, 600, 80);
-
-            try
-            {
-                cmd.Parameters.Add("@Id", SqlDbType.VarChar).Value = lblIdNum.Text;
-                cmd.Parameters.Add("@Category", SqlDbType.VarChar).Value = cbCategory.Text;
-                cmd.Parameters.Add("@Product_Name", SqlDbType.VarChar).Value = tbName.Text;
-                cmd.Parameters.Add("@Price", SqlDbType.VarChar).Value = tbPrice.Text;
-                cmd.Parameters.Add("@Available", SqlDbType.VarChar).Value = cbAvailable.Text;
-                if (imageData != null)
-                {
-                    SqlParameter imageParam = new SqlParameter("@Image", SqlDbType.VarBinary);
-                    imageParam.Value = imageData;
-                    cmd.Parameters.Add("@Image", SqlDbType.VarBinary).Value = imageParam.Value;
-                }
-                else
-                {
-                    cmd.Parameters.Add("@Image", SqlDbType.VarBinary).Value = DBNull.Value;
-                }
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Added Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (SqlException x)
-            {
-                MessageBox.Show("Product not Added. \n" + x.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-            }
         }
 
         private void formAddProduct_Load(object sender, EventArgs e)
@@ -108,7 +70,7 @@ namespace Fastfood
                     if (Convert.ToDouble(tbPrice.Text) >= 0)
                     {
                         tbPrice.Text = Convert.ToDouble(tbPrice.Text).ToString("0.00");
-                        AddFood();
+                        info.AddProduct(this);
                         this.Hide();
                     }
                     else
@@ -149,58 +111,6 @@ namespace Fastfood
         {
             tbImage.Text = "";
             pbImage.Image = null;
-        }
-
-        public byte[]? CompressImage(string imagePath, int maxWidth, int maxHeight, long quality)
-        {
-            if (tbImage.Text != "")
-            {
-                using (var originalImage = System.Drawing.Image.FromFile(imagePath))
-                {
-                    int newWidth, newHeight;
-                    if (originalImage.Width > originalImage.Height)
-                    {
-                        newWidth = maxWidth;
-                        newHeight = (int)(originalImage.Height * (float)newWidth / originalImage.Width);
-                    }
-                    else
-                    {
-                        newHeight = maxHeight;
-                        newWidth = (int)(originalImage.Width * (float)newHeight / originalImage.Height);
-                    }
-                    using (var resizedImage = new Bitmap(newWidth, newHeight))
-                    {
-                        using (var graphics = Graphics.FromImage(resizedImage))
-                        {
-                            graphics.DrawImage(originalImage, 0, 0, newWidth, newHeight);
-                        }
-                        using (var memoryStream = new MemoryStream())
-                        {
-                            var encoderParam = new EncoderParameters(1);
-                            encoderParam.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, quality);
-
-                            resizedImage.Save(memoryStream, GetEncoderInfo(ImageFormat.Jpeg), encoderParam);
-
-                            return memoryStream.ToArray();
-                        }
-                    }
-                }
-            }
-            byte[]? nullArray = null;
-            return nullArray;
-        }
-
-        private ImageCodecInfo GetEncoderInfo(ImageFormat format)
-        {
-            var codecs = ImageCodecInfo.GetImageEncoders();
-            foreach (var codec in codecs)
-            {
-                if (codec.FormatID == format.Guid)
-                {
-                    return codec;
-                }
-            }
-            return null!;
         }
 
         private void tbImage_TextChanged(object sender, EventArgs e)

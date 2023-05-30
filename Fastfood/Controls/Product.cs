@@ -26,19 +26,6 @@ namespace Fastfood
             f.controlProduct_Click(c);
         }
 
-        public DataTable GetData()
-        {
-            string data = "SELECT * FROM Products";
-            Connection sql = new Connection();
-            SqlConnection conn = sql.GetConnection();
-            SqlCommand cmd = new SqlCommand(data, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            conn.Close();
-            return dt;
-        }
-
         private void pbProduct_Click(object sender, EventArgs e)
         {
             OnClick(EventArgs.Empty);

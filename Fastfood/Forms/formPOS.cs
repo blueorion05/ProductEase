@@ -15,6 +15,7 @@ namespace Fastfood
 {
     public partial class formPOS : Form
     {
+        Information info = new Information();
         Dictionary<string, int> Products = new Dictionary<string, int>();
         public formPOS()
         {
@@ -22,19 +23,6 @@ namespace Fastfood
             Information i = new Information();
             lbl1Company.Text = i.GetName();
             ProductControl("ALL");
-        }
-
-        private DataTable GetData()
-        {
-            string data = "SELECT * FROM Products";
-            Connection sql = new Connection();
-            SqlConnection conn = sql.GetConnection();
-            SqlCommand cmd = new SqlCommand(data, conn);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            conn.Close();
-            return dt;
         }
 
         public void controlProduct_Click(Product c)
@@ -151,7 +139,7 @@ namespace Fastfood
         private void ProductControl(string category)
         {
             flowLayoutPanel1.Controls.Clear();
-            DataTable data = GetData();
+            DataTable data = info.GetProductData();
             foreach (DataRow row in data.Rows)
             {
                 Product c = new Product();
@@ -293,34 +281,7 @@ namespace Fastfood
             flowLayoutPanel1.Controls.Clear();
             if (textBox1.Text != "")
             {
-                string data = "SELECT * FROM Products WHERE Product_Name LIKE'" + textBox1.Text + "%'";
-                Connection sql = new Connection();
-                SqlConnection conn = sql.GetConnection();
-                SqlCommand cmd = new SqlCommand(data, conn);
-                SqlDataReader row = cmd.ExecuteReader();
-                while (row.Read())
-                {
-                    Product c = new Product();
-                    if (row["Available"].ToString() != "Yes")
-                    {
-                        continue;
-                    }
-                    if (row["Image"] != DBNull.Value)
-                    {
-                        byte[] imageData = (byte[])row["Image"];
-                        using (MemoryStream ms = new MemoryStream(imageData))
-                        {
-                            Image Image = Image.FromStream(ms);
-                            c.pbProduct.Image = Image;
-                        }
-                    }
-                    c.lblName.Text = row["Product_Name"].ToString();
-                    c.lblPrice.Text = row["Price"].ToString();
-                    c.lblPrice.Text = row["Price"].ToString();
-                    c.lblId.Text = row["Id"].ToString();
-                    flowLayoutPanel1.Controls.Add(c);
-                }
-                conn.Close();
+                info.POSSearch(this);
             }
             else
             {

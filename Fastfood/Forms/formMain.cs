@@ -97,6 +97,8 @@ namespace Fastfood
         {
             ButtonColor();
             this.Close();
+            formLogin f = new formLogin();
+            f.Show();
         }
 
         private void ButtonColor()

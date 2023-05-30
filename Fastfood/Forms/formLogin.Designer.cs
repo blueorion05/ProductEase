@@ -56,7 +56,6 @@
             btnLogin.Text = "LOGIN";
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnlogin_Click;
-            btnLogin.KeyPress += btnLogin_KeyPress;
             // 
             // btnExit
             // 
@@ -158,7 +157,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Click += formLogin_Click;
-            Enter += btnlogin_Click;
             KeyPress += formLogin_KeyPress;
             ((System.ComponentModel.ISupportInitialize)pbUser).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbPass).EndInit();

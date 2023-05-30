@@ -17,55 +17,10 @@ namespace Fastfood
 {
     public partial class formEditProduct : Form
     {
+        Information info = new Information();
         public formEditProduct()
         {
             InitializeComponent();
-        }
-
-        public void EditProduct()
-        {
-            string editProduct = "UPDATE Products SET Category = @Category, Product_Name = @Product_Name, Price = @Price, Available = @Available";
-            Connection sql = new Connection();
-            SqlConnection conn = sql.GetConnection();
-            byte[]? imageData = CompressImage(tbImage.Text, 800, 600, 80);
-
-            if (imageData != null)
-            {
-                editProduct += ", Image = @Image";
-            }
-            if (imageData == null && pbImage.Image == null && tbImage.Text == "")
-            {
-                editProduct += ", Image = NULL";
-            }
-            editProduct += " WHERE Id = @Id";
-
-            SqlCommand cmd = new SqlCommand(editProduct, conn);
-            cmd.CommandType = CommandType.Text;
-
-            try
-            {
-                cmd.Parameters.AddWithValue("@Id", SqlDbType.VarChar).Value = lblIdNum.Text;
-                cmd.Parameters.AddWithValue("@Category", SqlDbType.VarChar).Value = cbCategory.Text;
-                cmd.Parameters.AddWithValue("@Product_Name", SqlDbType.VarChar).Value = tbName.Text;
-                cmd.Parameters.AddWithValue("@Price", SqlDbType.VarChar).Value = tbPrice.Text;
-                cmd.Parameters.AddWithValue("@Available", SqlDbType.VarChar).Value = cbAvailable.Text;
-                if (imageData != null)
-                {
-                    SqlParameter imageParam = new SqlParameter("@Image", SqlDbType.VarBinary);
-                    imageParam.Value = imageData;
-                    cmd.Parameters.AddWithValue("@Image", SqlDbType.VarBinary).Value = imageParam.Value;
-                }
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Updated Successfully.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (SqlException x)
-            {
-                MessageBox.Show("Product not Updated. \n" + x.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                conn.Close();
-            }
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -83,7 +38,7 @@ namespace Fastfood
                     if (Convert.ToDouble(tbPrice.Text) >= 0)
                     {
                         tbPrice.Text = Convert.ToDouble(tbPrice.Text).ToString("0.00");
-                        EditProduct();
+                        info.EditProduct(this);
                         this.Hide();
                     }
                     else
@@ -129,58 +84,6 @@ namespace Fastfood
         private void formEditProduct_Load(object sender, EventArgs e)
         {
 
-        }
-
-        public byte[]? CompressImage(string imagePath, int maxWidth, int maxHeight, long quality)
-        {
-            if (tbImage.Text != "")
-            {
-                using (var originalImage = System.Drawing.Image.FromFile(imagePath))
-                {
-                    int newWidth, newHeight;
-                    if (originalImage.Width > originalImage.Height)
-                    {
-                        newWidth = maxWidth;
-                        newHeight = (int)(originalImage.Height * (float)newWidth / originalImage.Width);
-                    }
-                    else
-                    {
-                        newHeight = maxHeight;
-                        newWidth = (int)(originalImage.Width * (float)newHeight / originalImage.Height);
-                    }
-                    using (var resizedImage = new Bitmap(newWidth, newHeight))
-                    {
-                        using (var graphics = Graphics.FromImage(resizedImage))
-                        {
-                            graphics.DrawImage(originalImage, 0, 0, newWidth, newHeight);
-                        }
-                        using (var memoryStream = new MemoryStream())
-                        {
-                            var encoderParam = new EncoderParameters(1);
-                            encoderParam.Param[0] = new EncoderParameter(System.Drawing.Imaging.Encoder.Quality, quality);
-
-                            resizedImage.Save(memoryStream, GetEncoderInfo(ImageFormat.Jpeg), encoderParam);
-
-                            return memoryStream.ToArray();
-                        }
-                    }
-                }
-            }
-            byte[]? nullArray = null;
-            return nullArray;
-        }
-
-        private ImageCodecInfo GetEncoderInfo(ImageFormat format)
-        {
-            var codecs = ImageCodecInfo.GetImageEncoders();
-            foreach (var codec in codecs)
-            {
-                if (codec.FormatID == format.Guid)
-                {
-                    return codec;
-                }
-            }
-            return null!;
         }
 
         private void formEditProduct_Click(object sender, EventArgs e)

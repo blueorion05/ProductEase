@@ -698,7 +698,7 @@
         private Panel panelHeader;
         private Button btnMinimize;
         private Button btnExit;
-        private TextBox textBox1;
+        public TextBox textBox1;
         private Button button4;
         private Button button3;
         private Button button2;
@@ -715,7 +715,7 @@
         private Panel panel6;
         private Button btn1pay;
         public Label lbl7amount;
-        private FlowLayoutPanel flowLayoutPanel1;
+        public FlowLayoutPanel flowLayoutPanel1;
         private Label label4;
         public Label lblChange;
         private Label label3;

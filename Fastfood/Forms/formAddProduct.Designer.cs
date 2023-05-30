@@ -356,20 +356,20 @@
 
         #endregion
 
-        private ComboBox cbAvailable;
+        public ComboBox cbAvailable;
         private Button btnSave;
         private Label lblAvailable;
-        private ComboBox cbCategory;
-        private TextBox tbImage;
+        public ComboBox cbCategory;
+        public TextBox tbImage;
         private Button btnBrowse;
-        private TextBox tbPrice;
+        public TextBox tbPrice;
         private Label lblCategory;
         private Label lblPrice;
-        private TextBox tbName;
+        public TextBox tbName;
         private Label lblId;
         private Label lblName;
         private Button btnCancel;
-        private PictureBox pbImage;
+        public PictureBox pbImage;
         private Button btnClear;
         private Label lblRequired1;
         private Label lblRequired2;
@@ -377,6 +377,6 @@
         private Label lblRequired4;
         private Label lblRequired5;
         private Label lblRequired;
-        private Label lblIdNum;
+        public Label lblIdNum;
     }
 }
