@@ -325,8 +325,8 @@
         public DataGridView dataGridView1;
         private PictureBox pbFooter;
         private PictureBox pbHeader;
-        private DateTimePicker dtStart;
-        private DateTimePicker dtEnd;
+        public DateTimePicker dtStart;
+        public DateTimePicker dtEnd;
         private TextBox textBox1;
         private Label label1;
         private DataGridViewTextBoxColumn Date;

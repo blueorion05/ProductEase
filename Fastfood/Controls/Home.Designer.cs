@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             groupBox4 = new GroupBox();
+            pbAvailable3 = new PictureBox();
             pbAvailable2 = new PictureBox();
             pbAvailable1 = new PictureBox();
             panel1 = new Panel();
@@ -50,6 +51,10 @@
             toolStripButton4 = new ToolStripButton();
             pictureBox4 = new PictureBox();
             panel3 = new Panel();
+            panel8 = new Panel();
+            panel7 = new Panel();
+            panel6 = new Panel();
+            panel5 = new Panel();
             panel2 = new Panel();
             lblEarnings = new Label();
             label4 = new Label();
@@ -58,8 +63,8 @@
             lblOrder = new Label();
             label2 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
-            pbAvailable3 = new PictureBox();
             groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbAvailable3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAvailable2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAvailable1).BeginInit();
             panel1.SuspendLayout();
@@ -73,7 +78,6 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pbAvailable3).BeginInit();
             SuspendLayout();
             // 
             // groupBox4
@@ -90,6 +94,15 @@
             groupBox4.TabIndex = 11;
             groupBox4.TabStop = false;
             groupBox4.Text = "PRODUCTS AVAILABLE";
+            // 
+            // pbAvailable3
+            // 
+            pbAvailable3.BackgroundImageLayout = ImageLayout.Stretch;
+            pbAvailable3.Location = new Point(331, 22);
+            pbAvailable3.Name = "pbAvailable3";
+            pbAvailable3.Size = new Size(150, 150);
+            pbAvailable3.TabIndex = 4;
+            pbAvailable3.TabStop = false;
             // 
             // pbAvailable2
             // 
@@ -197,14 +210,17 @@
             toolStripButton2.BackColor = Color.FromArgb(0, 150, 136);
             toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Text;
             toolStripButton2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            toolStripButton2.ForeColor = Color.White;
             toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
             toolStripButton2.ImageTransparentColor = Color.Magenta;
             toolStripButton2.Name = "toolStripButton2";
             toolStripButton2.Size = new Size(100, 35);
             toolStripButton2.Text = "THIS MONTH";
+            toolStripButton2.Click += toolStripButton2_Click;
             // 
             // toolStripSeparator1
             // 
+            toolStripSeparator1.ForeColor = Color.White;
             toolStripSeparator1.Name = "toolStripSeparator1";
             toolStripSeparator1.Size = new Size(6, 38);
             // 
@@ -214,6 +230,7 @@
             toolStripButton1.BackColor = Color.FromArgb(0, 150, 136);
             toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Text;
             toolStripButton1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            toolStripButton1.ForeColor = Color.White;
             toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
             toolStripButton1.ImageTransparentColor = Color.Magenta;
             toolStripButton1.Name = "toolStripButton1";
@@ -223,6 +240,7 @@
             // 
             // toolStripSeparator2
             // 
+            toolStripSeparator2.ForeColor = Color.White;
             toolStripSeparator2.Name = "toolStripSeparator2";
             toolStripSeparator2.Size = new Size(6, 38);
             // 
@@ -232,14 +250,17 @@
             toolStripButton3.BackColor = Color.FromArgb(0, 150, 136);
             toolStripButton3.DisplayStyle = ToolStripItemDisplayStyle.Text;
             toolStripButton3.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            toolStripButton3.ForeColor = Color.White;
             toolStripButton3.Image = (Image)resources.GetObject("toolStripButton3.Image");
             toolStripButton3.ImageTransparentColor = Color.Magenta;
             toolStripButton3.Name = "toolStripButton3";
             toolStripButton3.Size = new Size(100, 35);
             toolStripButton3.Text = "LAST 7 DAYS";
+            toolStripButton3.Click += toolStripButton3_Click;
             // 
             // toolStripSeparator3
             // 
+            toolStripSeparator3.ForeColor = Color.White;
             toolStripSeparator3.Name = "toolStripSeparator3";
             toolStripSeparator3.Size = new Size(6, 38);
             // 
@@ -249,11 +270,13 @@
             toolStripButton4.BackColor = Color.FromArgb(0, 150, 136);
             toolStripButton4.DisplayStyle = ToolStripItemDisplayStyle.Text;
             toolStripButton4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            toolStripButton4.ForeColor = Color.White;
             toolStripButton4.Image = (Image)resources.GetObject("toolStripButton4.Image");
             toolStripButton4.ImageTransparentColor = Color.Magenta;
             toolStripButton4.Name = "toolStripButton4";
             toolStripButton4.Size = new Size(100, 35);
             toolStripButton4.Text = "TODAY";
+            toolStripButton4.Click += toolStripButton4_Click;
             // 
             // pictureBox4
             // 
@@ -268,6 +291,10 @@
             // 
             panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel3.BackColor = Color.White;
+            panel3.Controls.Add(panel8);
+            panel3.Controls.Add(panel7);
+            panel3.Controls.Add(panel6);
+            panel3.Controls.Add(panel5);
             panel3.Controls.Add(panel2);
             panel3.Controls.Add(panel4);
             panel3.Controls.Add(toolStrip1);
@@ -275,6 +302,39 @@
             panel3.Name = "panel3";
             panel3.Size = new Size(441, 197);
             panel3.TabIndex = 17;
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.White;
+            panel8.Location = new Point(330, 36);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(100, 5);
+            panel8.TabIndex = 20;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.White;
+            panel7.Location = new Point(224, 36);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(100, 5);
+            panel7.TabIndex = 19;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.White;
+            panel6.Location = new Point(118, 36);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(100, 5);
+            panel6.TabIndex = 18;
+            panel6.Paint += panel6_Paint;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(25, 26, 62);
+            panel5.Location = new Point(12, 35);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(100, 5);
+            panel5.TabIndex = 17;
             // 
             // panel2
             // 
@@ -352,15 +412,6 @@
             timer1.Interval = 3000;
             timer1.Tick += timer1_Tick;
             // 
-            // pbAvailable3
-            // 
-            pbAvailable3.BackgroundImageLayout = ImageLayout.Stretch;
-            pbAvailable3.Location = new Point(331, 22);
-            pbAvailable3.Name = "pbAvailable3";
-            pbAvailable3.Size = new Size(150, 150);
-            pbAvailable3.TabIndex = 4;
-            pbAvailable3.TabStop = false;
-            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
@@ -375,6 +426,7 @@
             Name = "Home";
             Size = new Size(1064, 654);
             groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbAvailable3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAvailable2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAvailable1).EndInit();
             panel1.ResumeLayout(false);
@@ -393,7 +445,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pbAvailable3).EndInit();
             ResumeLayout(false);
         }
 
@@ -427,5 +478,9 @@
         public PictureBox pbAvailable1;
         private System.Windows.Forms.Timer timer1;
         public PictureBox pbAvailable3;
+        private Panel panel5;
+        private Panel panel8;
+        private Panel panel7;
+        private Panel panel6;
     }
 }

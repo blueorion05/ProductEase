@@ -22,6 +22,17 @@ namespace Fastfood
             pbRecentProduct.Image = info.GetRecentProductImage();
             pbRecentProduct.SizeMode = PictureBoxSizeMode.StretchImage;
             GetAvailableProducts();
+            Transactions t = new Transactions();
+            t.dtStart.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+            t.dtEnd.Value = DateTime.Today;
+            int order = t.dataGridView1.RowCount;
+            double earnings = 0;
+            foreach (DataGridViewRow row in t.dataGridView1.Rows)
+            {
+                earnings += Convert.ToDouble(row.Cells["AmountDue"].Value);
+            }
+            lblOrder.Text = order.ToString();
+            lblEarnings.Text = earnings.ToString("0.00");
         }
 
         private void GetAvailableProducts()
@@ -63,7 +74,21 @@ namespace Fastfood
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-
+            panel5.BackColor = Color.White;
+            panel6.BackColor = Color.FromArgb(25, 26, 62);
+            panel7.BackColor = Color.White;
+            panel8.BackColor = Color.White;
+            Transactions t = new Transactions();
+            t.dtStart.Value = DateTime.Today.AddDays(-30);
+            t.dtEnd.Value = DateTime.Today;
+            int order = t.dataGridView1.RowCount;
+            double earnings = 0;
+            foreach (DataGridViewRow row in t.dataGridView1.Rows)
+            {
+                earnings += Convert.ToDouble(row.Cells["AmountDue"].Value);
+            }
+            lblOrder.Text = order.ToString();
+            lblEarnings.Text = earnings.ToString("0.00");
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -96,6 +121,66 @@ namespace Fastfood
             }
         }
 
-        
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.White;
+            panel6.BackColor = Color.White;
+            panel7.BackColor = Color.White;
+            panel8.BackColor = Color.FromArgb(25, 26, 62);
+            Transactions t = new Transactions();
+            t.dtStart.Value = DateTime.Today;
+            t.dtEnd.Value = DateTime.Today;
+            int order = t.dataGridView1.RowCount;
+            double earnings = 0;
+            foreach (DataGridViewRow row in t.dataGridView1.Rows)
+            {
+                earnings += Convert.ToDouble(row.Cells["AmountDue"].Value);
+            }
+            lblOrder.Text = order.ToString();
+            lblEarnings.Text = earnings.ToString("0.00");
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.White;
+            panel6.BackColor = Color.White;
+            panel7.BackColor = Color.FromArgb(25, 26, 62);
+            panel8.BackColor = Color.White;
+            Transactions t = new Transactions();
+            t.dtStart.Value = DateTime.Today.AddDays(-7);
+            t.dtEnd.Value = DateTime.Today;
+            int order = t.dataGridView1.RowCount;
+            double earnings = 0;
+            foreach (DataGridViewRow row in t.dataGridView1.Rows)
+            {
+                earnings += Convert.ToDouble(row.Cells["AmountDue"].Value);
+            }
+            lblOrder.Text = order.ToString();
+            lblEarnings.Text = earnings.ToString("0.00");
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            panel5.BackColor = Color.FromArgb(25, 26, 62);
+            panel6.BackColor = Color.White;
+            panel7.BackColor = Color.White;
+            panel8.BackColor = Color.White;
+            Transactions t = new Transactions();
+            t.dtStart.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
+            t.dtEnd.Value = DateTime.Today;
+            int order = t.dataGridView1.RowCount;
+            double earnings = 0;
+            foreach (DataGridViewRow row in t.dataGridView1.Rows)
+            {
+                earnings += Convert.ToDouble(row.Cells["AmountDue"].Value);
+            }
+            lblOrder.Text = order.ToString();
+            lblEarnings.Text = earnings.ToString("0.00");
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
