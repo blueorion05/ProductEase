@@ -147,19 +147,22 @@ namespace Fastfood
 
         public Image GetRecentProductImage()
         {
-            string data = "SELECT RecentProduct FROM Information";
+            string data = "SELECT Image FROM Products ORDER BY Timestamp DESC";
             Connection sql = new Connection();
             SqlConnection conn = sql.GetConnection();
             SqlCommand cmd = new SqlCommand(data, conn);
             SqlDataReader reader = cmd.ExecuteReader();
             Image Image = null!;
-            reader.Read();
-            if (reader["RecentProduct"] != DBNull.Value)
+            if (reader.HasRows)
             {
-                byte[] imageData = (byte[])reader["RecentProduct"];
-                using (MemoryStream ms = new MemoryStream(imageData))
+                reader.Read();
+                if (reader["Image"] != DBNull.Value)
                 {
-                    Image = Image.FromStream(ms);
+                    byte[] imageData = (byte[])reader["Image"];
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        Image = Image.FromStream(ms);
+                    }
                 }
             }
             conn.Close();
@@ -364,7 +367,7 @@ namespace Fastfood
 
         public void AddProduct(formAddProduct add)
         {
-            string addProduct = "INSERT INTO Products VALUES (@Id, @Category, @Product_Name, @Price, @Image, @Available)";
+            string addProduct = "INSERT INTO Products (Id, Category, Product_Name, Price, Image, Available, Timestamp) VALUES (@Id, @Category, @Product_Name, @Price, @Image, @Available, DEFAULT)";
             Connection sql = new Connection();
             SqlConnection conn = sql.GetConnection();
             SqlCommand cmd = new SqlCommand(addProduct, conn);
@@ -398,29 +401,7 @@ namespace Fastfood
             finally
             {
                 conn.Close();
-                AddRecentProduct(imageData!);
             }
-        }
-
-        private void AddRecentProduct(byte[] imageData)
-        {
-            string addProduct = "UPDATE Information SET RecentProduct = @RecentProduct";
-            Connection sql = new Connection();
-            SqlConnection conn = sql.GetConnection();
-            SqlCommand cmd = new SqlCommand(addProduct, conn);
-            cmd.CommandType = CommandType.Text;
-            if (imageData != null)
-            {
-                SqlParameter imageParam = new SqlParameter("@RecentProduct", SqlDbType.VarBinary);
-                imageParam.Value = imageData;
-                cmd.Parameters.Add("@RecentProduct", SqlDbType.VarBinary).Value = imageParam.Value;
-            }
-            else
-            {
-                cmd.Parameters.Add("@RecentProduct", SqlDbType.VarBinary).Value = DBNull.Value;
-            }
-            cmd.ExecuteNonQuery();
-            conn.Close();
         }
 
         public void EditProduct(formEditProduct edit)
@@ -471,27 +452,10 @@ namespace Fastfood
 
         public void DeleteProduct(string Id)
         {
-            string? tobeDeleted = "";
-
-            string selectImage = "SELECT Id, Image FROM Products";
+            string del = "DELETE FROM Products WHERE Id = @Id";
             Connection sql = new Connection();
             SqlConnection conn = sql.GetConnection();
-            SqlCommand cmd = new SqlCommand(selectImage, conn);
-            cmd.CommandType = CommandType.Text;
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                if (reader["Id"].ToString() == Id)
-                {
-                    tobeDeleted = reader["Image"].ToString();
-                }
-            }
-            conn.Close();
-
-            string del = "DELETE FROM Products WHERE Id = @Id";
-            sql = new Connection();
-            conn = sql.GetConnection();
-            cmd = new SqlCommand(del, conn);
+            SqlCommand cmd = new SqlCommand(del, conn);
             cmd.CommandType = CommandType.Text;
 
             try
@@ -506,30 +470,6 @@ namespace Fastfood
             }
             finally
             {
-                conn.Close();
-            }
-
-            string stored = "";
-
-            string checkImage = "SELECT RecentProduct FROM Information";
-            sql = new Connection();
-            conn = sql.GetConnection();
-            cmd = new SqlCommand(checkImage, conn);
-            cmd.CommandType = CommandType.Text;
-            reader = cmd.ExecuteReader();
-            reader.Read();
-            stored = reader["RecentProduct"].ToString()!;
-            conn.Close();
-
-            if (tobeDeleted == stored)
-            {
-                string addProduct = "UPDATE Information SET RecentProduct = @RecentProduct";
-                sql = new Connection();
-                conn = sql.GetConnection();
-                cmd = new SqlCommand(addProduct, conn);
-                cmd.CommandType = CommandType.Text;
-                cmd.Parameters.Add("@RecentProduct", SqlDbType.VarBinary).Value = DBNull.Value;
-                cmd.ExecuteNonQuery();
                 conn.Close();
             }
         }
