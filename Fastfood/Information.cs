@@ -8,6 +8,7 @@ using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 using System.Xml.Linq;
 
@@ -56,7 +57,7 @@ namespace Fastfood
 
         public void GetSettingsInfo(Settings s)
         {
-            string data = "SELECT Name, Address, Landline, CpNum, Email, StoreHours, About FROM Information";
+            string data = "SELECT Name, Address, ContactNum, Email, StoreHours, About FROM Information";
             Connection sql = new Connection();
             SqlConnection conn = sql.GetConnection();
             SqlCommand cmd = new SqlCommand(data, conn);
@@ -64,8 +65,7 @@ namespace Fastfood
             reader.Read();
             s.lblName.Text = reader["Name"].ToString();
             s.lblAddress.Text = reader["Address"].ToString();
-            s.lblLandline.Text = reader["Landline"].ToString();
-            s.lblCpNum.Text = reader["CpNum"].ToString();
+            s.lblContactNum.Text = reader["ContactNum"].ToString();
             s.lblEmail.Text = reader["Email"].ToString();
             s.lblStoreHours.Text = reader["StoreHours"].ToString();
             s.label1.Text = reader["About"].ToString();
@@ -91,6 +91,19 @@ namespace Fastfood
             string name = reader["Name"].ToString()!;
             conn.Close();
             return name;
+        }
+
+        public string GetAbout()
+        {
+            string data = "SELECT About FROM Information";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            string about = reader["About"].ToString()!;
+            conn.Close();
+            return about;
         }
 
         public string GetPassword()
@@ -132,6 +145,27 @@ namespace Fastfood
             return dt;
         }
 
+        public Image GetRecentProductImage()
+        {
+            string data = "SELECT RecentProduct FROM Information";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            Image Image = null!;
+            reader.Read();
+            if (reader["RecentProduct"] != DBNull.Value)
+            {
+                byte[] imageData = (byte[])reader["RecentProduct"];
+                using (MemoryStream ms = new MemoryStream(imageData))
+                {
+                    Image = Image.FromStream(ms);
+                }
+            }
+            conn.Close();
+            return Image;
+        }
+        
         public void UpdateName(formInformation f)
         {
             string data = "UPDATE Information SET Name = @Name WHERE Id = @Id";
@@ -158,7 +192,7 @@ namespace Fastfood
             conn.Close();
         }
 
-        public void UpdateLandline(formInformation f)
+        public void UpdateContactNum(formInformation f)
         {
             string data = "UPDATE Information SET Landline = @Landline WHERE Id = @Id";
             Connection sql = new Connection();
@@ -169,7 +203,7 @@ namespace Fastfood
             int valid;
             if (int.TryParse(f.textBox1.Text, out valid))
             {
-                cmd.Parameters.AddWithValue("@Landline", SqlDbType.Int).Value = Convert.ToInt32(f.textBox1.Text);
+                cmd.Parameters.AddWithValue("@ContactNum", SqlDbType.Int).Value = Convert.ToInt32(f.textBox1.Text);
                 cmd.ExecuteNonQuery();
             }
             else
@@ -177,26 +211,6 @@ namespace Fastfood
                 cmd.Parameters.AddWithValue("@Landline", SqlDbType.Int).Value = DBNull.Value;
                 cmd.ExecuteNonQuery();
             }
-            conn.Close();
-        }
-
-        public void UpdateCpNum(formInformation f)
-        {
-            string data = "UPDATE Information SET CpNum = @CpNum WHERE Id = @Id";
-            Connection sql = new Connection();
-            SqlConnection conn = sql.GetConnection();
-            SqlCommand cmd = new SqlCommand(data, conn);
-            cmd.CommandType = CommandType.Text;
-            cmd.Parameters.AddWithValue("@Id", 1);
-            if (f.textBox1.Text != "")
-            {
-                cmd.Parameters.AddWithValue("@CpNum", SqlDbType.VarChar).Value = f.textBox1.Text;
-            }
-            else
-            {
-                cmd.Parameters.AddWithValue("@CpNum", SqlDbType.VarChar).Value = DBNull.Value;
-            }
-            cmd.ExecuteNonQuery();
             conn.Close();
         }
 
@@ -384,7 +398,29 @@ namespace Fastfood
             finally
             {
                 conn.Close();
+                AddRecentProduct(imageData!);
             }
+        }
+
+        private void AddRecentProduct(byte[] imageData)
+        {
+            string addProduct = "UPDATE Information SET RecentProduct = @RecentProduct";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(addProduct, conn);
+            cmd.CommandType = CommandType.Text;
+            if (imageData != null)
+            {
+                SqlParameter imageParam = new SqlParameter("@RecentProduct", SqlDbType.VarBinary);
+                imageParam.Value = imageData;
+                cmd.Parameters.Add("@RecentProduct", SqlDbType.VarBinary).Value = imageParam.Value;
+            }
+            else
+            {
+                cmd.Parameters.Add("@RecentProduct", SqlDbType.VarBinary).Value = DBNull.Value;
+            }
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         public void EditProduct(formEditProduct edit)
@@ -435,10 +471,27 @@ namespace Fastfood
 
         public void DeleteProduct(string Id)
         {
-            string del = "DELETE FROM Products WHERE Id = @Id";
+            string? tobeDeleted = "";
+
+            string selectImage = "SELECT Id, Image FROM Products";
             Connection sql = new Connection();
             SqlConnection conn = sql.GetConnection();
-            SqlCommand cmd = new SqlCommand(del, conn);
+            SqlCommand cmd = new SqlCommand(selectImage, conn);
+            cmd.CommandType = CommandType.Text;
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader["Id"].ToString() == Id)
+                {
+                    tobeDeleted = reader["Image"].ToString();
+                }
+            }
+            conn.Close();
+
+            string del = "DELETE FROM Products WHERE Id = @Id";
+            sql = new Connection();
+            conn = sql.GetConnection();
+            cmd = new SqlCommand(del, conn);
             cmd.CommandType = CommandType.Text;
 
             try
@@ -453,6 +506,30 @@ namespace Fastfood
             }
             finally
             {
+                conn.Close();
+            }
+
+            string stored = "";
+
+            string checkImage = "SELECT RecentProduct FROM Information";
+            sql = new Connection();
+            conn = sql.GetConnection();
+            cmd = new SqlCommand(checkImage, conn);
+            cmd.CommandType = CommandType.Text;
+            reader = cmd.ExecuteReader();
+            reader.Read();
+            stored = reader["RecentProduct"].ToString()!;
+            conn.Close();
+
+            if (tobeDeleted == stored)
+            {
+                string addProduct = "UPDATE Information SET RecentProduct = @RecentProduct";
+                sql = new Connection();
+                conn = sql.GetConnection();
+                cmd = new SqlCommand(addProduct, conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.Add("@RecentProduct", SqlDbType.VarBinary).Value = DBNull.Value;
+                cmd.ExecuteNonQuery();
                 conn.Close();
             }
         }
@@ -499,6 +576,35 @@ namespace Fastfood
             {
                 conn.Close();
             }
+        }
+
+        public ImageList AvailableProducts(Home home)
+        {
+            ImageList? list = new ImageList();
+            string data = "SELECT Image, Available FROM Products";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader["Available"].ToString() == "Yes" && reader["Image"] != DBNull.Value)
+                {
+                    byte[] imageData = (byte[])reader["Image"];
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        Image image = Image.FromStream(ms);
+                        Image newImage = image.GetThumbnailImage(150, 150, null, IntPtr.Zero);
+                        list.Images.Add(newImage);
+                    }
+                }
+            }
+            if (list.Images.Count == 0)
+            {
+                list = null;
+            }
+            conn.Close();
+            return list!;
         }
 
         public void AccessEditProduct(Manage manage, DataGridViewCellEventArgs e)

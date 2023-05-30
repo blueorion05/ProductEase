@@ -29,24 +29,21 @@
         private void InitializeComponent()
         {
             lblEmailTag = new Label();
-            lblLandlineTag = new Label();
+            lblContact = new Label();
             lblAddressTag = new Label();
             lblNameTag = new Label();
-            lblCpNumTag = new Label();
             lblStoreHoursTag = new Label();
             pbFooter = new PictureBox();
             pbHeader = new PictureBox();
             label9 = new Label();
             lblPass = new Label();
             lblStoreHours = new Label();
-            lblCpNum = new Label();
             lblEmail = new Label();
-            lblLandline = new Label();
+            lblContactNum = new Label();
             lblAddress = new Label();
             lblName = new Label();
             button1 = new Button();
             button2 = new Button();
-            button3 = new Button();
             button4 = new Button();
             button5 = new Button();
             button6 = new Button();
@@ -69,24 +66,24 @@
             lblEmailTag.BackColor = Color.Transparent;
             lblEmailTag.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblEmailTag.ForeColor = Color.Black;
-            lblEmailTag.Location = new Point(105, 231);
+            lblEmailTag.Location = new Point(105, 205);
             lblEmailTag.Name = "lblEmailTag";
             lblEmailTag.Size = new Size(47, 17);
             lblEmailTag.TabIndex = 37;
             lblEmailTag.Text = "Email:";
             lblEmailTag.Click += label7_Click;
             // 
-            // lblLandlineTag
+            // lblContact
             // 
-            lblLandlineTag.AutoSize = true;
-            lblLandlineTag.BackColor = Color.Transparent;
-            lblLandlineTag.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblLandlineTag.ForeColor = Color.Black;
-            lblLandlineTag.Location = new Point(89, 177);
-            lblLandlineTag.Name = "lblLandlineTag";
-            lblLandlineTag.Size = new Size(66, 17);
-            lblLandlineTag.TabIndex = 33;
-            lblLandlineTag.Text = "Landline:";
+            lblContact.AutoSize = true;
+            lblContact.BackColor = Color.Transparent;
+            lblContact.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblContact.ForeColor = Color.Black;
+            lblContact.Location = new Point(58, 178);
+            lblContact.Name = "lblContact";
+            lblContact.Size = new Size(94, 17);
+            lblContact.TabIndex = 33;
+            lblContact.Text = "Contact No.:";
             // 
             // lblAddressTag
             // 
@@ -106,23 +103,11 @@
             lblNameTag.BackColor = Color.Transparent;
             lblNameTag.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblNameTag.ForeColor = Color.Black;
-            lblNameTag.Location = new Point(42, 119);
+            lblNameTag.Location = new Point(31, 120);
             lblNameTag.Name = "lblNameTag";
             lblNameTag.Size = new Size(119, 17);
             lblNameTag.TabIndex = 29;
             lblNameTag.Text = "Company name:";
-            // 
-            // lblCpNumTag
-            // 
-            lblCpNumTag.AutoSize = true;
-            lblCpNumTag.BackColor = Color.Transparent;
-            lblCpNumTag.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCpNumTag.ForeColor = Color.Black;
-            lblCpNumTag.Location = new Point(52, 205);
-            lblCpNumTag.Name = "lblCpNumTag";
-            lblCpNumTag.Size = new Size(106, 17);
-            lblCpNumTag.TabIndex = 41;
-            lblCpNumTag.Text = "Cellphone No.:";
             // 
             // lblStoreHoursTag
             // 
@@ -130,7 +115,7 @@
             lblStoreHoursTag.BackColor = Color.Transparent;
             lblStoreHoursTag.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblStoreHoursTag.ForeColor = Color.Black;
-            lblStoreHoursTag.Location = new Point(69, 259);
+            lblStoreHoursTag.Location = new Point(69, 233);
             lblStoreHoursTag.Name = "lblStoreHoursTag";
             lblStoreHoursTag.Size = new Size(83, 17);
             lblStoreHoursTag.TabIndex = 43;
@@ -188,21 +173,10 @@
             lblStoreHours.BorderStyle = BorderStyle.FixedSingle;
             lblStoreHours.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblStoreHours.ForeColor = Color.Black;
-            lblStoreHours.Location = new Point(164, 259);
+            lblStoreHours.Location = new Point(164, 233);
             lblStoreHours.Name = "lblStoreHours";
             lblStoreHours.Size = new Size(220, 17);
             lblStoreHours.TabIndex = 59;
-            // 
-            // lblCpNum
-            // 
-            lblCpNum.BackColor = Color.Transparent;
-            lblCpNum.BorderStyle = BorderStyle.FixedSingle;
-            lblCpNum.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCpNum.ForeColor = Color.Black;
-            lblCpNum.Location = new Point(164, 205);
-            lblCpNum.Name = "lblCpNum";
-            lblCpNum.Size = new Size(220, 17);
-            lblCpNum.TabIndex = 58;
             // 
             // lblEmail
             // 
@@ -210,21 +184,21 @@
             lblEmail.BorderStyle = BorderStyle.FixedSingle;
             lblEmail.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblEmail.ForeColor = Color.Black;
-            lblEmail.Location = new Point(164, 231);
+            lblEmail.Location = new Point(164, 205);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(220, 17);
             lblEmail.TabIndex = 57;
             // 
-            // lblLandline
+            // lblContactNum
             // 
-            lblLandline.BackColor = Color.Transparent;
-            lblLandline.BorderStyle = BorderStyle.FixedSingle;
-            lblLandline.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblLandline.ForeColor = Color.Black;
-            lblLandline.Location = new Point(164, 177);
-            lblLandline.Name = "lblLandline";
-            lblLandline.Size = new Size(220, 17);
-            lblLandline.TabIndex = 56;
+            lblContactNum.BackColor = Color.Transparent;
+            lblContactNum.BorderStyle = BorderStyle.FixedSingle;
+            lblContactNum.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblContactNum.ForeColor = Color.Black;
+            lblContactNum.Location = new Point(164, 177);
+            lblContactNum.Name = "lblContactNum";
+            lblContactNum.Size = new Size(220, 17);
+            lblContactNum.TabIndex = 56;
             // 
             // lblAddress
             // 
@@ -278,21 +252,6 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
-            // button3
-            // 
-            button3.BackColor = Color.FromArgb(0, 150, 136);
-            button3.FlatAppearance.BorderSize = 0;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(386, 205);
-            button3.Name = "button3";
-            button3.Size = new Size(27, 17);
-            button3.TabIndex = 64;
-            button3.Text = "EDIT";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
-            // 
             // button4
             // 
             button4.BackColor = Color.FromArgb(0, 150, 136);
@@ -330,7 +289,7 @@
             button6.FlatStyle = FlatStyle.Flat;
             button6.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
             button6.ForeColor = Color.White;
-            button6.Location = new Point(386, 263);
+            button6.Location = new Point(386, 237);
             button6.Name = "button6";
             button6.Size = new Size(27, 17);
             button6.TabIndex = 66;
@@ -345,7 +304,7 @@
             button7.FlatStyle = FlatStyle.Flat;
             button7.Font = new Font("Century Gothic", 5.25F, FontStyle.Regular, GraphicsUnit.Point);
             button7.ForeColor = Color.White;
-            button7.Location = new Point(386, 233);
+            button7.Location = new Point(386, 207);
             button7.Name = "button7";
             button7.Size = new Size(27, 17);
             button7.TabIndex = 65;
@@ -469,24 +428,21 @@
             Controls.Add(button5);
             Controls.Add(button6);
             Controls.Add(button7);
-            Controls.Add(button3);
             Controls.Add(button4);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(lblPass);
             Controls.Add(lblStoreHours);
-            Controls.Add(lblCpNum);
             Controls.Add(lblEmail);
-            Controls.Add(lblLandline);
+            Controls.Add(lblContactNum);
             Controls.Add(lblAddress);
             Controls.Add(lblName);
             Controls.Add(label9);
             Controls.Add(pbFooter);
             Controls.Add(pbHeader);
             Controls.Add(lblStoreHoursTag);
-            Controls.Add(lblCpNumTag);
             Controls.Add(lblEmailTag);
-            Controls.Add(lblLandlineTag);
+            Controls.Add(lblContact);
             Controls.Add(lblAddressTag);
             Controls.Add(lblNameTag);
             Name = "Settings";
@@ -500,24 +456,21 @@
 
         #endregion
         private Label lblEmailTag;
-        private Label lblLandlineTag;
+        private Label lblContact;
         private Label lblAddressTag;
         private Label lblNameTag;
-        private Label lblCpNumTag;
         private Label lblStoreHoursTag;
         private PictureBox pbFooter;
         private PictureBox pbHeader;
         private Label label9;
         private Label lblPass;
         public Label lblStoreHours;
-        public Label lblCpNum;
         public Label lblEmail;
-        public Label lblLandline;
+        public Label lblContactNum;
         public Label lblAddress;
         public Label lblName;
         private Button button1;
         private Button button2;
-        private Button button3;
         private Button button4;
         private Button button5;
         private Button button6;

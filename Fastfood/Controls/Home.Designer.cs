@@ -28,13 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             groupBox4 = new GroupBox();
+            pbAvailable2 = new PictureBox();
+            pbAvailable1 = new PictureBox();
             panel1 = new Panel();
-            label3 = new Label();
+            lblAbout = new Label();
             label1 = new Label();
             groupBox6 = new GroupBox();
+            pictureBox2 = new PictureBox();
             groupBox5 = new GroupBox();
+            pbRecentProduct = new PictureBox();
             toolStrip1 = new ToolStrip();
             toolStripButton2 = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
@@ -46,49 +51,82 @@
             pictureBox4 = new PictureBox();
             panel3 = new Panel();
             panel2 = new Panel();
-            EarnTotalLB = new Label();
+            lblEarnings = new Label();
             label4 = new Label();
             pictureBox1 = new PictureBox();
             panel4 = new Panel();
-            OrderTotalLB = new Label();
+            lblOrder = new Label();
             label2 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
+            pbAvailable3 = new PictureBox();
+            groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbAvailable2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbAvailable1).BeginInit();
             panel1.SuspendLayout();
+            groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbRecentProduct).BeginInit();
             toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbAvailable3).BeginInit();
             SuspendLayout();
             // 
             // groupBox4
             // 
+            groupBox4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             groupBox4.BackColor = Color.White;
-            groupBox4.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox4.Controls.Add(pbAvailable3);
+            groupBox4.Controls.Add(pbAvailable2);
+            groupBox4.Controls.Add(pbAvailable1);
+            groupBox4.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox4.Location = new Point(34, 432);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(441, 197);
+            groupBox4.Size = new Size(501, 197);
             groupBox4.TabIndex = 11;
             groupBox4.TabStop = false;
-            groupBox4.Text = "PRODUCTS UNAVAILABLE";
+            groupBox4.Text = "PRODUCTS AVAILABLE";
+            // 
+            // pbAvailable2
+            // 
+            pbAvailable2.BackgroundImageLayout = ImageLayout.Stretch;
+            pbAvailable2.Location = new Point(175, 22);
+            pbAvailable2.Name = "pbAvailable2";
+            pbAvailable2.Size = new Size(150, 150);
+            pbAvailable2.TabIndex = 3;
+            pbAvailable2.TabStop = false;
+            // 
+            // pbAvailable1
+            // 
+            pbAvailable1.BackgroundImageLayout = ImageLayout.Stretch;
+            pbAvailable1.Location = new Point(19, 22);
+            pbAvailable1.Name = "pbAvailable1";
+            pbAvailable1.Size = new Size(150, 150);
+            pbAvailable1.TabIndex = 2;
+            pbAvailable1.TabStop = false;
             // 
             // panel1
             // 
-            panel1.Controls.Add(label3);
+            panel1.Controls.Add(lblAbout);
             panel1.Controls.Add(label1);
             panel1.Location = new Point(6, 11);
             panel1.Name = "panel1";
             panel1.Size = new Size(1055, 170);
             panel1.TabIndex = 12;
             // 
-            // label3
+            // lblAbout
             // 
-            label3.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(286, 23);
-            label3.Name = "label3";
-            label3.Size = new Size(559, 129);
-            label3.TabIndex = 1;
-            label3.Text = resources.GetString("label3.Text");
+            lblAbout.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblAbout.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAbout.Location = new Point(286, 23);
+            lblAbout.Name = "lblAbout";
+            lblAbout.Size = new Size(559, 129);
+            lblAbout.TabIndex = 1;
+            lblAbout.Text = resources.GetString("lblAbout.Text");
             // 
             // label1
             // 
@@ -103,8 +141,10 @@
             // 
             // groupBox6
             // 
+            groupBox6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             groupBox6.BackColor = Color.White;
-            groupBox6.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox6.Controls.Add(pictureBox2);
+            groupBox6.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox6.Location = new Point(501, 213);
             groupBox6.Name = "groupBox6";
             groupBox6.Size = new Size(231, 197);
@@ -112,16 +152,34 @@
             groupBox6.TabStop = false;
             groupBox6.Text = "RECENT TRANSACTION";
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Location = new Point(6, 22);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(219, 162);
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
+            // 
             // groupBox5
             // 
+            groupBox5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             groupBox5.BackColor = Color.White;
-            groupBox5.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            groupBox5.Controls.Add(pbRecentProduct);
+            groupBox5.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox5.Location = new Point(786, 213);
             groupBox5.Name = "groupBox5";
             groupBox5.Size = new Size(231, 197);
             groupBox5.TabIndex = 13;
             groupBox5.TabStop = false;
             groupBox5.Text = "RECENT PRODUCT ADDED";
+            // 
+            // pbRecentProduct
+            // 
+            pbRecentProduct.Location = new Point(6, 22);
+            pbRecentProduct.Name = "pbRecentProduct";
+            pbRecentProduct.Size = new Size(219, 162);
+            pbRecentProduct.TabIndex = 1;
+            pbRecentProduct.TabStop = false;
             // 
             // toolStrip1
             // 
@@ -138,6 +196,7 @@
             toolStripButton2.AutoSize = false;
             toolStripButton2.BackColor = Color.FromArgb(0, 150, 136);
             toolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            toolStripButton2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
             toolStripButton2.ImageTransparentColor = Color.Magenta;
             toolStripButton2.Name = "toolStripButton2";
@@ -154,6 +213,7 @@
             toolStripButton1.AutoSize = false;
             toolStripButton1.BackColor = Color.FromArgb(0, 150, 136);
             toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            toolStripButton1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
             toolStripButton1.ImageTransparentColor = Color.Magenta;
             toolStripButton1.Name = "toolStripButton1";
@@ -171,6 +231,7 @@
             toolStripButton3.AutoSize = false;
             toolStripButton3.BackColor = Color.FromArgb(0, 150, 136);
             toolStripButton3.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            toolStripButton3.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             toolStripButton3.Image = (Image)resources.GetObject("toolStripButton3.Image");
             toolStripButton3.ImageTransparentColor = Color.Magenta;
             toolStripButton3.Name = "toolStripButton3";
@@ -187,6 +248,7 @@
             toolStripButton4.AutoSize = false;
             toolStripButton4.BackColor = Color.FromArgb(0, 150, 136);
             toolStripButton4.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            toolStripButton4.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
             toolStripButton4.Image = (Image)resources.GetObject("toolStripButton4.Image");
             toolStripButton4.ImageTransparentColor = Color.Magenta;
             toolStripButton4.Name = "toolStripButton4";
@@ -204,6 +266,7 @@
             // 
             // panel3
             // 
+            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             panel3.BackColor = Color.White;
             panel3.Controls.Add(panel2);
             panel3.Controls.Add(panel4);
@@ -215,7 +278,7 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(EarnTotalLB);
+            panel2.Controls.Add(lblEarnings);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(pictureBox1);
             panel2.Location = new Point(226, 52);
@@ -223,25 +286,25 @@
             panel2.Size = new Size(212, 132);
             panel2.TabIndex = 15;
             // 
-            // EarnTotalLB
+            // lblEarnings
             // 
-            EarnTotalLB.AutoSize = true;
-            EarnTotalLB.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            EarnTotalLB.Location = new Point(121, 55);
-            EarnTotalLB.Name = "EarnTotalLB";
-            EarnTotalLB.Size = new Size(22, 24);
-            EarnTotalLB.TabIndex = 5;
-            EarnTotalLB.Text = "0";
+            lblEarnings.AutoSize = true;
+            lblEarnings.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblEarnings.Location = new Point(121, 55);
+            lblEarnings.Name = "lblEarnings";
+            lblEarnings.Size = new Size(22, 24);
+            lblEarnings.TabIndex = 5;
+            lblEarnings.Text = "0";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label4.Location = new Point(21, 11);
             label4.Name = "label4";
-            label4.Size = new Size(106, 17);
+            label4.Size = new Size(117, 16);
             label4.TabIndex = 3;
-            label4.Text = "TOTAL EARNING";
+            label4.Text = "TOTAL EARNINGS";
             // 
             // pictureBox1
             // 
@@ -255,7 +318,7 @@
             // 
             // panel4
             // 
-            panel4.Controls.Add(OrderTotalLB);
+            panel4.Controls.Add(lblOrder);
             panel4.Controls.Add(label2);
             panel4.Controls.Add(pictureBox4);
             panel4.Location = new Point(3, 52);
@@ -263,31 +326,46 @@
             panel4.Size = new Size(212, 132);
             panel4.TabIndex = 16;
             // 
-            // OrderTotalLB
+            // lblOrder
             // 
-            OrderTotalLB.AutoSize = true;
-            OrderTotalLB.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            OrderTotalLB.Location = new Point(116, 55);
-            OrderTotalLB.Name = "OrderTotalLB";
-            OrderTotalLB.Size = new Size(22, 24);
-            OrderTotalLB.TabIndex = 4;
-            OrderTotalLB.Text = "0";
+            lblOrder.AutoSize = true;
+            lblOrder.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblOrder.Location = new Point(116, 55);
+            lblOrder.Name = "lblOrder";
+            lblOrder.Size = new Size(22, 24);
+            lblOrder.TabIndex = 4;
+            lblOrder.Text = "0";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label2.Location = new Point(16, 11);
             label2.Name = "label2";
-            label2.Size = new Size(52, 17);
+            label2.Size = new Size(100, 16);
             label2.TabIndex = 1;
-            label2.Text = "ORDER";
+            label2.Text = "TOTAL ORDERS";
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 3000;
+            timer1.Tick += timer1_Tick;
+            // 
+            // pbAvailable3
+            // 
+            pbAvailable3.BackgroundImageLayout = ImageLayout.Stretch;
+            pbAvailable3.Location = new Point(331, 22);
+            pbAvailable3.Name = "pbAvailable3";
+            pbAvailable3.Size = new Size(150, 150);
+            pbAvailable3.TabIndex = 4;
+            pbAvailable3.TabStop = false;
             // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
-            BackColor = Color.WhiteSmoke;
+            BackColor = Color.White;
             Controls.Add(groupBox5);
             Controls.Add(groupBox6);
             Controls.Add(panel1);
@@ -296,9 +374,15 @@
             Font = new Font("Century Gothic", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             Name = "Home";
             Size = new Size(1064, 654);
-            Load += controlHome_Load_1;
+            groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbAvailable2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbAvailable1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            groupBox5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbRecentProduct).EndInit();
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -309,6 +393,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbAvailable3).EndInit();
             ResumeLayout(false);
         }
 
@@ -329,12 +414,18 @@
         private PictureBox pictureBox4;
         private Panel panel3;
         private Panel panel2;
-        private Label EarnTotalLB;
+        private Label lblEarnings;
         private Label label4;
         private PictureBox pictureBox1;
         private Panel panel4;
-        private Label OrderTotalLB;
+        private Label lblOrder;
         private Label label2;
-        private Label label3;
+        private Label lblAbout;
+        private PictureBox pictureBox2;
+        private PictureBox pbRecentProduct;
+        public PictureBox pbAvailable2;
+        public PictureBox pbAvailable1;
+        private System.Windows.Forms.Timer timer1;
+        public PictureBox pbAvailable3;
     }
 }

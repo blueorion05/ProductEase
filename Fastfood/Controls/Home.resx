@@ -57,7 +57,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="label3.Text" xml:space="preserve">
+  <data name="lblAbout.Text" xml:space="preserve">
     <value>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</value>
   </data>
   <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -103,7 +103,7 @@
   <data name="pictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EAAACxABrSO9dQAAALZJREFUaEPtj0EKQyEUAz1+T9Drtis3EoKmBPx0BrKapzADHsP79blyx6hPbtgx
+        DAAACwwBP0AiyAAAALZJREFUaEPtj0EKQyEUAz1+T9Drtis3EoKmBPx0BrKapzADHsP79blyx6hPbtgx
         8cMShBBSghBCSlRCpmtN4Zxl59PWFM5Z4oclCCGkBCGElCCEkBKE/EXIdOpmdckUzll2PlU3q0umcM4S
         PyxBCCElKiHTqZvVJVM4Z9n5VN2sLpnCOUv8sAQhhJSohEynblaXTOGcZedTdbO6ZArnLPHDEoQQUoIQ
         Qkr8HHLbjlGf3DB4BGN8AcZEFDNy0enMAAAAAElFTkSuQmCC
@@ -112,7 +112,7 @@
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
-        EQAACxEBf2RfkQAABDJJREFUeF7tmktrFEEQgNvHRUVFxJMKivjAi0pEAz7wib/AnxH0D8QVdNO9CR6i
+        DAAACwwBP0AiyAAABDJJREFUeF7tmktrFEEQgNvHRUVFxJMKivjAi0pEAz7wib/AnxH0D8QVdNO9CR6i
         271Zn+DFJCaiGNSbj6CevQRfCOJBiI9o4vMUq7qqJ5uQNZvs9G5PMh8Uu1PdM91V09NdPVMiJSWlvoyO
         zhNGHRNaXhdGvhNa/YXfP3D8lnRQhnVmJYXsVjDyORg5+l/R6pkoZrfwWbMEIw+Bcd/ZyEGQZpFv3S4u
         55aKtrYlUL4DnHMK5BM5QQ6LgjzAZyccvPPOeK16rNEOI5+Cvp+P8HgFHN+2de05uc1cklDwecYh7YzP
@@ -133,7 +133,10 @@
         iC8lZQ4jxD+/thAclUEJ2AAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>122, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>47</value>
   </metadata>
 </root>

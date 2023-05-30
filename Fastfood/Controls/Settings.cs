@@ -83,21 +83,8 @@ namespace Fastfood
         {
             formInformation f = new formInformation(main);
             HideEditPassword(f);
-            f.label1.Text += "Landline";
-            f.textBox1.Text = lblLandline.Text;
-            f.Show();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            formInformation f = new formInformation(main);
-            HideEditPassword(f);
-            f.label1.Text += ".Cellphone No";
-            f.textBox1.Text = lblCpNum.Text;
-            if (f.textBox1.Text == "")
-            {
-                f.textBox1.Text = "639";
-            }
+            f.label1.Text += ".Contact No";
+            f.textBox1.Text = lblContactNum.Text;
             f.Show();
         }
 

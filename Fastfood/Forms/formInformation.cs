@@ -40,42 +40,11 @@ namespace Fastfood
                 main.btnAccount_Click(sender, e);
                 this.Close();
             }
-            else if (label1.Text.Contains("Landline"))
+            else if (label1.Text.Contains(".Contact No"))
             {
-                info.UpdateLandline(this);
+                info.UpdateContactNum(this);
                 main.btnAccount_Click(sender, e);
                 this.Close();
-            }
-            else if (label1.Text.Contains(".Cellphone No"))
-            {
-                textBox1.Text = textBox1.Text.Trim();
-                textBox1.Text = textBox1.Text.Replace(".", "");
-                if (textBox1.Text.StartsWith("639") || textBox1.Text.Length == 0)
-                {
-                    if (double.TryParse(textBox1.Text, out double valid) || textBox1.Text.Length == 0)
-                    {
-                        if (textBox1.Text.Length == 12 || textBox1.Text.Length == 0)
-                        {
-                            info.UpdateCpNum(this);
-                            main.btnAccount_Click(sender, e);
-                            this.Close();
-                        }
-                        else
-                        {
-                            MessageBox.Show("Check your inputted number.");
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Check your inputted number.");
-                        textBox1.Text = "639";
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Check your inputted number.");
-                    textBox1.Text = "639";
-                }
             }
             else if (label1.Text.Contains("Email"))
             {
