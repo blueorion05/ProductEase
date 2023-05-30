@@ -24,28 +24,24 @@ namespace Fastfood
             SqlConnection conn = sql.GetConnection();
             try
             {
-                String match = "SELECT * FROM Login WHERE username = '" + login.tbUser.Text + "' AND password = '" + login.tbPass.Text + "'";
-                SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(match, conn);
-                DataTable dt = new DataTable();
-                sqlDataAdapter.Fill(dt);
-                foreach (DataRow row in dt.Rows)
-                {
-                    string user = row["Username"].ToString()!;
-                    string pass = row["Password"].ToString()!;
+                String match = "SELECT * FROM Login";
+                SqlCommand cmd = new SqlCommand(match, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                string user = reader["Username"].ToString()!;
+                string pass = reader["Password"].ToString()!;
 
-                    if (user == username && pass == password)
-                    {
-                        formMain f = new formMain();
-                        f.Show();
-                        login.Close();
-                        break;
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid username/password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        login.tbUser.Text = "";
-                        login.tbPass.Text = "";
-                    }
+                if (user == username && pass == password)
+                {
+                    formMain f = new formMain();
+                    f.Show();
+                    login.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid username/password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    login.tbUser.Text = "";
+                    login.tbPass.Text = "";
                 }
             }
             catch

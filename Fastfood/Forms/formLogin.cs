@@ -14,12 +14,6 @@ namespace Fastfood
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            if (tbPass.Text == "" || tbUser.Text == "")
-            {
-                MessageBox.Show("Invalid username/password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                tbUser.Text = "";
-                tbPass.Text = "";
-            }
             info.CheckLogin(this);
         }
 
@@ -32,12 +26,6 @@ namespace Fastfood
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                if (tbPass.Text == "" || tbUser.Text == "")
-                {
-                    MessageBox.Show("Invalid username/password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    tbUser.Text = "";
-                    tbPass.Text = "";
-                }
                 info.CheckLogin(this);
             }
         }
@@ -46,12 +34,6 @@ namespace Fastfood
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                if (tbPass.Text == "" || tbUser.Text == "")
-                {
-                    MessageBox.Show("Invalid username/password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    tbUser.Text = "";
-                    tbPass.Text = "";
-                }
                 info.CheckLogin(this);
             }
         }
@@ -75,12 +57,6 @@ namespace Fastfood
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                if (tbPass.Text == "" || tbUser.Text == "")
-                {
-                    MessageBox.Show("Invalid username/password!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    tbUser.Text = "";
-                    tbPass.Text = "";
-                }
                 info.CheckLogin(this);
             }
         }
