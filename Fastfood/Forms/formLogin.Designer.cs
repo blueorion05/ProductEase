@@ -36,10 +36,10 @@
             tbPass = new TextBox();
             pbUser = new PictureBox();
             pbPass = new PictureBox();
-            panelHeader = new Panel();
+            pictureBox1 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pbUser).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbPass).BeginInit();
-            panelHeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // btnLogin
@@ -76,9 +76,10 @@
             // lblWelcome
             // 
             lblWelcome.AutoSize = true;
+            lblWelcome.BackColor = Color.FromArgb(25, 26, 62);
             lblWelcome.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point);
             lblWelcome.ForeColor = SystemColors.ButtonHighlight;
-            lblWelcome.Location = new Point(12, 150);
+            lblWelcome.Location = new Point(12, 161);
             lblWelcome.Name = "lblWelcome";
             lblWelcome.Size = new Size(179, 39);
             lblWelcome.TabIndex = 10;
@@ -128,16 +129,15 @@
             pbPass.TabIndex = 8;
             pbPass.TabStop = false;
             // 
-            // panelHeader
+            // pictureBox1
             // 
-            panelHeader.BackColor = Color.FromArgb(25, 26, 62);
-            panelHeader.Controls.Add(lblWelcome);
-            panelHeader.Dock = DockStyle.Left;
-            panelHeader.Location = new Point(0, 0);
-            panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(207, 386);
-            panelHeader.TabIndex = 11;
-            panelHeader.Click += panelHeader_Click;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-296, -53);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(512, 512);
+            pictureBox1.SizeMode = PictureBoxSizeMode.AutoSize;
+            pictureBox1.TabIndex = 11;
+            pictureBox1.TabStop = false;
             // 
             // formLogin
             // 
@@ -145,13 +145,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(546, 386);
-            Controls.Add(panelHeader);
+            Controls.Add(lblWelcome);
             Controls.Add(pbPass);
             Controls.Add(tbPass);
             Controls.Add(pbUser);
             Controls.Add(btnExit);
             Controls.Add(tbUser);
             Controls.Add(btnLogin);
+            Controls.Add(pictureBox1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "formLogin";
             StartPosition = FormStartPosition.CenterScreen;
@@ -161,8 +162,7 @@
             KeyPress += formLogin_KeyPress;
             ((System.ComponentModel.ISupportInitialize)pbUser).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbPass).EndInit();
-            panelHeader.ResumeLayout(false);
-            panelHeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -175,6 +175,6 @@
         public TextBox tbPass;
         private PictureBox pbUser;
         private PictureBox pbPass;
-        private Panel panelHeader;
+        private PictureBox pictureBox1;
     }
 }

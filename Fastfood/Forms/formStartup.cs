@@ -34,5 +34,10 @@ namespace Fastfood
         {
             timerLoad.Start();
         }
+
+        private void lblSubtitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

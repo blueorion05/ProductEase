@@ -30,26 +30,12 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formStartup));
-            lblTitle = new Label();
             timerLoad = new System.Windows.Forms.Timer(components);
             progressBar1 = new ProgressBar();
             lblSubtitle = new Label();
-            pbLogo = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pbLogo).BeginInit();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // lblTitle
-            // 
-            lblTitle.AutoSize = true;
-            lblTitle.BackColor = Color.Transparent;
-            lblTitle.Font = new Font("Century Gothic", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            lblTitle.ForeColor = Color.White;
-            lblTitle.Location = new Point(163, 96);
-            lblTitle.Margin = new Padding(2, 0, 2, 0);
-            lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(124, 23);
-            lblTitle.TabIndex = 0;
-            lblTitle.Text = "ProductEase";
             // 
             // timerLoad
             // 
@@ -70,24 +56,23 @@
             lblSubtitle.BackColor = Color.Transparent;
             lblSubtitle.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblSubtitle.ForeColor = Color.White;
-            lblSubtitle.Location = new Point(163, 119);
+            lblSubtitle.Location = new Point(12, 10);
             lblSubtitle.Margin = new Padding(2, 0, 2, 0);
             lblSubtitle.Name = "lblSubtitle";
             lblSubtitle.Size = new Size(76, 17);
             lblSubtitle.TabIndex = 2;
             lblSubtitle.Text = "Version 1.0";
+            lblSubtitle.Click += lblSubtitle_Click;
             // 
-            // pbLogo
+            // pictureBox1
             // 
-            pbLogo.BackColor = Color.FromArgb(31, 30, 68);
-            pbLogo.BackgroundImage = (Image)resources.GetObject("pbLogo.BackgroundImage");
-            pbLogo.BackgroundImageLayout = ImageLayout.Zoom;
-            pbLogo.Location = new Point(60, 64);
-            pbLogo.Margin = new Padding(2);
-            pbLogo.Name = "pbLogo";
-            pbLogo.Size = new Size(99, 77);
-            pbLogo.TabIndex = 3;
-            pbLogo.TabStop = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(12, 30);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(406, 136);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
             // 
             // formStartup
             // 
@@ -95,27 +80,24 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(25, 26, 62);
             ClientSize = new Size(430, 210);
-            Controls.Add(pbLogo);
+            Controls.Add(pictureBox1);
             Controls.Add(lblSubtitle);
             Controls.Add(progressBar1);
-            Controls.Add(lblTitle);
             ForeColor = Color.Black;
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2);
             Name = "formStartup";
             StartPosition = FormStartPosition.CenterScreen;
             Load += StartUp_Load;
-            ((System.ComponentModel.ISupportInitialize)pbLogo).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Label lblTitle;
         private System.Windows.Forms.Timer timerLoad;
         private ProgressBar progressBar1;
         private Label lblSubtitle;
-        private PictureBox pbLogo;
+        private PictureBox pictureBox1;
     }
 }

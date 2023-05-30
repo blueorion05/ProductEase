@@ -58,5 +58,20 @@ namespace Fastfood
         {
 
         }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
