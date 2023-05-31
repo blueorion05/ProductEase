@@ -287,7 +287,7 @@ namespace Fastfood
             }
             else
             {
-                cmd.Parameters.AddWithValue("@Landline", SqlDbType.VarChar).Value = "";
+                cmd.Parameters.AddWithValue("@ContactNum", SqlDbType.VarChar).Value = "";
                 cmd.ExecuteNonQuery();
             }
             conn.Close();
