@@ -35,12 +35,6 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             dataGridView1 = new DataGridView();
-            pbFooter = new PictureBox();
-            pbHeader = new PictureBox();
-            dtStart = new DateTimePicker();
-            dtEnd = new DateTimePicker();
-            textBox1 = new TextBox();
-            label1 = new Label();
             Date = new DataGridViewTextBoxColumn();
             Id = new DataGridViewTextBoxColumn();
             Products = new DataGridViewTextBoxColumn();
@@ -50,6 +44,13 @@
             Change = new DataGridViewTextBoxColumn();
             Receipt = new DataGridViewButtonColumn();
             Delete = new DataGridViewButtonColumn();
+            pbFooter = new PictureBox();
+            pbHeader = new PictureBox();
+            dtStart = new DateTimePicker();
+            dtEnd = new DateTimePicker();
+            textBox1 = new TextBox();
+            label1 = new Label();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbFooter).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbHeader).BeginInit();
@@ -113,93 +114,6 @@
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellMouseEnter += dataGridView1_CellMouseEnter;
             dataGridView1.CellMouseLeave += dataGridView1_CellMouseLeave;
-            dataGridView1.RowHeightInfoNeeded += dataGridView1_RowHeightInfoNeeded;
-            // 
-            // pbFooter
-            // 
-            pbFooter.BackColor = Color.FromArgb(0, 150, 136);
-            pbFooter.BackgroundImageLayout = ImageLayout.None;
-            pbFooter.Dock = DockStyle.Bottom;
-            pbFooter.Location = new Point(0, 601);
-            pbFooter.Name = "pbFooter";
-            pbFooter.Size = new Size(1064, 53);
-            pbFooter.TabIndex = 17;
-            pbFooter.TabStop = false;
-            // 
-            // pbHeader
-            // 
-            pbHeader.BackColor = Color.FromArgb(0, 150, 136);
-            pbHeader.BackgroundImageLayout = ImageLayout.None;
-            pbHeader.Dock = DockStyle.Top;
-            pbHeader.Location = new Point(0, 0);
-            pbHeader.Name = "pbHeader";
-            pbHeader.Size = new Size(1064, 53);
-            pbHeader.TabIndex = 16;
-            pbHeader.TabStop = false;
-            pbHeader.Click += pbHeader_Click;
-            // 
-            // dtStart
-            // 
-            dtStart.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            dtStart.CalendarFont = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dtStart.CalendarForeColor = Color.Black;
-            dtStart.CalendarMonthBackground = Color.Transparent;
-            dtStart.CalendarTitleBackColor = Color.Transparent;
-            dtStart.CalendarTitleForeColor = Color.Black;
-            dtStart.CustomFormat = "dd-MMM-yyyy";
-            dtStart.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dtStart.Format = DateTimePickerFormat.Custom;
-            dtStart.Location = new Point(825, 15);
-            dtStart.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
-            dtStart.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
-            dtStart.Name = "dtStart";
-            dtStart.Size = new Size(98, 22);
-            dtStart.TabIndex = 18;
-            dtStart.ValueChanged += dtStart_ValueChanged;
-            // 
-            // dtEnd
-            // 
-            dtEnd.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            dtEnd.CalendarFont = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dtEnd.CalendarForeColor = Color.Black;
-            dtEnd.CalendarMonthBackground = Color.Transparent;
-            dtEnd.CalendarTitleBackColor = Color.Transparent;
-            dtEnd.CalendarTitleForeColor = Color.Black;
-            dtEnd.CustomFormat = "dd-MMM-yyyy";
-            dtEnd.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            dtEnd.Format = DateTimePickerFormat.Custom;
-            dtEnd.Location = new Point(951, 15);
-            dtEnd.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
-            dtEnd.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
-            dtEnd.Name = "dtEnd";
-            dtEnd.Size = new Size(98, 22);
-            dtEnd.TabIndex = 19;
-            dtEnd.ValueChanged += dtEnd_ValueChanged;
-            // 
-            // textBox1
-            // 
-            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            textBox1.BackColor = Color.White;
-            textBox1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(14, 15);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Search Product Name here.";
-            textBox1.Size = new Size(422, 22);
-            textBox1.TabIndex = 24;
-            textBox1.TextChanged += textBox1_TextChanged;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            label1.BackColor = Color.FromArgb(0, 150, 136);
-            label1.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.ImageAlign = ContentAlignment.TopLeft;
-            label1.Location = new Point(924, 2);
-            label1.Name = "label1";
-            label1.Size = new Size(21, 33);
-            label1.TabIndex = 25;
-            label1.Text = "-";
             // 
             // Date
             // 
@@ -298,11 +212,114 @@
             Delete.UseColumnTextForButtonValue = true;
             Delete.Width = 5;
             // 
+            // pbFooter
+            // 
+            pbFooter.BackColor = Color.FromArgb(0, 150, 136);
+            pbFooter.BackgroundImageLayout = ImageLayout.None;
+            pbFooter.Dock = DockStyle.Bottom;
+            pbFooter.Location = new Point(0, 601);
+            pbFooter.Name = "pbFooter";
+            pbFooter.Size = new Size(1064, 53);
+            pbFooter.TabIndex = 17;
+            pbFooter.TabStop = false;
+            // 
+            // pbHeader
+            // 
+            pbHeader.BackColor = Color.FromArgb(0, 150, 136);
+            pbHeader.BackgroundImageLayout = ImageLayout.None;
+            pbHeader.Dock = DockStyle.Top;
+            pbHeader.Location = new Point(0, 0);
+            pbHeader.Name = "pbHeader";
+            pbHeader.Size = new Size(1064, 53);
+            pbHeader.TabIndex = 16;
+            pbHeader.TabStop = false;
+            // 
+            // dtStart
+            // 
+            dtStart.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            dtStart.CalendarFont = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dtStart.CalendarForeColor = Color.Black;
+            dtStart.CalendarMonthBackground = Color.Transparent;
+            dtStart.CalendarTitleBackColor = Color.Transparent;
+            dtStart.CalendarTitleForeColor = Color.Black;
+            dtStart.CustomFormat = "dd-MMM-yyyy";
+            dtStart.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dtStart.Format = DateTimePickerFormat.Custom;
+            dtStart.Location = new Point(825, 15);
+            dtStart.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
+            dtStart.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
+            dtStart.Name = "dtStart";
+            dtStart.Size = new Size(98, 22);
+            dtStart.TabIndex = 18;
+            dtStart.ValueChanged += dtStart_ValueChanged;
+            // 
+            // dtEnd
+            // 
+            dtEnd.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            dtEnd.CalendarFont = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dtEnd.CalendarForeColor = Color.Black;
+            dtEnd.CalendarMonthBackground = Color.Transparent;
+            dtEnd.CalendarTitleBackColor = Color.Transparent;
+            dtEnd.CalendarTitleForeColor = Color.Black;
+            dtEnd.CustomFormat = "dd-MMM-yyyy";
+            dtEnd.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dtEnd.Format = DateTimePickerFormat.Custom;
+            dtEnd.Location = new Point(951, 15);
+            dtEnd.MaxDate = new DateTime(3000, 12, 31, 0, 0, 0, 0);
+            dtEnd.MinDate = new DateTime(2000, 1, 1, 0, 0, 0, 0);
+            dtEnd.Name = "dtEnd";
+            dtEnd.Size = new Size(98, 22);
+            dtEnd.TabIndex = 19;
+            dtEnd.ValueChanged += dtEnd_ValueChanged;
+            // 
+            // textBox1
+            // 
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            textBox1.BackColor = Color.White;
+            textBox1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(14, 15);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Search Product Name here.";
+            textBox1.Size = new Size(422, 22);
+            textBox1.TabIndex = 24;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            label1.BackColor = Color.FromArgb(0, 150, 136);
+            label1.Font = new Font("Century Gothic", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.ImageAlign = ContentAlignment.TopLeft;
+            label1.Location = new Point(924, 2);
+            label1.Name = "label1";
+            label1.Size = new Size(21, 33);
+            label1.TabIndex = 25;
+            label1.Text = "-";
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            button1.BackColor = Color.FromArgb(0, 150, 136);
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatAppearance.MouseOverBackColor = Color.Red;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(989, 601);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 53);
+            button1.TabIndex = 26;
+            button1.Text = "RESET";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // Transactions
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(textBox1);
             Controls.Add(dtEnd);
@@ -312,7 +329,6 @@
             Controls.Add(pbHeader);
             Name = "Transactions";
             Size = new Size(1064, 654);
-            Load += controlRecords_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbFooter).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbHeader).EndInit();
@@ -338,5 +354,6 @@
         private DataGridViewTextBoxColumn Change;
         private DataGridViewButtonColumn Receipt;
         private DataGridViewButtonColumn Delete;
+        private Button button1;
     }
 }

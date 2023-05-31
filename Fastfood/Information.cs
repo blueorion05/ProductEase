@@ -93,6 +93,58 @@ namespace Fastfood
             return name;
         }
 
+        public string GetAddress()
+        {
+            string data = "SELECT Address FROM Information";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            string address = reader["Address"].ToString()!;
+            conn.Close();
+            return address;
+        }
+
+        public string GetContactNum()
+        {
+            string data = "SELECT ContactNum FROM Information";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            string contact = reader["ContactNum"].ToString()!;
+            conn.Close();
+            return contact;
+        }
+
+        public string GetEmail()
+        {
+            string data = "SELECT Email FROM Information";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            string email = reader["Email"].ToString()!;
+            conn.Close();
+            return email;
+        }
+
+        public string GetStoreHours()
+        {
+            string data = "SELECT StoreHours FROM Information";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            reader.Read();
+            string hours = reader["StoreHours"].ToString()!;
+            conn.Close();
+            return hours;
+        }
+
         public string GetAbout()
         {
             string data = "SELECT About FROM Information";
@@ -193,29 +245,6 @@ namespace Fastfood
             return Image;
         }
 
-        public string GetTotalTransaction(DateTime start, DateTime end)
-        {
-            string data = "SELECT AmountDue, Date FROM Transactions";
-            Connection sql = new Connection();
-            SqlConnection conn = sql.GetConnection();
-            SqlCommand cmd = new SqlCommand(data, conn);
-            SqlDataReader reader = cmd.ExecuteReader();
-            double total = 0;
-            while (reader.Read())
-            {
-                if (reader["AmountDue"] != DBNull.Value)
-                {
-                    DateTime DDay = Convert.ToDateTime(reader["Date"]);
-                    if (DDay >= start && DDay <= end)
-                    {
-                        total += Convert.ToDouble(reader["AmountDue"]);
-                    }
-                }
-            }
-            conn.Close();
-            return total.ToString("0.00");
-        }
-
         public void UpdateName(formInformation f)
         {
             string data = "UPDATE Information SET Name = @Name WHERE Id = @Id";
@@ -244,21 +273,21 @@ namespace Fastfood
 
         public void UpdateContactNum(formInformation f)
         {
-            string data = "UPDATE Information SET Landline = @Landline WHERE Id = @Id";
+            string data = "UPDATE Information SET ContactNum = @ContactNum WHERE Id = @Id";
             Connection sql = new Connection();
             SqlConnection conn = sql.GetConnection();
             SqlCommand cmd = new SqlCommand(data, conn);
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@Id", 1);
-            int valid;
-            if (int.TryParse(f.textBox1.Text, out valid))
+            double valid;
+            if (double.TryParse(f.textBox1.Text.ToString().Trim().Replace(".", ""), out valid))
             {
-                cmd.Parameters.AddWithValue("@ContactNum", SqlDbType.Int).Value = Convert.ToInt32(f.textBox1.Text);
+                cmd.Parameters.AddWithValue("@ContactNum", SqlDbType.VarChar).Value = f.textBox1.Text.ToString().Trim().Replace(".", "");
                 cmd.ExecuteNonQuery();
             }
             else
             {
-                cmd.Parameters.AddWithValue("@Landline", SqlDbType.Int).Value = DBNull.Value;
+                cmd.Parameters.AddWithValue("@Landline", SqlDbType.VarChar).Value = "";
                 cmd.ExecuteNonQuery();
             }
             conn.Close();
@@ -337,6 +366,19 @@ namespace Fastfood
             cmd.CommandType = CommandType.Text;
             cmd.Parameters.AddWithValue("@Id", 1);
             cmd.Parameters.AddWithValue("@TransacNum", SqlDbType.VarChar).Value = r.lblId.Text;
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        public void ResetTransacNum()
+        {
+            string data = "UPDATE Information SET TransacNum = @TransacNum WHERE Id = @Id";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.AddWithValue("@Id", 1);
+            cmd.Parameters.AddWithValue("@TransacNum", SqlDbType.VarChar).Value = 0;
             cmd.ExecuteNonQuery();
             conn.Close();
         }
@@ -563,6 +605,18 @@ namespace Fastfood
             {
                 conn.Close();
             }
+        }
+
+        public void EmptyTransaction(int Id)
+        {
+            string del = "DELETE FROM Transactions WHERE Id = @Id";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(del, conn);
+            cmd.CommandType = CommandType.Text;
+            cmd.Parameters.Add("@Id", SqlDbType.Int).Value = Id;
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
 
         public ImageList AvailableProducts(Home home)

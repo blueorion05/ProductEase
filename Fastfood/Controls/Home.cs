@@ -21,13 +21,92 @@ namespace Fastfood
             lblAbout.Text = info.GetAbout();
             pbRecentProduct.Image = info.GetRecentProductImage();
             pbRecentProduct.SizeMode = PictureBoxSizeMode.StretchImage;
-            PictureBox pb = new PictureBox();
             pbRecentTransac.Image = info.GetRecentTransaction();
             pbRecentTransac.SizeMode = PictureBoxSizeMode.StretchImage;
             list = info.AvailableProducts(this);
             GetAvailableProducts();
-            DateTime month = new(DateTime.Today.Year, DateTime.Today.Month, 1);
-            lblEarnings.Text = (info.GetTotalTransaction(month, DateTime.Today));
+            SelectedDateDefault();
+            panel5.BackColor = Color.FromArgb(25, 26, 62);
+            SalesAllTime();
+        }
+
+        private void SalesAllTime()
+        {
+            Transactions t = new Transactions();
+            int order = 0;
+            double earnings = 0;
+            foreach (DataGridViewRow row in t.dataGridView1.Rows)
+            {
+                earnings += Convert.ToDouble(row.Cells["AmountDue"].Value);
+                order++;
+            }
+            lblOrder.Text = order.ToString();
+            lblEarnings.Text = earnings.ToString("0.00");
+        }
+
+        private void SalesLast30Days()
+        {
+            Transactions t = new Transactions();
+            t.dtStart.Value = DateTime.Today.AddDays(-30);
+            t.dtEnd.Value = DateTime.Today;
+            int order = 0;
+            double earnings = 0;
+            foreach (DataGridViewRow row in t.dataGridView1.Rows)
+            {
+                if (row.Visible)
+                {
+                    earnings += Convert.ToDouble(row.Cells["AmountDue"].Value);
+                    order++;
+                }
+            }
+            lblOrder.Text = order.ToString();
+            lblEarnings.Text = earnings.ToString("0.00");
+        }
+
+        private void SalesLast7Days()
+        {
+            Transactions t = new Transactions();
+            t.dtStart.Value = DateTime.Today.AddDays(-7);
+            t.dtEnd.Value = DateTime.Today;
+            int order = 0;
+            double earnings = 0;
+            foreach (DataGridViewRow row in t.dataGridView1.Rows)
+            {
+                if (row.Visible)
+                {
+                    earnings += Convert.ToDouble(row.Cells["AmountDue"].Value);
+                    order++;
+                }
+            }
+            lblOrder.Text = order.ToString();
+            lblEarnings.Text = earnings.ToString("0.00");
+        }
+
+        private void SalesToday()
+        {
+            Transactions t = new Transactions();
+            t.dtStart.Value = DateTime.Today;
+            t.dtEnd.Value = DateTime.Today;
+            int order = 0;
+            double earnings = 0;
+            foreach (DataGridViewRow row in t.dataGridView1.Rows)
+            {
+                if (row.Visible)
+                {
+                    earnings += Convert.ToDouble(row.Cells["AmountDue"].Value);
+                    order++;
+                }
+            }
+            lblOrder.Text = order.ToString();
+            lblEarnings.Text = earnings.ToString("0.00");
+        }
+
+        private void SelectedDateDefault()
+        {
+            panel5.BackColor = Color.White;
+            panel6.BackColor = Color.White;
+            panel7.BackColor = Color.White;
+            panel8.BackColor = Color.White;
         }
 
         private void GetAvailableProducts()
@@ -86,12 +165,9 @@ namespace Fastfood
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            panel5.BackColor = Color.White;
+            SelectedDateDefault();
             panel6.BackColor = Color.FromArgb(25, 26, 62);
-            panel7.BackColor = Color.White;
-            panel8.BackColor = Color.White;
-            lblEarnings.Text = (info.GetTotalTransaction(DateTime.Today.AddDays(-30), DateTime.Today));
-            
+            SalesLast30Days();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -109,59 +185,23 @@ namespace Fastfood
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-            panel5.BackColor = Color.White;
-            panel6.BackColor = Color.White;
-            panel7.BackColor = Color.White;
+            SelectedDateDefault();
             panel8.BackColor = Color.FromArgb(25, 26, 62);
-            Transactions t = new Transactions();
-            t.dtStart.Value = DateTime.Today;
-            t.dtEnd.Value = DateTime.Today;
-            int order = t.dataGridView1.RowCount;
-            double earnings = 0;
-            foreach (DataGridViewRow row in t.dataGridView1.Rows)
-            {
-                earnings += Convert.ToDouble(row.Cells["AmountDue"].Value);
-            }
-            lblOrder.Text = order.ToString();
-            lblEarnings.Text = earnings.ToString("0.00");
+            SalesToday();
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-            panel5.BackColor = Color.White;
-            panel6.BackColor = Color.White;
+            SelectedDateDefault();
             panel7.BackColor = Color.FromArgb(25, 26, 62);
-            panel8.BackColor = Color.White;
-            Transactions t = new Transactions();
-            t.dtStart.Value = DateTime.Today.AddDays(-7);
-            t.dtEnd.Value = DateTime.Today;
-            int order = t.dataGridView1.RowCount;
-            double earnings = 0;
-            foreach (DataGridViewRow row in t.dataGridView1.Rows)
-            {
-                earnings += Convert.ToDouble(row.Cells["AmountDue"].Value);
-            }
-            lblOrder.Text = order.ToString();
-            lblEarnings.Text = earnings.ToString("0.00");
+            SalesLast7Days();
         }
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
+            SelectedDateDefault();
             panel5.BackColor = Color.FromArgb(25, 26, 62);
-            panel6.BackColor = Color.White;
-            panel7.BackColor = Color.White;
-            panel8.BackColor = Color.White;
-            Transactions t = new Transactions();
-            t.dtStart.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
-            t.dtEnd.Value = DateTime.Today;
-            int order = t.dataGridView1.RowCount;
-            double earnings = 0;
-            foreach (DataGridViewRow row in t.dataGridView1.Rows)
-            {
-                earnings += Convert.ToDouble(row.Cells["AmountDue"].Value);
-            }
-            lblOrder.Text = order.ToString();
-            lblEarnings.Text = earnings.ToString("0.00");
+            SalesAllTime();
         }
 
         private void panel6_Paint(object sender, PaintEventArgs e)

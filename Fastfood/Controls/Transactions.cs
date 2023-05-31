@@ -20,19 +20,10 @@ namespace Fastfood
         public Transactions()
         {
             InitializeComponent();
+            info.TransactionTable(this);
             dtStart.Value = DateTime.Now.AddMonths(-1);
             dtEnd.Value = DateTime.Now;
-            info.TransactionTable(this);
-        }
-
-        private void controlRecords_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
+            FilterByDate();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -48,14 +39,10 @@ namespace Fastfood
                 {
                     info.DeleteTransaction(this, e);
                     info.TransactionTable(this);
+                    FilterByDate();
                 }
                 return;
             }
-        }
-
-        private void dataGridView1_RowHeightInfoNeeded(object sender, DataGridViewRowHeightInfoNeededEventArgs e)
-        {
-
         }
 
         private void dtStart_ValueChanged(object sender, EventArgs e)
@@ -86,11 +73,6 @@ namespace Fastfood
                     row.Visible = false;
                 }
             }
-        }
-
-        private void pbHeader_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -160,6 +142,20 @@ namespace Fastfood
             if (e.RowIndex >= 0 && e.ColumnIndex == 2)
             {
                 dataGridView1.ShowCellToolTips = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Clicking this will clear all existing transactions in database.\nAre you sure you want to proceed?", "Information", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Information) == DialogResult.Yes)
+            {
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    int Id = Convert.ToInt32(row.Cells["Id"].Value);
+                    info.EmptyTransaction(Id);
+                }
+                info.ResetTransacNum();
+                MessageBox.Show("Reset successfully.");
             }
         }
     }

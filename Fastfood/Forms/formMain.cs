@@ -131,10 +131,5 @@ namespace Fastfood
                 button1.Image = Resources.maximize;
             }
         }
-
-        private void panelHeader_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

@@ -99,6 +99,9 @@ namespace Fastfood
                             {
                                 info.UpdatePassword(this);
                                 this.Close();
+                                main.Close();
+                                formLogin login = new formLogin();
+                                login.Show();
                             }
                             else
                             {

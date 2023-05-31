@@ -91,7 +91,6 @@
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1065, 720);
             panelHeader.TabIndex = 8;
-            panelHeader.Paint += panelHeader_Paint;
             // 
             // button1
             // 

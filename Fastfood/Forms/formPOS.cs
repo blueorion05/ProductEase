@@ -408,8 +408,13 @@ namespace Fastfood
                         {
                             r.lblDiscount.Text = Convert.ToDouble(tbDiscount.Text).ToString("0.00");
                         }
+                        r.lblCompany.Text = info.GetName();
+                        r.lblAddress.Text = info.GetAddress();
                         r.lblCash.Text = Convert.ToDouble(tbCash.Text).ToString("0.00");
                         r.lblChange.Text = Convert.ToDouble(lblChange.Text).ToString("0.00");
+                        r.lblContactNum.Text = info.GetContactNum();
+                        r.lblEmail.Text = info.GetEmail();
+                        r.lblStoreHours.Text = info.GetStoreHours();
                         for (int i = 0; i < dataGridView1.Rows.Count; i++)
                         {
                             r.dataGridView1.Rows.Add();

@@ -28,315 +28,373 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblId = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.lblCash = new System.Windows.Forms.Label();
-            this.lblChange = new System.Windows.Forms.Label();
-            this.lblDiscount = new System.Windows.Forms.Label();
-            this.lblAmountDue = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Empty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Product_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            panel1 = new Panel();
+            lblDate = new Label();
+            lblId = new Label();
+            lblCompany = new Label();
+            label5 = new Label();
+            panel2 = new Panel();
+            label6 = new Label();
+            panel3 = new Panel();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            lblCash = new Label();
+            lblChange = new Label();
+            lblDiscount = new Label();
+            lblAmountDue = new Label();
+            dataGridView1 = new DataGridView();
+            Empty = new DataGridViewTextBoxColumn();
+            Product_Name = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            Price = new DataGridViewTextBoxColumn();
+            Amount = new DataGridViewTextBoxColumn();
+            lblContactNum = new Label();
+            lblEmail = new Label();
+            lblAddress = new Label();
+            lblStoreHours = new Label();
+            panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.lblDate);
-            this.panel1.Controls.Add(this.lblId);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(336, 88);
-            this.panel1.TabIndex = 0;
+            panel1.Controls.Add(lblDate);
+            panel1.Controls.Add(lblId);
+            panel1.Controls.Add(lblAddress);
+            panel1.Controls.Add(lblCompany);
+            panel1.Controls.Add(label5);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(336, 126);
+            panel1.TabIndex = 0;
             // 
             // lblDate
             // 
-            this.lblDate.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblDate.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDate.Location = new System.Drawing.Point(0, 64);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(336, 16);
-            this.lblDate.TabIndex = 1;
-            this.lblDate.Text = "DateTime";
-            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblDate.Dock = DockStyle.Top;
+            lblDate.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDate.Location = new Point(0, 96);
+            lblDate.Name = "lblDate";
+            lblDate.Size = new Size(336, 16);
+            lblDate.TabIndex = 1;
+            lblDate.Text = "DateTime";
+            lblDate.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblId
             // 
-            this.lblId.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblId.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblId.Location = new System.Drawing.Point(0, 48);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(336, 16);
-            this.lblId.TabIndex = 0;
-            this.lblId.Text = "Order No.";
-            this.lblId.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblId.Dock = DockStyle.Top;
+            lblId.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblId.Location = new Point(0, 80);
+            lblId.Name = "lblId";
+            lblId.Size = new Size(336, 16);
+            lblId.TabIndex = 0;
+            lblId.Text = "Order No.";
+            lblId.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblCompany
+            // 
+            lblCompany.Dock = DockStyle.Top;
+            lblCompany.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCompany.Location = new Point(0, 48);
+            lblCompany.Name = "lblCompany";
+            lblCompany.Size = new Size(336, 16);
+            lblCompany.TabIndex = 3;
+            lblCompany.Text = "Company";
+            lblCompany.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // label5
             // 
-            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.label5.Size = new System.Drawing.Size(336, 48);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Receipt";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label5.Dock = DockStyle.Top;
+            label5.Font = new Font("Century Gothic", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label5.Location = new Point(0, 0);
+            label5.Name = "label5";
+            label5.Padding = new Padding(0, 10, 0, 10);
+            label5.Size = new Size(336, 48);
+            label5.TabIndex = 2;
+            label5.Text = "Receipt";
+            label5.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.label6);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 205);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(336, 95);
-            this.panel2.TabIndex = 1;
+            panel2.Controls.Add(lblStoreHours);
+            panel2.Controls.Add(lblEmail);
+            panel2.Controls.Add(lblContactNum);
+            panel2.Controls.Add(label6);
+            panel2.Dock = DockStyle.Bottom;
+            panel2.Location = new Point(0, 247);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(336, 125);
+            panel2.TabIndex = 1;
             // 
             // label6
             // 
-            this.label6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(0, 0);
-            this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(0, 10, 0, 10);
-            this.label6.Size = new System.Drawing.Size(336, 48);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Thank You For Purchasing!";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            label6.Dock = DockStyle.Top;
+            label6.Font = new Font("Century Gothic", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label6.Location = new Point(0, 0);
+            label6.Name = "label6";
+            label6.Padding = new Padding(0, 10, 0, 10);
+            label6.Size = new Size(336, 48);
+            label6.TabIndex = 3;
+            label6.Text = "Thank You For Purchasing!";
+            label6.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.label4);
-            this.panel3.Controls.Add(this.lblCash);
-            this.panel3.Controls.Add(this.lblChange);
-            this.panel3.Controls.Add(this.lblDiscount);
-            this.panel3.Controls.Add(this.lblAmountDue);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 109);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(336, 96);
-            this.panel3.TabIndex = 2;
+            panel3.Controls.Add(label1);
+            panel3.Controls.Add(label2);
+            panel3.Controls.Add(label3);
+            panel3.Controls.Add(label4);
+            panel3.Controls.Add(lblCash);
+            panel3.Controls.Add(lblChange);
+            panel3.Controls.Add(lblDiscount);
+            panel3.Controls.Add(lblAmountDue);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 147);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(336, 100);
+            panel3.TabIndex = 2;
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(97, 50);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label1.Size = new System.Drawing.Size(150, 17);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "₱  :Cash Tendered";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label1.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(97, 50);
+            label1.Name = "label1";
+            label1.RightToLeft = RightToLeft.Yes;
+            label1.Size = new Size(150, 17);
+            label1.TabIndex = 7;
+            label1.Text = "₱  :Cash Tendered";
+            label1.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(164, 67);
-            this.label2.Name = "label2";
-            this.label2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label2.Size = new System.Drawing.Size(83, 17);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "₱  :Change";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label2.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(164, 67);
+            label2.Name = "label2";
+            label2.RightToLeft = RightToLeft.Yes;
+            label2.Size = new Size(83, 17);
+            label2.TabIndex = 6;
+            label2.Text = "₱  :Change";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(164, 16);
-            this.label3.Name = "label3";
-            this.label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label3.Size = new System.Drawing.Size(83, 17);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "₱  :Discount";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label3.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(164, 16);
+            label3.Name = "label3";
+            label3.RightToLeft = RightToLeft.Yes;
+            label3.Size = new Size(83, 17);
+            label3.TabIndex = 5;
+            label3.Text = "₱  :Discount";
+            label3.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(164, 33);
-            this.label4.Name = "label4";
-            this.label4.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label4.Size = new System.Drawing.Size(83, 17);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "₱  :Amount Due";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            label4.Font = new Font("Century Gothic", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.Location = new Point(164, 33);
+            label4.Name = "label4";
+            label4.RightToLeft = RightToLeft.Yes;
+            label4.Size = new Size(83, 17);
+            label4.TabIndex = 4;
+            label4.Text = "₱  :Amount Due";
+            label4.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblCash
             // 
-            this.lblCash.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCash.Location = new System.Drawing.Point(253, 50);
-            this.lblCash.Name = "lblCash";
-            this.lblCash.Size = new System.Drawing.Size(83, 17);
-            this.lblCash.TabIndex = 3;
-            this.lblCash.Text = "0.00 ";
-            this.lblCash.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lblCash.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCash.Location = new Point(253, 50);
+            lblCash.Name = "lblCash";
+            lblCash.Size = new Size(83, 17);
+            lblCash.TabIndex = 3;
+            lblCash.Text = "0.00 ";
+            lblCash.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblChange
             // 
-            this.lblChange.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblChange.Location = new System.Drawing.Point(253, 67);
-            this.lblChange.Name = "lblChange";
-            this.lblChange.Size = new System.Drawing.Size(83, 17);
-            this.lblChange.TabIndex = 2;
-            this.lblChange.Text = "0.00 ";
-            this.lblChange.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lblChange.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblChange.Location = new Point(253, 67);
+            lblChange.Name = "lblChange";
+            lblChange.Size = new Size(83, 17);
+            lblChange.TabIndex = 2;
+            lblChange.Text = "0.00 ";
+            lblChange.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblDiscount
             // 
-            this.lblDiscount.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblDiscount.Location = new System.Drawing.Point(253, 16);
-            this.lblDiscount.Name = "lblDiscount";
-            this.lblDiscount.Size = new System.Drawing.Size(83, 17);
-            this.lblDiscount.TabIndex = 1;
-            this.lblDiscount.Text = "0.00 ";
-            this.lblDiscount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lblDiscount.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDiscount.Location = new Point(253, 16);
+            lblDiscount.Name = "lblDiscount";
+            lblDiscount.Size = new Size(83, 17);
+            lblDiscount.TabIndex = 1;
+            lblDiscount.Text = "0.00 ";
+            lblDiscount.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblAmountDue
             // 
-            this.lblAmountDue.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblAmountDue.Location = new System.Drawing.Point(253, 33);
-            this.lblAmountDue.Name = "lblAmountDue";
-            this.lblAmountDue.Size = new System.Drawing.Size(83, 17);
-            this.lblAmountDue.TabIndex = 0;
-            this.lblAmountDue.Text = "0.00 ";
-            this.lblAmountDue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lblAmountDue.Font = new Font("Century Gothic", 8.25F, FontStyle.Bold, GraphicsUnit.Point);
+            lblAmountDue.Location = new Point(253, 33);
+            lblAmountDue.Name = "lblAmountDue";
+            lblAmountDue.Size = new Size(83, 17);
+            lblAmountDue.TabIndex = 0;
+            lblAmountDue.Text = "0.00 ";
+            lblAmountDue.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Empty,
-            this.Product_Name,
-            this.Quantity,
-            this.Price,
-            this.Amount});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Enabled = false;
-            this.dataGridView1.GridColor = System.Drawing.Color.White;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 88);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(336, 21);
-            this.dataGridView1.TabIndex = 8;
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AllowUserToResizeColumns = false;
+            dataGridView1.AllowUserToResizeRows = false;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Century Gothic", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Empty, Product_Name, Quantity, Price, Amount });
+            dataGridView1.Dock = DockStyle.Top;
+            dataGridView1.Enabled = false;
+            dataGridView1.GridColor = Color.White;
+            dataGridView1.Location = new Point(0, 126);
+            dataGridView1.MultiSelect = false;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.ScrollBars = ScrollBars.None;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.CellSelect;
+            dataGridView1.Size = new Size(336, 21);
+            dataGridView1.TabIndex = 8;
             // 
             // Empty
             // 
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            this.Empty.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Empty.HeaderText = "";
-            this.Empty.Name = "Empty";
-            this.Empty.ReadOnly = true;
-            this.Empty.Width = 5;
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            Empty.DefaultCellStyle = dataGridViewCellStyle2;
+            Empty.HeaderText = "";
+            Empty.Name = "Empty";
+            Empty.ReadOnly = true;
+            Empty.Width = 5;
             // 
             // Product_Name
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Product_Name.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Product_Name.FillWeight = 99.60046F;
-            this.Product_Name.HeaderText = "Product Name";
-            this.Product_Name.MinimumWidth = 130;
-            this.Product_Name.Name = "Product_Name";
-            this.Product_Name.ReadOnly = true;
-            this.Product_Name.Width = 130;
+            dataGridViewCellStyle3.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Product_Name.DefaultCellStyle = dataGridViewCellStyle3;
+            Product_Name.FillWeight = 99.60046F;
+            Product_Name.HeaderText = "Product Name";
+            Product_Name.MinimumWidth = 130;
+            Product_Name.Name = "Product_Name";
+            Product_Name.ReadOnly = true;
+            Product_Name.Width = 130;
             // 
             // Quantity
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Quantity.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Quantity.FillWeight = 95.62374F;
-            this.Quantity.HeaderText = "Qty";
-            this.Quantity.MinimumWidth = 40;
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            this.Quantity.Width = 40;
+            dataGridViewCellStyle4.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Quantity.DefaultCellStyle = dataGridViewCellStyle4;
+            Quantity.FillWeight = 95.62374F;
+            Quantity.HeaderText = "Qty";
+            Quantity.MinimumWidth = 40;
+            Quantity.Name = "Quantity";
+            Quantity.ReadOnly = true;
+            Quantity.Width = 40;
             // 
             // Price
             // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Price.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Price.FillWeight = 95.93309F;
-            this.Price.HeaderText = "Price";
-            this.Price.MinimumWidth = 80;
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            this.Price.Width = 80;
+            dataGridViewCellStyle5.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Price.DefaultCellStyle = dataGridViewCellStyle5;
+            Price.FillWeight = 95.93309F;
+            Price.HeaderText = "Price";
+            Price.MinimumWidth = 80;
+            Price.Name = "Price";
+            Price.ReadOnly = true;
+            Price.Width = 80;
             // 
             // Amount
             // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Amount.DefaultCellStyle = dataGridViewCellStyle6;
-            this.Amount.FillWeight = 100F;
-            this.Amount.HeaderText = "Total";
-            this.Amount.MinimumWidth = 80;
-            this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
-            this.Amount.Width = 80;
+            dataGridViewCellStyle6.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Amount.DefaultCellStyle = dataGridViewCellStyle6;
+            Amount.HeaderText = "Total";
+            Amount.MinimumWidth = 80;
+            Amount.Name = "Amount";
+            Amount.ReadOnly = true;
+            Amount.Width = 80;
+            // 
+            // lblContactNum
+            // 
+            lblContactNum.Dock = DockStyle.Top;
+            lblContactNum.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblContactNum.Location = new Point(0, 48);
+            lblContactNum.Name = "lblContactNum";
+            lblContactNum.Size = new Size(336, 16);
+            lblContactNum.TabIndex = 4;
+            lblContactNum.Text = "Contact Num";
+            lblContactNum.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblEmail
+            // 
+            lblEmail.Dock = DockStyle.Top;
+            lblEmail.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblEmail.Location = new Point(0, 64);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(336, 16);
+            lblEmail.TabIndex = 5;
+            lblEmail.Text = "Email";
+            lblEmail.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblAddress
+            // 
+            lblAddress.Dock = DockStyle.Top;
+            lblAddress.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAddress.Location = new Point(0, 64);
+            lblAddress.Name = "lblAddress";
+            lblAddress.Size = new Size(336, 16);
+            lblAddress.TabIndex = 4;
+            lblAddress.Text = "Address";
+            lblAddress.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblStoreHours
+            // 
+            lblStoreHours.Dock = DockStyle.Top;
+            lblStoreHours.Font = new Font("Century Gothic", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblStoreHours.Location = new Point(0, 80);
+            lblStoreHours.Name = "lblStoreHours";
+            lblStoreHours.Size = new Size(336, 16);
+            lblStoreHours.TabIndex = 6;
+            lblStoreHours.Text = "Store Hours";
+            lblStoreHours.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Receipt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Name = "Receipt";
-            this.Size = new System.Drawing.Size(336, 300);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 17F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            Controls.Add(panel3);
+            Controls.Add(dataGridView1);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
+            Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            Name = "Receipt";
+            Size = new Size(336, 372);
+            panel1.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -362,5 +420,10 @@
         private DataGridViewTextBoxColumn Amount;
         public Label label5;
         public Label label6;
+        public Label lblCompany;
+        public Label lblAddress;
+        public Label lblEmail;
+        public Label lblContactNum;
+        public Label lblStoreHours;
     }
 }

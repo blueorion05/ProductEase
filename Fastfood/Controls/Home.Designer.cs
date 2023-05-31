@@ -233,7 +233,7 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton2, toolStripSeparator1, toolStripButton1, toolStripSeparator2, toolStripButton3, toolStripSeparator3, toolStripButton4 });
             toolStrip1.Location = new Point(3, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(430, 38);
+            toolStrip1.Size = new Size(461, 38);
             toolStrip1.TabIndex = 14;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -248,7 +248,7 @@
             toolStripButton2.ImageTransparentColor = Color.Magenta;
             toolStripButton2.Name = "toolStripButton2";
             toolStripButton2.Size = new Size(100, 35);
-            toolStripButton2.Text = "THIS MONTH";
+            toolStripButton2.Text = "ALL TIME";
             toolStripButton2.Click += toolStripButton2_Click;
             // 
             // toolStripSeparator1
