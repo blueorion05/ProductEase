@@ -24,30 +24,5 @@ namespace Fastfood
             DrawToBitmap(bitmap, new Rectangle(0, 0, this.Width, this.Height));
             return bitmap;
         }
-
-        private void dataGridView1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void Receipt_Resize(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
