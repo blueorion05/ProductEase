@@ -31,16 +31,13 @@ namespace Fastfood
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            if (pbActive.BackgroundImage != btnHome.Image)
-            {
-                Home home = new Home();
-                ButtonColor();
-                btnHome.BackColor = Color.FromArgb(0, 150, 136);
-                pbActive.BackgroundImage = btnHome.Image;
-                panelMain.Controls.Clear();
-                home.Dock = DockStyle.Fill;
-                panelMain.Controls.Add(home);
-            }
+            Home home = new Home();
+            ButtonColor();
+            btnHome.BackColor = Color.FromArgb(0, 150, 136);
+            pbActive.BackgroundImage = btnHome.Image;
+            panelMain.Controls.Clear();
+            home.Dock = DockStyle.Fill;
+            panelMain.Controls.Add(home);
         }
 
         private void btnManage_Click(object sender, EventArgs e)

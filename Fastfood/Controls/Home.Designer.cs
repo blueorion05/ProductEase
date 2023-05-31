@@ -31,14 +31,16 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Home));
             groupBox4 = new GroupBox();
+            pbAvailable6 = new PictureBox();
+            pbAvailable5 = new PictureBox();
+            pbAvailable4 = new PictureBox();
             pbAvailable3 = new PictureBox();
             pbAvailable2 = new PictureBox();
             pbAvailable1 = new PictureBox();
             panel1 = new Panel();
             lblAbout = new Label();
             label1 = new Label();
-            groupBox6 = new GroupBox();
-            pictureBox2 = new PictureBox();
+            pbRecentTransac = new PictureBox();
             groupBox5 = new GroupBox();
             pbRecentProduct = new PictureBox();
             toolStrip1 = new ToolStrip();
@@ -63,13 +65,16 @@
             lblOrder = new Label();
             label2 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            groupBox1 = new GroupBox();
             groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbAvailable6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbAvailable5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbAvailable4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAvailable3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAvailable2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pbAvailable1).BeginInit();
             panel1.SuspendLayout();
-            groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbRecentTransac).BeginInit();
             groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbRecentProduct).BeginInit();
             toolStrip1.SuspendLayout();
@@ -78,47 +83,84 @@
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel4.SuspendLayout();
+            groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox4
             // 
-            groupBox4.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            groupBox4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox4.BackColor = Color.White;
+            groupBox4.Controls.Add(pbAvailable6);
+            groupBox4.Controls.Add(pbAvailable5);
+            groupBox4.Controls.Add(pbAvailable4);
             groupBox4.Controls.Add(pbAvailable3);
             groupBox4.Controls.Add(pbAvailable2);
             groupBox4.Controls.Add(pbAvailable1);
             groupBox4.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox4.Location = new Point(34, 432);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(501, 197);
+            groupBox4.Size = new Size(983, 197);
             groupBox4.TabIndex = 11;
             groupBox4.TabStop = false;
             groupBox4.Text = "PRODUCTS AVAILABLE";
             // 
+            // pbAvailable6
+            // 
+            pbAvailable6.BackgroundImageLayout = ImageLayout.Stretch;
+            pbAvailable6.Location = new Point(813, 19);
+            pbAvailable6.Name = "pbAvailable6";
+            pbAvailable6.Padding = new Padding(5);
+            pbAvailable6.Size = new Size(162, 175);
+            pbAvailable6.TabIndex = 7;
+            pbAvailable6.TabStop = false;
+            // 
+            // pbAvailable5
+            // 
+            pbAvailable5.BackgroundImageLayout = ImageLayout.Stretch;
+            pbAvailable5.Location = new Point(651, 19);
+            pbAvailable5.Name = "pbAvailable5";
+            pbAvailable5.Padding = new Padding(5);
+            pbAvailable5.Size = new Size(162, 175);
+            pbAvailable5.TabIndex = 6;
+            pbAvailable5.TabStop = false;
+            // 
+            // pbAvailable4
+            // 
+            pbAvailable4.BackgroundImageLayout = ImageLayout.Stretch;
+            pbAvailable4.Location = new Point(489, 19);
+            pbAvailable4.Name = "pbAvailable4";
+            pbAvailable4.Padding = new Padding(5);
+            pbAvailable4.Size = new Size(162, 175);
+            pbAvailable4.TabIndex = 5;
+            pbAvailable4.TabStop = false;
+            // 
             // pbAvailable3
             // 
             pbAvailable3.BackgroundImageLayout = ImageLayout.Stretch;
-            pbAvailable3.Location = new Point(331, 22);
+            pbAvailable3.Location = new Point(327, 19);
             pbAvailable3.Name = "pbAvailable3";
-            pbAvailable3.Size = new Size(150, 150);
+            pbAvailable3.Padding = new Padding(5);
+            pbAvailable3.Size = new Size(162, 175);
             pbAvailable3.TabIndex = 4;
             pbAvailable3.TabStop = false;
             // 
             // pbAvailable2
             // 
             pbAvailable2.BackgroundImageLayout = ImageLayout.Stretch;
-            pbAvailable2.Location = new Point(175, 22);
+            pbAvailable2.Location = new Point(165, 19);
             pbAvailable2.Name = "pbAvailable2";
-            pbAvailable2.Size = new Size(150, 150);
+            pbAvailable2.Padding = new Padding(5);
+            pbAvailable2.Size = new Size(162, 175);
             pbAvailable2.TabIndex = 3;
             pbAvailable2.TabStop = false;
             // 
             // pbAvailable1
             // 
             pbAvailable1.BackgroundImageLayout = ImageLayout.Stretch;
-            pbAvailable1.Location = new Point(19, 22);
+            pbAvailable1.Location = new Point(3, 19);
             pbAvailable1.Name = "pbAvailable1";
-            pbAvailable1.Size = new Size(150, 150);
+            pbAvailable1.Padding = new Padding(5);
+            pbAvailable1.Size = new Size(162, 175);
             pbAvailable1.TabIndex = 2;
             pbAvailable1.TabStop = false;
             // 
@@ -137,7 +179,7 @@
             lblAbout.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblAbout.Location = new Point(286, 23);
             lblAbout.Name = "lblAbout";
-            lblAbout.Size = new Size(559, 129);
+            lblAbout.Size = new Size(752, 129);
             lblAbout.TabIndex = 1;
             lblAbout.Text = resources.GetString("lblAbout.Text");
             // 
@@ -152,30 +194,19 @@
             label1.Text = "WELCOME";
             label1.Click += label1_Click;
             // 
-            // groupBox6
+            // pbRecentTransac
             // 
-            groupBox6.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            groupBox6.BackColor = Color.White;
-            groupBox6.Controls.Add(pictureBox2);
-            groupBox6.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
-            groupBox6.Location = new Point(501, 213);
-            groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(231, 197);
-            groupBox6.TabIndex = 12;
-            groupBox6.TabStop = false;
-            groupBox6.Text = "RECENT TRANSACTION";
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Location = new Point(6, 22);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(219, 162);
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
+            pbRecentTransac.Dock = DockStyle.Fill;
+            pbRecentTransac.Location = new Point(3, 19);
+            pbRecentTransac.Name = "pbRecentTransac";
+            pbRecentTransac.Size = new Size(225, 175);
+            pbRecentTransac.TabIndex = 0;
+            pbRecentTransac.TabStop = false;
+            pbRecentTransac.Click += pbRecentTransac_Click;
             // 
             // groupBox5
             // 
-            groupBox5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            groupBox5.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             groupBox5.BackColor = Color.White;
             groupBox5.Controls.Add(pbRecentProduct);
             groupBox5.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
@@ -188,11 +219,13 @@
             // 
             // pbRecentProduct
             // 
-            pbRecentProduct.Location = new Point(6, 22);
+            pbRecentProduct.Dock = DockStyle.Fill;
+            pbRecentProduct.Location = new Point(3, 19);
             pbRecentProduct.Name = "pbRecentProduct";
-            pbRecentProduct.Size = new Size(219, 162);
+            pbRecentProduct.Size = new Size(225, 175);
             pbRecentProduct.TabIndex = 1;
             pbRecentProduct.TabStop = false;
+            pbRecentProduct.Click += pbRecentProduct_Click;
             // 
             // toolStrip1
             // 
@@ -289,7 +322,7 @@
             // 
             // panel3
             // 
-            panel3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            panel3.Anchor = AnchorStyles.Left;
             panel3.BackColor = Color.White;
             panel3.Controls.Add(panel8);
             panel3.Controls.Add(panel7);
@@ -338,6 +371,7 @@
             // 
             // panel2
             // 
+            panel2.BackColor = Color.FromArgb(25, 26, 62);
             panel2.Controls.Add(lblEarnings);
             panel2.Controls.Add(label4);
             panel2.Controls.Add(pictureBox1);
@@ -350,6 +384,7 @@
             // 
             lblEarnings.AutoSize = true;
             lblEarnings.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblEarnings.ForeColor = Color.White;
             lblEarnings.Location = new Point(121, 55);
             lblEarnings.Name = "lblEarnings";
             lblEarnings.Size = new Size(22, 24);
@@ -360,6 +395,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.White;
             label4.Location = new Point(21, 11);
             label4.Name = "label4";
             label4.Size = new Size(117, 16);
@@ -378,6 +414,7 @@
             // 
             // panel4
             // 
+            panel4.BackColor = Color.FromArgb(25, 26, 62);
             panel4.Controls.Add(lblOrder);
             panel4.Controls.Add(label2);
             panel4.Controls.Add(pictureBox4);
@@ -390,6 +427,7 @@
             // 
             lblOrder.AutoSize = true;
             lblOrder.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblOrder.ForeColor = Color.White;
             lblOrder.Location = new Point(116, 55);
             lblOrder.Name = "lblOrder";
             lblOrder.Size = new Size(22, 24);
@@ -400,6 +438,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(16, 11);
             label2.Name = "label2";
             label2.Size = new Size(100, 16);
@@ -412,13 +451,26 @@
             timer1.Interval = 3000;
             timer1.Tick += timer1_Tick;
             // 
+            // groupBox1
+            // 
+            groupBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            groupBox1.BackColor = Color.White;
+            groupBox1.Controls.Add(pbRecentTransac);
+            groupBox1.Font = new Font("Century Gothic", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Location = new Point(536, 213);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(231, 197);
+            groupBox1.TabIndex = 18;
+            groupBox1.TabStop = false;
+            groupBox1.Text = "RECENT TRANSACTION";
+            // 
             // Home
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.White;
+            Controls.Add(groupBox1);
             Controls.Add(groupBox5);
-            Controls.Add(groupBox6);
             Controls.Add(panel1);
             Controls.Add(groupBox4);
             Controls.Add(panel3);
@@ -426,13 +478,15 @@
             Name = "Home";
             Size = new Size(1064, 654);
             groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbAvailable6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbAvailable5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbAvailable4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAvailable3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAvailable2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pbAvailable1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbRecentTransac).EndInit();
             groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pbRecentProduct).EndInit();
             toolStrip1.ResumeLayout(false);
@@ -445,6 +499,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            groupBox1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -452,7 +507,6 @@
         private GroupBox groupBox4;
         private Panel panel1;
         private Label label1;
-        private GroupBox groupBox6;
         private GroupBox groupBox5;
         private ToolStrip toolStrip1;
         private ToolStripButton toolStripButton1;
@@ -472,7 +526,7 @@
         private Label lblOrder;
         private Label label2;
         private Label lblAbout;
-        private PictureBox pictureBox2;
+        private PictureBox pbRecentTransac;
         private PictureBox pbRecentProduct;
         public PictureBox pbAvailable2;
         public PictureBox pbAvailable1;
@@ -482,5 +536,9 @@
         private Panel panel8;
         private Panel panel7;
         private Panel panel6;
+        public PictureBox pbAvailable6;
+        public PictureBox pbAvailable5;
+        public PictureBox pbAvailable4;
+        private GroupBox groupBox1;
     }
 }

@@ -28,7 +28,7 @@ namespace Fastfood
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (label1.Text.Contains("Company name"))
+            if (label1.Text.Contains("Company Name"))
             {
                 info.UpdateName(this);
                 main.btnAccount_Click(sender, e);

@@ -21,23 +21,17 @@ namespace Fastfood
             lblAbout.Text = info.GetAbout();
             pbRecentProduct.Image = info.GetRecentProductImage();
             pbRecentProduct.SizeMode = PictureBoxSizeMode.StretchImage;
+            PictureBox pb = new PictureBox();
+            pbRecentTransac.Image = info.GetRecentTransaction();
+            pbRecentTransac.SizeMode = PictureBoxSizeMode.StretchImage;
+            list = info.AvailableProducts(this);
             GetAvailableProducts();
-            Transactions t = new Transactions();
-            t.dtStart.Value = new DateTime(DateTime.Today.Year, DateTime.Today.Month, 1);
-            t.dtEnd.Value = DateTime.Today;
-            int order = t.dataGridView1.RowCount;
-            double earnings = 0;
-            foreach (DataGridViewRow row in t.dataGridView1.Rows)
-            {
-                earnings += Convert.ToDouble(row.Cells["AmountDue"].Value);
-            }
-            lblOrder.Text = order.ToString();
-            lblEarnings.Text = earnings.ToString("0.00");
+            DateTime month = new(DateTime.Today.Year, DateTime.Today.Month, 1);
+            lblEarnings.Text = (info.GetTotalTransaction(month, DateTime.Today));
         }
 
         private void GetAvailableProducts()
         {
-            list = info.AvailableProducts(this);
             if (list != null)
             {
                 list.ImageSize = new Size(pbAvailable1.Width, pbAvailable1.Height);
@@ -59,6 +53,24 @@ namespace Fastfood
                 }
                 pbAvailable3.Image = list.Images[listIndex];
                 listIndex++;
+                if (listIndex >= list.Images.Count)
+                {
+                    listIndex = 0;
+                }
+                pbAvailable4.Image = list.Images[listIndex];
+                listIndex++;
+                if (listIndex >= list.Images.Count)
+                {
+                    listIndex = 0;
+                }
+                pbAvailable5.Image = list.Images[listIndex];
+                listIndex++;
+                if (listIndex >= list.Images.Count)
+                {
+                    listIndex = 0;
+                }
+                pbAvailable6.Image = list.Images[listIndex];
+                listIndex++;
             }
         }
 
@@ -78,17 +90,8 @@ namespace Fastfood
             panel6.BackColor = Color.FromArgb(25, 26, 62);
             panel7.BackColor = Color.White;
             panel8.BackColor = Color.White;
-            Transactions t = new Transactions();
-            t.dtStart.Value = DateTime.Today.AddDays(-30);
-            t.dtEnd.Value = DateTime.Today;
-            int order = t.dataGridView1.RowCount;
-            double earnings = 0;
-            foreach (DataGridViewRow row in t.dataGridView1.Rows)
-            {
-                earnings += Convert.ToDouble(row.Cells["AmountDue"].Value);
-            }
-            lblOrder.Text = order.ToString();
-            lblEarnings.Text = earnings.ToString("0.00");
+            lblEarnings.Text = (info.GetTotalTransaction(DateTime.Today.AddDays(-30), DateTime.Today));
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -100,24 +103,7 @@ namespace Fastfood
         {
             if (list != null)
             {
-                if (listIndex >= list.Images.Count)
-                {
-                    listIndex = 0;
-                }
-                pbAvailable1.Image = list.Images[listIndex];
-                listIndex++;
-                if (listIndex >= list.Images.Count)
-                {
-                    listIndex = 0;
-                }
-                pbAvailable2.Image = list.Images[listIndex];
-                listIndex++;
-                if (listIndex >= list.Images.Count)
-                {
-                    listIndex = 0;
-                }
-                pbAvailable3.Image = list.Images[listIndex];
-                listIndex++;
+                GetAvailableProducts();
             }
         }
 
@@ -179,6 +165,16 @@ namespace Fastfood
         }
 
         private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pbRecentTransac_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pbRecentProduct_Click(object sender, EventArgs e)
         {
 
         }

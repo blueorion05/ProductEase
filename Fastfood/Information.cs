@@ -168,7 +168,54 @@ namespace Fastfood
             conn.Close();
             return Image;
         }
-        
+
+        public Image GetRecentTransaction()
+        {
+            string data = "SELECT Receipt FROM Transactions ORDER BY Id DESC";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            Image Image = null!;
+            if (reader.HasRows)
+            {
+                reader.Read();
+                if (reader["Receipt"] != DBNull.Value)
+                {
+                    byte[] imageData = (byte[])reader["Receipt"];
+                    using (MemoryStream ms = new MemoryStream(imageData))
+                    {
+                        Image = Image.FromStream(ms);
+                    }
+                }
+            }
+            conn.Close();
+            return Image;
+        }
+
+        public string GetTotalTransaction(DateTime start, DateTime end)
+        {
+            string data = "SELECT AmountDue, Date FROM Transactions";
+            Connection sql = new Connection();
+            SqlConnection conn = sql.GetConnection();
+            SqlCommand cmd = new SqlCommand(data, conn);
+            SqlDataReader reader = cmd.ExecuteReader();
+            double total = 0;
+            while (reader.Read())
+            {
+                if (reader["AmountDue"] != DBNull.Value)
+                {
+                    DateTime DDay = Convert.ToDateTime(reader["Date"]);
+                    if (DDay >= start && DDay <= end)
+                    {
+                        total += Convert.ToDouble(reader["AmountDue"]);
+                    }
+                }
+            }
+            conn.Close();
+            return total.ToString("0.00");
+        }
+
         public void UpdateName(formInformation f)
         {
             string data = "UPDATE Information SET Name = @Name WHERE Id = @Id";

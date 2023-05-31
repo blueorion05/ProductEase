@@ -20,9 +20,9 @@ namespace Fastfood
         public Transactions()
         {
             InitializeComponent();
-            info.TransactionTable(this);
             dtStart.Value = DateTime.Now.AddMonths(-1);
             dtEnd.Value = DateTime.Now;
+            info.TransactionTable(this);
         }
 
         private void controlRecords_Load(object sender, EventArgs e)
@@ -73,7 +73,6 @@ namespace Fastfood
         {
             DateTime startDate = dtStart.Value.Date;
             DateTime endDate = dtEnd.Value.Date.AddDays(1).AddSeconds(-1);
-
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {

@@ -81,12 +81,12 @@
             // 
             // panelHeader
             // 
+            panelHeader.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelHeader.BackColor = Color.FromArgb(25, 26, 62);
             panelHeader.Controls.Add(button1);
             panelHeader.Controls.Add(pbActive);
             panelHeader.Controls.Add(btnMinimize);
             panelHeader.Controls.Add(btnExit);
-            panelHeader.Dock = DockStyle.Right;
             panelHeader.Location = new Point(215, 0);
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1065, 720);
