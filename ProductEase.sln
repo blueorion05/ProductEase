@@ -5,6 +5,8 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductEase", "Fastfood\ProductEase.csproj", "{CB218ADB-C14B-426D-B2E3-F43E962F2FA1}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ProductEaseSetup", "ProductEaseSetup\ProductEaseSetup.vdproj", "{9510A517-1BA7-417E-96B7-BB7776912103}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{CB218ADB-C14B-426D-B2E3-F43E962F2FA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB218ADB-C14B-426D-B2E3-F43E962F2FA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB218ADB-C14B-426D-B2E3-F43E962F2FA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9510A517-1BA7-417E-96B7-BB7776912103}.Debug|Any CPU.ActiveCfg = Debug
+		{9510A517-1BA7-417E-96B7-BB7776912103}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
