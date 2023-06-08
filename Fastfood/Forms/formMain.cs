@@ -14,9 +14,11 @@ namespace Fastfood
 {
     public partial class formMain : Form
     {
+        Information info = new Information();
         public formMain()
         {
             InitializeComponent();
+            lbl1Company.Text = info.GetName();
         }
 
         private void Form2_Load(object sender, EventArgs e)

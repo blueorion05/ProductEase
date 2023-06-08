@@ -233,7 +233,7 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton2, toolStripSeparator1, toolStripButton1, toolStripSeparator2, toolStripButton3, toolStripSeparator3, toolStripButton4 });
             toolStrip1.Location = new Point(3, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(461, 38);
+            toolStrip1.Size = new Size(430, 38);
             toolStrip1.TabIndex = 14;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -385,11 +385,12 @@
             lblEarnings.AutoSize = true;
             lblEarnings.Font = new Font("Century Gothic", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblEarnings.ForeColor = Color.White;
-            lblEarnings.Location = new Point(121, 55);
+            lblEarnings.Location = new Point(91, 55);
             lblEarnings.Name = "lblEarnings";
-            lblEarnings.Size = new Size(22, 24);
+            lblEarnings.Size = new Size(29, 24);
             lblEarnings.TabIndex = 5;
-            lblEarnings.Text = "0";
+            lblEarnings.Text = "₱ ";
+            lblEarnings.Click += lblEarnings_Click;
             // 
             // label4
             // 

@@ -41,7 +41,7 @@ namespace Fastfood
                 order++;
             }
             lblOrder.Text = order.ToString();
-            lblEarnings.Text = earnings.ToString("0.00");
+            lblEarnings.Text = "₱ " + earnings.ToString("0.00");
         }
 
         private void SalesLast30Days()
@@ -60,7 +60,7 @@ namespace Fastfood
                 }
             }
             lblOrder.Text = order.ToString();
-            lblEarnings.Text = earnings.ToString("0.00");
+            lblEarnings.Text = "₱ " + earnings.ToString("0.00");
         }
 
         private void SalesLast7Days()
@@ -79,7 +79,7 @@ namespace Fastfood
                 }
             }
             lblOrder.Text = order.ToString();
-            lblEarnings.Text = earnings.ToString("0.00");
+            lblEarnings.Text = "₱ " + earnings.ToString("0.00");
         }
 
         private void SalesToday()
@@ -98,7 +98,7 @@ namespace Fastfood
                 }
             }
             lblOrder.Text = order.ToString();
-            lblEarnings.Text = earnings.ToString("0.00");
+            lblEarnings.Text = "₱ " + earnings.ToString("0.00");
         }
 
         private void SelectedDateDefault()
@@ -215,6 +215,11 @@ namespace Fastfood
         }
 
         private void pbRecentProduct_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEarnings_Click(object sender, EventArgs e)
         {
 
         }
