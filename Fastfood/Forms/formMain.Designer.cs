@@ -33,6 +33,7 @@
             lbl1Company = new Label();
             panelMain = new Panel();
             panelHeader = new Panel();
+            button2 = new Button();
             button1 = new Button();
             pbActive = new PictureBox();
             btnMinimize = new Button();
@@ -83,6 +84,7 @@
             // 
             panelHeader.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panelHeader.BackColor = Color.FromArgb(25, 26, 62);
+            panelHeader.Controls.Add(button2);
             panelHeader.Controls.Add(button1);
             panelHeader.Controls.Add(pbActive);
             panelHeader.Controls.Add(btnMinimize);
@@ -91,6 +93,20 @@
             panelHeader.Name = "panelHeader";
             panelHeader.Size = new Size(1065, 720);
             panelHeader.TabIndex = 8;
+            // 
+            // button2
+            // 
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Century Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(890, 0);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 25);
+            button2.TabIndex = 18;
+            button2.Text = "About Us";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // button1
             // 
@@ -361,5 +377,6 @@
         private Label lblDateTime;
         private System.Windows.Forms.Timer timerDateTime;
         private Button button1;
+        private Button button2;
     }
 }

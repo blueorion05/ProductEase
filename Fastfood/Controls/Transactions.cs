@@ -155,6 +155,9 @@ namespace Fastfood
                     info.EmptyTransaction(Id);
                 }
                 info.ResetTransacNum();
+                info.TransactionTable(this);
+                dtStart.Value = DateTime.Now.AddMonths(-1);
+                dtEnd.Value = DateTime.Now;
                 MessageBox.Show("Reset successfully.");
             }
         }

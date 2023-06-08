@@ -133,5 +133,11 @@ namespace Fastfood
                 button1.Image = Resources.maximize;
             }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            formDevelopers developers = new formDevelopers();
+            developers.ShowDialog();
+        }
     }
 }
